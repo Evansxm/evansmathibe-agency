@@ -32,8 +32,7 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- Stripe -->
-    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+
     
     <style>
         :root {
@@ -695,6 +694,205 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: var(--primary-light);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.9) translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: var(--text);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .modal-header {
+            padding: 2rem 2rem 1rem;
+            text-align: center;
+        }
+
+        .modal-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1.5rem;
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(232, 122, 122, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 0 20px 10px rgba(232, 122, 122, 0); }
+        }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes iconSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes iconBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .modal-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-description {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .modal-images {
+            padding: 1rem 2rem;
+        }
+
+        .modal-images-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .modal-image {
+            aspect-ratio: 4/3;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--card-border);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-image:hover {
+            transform: scale(1.05);
+        }
+
+        .modal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-footer {
+            padding: 1.5rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .modal-price {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            box-shadow: 0 10px 30px rgba(232, 122, 122, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .service-card {
+            cursor: pointer;
+        }
+
+        .service-card .service-btn {
+            pointer-events: none;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-item:hover div {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .modal-images-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .modal-images-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -758,77 +956,77 @@
             <p>Comprehensive creative solutions tailored to elevate your brand across South Africa</p>
         </div>
         <div class="services-grid">
-            <div class="service-card">
+            <div class="service-card" onclick="openModal('photography')">
                 <div class="service-icon"><i class="fas fa-camera"></i></div>
                 <h3>Photography</h3>
                 <p>Professional photography for events, products, portraits, and commercial campaigns. Serving Johannesburg, Cape Town, Durban, Pretoria and surrounding areas.</p>
-                <button class="service-btn" onclick="addToCart('Photography')">Add to Inquiry Cart</button>
+                <button class="service-btn" onclick="event.stopPropagation(); addToCart('Photography')">Add to Inquiry Cart</button>
             </div>
-            <div class="service-card">
+            <div class="service-card" onclick="openModal('film')">
                 <div class="service-icon"><i class="fas fa-film"></i></div>
                 <h3>Film</h3>
                 <p>Film production including commercials, documentaries, short films, and corporate videos. Cinematic storytelling across South Africa.</p>
-                <button class="service-btn" onclick="addToCart('Film Production')">Add to Inquiry Cart</button>
+                <button class="service-btn" onclick="event.stopPropagation(); addToCart('Film Production')">Add to Inquiry Cart</button>
             </div>
-            <div class="service-card">
+            <div class="service-card" onclick="openModal('advertising')">
                 <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
                 <h3>Advertising</h3>
                 <p>Strategic advertising campaigns across digital and traditional media platforms. Data-driven strategies for maximum ROI.</p>
-                <button class="service-btn" onclick="addToCart('Advertising')">Add to Inquiry Cart</button>
+                <button class="service-btn" onclick="event.stopPropagation(); addToCart('Advertising')">Add to Inquiry Cart</button>
             </div>
-            <div class="service-card">
+            <div class="service-card" onclick="openModal('ai_automation')">
                 <div class="service-icon"><i class="fas fa-robot"></i></div>
                 <h3>AI Brand Automation</h3>
                 <p>AI-powered brand automation solutions for marketing and customer engagement. Smart automation that scales your brand.</p>
-                <button class="service-btn" onclick="addToCart('AI Brand Automation')">Add to Inquiry Cart</button>
+                <button class="service-btn" onclick="event.stopPropagation(); addToCart('AI Brand Automation')">Add to Inquiry Cart</button>
             </div>
-            <div class="service-card">
+            <div class="service-card" onclick="openModal('brand_management')">
                 <div class="service-icon"><i class="fas fa-building"></i></div>
                 <h3>Brand Management</h3>
                 <p>Comprehensive brand strategy, positioning, and identity management. Building strong, memorable brands.</p>
-                <button class="service-btn" onclick="addToCart('Brand Management')">Add to Inquiry Cart</button>
+                <button class="service-btn" onclick="event.stopPropagation(); addToCart('Brand Management')">Add to Inquiry Cart</button>
             </div>
-            <div class="service-card">
+            <div class="service-card" onclick="openModal('talent_management')">
                 <div class="service-icon"><i class="fas fa-users"></i></div>
                 <h3>Talent Management</h3>
                 <p>Representation and management of creative talent and influencers. Connecting brands with the right voices.</p>
-                <button class="service-btn" onclick="addToCart('Talent Management')">Add to Inquiry Cart</button>
+                <button class="service-btn" onclick="event.stopPropagation(); addToCart('Talent Management')">Add to Inquiry Cart</button>
             </div>
-            <div class="service-card">
+            <div class="service-card" onclick="openModal('project_design')">
                 <div class="service-icon"><i class="fas fa-project-diagram"></i></div>
                 <h3>Project Design Management</h3>
                 <p>End-to-end project design and management services. From concept to execution across South Africa.</p>
-                <button class="service-btn" onclick="addToCart('Project Design Management')">Add to Inquiry Cart</button>
+                <button class="service-btn" onclick="event.stopPropagation(); addToCart('Project Design Management')">Add to Inquiry Cart</button>
             </div>
-            <div class="service-card">
+            <div class="service-card" onclick="openModal('brand_design')">
                 <div class="service-icon"><i class="fas fa-palette"></i></div>
                 <h3>Brand Design</h3>
                 <p>Visual identity design including logos, brand guidelines, and collateral. Creating distinctive visual languages.</p>
-                <button class="service-btn" onclick="addToCart('Brand Design')">Add to Inquiry Cart</button>
+                <button class="service-btn" onclick="event.stopPropagation(); addToCart('Brand Design')">Add to Inquiry Cart</button>
             </div>
-            <div class="service-card">
+            <div class="service-card" onclick="openModal('public_relations')">
                 <div class="service-icon"><i class="fas fa-newspaper"></i></div>
                 <h3>Public Relations</h3>
                 <p>PR strategies, media relations, and reputation management. Building and protecting your brand's image.</p>
-                <button class="service-btn" onclick="addToCart('Public Relations')">Add to Inquiry Cart</button>
+                <button class="service-btn" onclick="event.stopPropagation(); addToCart('Public Relations')">Add to Inquiry Cart</button>
             </div>
-            <div class="service-card">
+            <div class="service-card" onclick="openModal('event_management')">
                 <div class="service-icon"><i class="fas fa-calendar-star"></i></div>
                 <h3>Event Design & Management</h3>
                 <p>Full-service event design, planning, and production. Creating memorable experiences across SA.</p>
-                <button class="service-btn" onclick="addToCart('Event Management')">Add to Inquiry Cart</button>
+                <button class="service-btn" onclick="event.stopPropagation(); addToCart('Event Management')">Add to Inquiry Cart</button>
             </div>
-            <div class="service-card">
+            <div class="service-card" onclick="openModal('creative_services')">
                 <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
                 <h3>Creative Services</h3>
                 <p>Creative direction, concept development, and content creation. Innovative solutions that engage.</p>
-                <button class="service-btn" onclick="addToCart('Creative Services')">Add to Inquiry Cart</button>
+                <button class="service-btn" onclick="event.stopPropagation(); addToCart('Creative Services')">Add to Inquiry Cart</button>
             </div>
-            <div class="service-card">
+            <div class="service-card" onclick="openModal('design')">
                 <div class="service-icon"><i class="fas fa-bezier-curve"></i></div>
                 <h3>Design</h3>
                 <p>Graphic design, UI/UX design, and visual communication solutions. Beautiful, functional designs.</p>
-                <button class="service-btn" onclick="addToCart('Design')">Add to Inquiry Cart</button>
+                <button class="service-btn" onclick="event.stopPropagation(); addToCart('Design')">Add to Inquiry Cart</button>
             </div>
         </div>
     </section>
@@ -842,9 +1040,10 @@
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-building"></i></div>
-                <h3>Tshwane Youth Centre (TYC)</h3>
-                <p>A flagship youth development initiative in Pretoria, focusing on empowerment through education, skills training, and community engagement. EvansMathibe Agency partnered with TYC to deliver comprehensive branding, marketing materials, and event management services.</p>
-                <button class="service-btn" onclick="addToCart('Tshwane Youth Centre Project')">Inquire About This Project</button>
+                <span style="display: inline-block; padding: 0.25rem 0.75rem; background: var(--accent); color: white; border-radius: 20px; font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem;">Coming Soon</span>
+                <h3>Upcoming Project</h3>
+                <p>We're currently working on an exciting new youth development initiative in Pretoria. Stay tuned for more details on this flagship project focusing on empowerment through education, skills training, and community engagement.</p>
+                <button class="service-btn" onclick="addToCart('Upcoming Project'); document.getElementById('cart').scrollIntoView({behavior: 'smooth'});">Notify Me When Available</button>
             </div>
         </div>
     </section>
@@ -855,57 +1054,49 @@
             <h2>Our Work Gallery</h2>
             <p>Explore our portfolio of creative projects and photography</p>
         </div>
-        <div class="blog-grid">
-            <div class="blog-card">
-                <img src="images/Google_AI_Studio_2025-12-25T10_18_38.180Z.png" alt="AI Brand Automation" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">AI & Technology</span>
-                    <h3>AI Brand Automation</h3>
-                    <p>Cutting-edge AI solutions for modern brands.</p>
-                </div>
+        <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1400px; margin: 0 auto;">
+            <div class="gallery-item" onclick="openGalleryModal(0)" style="aspect-ratio: 4/3; border-radius: 15px; overflow: hidden; cursor: pointer; position: relative;">
+                <img src="images/Google_AI_Studio_2025-12-25T10_18_38.180Z.png" alt="AI Brand Automation" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" loading="lazy">
+                <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.4); opacity: 0; transition: opacity 0.3s ease; display: flex; align-items: center; justify-content: center;"><i class="fas fa-expand" style="color: white; font-size: 2rem;"></i></div>
             </div>
-            <div class="blog-card">
-                <img src="images/Google_AI_Studio_2025-12-19T09_49_57.794Z.png" alt="Brand Design" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">Design</span>
-                    <h3>Brand Identity</h3>
-                    <p>Professional visual identity design solutions.</p>
-                </div>
+            <div class="gallery-item" onclick="openGalleryModal(1)" style="aspect-ratio: 4/3; border-radius: 15px; overflow: hidden; cursor: pointer; position: relative;">
+                <img src="images/Google_AI_Studio_2025-12-19T09_49_57.794Z.png" alt="Brand Design" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" loading="lazy">
+                <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.4); opacity: 0; transition: opacity 0.3s ease; display: flex; align-items: center; justify-content: center;"><i class="fas fa-expand" style="color: white; font-size: 2rem;"></i></div>
             </div>
-            <div class="blog-card">
-                <img src="images/Google_AI_Studio_2026-01-06T15_57_56.866Z.png" alt="Creative Work" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">Creative</span>
-                    <h3>Creative Direction</h3>
-                    <p>Innovative creative concepts and execution.</p>
-                </div>
+            <div class="gallery-item" onclick="openGalleryModal(2)" style="aspect-ratio: 4/3; border-radius: 15px; overflow: hidden; cursor: pointer; position: relative;">
+                <img src="images/Google_AI_Studio_2026-01-06T15_57_56.866Z.png" alt="Creative Work" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" loading="lazy">
+                <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.4); opacity: 0; transition: opacity 0.3s ease; display: flex; align-items: center; justify-content: center;"><i class="fas fa-expand" style="color: white; font-size: 2rem;"></i></div>
             </div>
-            <div class="blog-card">
-                <img src="images/Google_AI_Studio_2026-01-11T12_08_27.902Z.png" alt="Marketing" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">Marketing</span>
-                    <h3>Digital Marketing</h3>
-                    <p>Strategic digital marketing campaigns.</p>
-                </div>
+            <div class="gallery-item" onclick="openGalleryModal(3)" style="aspect-ratio: 4/3; border-radius: 15px; overflow: hidden; cursor: pointer; position: relative;">
+                <img src="images/Google_AI_Studio_2026-01-11T12_08_27.902Z.png" alt="Marketing" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" loading="lazy">
+                <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.4); opacity: 0; transition: opacity 0.3s ease; display: flex; align-items: center; justify-content: center;"><i class="fas fa-expand" style="color: white; font-size: 2rem;"></i></div>
             </div>
-            <div class="blog-card">
-                <img src="images/Google_AI_Studio_2026-01-13T12_39_50.916Z.png" alt="Content" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">Content</span>
-                    <h3>Content Creation</h3>
-                    <p>Compelling content for brands.</p>
-                </div>
+            <div class="gallery-item" onclick="openGalleryModal(4)" style="aspect-ratio: 4/3; border-radius: 15px; overflow: hidden; cursor: pointer; position: relative;">
+                <img src="images/Google_AI_Studio_2026-01-13T12_39_50.916Z.png" alt="Content" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" loading="lazy">
+                <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.4); opacity: 0; transition: opacity 0.3s ease; display: flex; align-items: center; justify-content: center;"><i class="fas fa-expand" style="color: white; font-size: 2rem;"></i></div>
             </div>
-            <div class="blog-card">
-                <img src="images/Google_AI_Studio_2026-01-22T08_46_22.030Z.png" alt="Photography" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">Photography</span>
-                    <h3>Professional Photography</h3>
-                    <p>High-quality photography services.</p>
-                </div>
+            <div class="gallery-item" onclick="openGalleryModal(5)" style="aspect-ratio: 4/3; border-radius: 15px; overflow: hidden; cursor: pointer; position: relative;">
+                <img src="images/Google_AI_Studio_2026-01-22T08_46_22.030Z.png" alt="Photography" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" loading="lazy">
+                <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.4); opacity: 0; transition: opacity 0.3s ease; display: flex; align-items: center; justify-content: center;"><i class="fas fa-expand" style="color: white; font-size: 2rem;"></i></div>
+            </div>
+            <div class="gallery-item" onclick="openGalleryModal(6)" style="aspect-ratio: 4/3; border-radius: 15px; overflow: hidden; cursor: pointer; position: relative;">
+                <img src="images/Google_AI_Studio_2025-12-21T11_38_25.317Z.png" alt="Design" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" loading="lazy">
+                <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.4); opacity: 0; transition: opacity 0.3s ease; display: flex; align-items: center; justify-content: center;"><i class="fas fa-expand" style="color: white; font-size: 2rem;"></i></div>
+            </div>
+            <div class="gallery-item" onclick="openGalleryModal(7)" style="aspect-ratio: 4/3; border-radius: 15px; overflow: hidden; cursor: pointer; position: relative;">
+                <img src="images/Google_AI_Studio_2026-01-15T05_59_53.455Z.png" alt="Strategy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" loading="lazy">
+                <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.4); opacity: 0; transition: opacity 0.3s ease; display: flex; align-items: center; justify-content: center;"><i class="fas fa-expand" style="color: white; font-size: 2rem;"></i></div>
             </div>
         </div>
     </section>
+
+    <!-- Gallery Modal -->
+    <div class="gallery-modal-overlay" id="galleryModal" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.95); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 2rem;">
+        <button onclick="closeGalleryModal()" style="position: absolute; top: 1.5rem; right: 1.5rem; background: rgba(255,255,255,0.1); border: none; color: white; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; z-index: 10;"><i class="fas fa-times"></i></button>
+        <button onclick="prevGalleryImage()" style="position: absolute; left: 1.5rem; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.1); border: none; color: white; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; font-size: 1.5rem;"><i class="fas fa-chevron-left"></i></button>
+        <button onclick="nextGalleryImage()" style="position: absolute; right: 1.5rem; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.1); border: none; color: white; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; font-size: 1.5rem;"><i class="fas fa-chevron-right"></i></button>
+        <img id="galleryModalImage" src="" alt="Gallery Image" style="max-width: 90%; max-height: 85vh; object-fit: contain; border-radius: 10px;">
+    </div>
 
     <!-- Blog Section -->
     <section class="blog" id="blog">
@@ -1016,7 +1207,7 @@
     <!-- Cart Section -->
     <section class="cart-section" id="cart">
         <div class="section-header">
-            <h2>Service Inquiry Cart</h2>
+            <h2>Send Inquiry</h2>
             <p>Select services you're interested in and submit an inquiry</p>
         </div>
         <div class="cart-container">
@@ -1025,16 +1216,28 @@
             </div>
             <div class="cart-total" id="cart-summary" style="display: none;">
                 <h3>Ready to Start Your Project?</h3>
-                <p style="color: var(--text-muted);">Submit your inquiry and our team will contact you within 24 hours.</p>
-                <div class="payment-buttons">
-                    <stripe-buy-button
-                        buy-button-id="buy_btn_1T1WUUEqhcaJaqvt1u2U5v5O"
-                        publishable-key="pk_test_51P5pdOEqhcaJaqvtj59OoD6s890ZPUiNmyLrkhyyMLbaPQrXCU7kV4xRhPJxaeja0XcJ9ot276Ohvg87stY5NyZ500j91jFNUs">
-                    </stripe-buy-button>
-                    <a href="https://paypal.me/evansmathibe82" target="_blank" class="btn btn-gold">
-                        <i class="fab fa-paypal"></i> Pay with PayPal
-                    </a>
-                </div>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Selected services will be included in your inquiry. Our team will contact you within 24 hours.</p>
+                <form id="inquiryForm" style="max-width: 500px; margin: 0 auto; text-align: left;">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" name="inquiryName" required placeholder="Your full name" style="width: 100%; padding: 1rem; background: var(--primary); border: 1px solid var(--card-border); border-radius: 10px; color: var(--text); font-size: 1rem;">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" name="inquiryEmail" required placeholder="your@email.com" style="width: 100%; padding: 1rem; background: var(--primary); border: 1px solid var(--card-border); border-radius: 10px; color: var(--text); font-size: 1rem;">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" name="inquiryPhone" placeholder="+27 XX XXX XXXX" style="width: 100%; padding: 1rem; background: var(--primary); border: 1px solid var(--card-border); border-radius: 10px; color: var(--text); font-size: 1rem;">
+                    </div>
+                    <div class="form-group">
+                        <label>Project Details</label>
+                        <textarea name="inquiryMessage" rows="3" placeholder="Tell us about your project..." style="width: 100%; padding: 1rem; background: var(--primary); border: 1px solid var(--card-border); border-radius: 10px; color: var(--text); font-size: 1rem; font-family: 'Inter', sans-serif;"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i> Submit Inquiry
+                    </button>
+                </form>
             </div>
         </div>
     </section>
@@ -1047,25 +1250,31 @@
                 <p style="color: var(--text-muted); margin-bottom: 2rem;">Ready to transform your brand? Get in touch with us today.</p>
                 
                 <div class="contact-item">
-                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
-                    <div class="contact-details">
-                        <h4>Phone</h4>
-                        <p>+27 72 416 5061</p>
-                    </div>
+                    <a href="tel:+27724165061" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; width: 100%;">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+27 72 416 5061</p>
+                        </div>
+                    </a>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
-                    <div class="contact-details">
-                        <h4>WhatsApp</h4>
-                        <p>+27724165061</p>
-                    </div>
+                    <a href="https://wa.me/27724165061" target="_blank" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; width: 100%;">
+                        <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div class="contact-details">
+                            <h4>WhatsApp</h4>
+                            <p>+27 72 416 5061</p>
+                        </div>
+                    </a>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                    <div class="contact-details">
-                        <h4>Email</h4>
-                        <p>evans.mathibe@mail.com</p>
-                    </div>
+                    <a href="mailto:evans.mathibe@mail.com" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; width: 100%;">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>evans.mathibe@mail.com</p>
+                        </div>
+                    </a>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
@@ -1170,20 +1379,305 @@
         </div>
     </footer>
 
+    <!-- Modal -->
+    <div class="modal-overlay" id="serviceModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <div class="modal-icon" id="modalIcon">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <h2 id="modalTitle">Service Title</h2>
+                <p class="modal-description" id="modalDesc">Service description goes here.</p>
+            </div>
+            <div class="modal-images">
+                <div class="modal-images-grid" id="modalImages">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="modal-price" id="modalPrice">Custom Quote</div>
+                <button class="btn btn-primary" id="modalAddToCart" onclick="addServiceFromModal()">
+                    <i class="fas fa-shopping-cart"></i> Add to Inquiry Cart
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Service added to cart!</span>
+    </div>
+
     <script>
-        // Cart functionality
+        // Service Data
+        const serviceData = {
+            photography: {
+                title: "Photography",
+                icon: "fa-camera",
+                description: "Professional photography services for events, products, portraits, and commercial campaigns. Our expert photographers capture stunning visuals that tell your brand's story. Serving Johannesburg, Cape Town, Durban, Pretoria and all major South African cities.",
+                images: [
+                    "images/Google_AI_Studio_2026-01-22T08_46_22.030Z.png",
+                    "images/Google_AI_Studio_2026-01-13T12_39_50.916Z.png",
+                    "images/Google_AI_Studio_2025-12-19T09_49_57.794Z.png"
+                ],
+                price: "From R5,000",
+                cartName: "Photography"
+            },
+            film: {
+                title: "Film Production",
+                icon: "fa-film",
+                description: "Cinematic film production including commercials, documentaries, short films, and corporate videos. Our team delivers blockbuster-quality productions that captivate your audience across South Africa.",
+                images: [
+                    "images/Google_AI_Studio_2026-01-06T15_57_56.866Z.png",
+                    "images/Google_AI_Studio_2026-01-11T12_08_27.902Z.png",
+                    "images/Google_AI_Studio_2025-12-25T10_18_38.180Z.png"
+                ],
+                price: "From R15,000",
+                cartName: "Film Production"
+            },
+            advertising: {
+                title: "Advertising",
+                icon: "fa-bullhorn",
+                description: "Strategic advertising campaigns across digital and traditional media platforms. Data-driven strategies that maximize your ROI and target the right audience effectively.",
+                images: [
+                    "images/Google_AI_Studio_2026-01-15T05_59_53.455Z.png",
+                    "images/Google_AI_Studio_2026-01-20T09_07_43.021Z.png",
+                    "images/Google_AI_Studio_2025-12-21T11_38_25.317Z.png"
+                ],
+                price: "From R10,000",
+                cartName: "Advertising"
+            },
+            ai_automation: {
+                title: "AI Brand Automation",
+                icon: "fa-robot",
+                description: "AI-powered brand automation solutions for marketing and customer engagement. Smart automation that scales your brand operations while saving time and resources.",
+                images: [
+                    "images/Google_AI_Studio_2025-12-25T10_18_38.180Z.png",
+                    "images/Google_AI_Studio_2025-12-19T09_58_52.071Z.png",
+                    "images/Google_AI_Studio_2026-02-02T14_25_59.438Z.png"
+                ],
+                price: "From R12,000",
+                cartName: "AI Brand Automation"
+            },
+            brand_management: {
+                title: "Brand Management",
+                icon: "fa-building",
+                description: "Comprehensive brand strategy, positioning, and identity management. We build strong, memorable brands that resonate with your target audience and stand the test of time.",
+                images: [
+                    "images/Google_AI_Studio_2025-12-19T09_49_57.794Z.png",
+                    "images/Google_AI_Studio_2025-12-19T09_45_28.147Z.png",
+                    "images/Google_AI_Studio_2026-01-06T15_52_53.853Z.png"
+                ],
+                price: "From R8,000",
+                cartName: "Brand Management"
+            },
+            talent_management: {
+                title: "Talent Management",
+                icon: "fa-users",
+                description: "Representation and management of creative talent and influencers. We connect brands with the right voices to amplify your message across South Africa's diverse market.",
+                images: [
+                    "images/Google_AI_Studio_2026-01-11T12_13_22.307Z.png",
+                    "images/Google_AI_Studio_2026-01-13T12_57_07.139Z.png",
+                    "images/Google_AI_Studio_2025-12-22T13_30_44.120Z.png"
+                ],
+                price: "Custom Quote",
+                cartName: "Talent Management"
+            },
+            project_design: {
+                title: "Project Design Management",
+                icon: "fa-project-diagram",
+                description: "End-to-end project design and management services. From concept to execution, we deliver your projects on time and within budget across South Africa.",
+                images: [
+                    "images/Google_AI_Studio_2026-01-15T05_49_53.935Z.png",
+                    "images/Google_AI_Studio_2026-01-23T19_28_03.259Z.png",
+                    "images/Google_AI_Studio_2025-12-12T14_13_19.423Z.png"
+                ],
+                price: "From R10,000",
+                cartName: "Project Design Management"
+            },
+            brand_design: {
+                title: "Brand Design",
+                icon: "fa-palette",
+                description: "Visual identity design including logos, brand guidelines, and collateral. We create distinctive visual languages that make your brand unforgettable.",
+                images: [
+                    "images/Google_AI_Studio_2025-12-19T09_49_57.794Z.png",
+                    "images/Google_AI_Studio_2025-12-19T09_45_28.147Z.png",
+                    "images/Google_AI_Studio_2026-01-06T16_11_28.684Z.png"
+                ],
+                price: "From R6,000",
+                cartName: "Brand Design"
+            },
+            public_relations: {
+                title: "Public Relations",
+                icon: "fa-newspaper",
+                description: "PR strategies, media relations, and reputation management. We build and protect your brand's image through strategic communications across all media channels.",
+                images: [
+                    "images/Google_AI_Studio_2026-01-09T16_24_32.869Z.png",
+                    "images/Google_AI_Studio_2025-12-21T11_17_05.316Z.png",
+                    "images/Google_AI_Studio_2025-12-03T18_41_10.030Z.png"
+                ],
+                price: "From R7,500",
+                cartName: "Public Relations"
+            },
+            event_management: {
+                title: "Event Design & Management",
+                icon: "fa-calendar-star",
+                description: "Full-service event design, planning, and production. From corporate events to product launches, we create memorable experiences across South Africa.",
+                images: [
+                    "images/Google_AI_Studio_2026-01-31T10_22_58.884Z.png",
+                    "images/Google_AI_Studio_2026-01-31T19_07_02.447Z.png",
+                    "images/Google_AI_Studio_2026-02-02T14_22_54.233Z.png"
+                ],
+                price: "From R12,000",
+                cartName: "Event Management"
+            },
+            creative_services: {
+                title: "Creative Services",
+                icon: "fa-lightbulb",
+                description: "Creative direction, concept development, and content creation. Innovative solutions that engage your audience and elevate your brand above the competition.",
+                images: [
+                    "images/Google_AI_Studio_2026-01-06T15_57_56.866Z.png",
+                    "images/Google_AI_Studio_2025-12-26T18_34_30.369Z.png",
+                    "images/Google_AI_Studio_2025-11-27T17_55_33.493Z.png"
+                ],
+                price: "From R8,000",
+                cartName: "Creative Services"
+            },
+            design: {
+                title: "Design",
+                icon: "fa-bezier-curve",
+                description: "Graphic design, UI/UX design, and visual communication solutions. Beautiful, functional designs that communicate your message effectively.",
+                images: [
+                    "images/Google_AI_Studio_2025-12-19T09_49_57.794Z.png",
+                    "images/Google_AI_Studio_2025-12-19T09_45_28.147Z.png",
+                    "images/Google_AI_Studio_2026-01-06T15_52_53.853Z.png"
+                ],
+                price: "From R5,000",
+                cartName: "Design"
+            }
+        };
+
+        // Current service for modal
+        let currentService = null;
+
+        // Gallery functionality
+        const galleryImages = [
+            "images/Google_AI_Studio_2025-12-25T10_18_38.180Z.png",
+            "images/Google_AI_Studio_2025-12-19T09_49_57.794Z.png",
+            "images/Google_AI_Studio_2026-01-06T15_57_56.866Z.png",
+            "images/Google_AI_Studio_2026-01-11T12_08_27.902Z.png",
+            "images/Google_AI_Studio_2026-01-13T12_39_50.916Z.png",
+            "images/Google_AI_Studio_2026-01-22T08_46_22.030Z.png",
+            "images/Google_AI_Studio_2025-12-21T11_38_25.317Z.png",
+            "images/Google_AI_Studio_2026-01-15T05_59_53.455Z.png"
+        ];
+        let currentGalleryIndex = 0;
+
+        function openGalleryModal(index) {
+            currentGalleryIndex = index;
+            const modal = document.getElementById('galleryModal');
+            const img = document.getElementById('galleryModalImage');
+            img.src = galleryImages[index];
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGalleryModal() {
+            document.getElementById('galleryModal').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        function nextGalleryImage() {
+            currentGalleryIndex = (currentGalleryIndex + 1) % galleryImages.length;
+            document.getElementById('galleryModalImage').src = galleryImages[currentGalleryIndex];
+        }
+
+        function prevGalleryImage() {
+            currentGalleryIndex = (currentGalleryIndex - 1 + galleryImages.length) % galleryImages.length;
+            document.getElementById('galleryModalImage').src = galleryImages[currentGalleryIndex];
+        }
+
+        document.getElementById('galleryModal').addEventListener('click', function(e) {
+            if (e.target === this) closeGalleryModal();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            const galleryModal = document.getElementById('galleryModal');
+            if (galleryModal.style.display === 'flex') {
+                if (e.key === 'Escape') closeGalleryModal();
+                if (e.key === 'ArrowRight') nextGalleryImage();
+                if (e.key === 'ArrowLeft') prevGalleryImage();
+            }
+        });
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            toastMessage.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        function openModal(serviceKey) {
+            const service = serviceData[serviceKey];
+            if (!service) return;
+
+            currentService = service;
+
+            document.getElementById('modalTitle').textContent = service.title;
+            document.getElementById('modalDesc').textContent = service.description;
+            document.getElementById('modalPrice').textContent = service.price;
+            
+            const iconEl = document.getElementById('modalIcon');
+            iconEl.innerHTML = `<i class="fas ${service.icon}"></i>`;
+
+            const imagesGrid = document.getElementById('modalImages');
+            imagesGrid.innerHTML = service.images.map(img => `
+                <div class="modal-image">
+                    <img src="${img}" alt="${service.title}" loading="lazy">
+                </div>
+            `).join('');
+
+            const modal = document.getElementById('serviceModal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('serviceModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            currentService = null;
+        }
+
+        function addServiceFromModal() {
+            if (currentService) {
+                addToCart(currentService.cartName);
+                closeModal();
+            }
+        }
+
         let cart = [];
 
         function addToCart(service) {
             if (!cart.includes(service)) {
                 cart.push(service);
                 updateCart();
+                showToast(`${service} added to inquiry cart!`);
+            } else {
+                showToast(`${service} is already in your cart`);
             }
         }
 
         function removeFromCart(service) {
             cart = cart.filter(item => item !== service);
             updateCart();
+            showToast(`${service} removed from cart`);
         }
 
         function updateCart() {
@@ -1209,6 +1703,20 @@
             }
         }
 
+        // Close modal on overlay click
+        document.getElementById('serviceModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
@@ -1225,11 +1733,72 @@
             navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         }
 
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', (e) => {
+        // Form submission (main contact form)
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            alert('Thank you for your inquiry! We will get back to you within 24 hours.');
-            e.target.reset();
+            const formData = new FormData(this);
+            const contactData = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                service: formData.get('service'),
+                message: formData.get('message')
+            };
+            
+            try {
+                const response = await fetch('http://localhost:8000/api/inquiry', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(contactData)
+                });
+                
+                if (response.ok) {
+                    showToast('Thank you for your inquiry! We will get back to you within 24 hours.');
+                } else {
+                    showToast('Something went wrong. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error submitting contact form:', error);
+                showToast('Unable to submit inquiry. Please try again or contact us directly.');
+            }
+            this.reset();
+        });
+
+        // Inquiry form submission (cart section)
+        document.getElementById('inquiryForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const inquiryData = {
+                name: formData.get('inquiryName'),
+                email: formData.get('inquiryEmail'),
+                phone: formData.get('inquiryPhone'),
+                message: formData.get('inquiryMessage'),
+                services: cart
+            };
+            
+            try {
+                const response = await fetch('http://localhost:8000/api/inquiry', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(inquiryData)
+                });
+                
+                if (response.ok) {
+                    showToast('Inquiry submitted successfully! We will contact you within 24 hours.');
+                    cart = [];
+                    updateCart();
+                } else {
+                    showToast('Something went wrong. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error submitting inquiry:', error);
+                showToast('Unable to submit inquiry. Please try again or contact us directly.');
+            }
+            this.reset();
         });
 
         // Smooth scroll
