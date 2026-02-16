@@ -698,13 +698,15 @@
     <!-- Navigation -->
     <nav id="navbar">
         <a href="#" class="logo">
-            <img src="logo.png" alt="EvansMathibe Agency" class="logo-img" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+            <img src="logo.png" alt="EvansMathibe Agency" class="logo-img" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" loading="lazy">
             <span class="logo-text">EvansMathibe</span>
         </a>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
+            <li><a href="#video">Video</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#gallery">Gallery</a></li>
             <li><a href="#blog">Blog</a></li>
             <li><a href="#cart">Cart</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -728,6 +730,20 @@
                     <i class="fas fa-envelope"></i> Get in Touch
                 </a>
             </div>
+        </div>
+    </section>
+
+    <!-- Video Showcase -->
+    <section style="padding: 4rem 5%; background: var(--primary-light); text-align: center;">
+        <div class="section-header">
+            <h2>Watch Our Showreel</h2>
+            <p>Experience our creative work through video</p>
+        </div>
+        <div style="max-width: 900px; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+            <video autoplay loop muted playsinline style="width: 100%; display: block;">
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </section>
 
@@ -825,6 +841,64 @@
                 <h3>Tshwane Youth Centre (TYC)</h3>
                 <p>A flagship youth development initiative in Pretoria, focusing on empowerment through education, skills training, and community engagement. EvansMathibe Agency partnered with TYC to deliver comprehensive branding, marketing materials, and event management services.</p>
                 <button class="service-btn" onclick="addToCart('Tshwane Youth Centre Project')">Inquire About This Project</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="blog" id="gallery">
+        <div class="section-header">
+            <h2>Our Work Gallery</h2>
+            <p>Explore our portfolio of creative projects and photography</p>
+        </div>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <img src="images/Google_AI_Studio_2025-12-29T12_25_28.824Z.png" alt="AI Brand Automation" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
+                <div class="blog-content">
+                    <span class="blog-category">AI & Technology</span>
+                    <h3>AI Brand Automation</h3>
+                    <p>Cutting-edge AI solutions for modern brands.</p>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="images/Google_AI_Studio_2025-12-29T12_42_46.972Z.png" alt="Brand Design" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
+                <div class="blog-content">
+                    <span class="blog-category">Design</span>
+                    <h3>Brand Identity</h3>
+                    <p>Professional visual identity design solutions.</p>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="images/Google_AI_Studio_2025-12-29T12_52_44.558Z.png" alt="Creative Work" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
+                <div class="blog-content">
+                    <span class="blog-category">Creative</span>
+                    <h3>Creative Direction</h3>
+                    <p>Innovative creative concepts and execution.</p>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="images/Google_AI_Studio_2025-12-29T12_58_32.467Z.png" alt="Marketing" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
+                <div class="blog-content">
+                    <span class="blog-category">Marketing</span>
+                    <h3>Digital Marketing</h3>
+                    <p>Strategic digital marketing campaigns.</p>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="images/Google_AI_Studio_2025-12-29T13_00_22.115Z.png" alt="Content" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
+                <div class="blog-content">
+                    <span class="blog-category">Content</span>
+                    <h3>Content Creation</h3>
+                    <p>Compelling content for brands.</p>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="images/ChatGPT Image Dec 29, 2025, 04_10_33 PM.png" alt="TYC Project" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
+                <div class="blog-content">
+                    <span class="blog-category">Project</span>
+                    <h3>Tshwane Youth Centre</h3>
+                    <p>Community branding project.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -1047,7 +1121,7 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <a href="#" class="logo">
-                    <img src="logo.png" alt="EvansMathibe Agency" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                    <img src="logo.png" alt="EvansMathibe Agency" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" loading="lazy">
                     <span class="logo-text">EvansMathibe</span>
                 </a>
                 <p>Premier creative agency delivering world-class solutions across South Africa. Serving Johannesburg, Cape Town, Durban, Pretoria, and beyond.</p>
