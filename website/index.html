@@ -21,6 +21,9 @@
     <!-- Canonical -->
     <link rel="canonical" href="https://evansmathibe-agency.com">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -695,12 +698,13 @@
     <!-- Navigation -->
     <nav id="navbar">
         <a href="#" class="logo">
-            <div class="logo-icon">E</div>
+            <img src="logo.png" alt="EvansMathibe Agency" class="logo-img" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
             <span class="logo-text">EvansMathibe</span>
         </a>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
             <li><a href="#blog">Blog</a></li>
             <li><a href="#cart">Cart</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -805,6 +809,22 @@
                 <h3>Design</h3>
                 <p>Graphic design, UI/UX design, and visual communication solutions. Beautiful, functional designs.</p>
                 <button class="service-btn" onclick="addToCart('Design')">Add to Inquiry Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="services" id="projects">
+        <div class="section-header">
+            <h2>Our Projects</h2>
+            <p>Showcasing our creative work and collaborations across South Africa</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-building"></i></div>
+                <h3>Tshwane Youth Centre (TYC)</h3>
+                <p>A flagship youth development initiative in Pretoria, focusing on empowerment through education, skills training, and community engagement. EvansMathibe Agency partnered with TYC to deliver comprehensive branding, marketing materials, and event management services.</p>
+                <button class="service-btn" onclick="addToCart('Tshwane Youth Centre Project')">Inquire About This Project</button>
             </div>
         </div>
     </section>
@@ -1027,7 +1047,7 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <a href="#" class="logo">
-                    <div class="logo-icon">E</div>
+                    <img src="logo.png" alt="EvansMathibe Agency" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
                     <span class="logo-text">EvansMathibe</span>
                 </a>
                 <p>Premier creative agency delivering world-class solutions across South Africa. Serving Johannesburg, Cape Town, Durban, Pretoria, and beyond.</p>
@@ -1036,6 +1056,7 @@
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     <a href="#"><i class="fab fa-twitter-x"></i></a>
+                    <a href="https://business.google.com" target="_blank"><i class="fas fa-google"></i></a>
                 </div>
             </div>
             <div class="footer-links">
