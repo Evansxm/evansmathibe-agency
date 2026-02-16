@@ -33,3 +33,4 @@ _site/
 # Logs
 *.log
 logs/
+data/agency_data.json
