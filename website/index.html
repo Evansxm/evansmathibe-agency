@@ -37,16 +37,19 @@
     
     <style>
         :root {
-            --primary: #0a0a0a;
-            --primary-light: #1a1a1a;
-            --secondary: #2d2d2d;
-            --accent: #c9a227;
-            --accent-gold: #d4af37;
+            --primary: #333333;
+            --primary-light: #2a2a2a;
+            --secondary: #1f1f1f;
+            --accent: #E87A7A;
+            --accent-light: #f0a5a5;
             --text: #f5f5f5;
             --text-muted: #b0b0b0;
-            --gradient: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2d2d2d 100%);
+            --gradient: linear-gradient(135deg, #333333 0%, #2a2a2a 50%, #1f1f1f 100%);
             --card-bg: rgba(255, 255, 255, 0.05);
-            --card-border: rgba(201, 162, 39, 0.2);
+            --card-border: rgba(232, 122, 122, 0.2);
+            --bg-light: #F5E6D3;
+            --slate-blue: #7A8E99;
+            --sage-green: #9CAF88;
         }
 
         * {
@@ -104,7 +107,7 @@
         .logo-icon {
             width: 50px;
             height: 50px;
-            background: var(--accent-gold);
+            background: var(--accent);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -142,7 +145,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--accent-gold);
+            background: var(--accent);
             transition: width 0.3s ease;
         }
 
@@ -172,8 +175,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 30% 70%, rgba(201, 162, 39, 0.2) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 30%, rgba(212, 175, 55, 0.15) 0%, transparent 50%);
+            background: radial-gradient(circle at 30% 70%, rgba(232, 122, 122, 0.2) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(122, 142, 153, 0.15) 0%, transparent 50%);
             pointer-events: none;
         }
 
@@ -197,7 +200,7 @@
             border-radius: 50px;
             font-size: 0.875rem;
             margin-bottom: 2rem;
-            color: var(--accent-gold);
+            color: var(--accent);
         }
 
         .hero h1 {
@@ -241,12 +244,12 @@
         }
 
         .btn-primary {
-            background: var(--accent-gold);
+            background: var(--accent);
             color: white;
         }
 
         .btn-primary:hover {
-            background: #b8922a;
+            background: #c45c5c;
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
         }
@@ -263,12 +266,12 @@
         }
 
         .btn-gold {
-            background: var(--accent-gold);
+            background: var(--accent);
             color: var(--primary);
         }
 
         .btn-gold:hover {
-            background: #b8922a;
+            background: #c45c5c;
             transform: translateY(-2px);
         }
 
@@ -318,7 +321,7 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-gold));
+            background: linear-gradient(90deg, var(--accent), var(--accent));
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
@@ -335,7 +338,7 @@
         .service-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, var(--accent), var(--accent-gold));
+            background: linear-gradient(135deg, var(--accent), var(--accent));
             border-radius: 15px;
             display: flex;
             align-items: center;
@@ -368,7 +371,7 @@
         }
 
         .service-btn:hover {
-            background: var(--accent-gold);
+            background: var(--accent);
             border-color: var(--accent);
         }
 
@@ -417,7 +420,7 @@
         .blog-category {
             display: inline-block;
             padding: 0.25rem 0.75rem;
-            background: var(--accent-gold);
+            background: var(--accent);
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 600;
@@ -486,7 +489,7 @@
         .cart-total h3 {
             font-size: 2rem;
             margin-bottom: 1rem;
-            color: var(--accent-gold);
+            color: var(--accent);
         }
 
         .payment-buttons {
@@ -648,7 +651,7 @@
         }
 
         .footer-social a:hover {
-            background: var(--accent-gold);
+            background: var(--accent);
             transform: translateY(-3px);
         }
 
