@@ -703,7 +703,8 @@
         </a>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#video">Video</a></li>
+            <li><a href="#video">Showreel</a></li>
+            <li><a href="#videos">Videos</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#gallery">Gallery</a></li>
@@ -740,10 +741,83 @@
             <p>Experience our creative work through video</p>
         </div>
         <div style="max-width: 900px; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
-            <video autoplay loop muted playsinline style="width: 100%; display: block;">
-                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            <video id="showreel-video" autoplay loop muted playsinline style="width: 100%; display: block; background: #000;">
+                <source src="videos/showreel.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
+        </div>
+        <p style="text-align: center; margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+            <i class="fas fa-film"></i> Creative Showreel 2026 | EvansMathibe Agency
+        </p>
+    </section>
+
+    <!-- Video Gallery Section -->
+    <section class="blog" id="videos">
+        <div class="section-header">
+            <h2>Video Portfolio</h2>
+            <p>Explore our creative video productions</p>
+        </div>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <video controls style="width:100%;height:200px;object-fit:cover;" poster="images/Google_AI_Studio_2025-12-29T12_25_28.824Z.png">
+                    <source src="videos/photography.mp4" type="video/mp4">
+                </video>
+                <div class="blog-content">
+                    <span class="blog-category">Photography</span>
+                    <h3>Photography Showcase</h3>
+                    <p>Professional photography work and visual storytelling.</p>
+                </div>
+            </div>
+            <div class="blog-card">
+                <video controls style="width:100%;height:200px;object-fit:cover;" poster="images/Google_AI_Studio_2025-12-29T12_42_46.972Z.png">
+                    <source src="videos/film.mp4" type="video/mp4">
+                </video>
+                <div class="blog-content">
+                    <span class="blog-category">Film</span>
+                    <h3>Film Production</h3>
+                    <p>Cinematic video production and direction.</p>
+                </div>
+            </div>
+            <div class="blog-card">
+                <video controls style="width:100%;height:200px;object-fit:cover;" poster="images/Google_AI_Studio_2025-12-29T12_52_44.558Z.png">
+                    <source src="videos/branding.mp4" type="video/mp4">
+                </video>
+                <div class="blog-content">
+                    <span class="blog-category">Branding</span>
+                    <h3>Brand Videos</h3>
+                    <p>Compelling brand identity videos.</p>
+                </div>
+            </div>
+            <div class="blog-card">
+                <video controls style="width:100%;height:200px;object-fit:cover;" poster="images/Google_AI_Studio_2025-12-29T12_58_32.467Z.png">
+                    <source src="videos/advertising.mp4" type="video/mp4">
+                </video>
+                <div class="blog-content">
+                    <span class="blog-category">Advertising</span>
+                    <h3>Ad Campaigns</h3>
+                    <p>Strategic advertising campaign videos.</p>
+                </div>
+            </div>
+            <div class="blog-card">
+                <video controls style="width:100%;height:200px;object-fit:cover;" poster="images/Google_AI_Studio_2025-12-29T13_00_22.115Z.png">
+                    <source src="videos/ai_automation.mp4" type="video/mp4">
+                </video>
+                <div class="blog-content">
+                    <span class="blog-category">AI & Tech</span>
+                    <h3>AI Automation</h3>
+                    <p>AI-powered brand automation solutions.</p>
+                </div>
+            </div>
+            <div class="blog-card">
+                <video controls style="width:100%;height:200px;object-fit:cover;" poster="images/ChatGPT Image Dec 29, 2025, 04_10_33 PM.png">
+                    <source src="videos/events.mp4" type="video/mp4">
+                </video>
+                <div class="blog-content">
+                    <span class="blog-category">Events</span>
+                    <h3>Event Coverage</h3>
+                    <p>Event video production and coverage.</p>
+                </div>
+            </div>
         </div>
     </section>
 
