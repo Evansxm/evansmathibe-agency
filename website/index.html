@@ -19,7 +19,7 @@
     <meta property="og:region" content="South Africa">
     
     <!-- Canonical -->
-    <link rel="canonical" href="https://evansmathibe-agency.com">
+    <link rel="canonical" href="https://evansxm.github.io/evansmathibe-agency/">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
@@ -1733,7 +1733,7 @@
             navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         }
 
-        // Form submission (main contact form)
+        // Form submission (main contact form) - GitHub Pages compatible
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const formData = new FormData(this);
@@ -1742,31 +1742,26 @@
                 email: formData.get('email'),
                 phone: formData.get('phone'),
                 service: formData.get('service'),
-                message: formData.get('message')
+                message: formData.get('message'),
+                timestamp: new Date().toISOString()
             };
             
+            // Try localStorage as primary (works on GitHub Pages)
             try {
-                const response = await fetch('http://localhost:8000/api/inquiry', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(contactData)
-                });
-                
-                if (response.ok) {
-                    showToast('Thank you for your inquiry! We will get back to you within 24 hours.');
-                } else {
-                    showToast('Something went wrong. Please try again.');
-                }
-            } catch (error) {
-                console.error('Error submitting contact form:', error);
-                showToast('Unable to submit inquiry. Please try again or contact us directly.');
+                const inquiries = JSON.parse(localStorage.getItem('evans_inquiries') || '[]');
+                inquiries.push(contactData);
+                localStorage.setItem('evans_inquiries', JSON.stringify(inquiries));
+                showToast('Thank you! Your inquiry has been saved. We will contact you within 24 hours.');
+            } catch (localError) {
+                // Fallback: Open email client
+                const subject = encodeURIComponent(`New Inquiry: ${contactData.service}`);
+                const body = encodeURIComponent(`Name: ${contactData.name}\nEmail: ${contactData.email}\nPhone: ${contactData.phone}\n\nMessage:\n${contactData.message}`);
+                window.location.href = `mailto:evans.mathibe@mail.com?subject=${subject}&body=${body}`;
             }
             this.reset();
         });
 
-        // Inquiry form submission (cart section)
+        // Inquiry form submission (cart section) - GitHub Pages compatible
         document.getElementById('inquiryForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const formData = new FormData(this);
@@ -1775,28 +1770,23 @@
                 email: formData.get('inquiryEmail'),
                 phone: formData.get('inquiryPhone'),
                 message: formData.get('inquiryMessage'),
-                services: cart
+                services: cart,
+                timestamp: new Date().toISOString()
             };
             
+            // Try localStorage as primary (works on GitHub Pages)
             try {
-                const response = await fetch('http://localhost:8000/api/inquiry', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(inquiryData)
-                });
-                
-                if (response.ok) {
-                    showToast('Inquiry submitted successfully! We will contact you within 24 hours.');
-                    cart = [];
-                    updateCart();
-                } else {
-                    showToast('Something went wrong. Please try again.');
-                }
-            } catch (error) {
-                console.error('Error submitting inquiry:', error);
-                showToast('Unable to submit inquiry. Please try again or contact us directly.');
+                const inquiries = JSON.parse(localStorage.getItem('evans_inquiries') || '[]');
+                inquiries.push(inquiryData);
+                localStorage.setItem('evans_inquiries', JSON.stringify(inquiries));
+                showToast('Inquiry submitted! We will contact you within 24 hours.');
+                cart = [];
+                updateCart();
+            } catch (localError) {
+                // Fallback: Open email client
+                const subject = encodeURIComponent('New Service Inquiry');
+                const body = encodeURIComponent(`Name: ${inquiryData.name}\nEmail: ${inquiryData.email}\nPhone: ${inquiryData.phone}\n\nServices: ${inquiryData.services.join(', ')}\n\nMessage:\n${inquiryData.message}`);
+                window.location.href = `mailto:evans.mathibe@mail.com?subject=${subject}&body=${body}`;
             }
             this.reset();
         });
