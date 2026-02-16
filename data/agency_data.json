@@ -1,0 +1,121 @@
+{
+  "agency_info": {
+    "name": "EvansMathibe Agency",
+    "email": "evans.mathibe@mail.com",
+    "phone": "+27 72 416 5061",
+    "whatsapp": "+27724165061",
+    "website": "https://evansmathibe-agency.com",
+    "google_business": null,
+    "social_media": {
+      "facebook": null,
+      "instagram": null,
+      "linkedin": null,
+      "twitter": null
+    }
+  },
+  "payment_info": {
+    "stripe": {
+      "publishable_key": "pk_test_51P5pdOEqhcaJaqvtj59OoD6s890ZPUiNmyLrkhyyMLbaPQrXCU7kV4xRhPJxaeja0XcJ9ot276Ohvg87stY5NyZ500j91jFNUs",
+      "buy_button_id": "buy_btn_1T1WUUEqhcaJaqvt1u2U5v5O",
+      "test_mode": true
+    },
+    "paypal": {
+      "username": "evansmathibe82",
+      "payment_url": "https://paypal.me/evansmathibe82"
+    }
+  },
+  "services": [
+    {"id": "photography", "name": "Photography", "category": "creative"},
+    {"id": "film", "name": "Film Production", "category": "creative"},
+    {"id": "advertising", "name": "Advertising", "category": "marketing"},
+    {"id": "ai_automation", "name": "AI Brand Automation", "category": "technology"},
+    {"id": "brand_management", "name": "Brand Management", "category": "strategy"},
+    {"id": "talent_management", "name": "Talent Management", "category": "human_resources"},
+    {"id": "project_management", "name": "Project Design Management", "category": "management"},
+    {"id": "brand_design", "name": "Brand Design", "category": "creative"},
+    {"id": "pr", "name": "Public Relations", "category": "marketing"},
+    {"id": "events", "name": "Event Design & Management", "category": "events"},
+    {"id": "creative", "name": "Creative Services", "category": "creative"},
+    {"id": "design", "name": "Design", "category": "creative"}
+  ],
+  "service_areas": {
+    "major_cities": [
+      "Johannesburg", "Cape Town", "Durban", "Pretoria", "Port Elizabeth",
+      "Bloemfontein", "Polokwane", "Nelspruit", "Kimberley"
+    ],
+    "business_districts": [
+      "Sandton", "Rosebank", "Midrand", "Umhlanga", "Stellenbosch",
+      "Randburg", "Bryanston", "Fourways", "Lonehill", "Sunninghill",
+      "Waterfall City", "Illovo", "Melrose Arch", "Maboneng", "Auckland Park"
+    ],
+    "provinces": [
+      "Gauteng", "Western Cape", "KwaZulu-Natal", "Eastern Cape",
+      "Limpopo", "Mpumalanga", "North West", "Free State", "Northern Cape"
+    ],
+    "high_income_areas": [
+      "Sandton", "Morningside", "Rosebank", "Hyde Park", "Melrose",
+      "Camps Bay", "Clifton", "Sea Point", "Umhlanga Rocks", "Zimbali"
+    ]
+  },
+  "blog_articles": [
+    {
+      "id": "brand_design",
+      "title": "The Art of Brand Design: Building Identities That Resonate",
+      "category": "Brand Design",
+      "excerpt": "Explore the fundamentals of creating memorable brand identities",
+      "content": "Full article content here..."
+    },
+    {
+      "id": "advertising_future",
+      "title": "The Future of Advertising: Trends Shaping 2026 and Beyond",
+      "category": "Advertising",
+      "excerpt": "Discover the latest advertising trends reshaping the industry",
+      "content": "Full article content here..."
+    },
+    {
+      "id": "ai_creative",
+      "title": "Mastering AI in Creative Practice: A Strategic Guide",
+      "category": "AI & Creativity",
+      "excerpt": "Learn how to effectively integrate AI into your creative workflow",
+      "content": "Full article content here..."
+    },
+    {
+      "id": "ai_advertising",
+      "title": "Leveraging AI Automation in Advertising and Creative Work",
+      "category": "AI Automation",
+      "excerpt": "How AI is revolutionizing advertising campaigns",
+      "content": "Full article content here..."
+    },
+    {
+      "id": "project_design_ai",
+      "title": "Project Design in the AI Era: Modern Approaches",
+      "category": "Project Design",
+      "excerpt": "How AI is transforming project design methodologies",
+      "content": "Full article content here..."
+    },
+    {
+      "id": "project_management",
+      "title": "What is Project Management? A Comprehensive Guide",
+      "category": "Project Management",
+      "excerpt": "Understanding project management fundamentals",
+      "content": "Full article content here..."
+    },
+    {
+      "id": "networking",
+      "title": "The Art of Business Networking in South Africa",
+      "category": "Networking",
+      "excerpt": "Master professional networking in South Africa's business landscape",
+      "content": "Full article content here..."
+    },
+    {
+      "id": "design_thinking",
+      "title": "Design Thinking: Solving Problems Creatively",
+      "category": "Design",
+      "excerpt": "How design thinking transforms problem-solving",
+      "content": "Full article content here..."
+    }
+  ],
+  "inquiries": [],
+  "created_at": "2026-02-16",
+  "updated_at": "2026-02-16"
+}
