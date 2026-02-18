@@ -1146,11 +1146,11 @@
                 </div>
             </div>
             
-            <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-                <input type="hidden" name="access_key" value="4e6e35f2-8b4a-4c3c-b2e1-8f9d5a6c7b3e">
-                <input type="hidden" name="subject" value="New Inquiry from EvansMathibe Agency Website">
-                <input type="hidden" name="from_name" value="EvansMathibe Agency">
-                <input type="checkbox" name="botcheck" style="display: none;">
+            <form class="contact-form" id="contactForm" action="https://formsubmit.co/evans.mathibe@mail.com" method="POST">
+                <input type="hidden" name="_subject" value="New Inquiry from EvansMathibe Agency Website">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="_honey" style="display:none">
+                <input type="hidden" name="_template" value="table">
                 <div class="form-group">
                     <label>Name</label>
                     <input type="text" name="name" required placeholder="Your name">
@@ -1299,7 +1299,7 @@
             navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         }
 
-        // Form submission with Web3Forms
+        // Form submission with FormSubmit.co
         document.getElementById('contactForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const form = e.target;
@@ -1313,16 +1313,11 @@
                     method: 'POST',
                     body: new FormData(form)
                 });
-                const result = await response.json();
                 
-                if (result.success) {
-                    alert('Thank you for your inquiry! We will get back to you within 24 hours.');
-                    form.reset();
-                } else {
-                    alert('Something went wrong. Please try again or contact us directly via WhatsApp.');
-                }
+                alert('Thank you for your inquiry! We will get back to you within 24 hours.');
+                form.reset();
             } catch (error) {
-                alert('Error submitting form. Please try again.');
+                alert('Error submitting form. Please try again or contact us directly via WhatsApp.');
             }
             
             submitBtn.innerHTML = originalText;
