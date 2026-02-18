@@ -683,7 +683,7 @@
         // Submit Inquiry
         function submitInquiry() {
             const subject = encodeURIComponent('New Service Inquiry');
-            const body = encodeURIComponent(`Hello EvansMathibe,\n\nI am interested in the following services:\n\n${cart.map(s => '- ' + s).join('\n')}\n\nPlease contact me to discuss pricing and next steps.\n\nThank you`);
+            const body = encodeURIComponent(`Hello EvansMathibe,\n\nI am interested in the following services:\n\n${cart.map(s => '- ' + s).join('\n')}\n\nPlease contact me for a custom quote and next steps.\n\nThank you`);
             window.location.href = `mailto:evans.mathibe@mail.com?subject=${subject}&body=${body}`;
             showToast('Opening email client to send inquiry!');
         }
