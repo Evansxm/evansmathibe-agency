@@ -1,0 +1,54 @@
+name: Analytics Data Archive
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  archive-analytics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      
+    - name: Create analytics archive
+      run: |
+        mkdir -p data/archive
+        DATE=$(date +%Y-%m-%d_%H-%M-%S)
+        
+        cat > data/archive/analytics_$DATE.json << 'EOF'
+        {
+          "timestamp": "$DATE",
+          "type": "automated_archive",
+          "message": "EvansMathibe Agency analytics data archived",
+          "next_steps": "Visit https://evansxm.github.io/evansmathibe-agency/analytics.html to view dashboard"
+        }
+        EOF
+        
+        echo "Archive created: analytics_$DATE.json"
+    
+    - name: Commit and push
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data/archive/
+        git commit -m "Archive EvansMathibe analytics data - $(date +%Y-%m-%d_%H:%M:%S)" || exit 0
+        git push
+    
+    - name: Create summary issue
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const date = new Date().toISOString();
+          github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: `EvansMathibe Analytics Archive - ${date}`,
+            body: `Automated analytics data archive created at ${date}\n\nView dashboard: https://evansxm.github.io/evansmathibe-agency/analytics.html`,
+            labels: ['analytics', 'automated']
+          });
