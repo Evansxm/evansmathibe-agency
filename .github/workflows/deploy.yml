@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+      - gh-pages
+      - deploy-gh-pages
   workflow_dispatch:
 
 jobs:
