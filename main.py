@@ -1,16 +1,36 @@
 from fastapi import FastAPI, HTTPException, Request, Form
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 import json
 import os
 from typing import Optional
+from datetime import datetime
 
 app = FastAPI(title="EvansMathibe Agency API")
 
 DATA_FILE = "inquiries.json"
 ADMIN_PASSWORD = "admin123"
+
+FRONTEND_DIR = os.path.join(os.path.dirname(__file__), "website")
+
+app.mount("/static", StaticFiles(directory=FRONTEND_DIR), name="static")
+app.mount("", StaticFiles(directory=FRONTEND_DIR), name="root")
+
+
+@app.get("/")
+async def serve_frontend():
+    index_path = os.path.join(FRONTEND_DIR, "index.html")
+    return FileResponse(index_path)
+
+
+@app.get("/{path:path}")
+async def serve_frontend_catchall(path: str):
+    file_path = os.path.join(FRONTEND_DIR, path)
+    if os.path.isfile(file_path):
+        return FileResponse(file_path)
+    return FileResponse(os.path.join(FRONTEND_DIR, "index.html"))
 
 
 class Inquiry(BaseModel):
@@ -127,8 +147,6 @@ async def admin_login(request: Request, password: str = Form(...)):
     else:
         return HTMLResponse("Invalid password. <a href='/admin'>Try again</a>")
 
-
-from datetime import datetime
 
 if __name__ == "__main__":
     import uvicorn
