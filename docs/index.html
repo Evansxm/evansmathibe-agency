@@ -224,6 +224,72 @@
             animation: fadeInUp 1s ease 0.6s both;
         }
 
+        /* Hero Showcase with About Us */
+        .hero-showcase {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 2.5rem;
+            margin-top: 2.5rem;
+            align-items: start;
+            max-width: 1700px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 3vw;
+        }
+
+        @media (max-width: 1100px) {
+            .hero-showcase {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .about-brief {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 182, 180, 0.3);
+            animation: fadeInUp 1s ease 0.8s both;
+            position: sticky;
+            top: 100px;
+        }
+
+        .about-brief h3 {
+            color: var(--white);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .about-brief h3 i {
+            color: var(--accent-pink);
+        }
+
+        .about-brief p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+            margin-bottom: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .about-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-pink);
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .about-link:hover {
+            gap: 0.75rem;
+            color: var(--white);
+        }
+
         .btn {
             padding: 1rem 2.5rem;
             border-radius: 50px;
@@ -1197,11 +1263,8 @@
     <section class="hero" id="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-rocket me-2"></i>Based in South Africa
-                </div>
                 <h1>EvansMathibe Agency</h1>
-                <p class="hero-tagline">Creative Agency Powering Global Brands from South Africa</p>
+                <p class="hero-tagline">Elevating Brands Through Creative Excellence</p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">
                         <i class="fas fa-paper-plane"></i>Get Started
@@ -1209,6 +1272,17 @@
                     <a href="#services" class="btn btn-outline">
                         <i class="fas fa-briefcase"></i>Our Services
                     </a>
+                </div>
+            </div>
+            
+            <!-- Hero with Images and About Us -->
+            <div class="hero-showcase">
+                <!-- About Us Brief -->
+                <div class="about-brief">
+                    <h3><i class="fas fa-info-circle"></i> About Us</h3>
+                    <p>Premier creative agency specializing in advertising, campaigns, design, AI automation, brand management, events, and project design.</p>
+                    <p>Based in South Africa, serving clients worldwide from Tshwane, Johannesburg, Durban & Cape Town.</p>
+                    <a href="#about" class="about-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
                 <!-- Image Slider -->
@@ -1260,9 +1334,8 @@
                             <div><img src="images/Google_AI_Studio_2025-10-18T13_16_58.172Z.png" alt="Creative Work 25"></div>
                         </div>
                     </div>
-                    <!-- Closing side panels -->
-                    </div>
-                    </div>
+                </div>
+                <!-- End hero-showcase -->
                 </div>
             </div>
         </div>
