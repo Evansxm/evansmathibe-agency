@@ -40,15 +40,16 @@
 
     <style>
         :root {
-            --primary-dark: #5B0A0A;
-            --primary: #800000;
+            --primary-dark: #6B0F1A;
+            --primary: #9A1B2E;
             --accent-pink: #FFB6B4;
             --accent-hot-pink: #FF69B4;
             --burgundy: #4A0404;
-            --soft-pink: #FFC0CB;
-            --gray: #808080;
+            --soft-pink: #FFD1D1;
+            --gray: #606060;
             --white: #FFFFFF;
-            --off-white: #F8F8F8;
+            --off-white: #F5F5F5;
+            --cream: #FFF8F0;
         }
 
         * {
@@ -63,7 +64,7 @@
 
         body {
             font-family: 'Outfit', sans-serif;
-            background: var(--off-white);
+            background: var(--cream);
             color: #1a1a1a;
             line-height: 1.7;
             overflow-x: hidden;
@@ -83,7 +84,7 @@
             right: 0;
             z-index: 1000;
             padding: 1rem 0;
-            background: rgba(91, 10, 10, 0.95);
+            background: linear-gradient(135deg, var(--burgundy) 0%, var(--primary-dark) 100%);
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
         }
@@ -157,7 +158,7 @@
             padding-top: 80px;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--burgundy) 100%);
+            background: linear-gradient(135deg, var(--burgundy) 0%, var(--primary-dark) 50%, var(--primary) 100%);
         }
 
         .hero::before {
@@ -370,9 +371,10 @@
         .slider-container img {
             width: 100%;
             height: 550px;
-            object-fit: cover;
+            object-fit: contain;
             object-position: center;
             background: var(--primary-dark);
+            padding: 20px;
         }
 
         @media (max-width: 1200px) {
@@ -728,15 +730,15 @@
         .blog-image {
             width: 100%;
             height: 220px;
-            object-fit: cover;
+            object-fit: contain;
             object-position: center;
             background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            padding: 10px;
         }
         
         .blog-card .blog-image {
             object-fit: contain;
-            background: var(--primary-dark);
-            padding: 10px;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
         }
 
         @media (max-width: 768px) {
