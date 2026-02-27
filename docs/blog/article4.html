@@ -17,16 +17,16 @@
         .navbar { background: rgba(91, 10, 10, 0.95); padding: 1rem 0; }
         .navbar-brand { display: flex; align-items: center; gap: 0.75rem; }
         .logo-icon { width: 40px; height: 40px; background: linear-gradient(135deg, var(--accent-pink), #FF69B4); border-radius: 50%; font-weight: 700; color: var(--burgundy); border: 2px solid var(--accent-pink); }
-        .logo-text { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: white; }
-        .article-header { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); padding: 4rem 0 2rem; color: white; }
-        .article-header h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); color: white; margin-bottom: 1rem; }
+        .logo-text { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--burgundy); }
+        .article-header { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); padding: 4rem 0 2rem; color: var(--burgundy); }
+        .article-header h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); color: var(--burgundy); margin-bottom: 1rem; }
         .article-tag { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(255,182,180,0.2); color: var(--accent-pink); border-radius: 20px; font-size: 0.8rem; margin-right: 0.5rem; }
         .article-content { padding: 3rem 0; max-width: 800px; margin: 0 auto; }
         .article-content h2 { font-size: 1.75rem; margin: 2.5rem 0 1.25rem; }
         .article-content p { font-size: 1.1rem; color: #333; margin-bottom: 1.5rem; }
-        .cta-box { background: linear-gradient(135deg, var(--primary-dark), var(--primary)); color: white; padding: 2.5rem; border-radius: 20px; text-align: center; margin-top: 3rem; }
+        .cta-box { background: linear-gradient(135deg, var(--primary-dark), var(--primary)); color: var(--burgundy); padding: 2.5rem; border-radius: 20px; text-align: center; margin-top: 3rem; }
         .cta-btn { display: inline-block; padding: 1rem 2rem; background: var(--accent-pink); color: var(--burgundy); border-radius: 50px; text-decoration: none; font-weight: 600; }
-        footer { background: var(--burgundy); color: white; padding: 2rem 0; text-align: center; }
+        footer { background: var(--burgundy); color: var(--burgundy); padding: 2rem 0; text-align: center; }
         footer a { color: var(--accent-pink); }
         .whatsapp-float {
             position: fixed;
@@ -34,22 +34,22 @@
             right: 30px;
             width: 60px;
             height: 60px;
-            background: #25D366;
+            background: linear-gradient(135deg, var(--accent-pink), var(--accent-hot-pink));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--burgundy);
             font-size: 30px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 4px 20px rgba(255, 182, 180, 0.5);
             z-index: 1000;
             transition: all 0.3s ease;
             text-decoration: none;
         }
         .whatsapp-float:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
-            background: #20BD5A;
+            box-shadow: 0 6px 25px rgba(255, 182, 180, 0.7);
+            background: linear-gradient(135deg, var(--accent-hot-pink), var(--accent-pink));
         }
     </style>
 </head>
@@ -83,7 +83,7 @@
             <p>As AI tools become more sophisticated, the role of human creativity will evolve. We'll become curators, strategists, and directors rather than executors. But the fundamental need for creative thinking—finding new solutions to problems—will only become more valuable.</p>
             <p>The future belongs to those who can combine human insight with machine capability.</p>
             <div class="cta-box">
-                <h3 style="color: white; margin-bottom: 1rem;">Ready to Create Something Amazing?</h3>
+                <h3 style="color: var(--burgundy); margin-bottom: 1rem;">Ready to Create Something Amazing?</h3>
                 <p style="color: rgba(255,255,255,0.9);">Let's discuss how we can bring creative solutions to your brand.</p>
                 <a href="../index.html#contact" class="cta-btn">Get In Touch</a>
             </div>
