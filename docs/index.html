@@ -266,6 +266,97 @@
             max-width: 1800px;
             margin-left: auto;
             margin-right: auto;
+            position: relative;
+        }
+
+        /* Animated side panels */
+        .hero-side-panel {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 180px;
+            height: 400px;
+            z-index: 10;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        .hero-side-panel.left {
+            left: -80px;
+        }
+
+        .hero-side-panel.right {
+            right: -80px;
+        }
+
+        @media (max-width: 1400px) {
+            .hero-side-panel {
+                display: none;
+            }
+        }
+
+        /* Floating service icons on sides */
+        .side-float {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 182, 180, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-pink);
+            font-size: 1.5rem;
+            animation: sideFloat 6s ease-in-out infinite;
+            border: 1px solid rgba(255, 182, 180, 0.3);
+        }
+
+        .side-float:nth-child(1) { top: 10%; animation-delay: 0s; }
+        .side-float:nth-child(2) { top: 30%; animation-delay: 1s; }
+        .side-float:nth-child(3) { top: 50%; animation-delay: 2s; }
+        .side-float:nth-child(4) { top: 70%; animation-delay: 3s; }
+        .side-float:nth-child(5) { top: 90%; animation-delay: 4s; }
+
+        .hero-side-panel.left .side-float {
+            animation-direction: normal;
+        }
+
+        .hero-side-panel.right .side-float {
+            animation-direction: reverse;
+        }
+
+        @keyframes sideFloat {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+            50% { transform: translateY(-20px) scale(1.1); opacity: 1; }
+        }
+
+        /* Gradient side overlays */
+        .hero-slider::before,
+        .hero-slider::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 150px;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .hero-slider::before {
+            left: 0;
+            background: linear-gradient(90deg, rgba(91, 10, 10, 0.8) 0%, transparent 100%);
+        }
+
+        .hero-slider::after {
+            right: 0;
+            background: linear-gradient(-90deg, rgba(91, 10, 10, 0.8) 0%, transparent 100%);
+        }
+
+        @media (max-width: 768px) {
+            .hero-slider::before,
+            .hero-slider::after {
+                width: 80px;
+            }
         }
 
         .slider-container {
@@ -1037,6 +1128,24 @@
                 
                 <!-- Image Slider -->
                 <div class="hero-slider">
+                    <!-- Left side animated elements -->
+                    <div class="hero-side-panel left">
+                        <div class="side-float"><i class="fas fa-crown"></i></div>
+                        <div class="side-float"><i class="fas fa-bullhorn"></i></div>
+                        <div class="side-float"><i class="fas fa-share-alt"></i></div>
+                        <div class="side-float"><i class="fas fa-robot"></i></div>
+                        <div class="side-float"><i class="fas fa-video"></i></div>
+                    </div>
+                    
+                    <!-- Right side animated elements -->
+                    <div class="hero-side-panel right">
+                        <div class="side-float"><i class="fas fa-camera"></i></div>
+                        <div class="side-float"><i class="fas fa-calendar-star"></i></div>
+                        <div class="side-float"><i class="fas fa-fashion"></i></div>
+                        <div class="side-float"><i class="fas fa-palette"></i></div>
+                        <div class="side-float"><i class="fas fa-chart-line"></i></div>
+                    </div>
+                    
                     <div class="slider-container">
                         <div class="image-slider">
                             <div><img src="images/Generated_image_1_-17.png" alt="Creative Work 1"></div>
@@ -1065,6 +1174,9 @@
                             <div><img src="images/Google_AI_Studio_2025-10-17T06_03_49.044Z.png" alt="Creative Work 24"></div>
                             <div><img src="images/Google_AI_Studio_2025-10-18T13_16_58.172Z.png" alt="Creative Work 25"></div>
                         </div>
+                    </div>
+                    <!-- Closing side panels -->
+                    </div>
                     </div>
                 </div>
             </div>

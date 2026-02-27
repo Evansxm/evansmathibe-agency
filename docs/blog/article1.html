@@ -174,16 +174,19 @@
             border-radius: 20px;
             text-align: center;
             margin-top: 3rem;
+            border: 2px solid var(--accent-pink);
         }
         
         .cta-box h3 {
-            color: var(--burgundy);
+            color: var(--white);
             margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
         
         .cta-box p {
-            color: rgba(255,255,255,0.9);
+            color: rgba(255,255,255,0.95);
             margin-bottom: 1.5rem;
+            font-size: 1.1rem;
         }
         
         .cta-btn {
@@ -194,11 +197,29 @@
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
         
         .cta-btn:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
+            background: var(--accent-hot-pink);
+            box-shadow: 0 10px 30px rgba(255,105,180,0.4);
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-pink);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            color: var(--burgundy);
+            gap: 0.75rem;
         }
         
         footer {
@@ -264,6 +285,7 @@
 
     <article class="article-content">
         <div class="container">
+            <a href="../index.html#blog" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Articles</a>
             <p>In the neon-lit streets of Sandton, where banking towers pierce the Johannesburg skyline, a quiet revolution unfolds. It's not visible in protest marches or parliament debates—it's happening in the algorithms that determine which advertisement you'll see on your phone, which brand will catch your eye, and which message will finally make you click "buy."</p>
             
             <p>Artificial intelligence has arrived in South Africa's advertising industry, and its impact is nothing short of seismic. From the creative agencies of Rosebank to the media buying desks of Cape Town, AI is reshaping every facet of how we conceive, create, and deliver marketing messages.</p>

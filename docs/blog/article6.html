@@ -24,8 +24,13 @@
         .article-content { padding: 3rem 0; max-width: 800px; margin: 0 auto; }
         .article-content h2 { font-size: 1.75rem; margin: 2.5rem 0 1.25rem; }
         .article-content p { font-size: 1.1rem; color: #333; margin-bottom: 1.5rem; }
-        .cta-box { background: linear-gradient(135deg, var(--primary-dark), var(--primary)); color: var(--burgundy); padding: 2.5rem; border-radius: 20px; text-align: center; margin-top: 3rem; }
-        .cta-btn { display: inline-block; padding: 1rem 2rem; background: var(--accent-pink); color: var(--burgundy); border-radius: 50px; text-decoration: none; font-weight: 600; }
+        .cta-box { background: linear-gradient(135deg, var(--primary-dark), var(--primary)); color: var(--burgundy); padding: 2.5rem; border-radius: 20px; text-align: center; margin-top: 3rem; border: 2px solid var(--accent-pink); }
+        .cta-box h3 { color: var(--white); margin-bottom: 1rem; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        .cta-box p { color: rgba(255,255,255,0.95); margin-bottom: 1.5rem; font-size: 1.1rem; }
+        .cta-btn { display: inline-block; padding: 1rem 2rem; background: var(--accent-pink); color: var(--burgundy); border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; }
+        .cta-btn:hover { background: var(--accent-hot-pink); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(255,105,180,0.4); }
+        .back-btn { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-pink); text-decoration: none; font-weight: 500; margin-bottom: 1.5rem; transition: all 0.3s ease; }
+        .back-btn:hover { color: var(--burgundy); gap: 0.75rem; }
         footer { background: var(--burgundy); color: var(--burgundy); padding: 2rem 0; text-align: center; }
         footer a { color: var(--accent-pink); }
         .whatsapp-float {
@@ -64,6 +69,7 @@
     </header>
     <article class="article-content">
         <div class="container">
+            <a href="../index.html#blog" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Articles</a>
             <img src="../images/article6-design-thumbnail.png" alt="South African Design Language" class="article-image" style="width: 100%; height: 300px; object-fit: cover; border-radius: 15px; margin-bottom: 2rem;">
             <p>Design language is more than a visual style—it's the visual vocabulary that communicates a brand's values, personality, and promise. In South Africa, our design language is evolving as we blend global influences with our rich local heritage.</p>
             <h2>A Nation of Contrasts</h2>
