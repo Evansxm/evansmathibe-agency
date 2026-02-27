@@ -28,10 +28,33 @@
         .cta-btn { display: inline-block; padding: 1rem 2rem; background: var(--accent-pink); color: var(--burgundy); border-radius: 50px; text-decoration: none; font-weight: 600; }
         footer { background: var(--burgundy); color: white; padding: 2rem 0; text-align: center; }
         footer a { color: var(--accent-pink); }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+            background: #20BD5A;
+        }
     </style>
 </head>
 <body>
-    <nav class="navbar"><div class="container"><a class="navbar-brand" href="../index.html"><div class="logo-icon">E</div><span class="logo-text">EvansMathibe</span></a></div></nav>
+    <nav class="navbar"><div class="container"><a class="navbar-brand" href="../index.html"><img src="../logo.png" alt="EvansMathibe Logo" style="height: 40px; margin-right: 10px;"><span class="logo-text">EvansMathibe</span></a></div></nav>
     <header class="article-header">
         <div class="container">
             <div><span class="article-tag">#Fashion</span><span class="article-tag">#Design</span></div>
@@ -64,5 +87,8 @@
         </div>
     </article>
     <footer><div class="container"><p>&copy; 2026 EvansMathibe Agency. <a href="../index.html">Back to Home</a></p></div></footer>
+    <a href="https://wa.me/27724165061" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 </body>
 </html>

@@ -662,6 +662,42 @@
             margin-bottom: 1rem;
         }
 
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+            background: #20BD5A;
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+                font-size: 26px;
+            }
+        }
+
         /* Footer */
         footer {
             background: var(--burgundy);
@@ -824,6 +860,15 @@
                             <div><img src="images/Generated_image_1_-83.png" alt="Creative Work 14"></div>
                             <div><img src="images/Generated_image_1_-95.png" alt="Creative Work 15"></div>
                             <div><img src="images/img-2025-11-17T184214.269.png" alt="Creative Work 16"></div>
+                            <div><img src="images/evansmathibe-07-copyright.png" alt="Creative Work 17"></div>
+                            <div><img src="images/evansmathibe-08-copyright.png" alt="Creative Work 18"></div>
+                            <div><img src="images/evansmathibe-09-copyright.png" alt="Creative Work 19"></div>
+                            <div><img src="images/evansmathibe-10-copyright.png" alt="Creative Work 20"></div>
+                            <div><img src="images/evansmathibe-11-copyright.png" alt="Creative Work 21"></div>
+                            <div><img src="images/evansmathibe-12-copyright.png" alt="Creative Work 22"></div>
+                            <div><img src="images/Google_AI_Studio_2025-10-04T15_15_54.000Z.png" alt="Creative Work 23"></div>
+                            <div><img src="images/Google_AI_Studio_2025-10-17T06_03_49.044Z.png" alt="Creative Work 24"></div>
+                            <div><img src="images/Google_AI_Studio_2025-10-18T13_16_58.172Z.png" alt="Creative Work 25"></div>
                         </div>
                     </div>
                 </div>
@@ -1087,6 +1132,11 @@
             </div>
         </div>
     </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/27724165061" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <!-- Footer -->
     <footer>
