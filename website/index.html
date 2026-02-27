@@ -3,50 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EvansMathibe Agency | Premier Creative Services in South Africa</title>
-    <meta name="description" content="EvansMathibe Agency - Premier creative agency offering Photography, Film, Advertising, AI Brand Automation, Brand Management, Project Design, PR, Events, and Design services across South Africa. Johannesburg, Cape Town, Durban, Pretoria, and more.">
-    <meta name="keywords" content="EvansMathibe Agency, creative agency South Africa, photography, film production, advertising agency, brand management, AI automation, digital marketing, PR services, event management, graphic design, Johannesburg, Cape Town, Durban, Pretoria, Gauteng, Western Cape, KwaZulu-Natal, Sandton, Rosebank, Midrand, Umhlanga, Stellenbosch, Bloemfontein, Port Elizabeth, Polokwane, Nelspruit, Kimberley, Vereeniging, Vanderbijlpark, Richfield, Randburg, Bryanston, Fourways, Lonehill, Sunninghill, Waterfall City, Illovo, Melrose Arch, Maboneng, Rosebank, Auckland Park">
-    <meta name="author" content="EvansMathibe Agency">
+    <title>EvansMathibe Agency | Creative Agency Powering Global Brands from South Africa</title>
+    <meta name="description" content="EvansMathibe Agency - Premier creative agency in South Africa offering Advertising, Campaigns, Design, AI Automation, Brand Management, Events, Project Design & Sales. Serving clients globally from Tshwane, Joburg, Durban, Cape Town.">
+    <meta name="keywords" content="EvansMathibe agency South Africa, creative agency, advertising, AI automation, brand design, project management, events, sales distribution, Johannesburg, Cape Town, Durban, Pretoria, Tshwane">
+    <meta name="author" content="Evans Mathibe">
     <meta name="robots" content="index, follow">
     <meta name="geo.region" content="ZA">
     <meta name="geo.placename" content="South Africa">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="EvansMathibe Agency | Premier Creative Services">
-    <meta property="og:description" content="Transform your brand with creative excellence. Photography, Film, Advertising, Brand Management, AI Automation, and more across South Africa.">
+    <meta property="og:title" content="EvansMathibe Agency | Creative Agency Powering Global Brands">
+    <meta property="og:description" content="Based in South Africa, serving clients worldwide. Advertising, Design, AI Automation, Brand Management & more.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_ZA">
-    <meta property="og:region" content="South Africa">
-    
-    <!-- Canonical -->
-    <link rel="canonical" href="https://evansmathibe-agency.com">
+    <meta property="og:url" content="https://evansmathibe.github.io/evansmathibe-agency/">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="logo.png">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- Stripe -->
-    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-    
+    <!-- Slick Slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+
     <style>
         :root {
-            --primary: #1a1a2e;
-            --primary-light: #16213e;
-            --secondary: #0f3460;
-            --accent: #e94560;
-            --accent-gold: #c9a227;
-            --text: #eaeaea;
-            --text-muted: #a0a0a0;
-            --gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --card-border: rgba(255, 255, 255, 0.1);
+            --primary-dark: #5B0A0A;
+            --primary: #800000;
+            --accent-pink: #FFB6B4;
+            --accent-hot-pink: #FF69B4;
+            --burgundy: #4A0404;
+            --soft-pink: #FFC0CB;
+            --gray: #808080;
+            --white: #FFFFFF;
+            --off-white: #F8F8F8;
         }
 
         * {
@@ -60,109 +61,102 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: var(--gradient);
-            color: var(--text);
-            line-height: 1.6;
+            font-family: 'Outfit', sans-serif;
+            background: var(--off-white);
+            color: #1a1a1a;
+            line-height: 1.7;
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 {
+        h1, h2, h3, h4, h5, h6 {
             font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--burgundy);
         }
 
         /* Navigation */
-        nav {
+        .navbar {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 1.5rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(26, 26, 46, 0.95);
+            padding: 1rem 0;
+            background: rgba(91, 10, 10, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--card-border);
             transition: all 0.3s ease;
         }
 
-        nav.scrolled {
-            padding: 1rem 5%;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        .navbar.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: 0 4px 30px rgba(91, 10, 10, 0.3);
         }
 
-        .logo {
+        .navbar-brand {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.75rem;
             text-decoration: none;
-            color: var(--text);
         }
 
         .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--accent);
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--accent-pink), var(--accent-hot-pink));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Playfair Display', serif;
             font-weight: 700;
-            font-size: 1.5rem;
-            color: white;
+            font-size: 1.2rem;
+            color: var(--burgundy);
+            border: 2px solid var(--accent-pink);
+            box-shadow: 0 0 15px rgba(255, 182, 180, 0.5);
         }
 
         .logo-text {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
-            font-weight: 600;
+            font-weight: 700;
+            color: var(--white);
         }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text);
-            text-decoration: none;
+        .nav-link {
+            color: var(--white) !important;
             font-weight: 500;
-            transition: color 0.3s ease;
+            padding: 0.5rem 1rem !important;
             position: relative;
+            transition: color 0.3s ease;
         }
 
-        .nav-links a::after {
+        .nav-link::after {
             content: '';
             position: absolute;
-            bottom: -5px;
-            left: 0;
+            bottom: 0;
+            left: 50%;
             width: 0;
             height: 2px;
-            background: var(--accent);
-            transition: width 0.3s ease;
+            background: var(--accent-pink);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
+        .nav-link:hover::after {
+            width: 80%;
         }
 
-        .nav-links a:hover {
-            color: var(--accent);
+        .nav-link:hover {
+            color: var(--accent-pink) !important;
         }
 
         /* Hero Section */
         .hero {
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 8rem 5% 4rem;
+            padding-top: 80px;
             position: relative;
             overflow: hidden;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--burgundy) 100%);
         }
 
         .hero::before {
@@ -172,51 +166,52 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 30% 70%, rgba(233, 69, 96, 0.15) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 30%, rgba(201, 162, 39, 0.1) 0%, transparent 50%);
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 182, 180, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 20%, rgba(255, 105, 180, 0.1) 0%, transparent 40%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFB6B4' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             pointer-events: none;
         }
 
         .hero-content {
-            text-align: center;
-            max-width: 900px;
+            position: relative;
             z-index: 1;
-            animation: fadeInUp 1s ease;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            padding: 4rem 0;
+            text-align: center;
         }
 
         .hero-badge {
             display: inline-block;
             padding: 0.5rem 1.5rem;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
+            background: rgba(255, 182, 180, 0.15);
+            border: 1px solid var(--accent-pink);
             border-radius: 50px;
             font-size: 0.875rem;
             margin-bottom: 2rem;
-            color: var(--accent-gold);
+            color: var(--accent-pink);
+            animation: fadeInDown 0.8s ease;
         }
 
         .hero h1 {
             font-size: clamp(2.5rem, 6vw, 4.5rem);
-            line-height: 1.1;
+            line-height: 1.15;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
+            background: linear-gradient(135deg, var(--white) 0%, var(--accent-pink) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            animation: fadeInUp 1s ease 0.2s both;
         }
 
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
+        .hero-tagline {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 2.5rem;
-            max-width: 600px;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            font-weight: 300;
+            animation: fadeInUp 1s ease 0.4s both;
         }
 
         .hero-buttons {
@@ -224,6 +219,7 @@
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s both;
         }
 
         .btn {
@@ -241,72 +237,135 @@
         }
 
         .btn-primary {
-            background: var(--accent);
-            color: white;
+            background: linear-gradient(135deg, var(--accent-pink), var(--accent-hot-pink));
+            color: var(--burgundy);
         }
 
         .btn-primary:hover {
-            background: #d63851;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 182, 180, 0.4);
         }
 
-        .btn-secondary {
+        .btn-outline {
             background: transparent;
-            color: var(--text);
-            border: 1px solid var(--card-border);
+            color: var(--white);
+            border: 2px solid var(--accent-pink);
         }
 
-        .btn-secondary:hover {
-            background: var(--card-bg);
-            border-color: var(--accent);
+        .btn-outline:hover {
+            background: var(--accent-pink);
+            color: var(--burgundy);
         }
 
-        .btn-gold {
-            background: var(--accent-gold);
+        /* Image Slider */
+        .hero-slider {
+            margin-top: 3rem;
+            padding: 0 2rem;
+            animation: fadeInUp 1s ease 0.8s both;
+        }
+
+        .slider-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+            border: 3px solid rgba(255, 182, 180, 0.3);
+        }
+
+        .slider-container img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .slick-dots li button:before {
+            color: var(--accent-pink) !important;
+        }
+
+        .slick-dots li.slick-active button:before {
+            color: var(--accent-pink) !important;
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 0;
+            background: var(--white);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-pink), var(--accent-hot-pink));
+            border-radius: 2px;
+        }
+
+        .about p {
+            font-size: 1.125rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
             color: var(--primary);
+            font-family: 'Playfair Display', serif;
         }
 
-        .btn-gold:hover {
-            background: #b8922a;
-            transform: translateY(-2px);
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         /* Services Section */
         .services {
-            padding: 6rem 5%;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 1rem;
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto;
+            padding: 6rem 0;
+            background: linear-gradient(180deg, var(--off-white) 0%, var(--white) 100%);
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
+            margin-top: 3rem;
         }
 
         .service-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
+            background: var(--white);
             padding: 2.5rem;
-            transition: all 0.3s ease;
+            border-radius: 20px;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(128, 128, 128, 0.1);
             position: relative;
             overflow: hidden;
         }
@@ -317,15 +376,15 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-gold));
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-pink), var(--accent-hot-pink));
             transform: scaleX(0);
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(91, 10, 10, 0.15);
         }
 
         .service-card:hover::before {
@@ -333,493 +392,459 @@
         }
 
         .service-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--accent), var(--accent-gold));
-            border-radius: 15px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(255, 182, 180, 0.2), rgba(255, 105, 180, 0.1));
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
             margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+            color: var(--primary);
         }
 
         .service-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
+            color: var(--burgundy);
         }
 
         .service-card p {
-            color: var(--text-muted);
+            color: var(--gray);
             font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-btn {
-            width: 100%;
-            padding: 0.75rem;
-            background: transparent;
-            border: 1px solid var(--card-border);
-            border-radius: 10px;
-            color: var(--text);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .service-btn:hover {
-            background: var(--accent);
-            border-color: var(--accent);
         }
 
         /* Blog Section */
         .blog {
-            padding: 6rem 5%;
-            background: var(--primary-light);
+            padding: 6rem 0;
+            background: var(--white);
         }
 
         .blog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
+            margin-top: 3rem;
         }
 
         .blog-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
             border-radius: 20px;
             overflow: hidden;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            background: var(--off-white);
+            border: 1px solid rgba(128, 128, 128, 0.1);
         }
 
         .blog-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(91, 10, 10, 0.12);
         }
 
         .blog-image {
             width: 100%;
             height: 200px;
-            background: linear-gradient(135deg, var(--secondary), var(--accent));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: rgba(255,255,255,0.3);
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
         }
 
         .blog-content {
             padding: 1.5rem;
         }
 
-        .blog-category {
+        .blog-tag {
             display: inline-block;
             padding: 0.25rem 0.75rem;
-            background: var(--accent);
-            border-radius: 20px;
+            background: rgba(255, 182, 180, 0.2);
+            color: var(--primary);
             font-size: 0.75rem;
+            border-radius: 20px;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             font-weight: 600;
-            margin-bottom: 1rem;
         }
 
         .blog-card h3 {
             font-size: 1.25rem;
             margin-bottom: 0.75rem;
+            color: var(--burgundy);
             line-height: 1.4;
         }
 
         .blog-card p {
-            color: var(--text-muted);
+            color: var(--gray);
             font-size: 0.9rem;
             margin-bottom: 1rem;
         }
 
         .blog-meta {
-            display: flex;
-            gap: 1rem;
             font-size: 0.8rem;
-            color: var(--text-muted);
+            color: var(--gray);
         }
 
-        /* Cart Section */
-        .cart-section {
-            padding: 6rem 5%;
-        }
-
-        .cart-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .cart-item {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 15px;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            display: flex;
-            justify-content: space-between;
+        .blog-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
             align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
         }
 
-        .cart-item-info h4 {
-            font-family: 'Inter', sans-serif;
-            margin-bottom: 0.5rem;
-        }
-
-        .cart-item-info p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .cart-total {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 15px;
-            padding: 2rem;
-            margin-top: 2rem;
-            text-align: center;
-        }
-
-        .cart-total h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--accent-gold);
-        }
-
-        .payment-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 1.5rem;
+        .blog-link:hover {
+            gap: 0.75rem;
         }
 
         /* Contact Section */
         .contact {
-            padding: 6rem 5%;
-            background: var(--primary-light);
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--burgundy) 100%);
+            position: relative;
         }
 
-        .contact-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 4rem;
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFB6B4' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
         }
 
-        .contact-info h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
+        .contact-content {
+            position: relative;
+            z-index: 1;
         }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+        .contact .section-title {
+            color: var(--white);
         }
 
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--card-bg);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            color: var(--accent);
-        }
-
-        .contact-details h4 {
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .contact-details p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
+        .contact .section-title::after {
+            background: var(--accent-pink);
         }
 
         .contact-form {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 25px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
         }
 
         .form-group {
             margin-bottom: 1.5rem;
         }
 
-        .form-group label {
+        .form-label {
             display: block;
             margin-bottom: 0.5rem;
-            font-weight: 500;
+            font-weight: 600;
+            color: var(--burgundy);
         }
 
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
+        .form-control {
             width: 100%;
-            padding: 1rem;
-            background: var(--primary);
-            border: 1px solid var(--card-border);
-            border-radius: 10px;
-            color: var(--text);
+            padding: 1rem 1.25rem;
+            border: 2px solid rgba(128, 128, 128, 0.2);
+            border-radius: 12px;
             font-size: 1rem;
-            font-family: 'Inter', sans-serif;
-            transition: border-color 0.3s ease;
+            font-family: 'Outfit', sans-serif;
+            transition: all 0.3s ease;
+            background: var(--white);
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
+        .form-control:focus {
             outline: none;
-            border-color: var(--accent);
+            border-color: var(--accent-pink);
+            box-shadow: 0 0 0 4px rgba(255, 182, 180, 0.2);
+        }
+
+        select.form-control {
+            cursor: pointer;
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.25rem;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(91, 10, 10, 0.4);
+        }
+
+        .contact-info {
+            margin-top: 3rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-info a {
+            color: var(--accent-pink);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--white);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid var(--accent-pink);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-pink);
+            font-size: 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--accent-pink);
+            color: var(--burgundy);
+            transform: translateY(-5px);
+        }
+
+        .location-info {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .location-info h4 {
+            color: var(--accent-pink);
+            margin-bottom: 1rem;
         }
 
         /* Footer */
         footer {
-            padding: 4rem 5% 2rem;
-            border-top: 1px solid var(--card-border);
+            background: var(--burgundy);
+            color: var(--white);
+            padding: 3rem 0 1.5rem;
         }
 
         .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
         }
 
-        .footer-brand p {
-            color: var(--text-muted);
-            margin-top: 1rem;
-            font-size: 0.9rem;
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
         }
 
-        .footer-links h4 {
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-links ul {
+        .footer-links {
+            display: flex;
+            gap: 2rem;
             list-style: none;
         }
 
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
-
         .footer-links a {
-            color: var(--text-muted);
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .footer-links a:hover {
-            color: var(--accent);
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .footer-social a {
-            width: 40px;
-            height: 40px;
-            background: var(--card-bg);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text);
-            transition: all 0.3s ease;
-        }
-
-        .footer-social a:hover {
-            background: var(--accent);
-            transform: translateY(-3px);
+            color: var(--accent-pink);
         }
 
         .footer-bottom {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid var(--card-border);
-            color: var(--text-muted);
-            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
         }
 
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text);
-            font-size: 1.5rem;
-            cursor: pointer;
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.25rem;
             }
-        }
 
-        .fade-in {
-            animation: fadeIn 0.6s ease;
-        }
+            .hero-tagline {
+                font-size: 1.125rem;
+            }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            .navbar-collapse {
+                background: var(--primary-dark);
+                padding: 1rem;
+                border-radius: 10px;
+                margin-top: 1rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
         }
     </style>
-    
-    <!-- Backend Analytics System -->
-    <script src="analytics-backend.js"></script>
 </head>
 <body>
     <!-- Navigation -->
-    <nav id="navbar">
-        <a href="#" class="logo">
-            <img src="logo.png" alt="EvansMathibe Agency" class="logo-img" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" loading="lazy">
-            <span class="logo-text">EvansMathibe</span>
-        </a>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#video">Showreel</a></li>
-            <li><a href="#videos">Videos</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#extended-gallery">More Work</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#cart">Cart</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-            <i class="fas fa-bars"></i>
-        </button>
+    <nav class="navbar navbar-expand-lg" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <div class="logo-icon">E</div>
+                <span class="logo-text">EvansMathibe</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border-color: var(--accent-pink);">
+                <i class="fas fa-bars" style="color: var(--accent-pink);"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <span class="hero-badge"><i class="fas fa-star"></i> Premier Creative Agency South Africa</span>
-            <h1>Transform Your Brand<br>With Creative Excellence</h1>
-            <p>EvansMathibe Agency delivers world-class creative solutions across photography, film, advertising, and brand management. Serving Johannesburg, Cape Town, Durban, Pretoria, and all major SA cities.</p>
-            <div class="hero-buttons">
-                <a href="#services" class="btn btn-primary">
-                    <i class="fas fa-rocket"></i> Our Services
-                </a>
-                <a href="#contact" class="btn btn-secondary">
-                    <i class="fas fa-envelope"></i> Get in Touch
-                </a>
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-rocket me-2"></i>Creative Agency Powering Global Brands
+                </div>
+                <h1>EvansMathibe Agency</h1>
+                <p class="hero-tagline">Creative Agency Powering Global Brands from South Africa</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>Get Started
+                    </a>
+                    <a href="#services" class="btn btn-outline">
+                        <i class="fas fa-briefcase"></i>Our Services
+                    </a>
+                </div>
+                
+                <!-- Image Slider -->
+                <div class="hero-slider">
+                    <div class="slider-container">
+                        <div class="image-slider">
+                            <div><img src="images/evansmathibe-01-copyright.png" alt="Creative Work 1"></div>
+                            <div><img src="images/evansmathibe-02-copyright.png" alt="Creative Work 2"></div>
+                            <div><img src="images/evansmathibe-03-copyright.png" alt="Creative Work 3"></div>
+                            <div><img src="images/evansmathibe-04-copyright.jpeg" alt="Creative Work 4"></div>
+                            <div><img src="images/evansmathibe-05-copyright.jpeg" alt="Creative Work 5"></div>
+                            <div><img src="images/evansmathibe-06-copyright.png" alt="Creative Work 6"></div>
+                            <div><img src="images/evansmathibe-07-copyright.png" alt="Creative Work 7"></div>
+                            <div><img src="images/evansmathibe-08-copyright.png" alt="Creative Work 8"></div>
+                            <div><img src="images/evansmathibe-09-copyright.png" alt="Creative Work 9"></div>
+                            <div><img src="images/evansmathibe-10-copyright.png" alt="Creative Work 10"></div>
+                            <div><img src="images/evansmathibe-11-copyright.png" alt="Creative Work 11"></div>
+                            <div><img src="images/evansmathibe-12-copyright.png" alt="Creative Work 12"></div>
+                            <div><img src="images/evansmathibe-13-copyright.png" alt="Creative Work 13"></div>
+                            <div><img src="images/evansmathibe-14-copyright.png" alt="Creative Work 14"></div>
+                            <div><img src="images/evansmathibe-15-copyright.png" alt="Creative Work 15"></div>
+                            <div><img src="images/evansmathibe-16-copyright.png" alt="Creative Work 16"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Video Showcase -->
-    <section style="padding: 4rem 5%; background: var(--primary-light); text-align: center;">
-        <div class="section-header">
-            <h2>Watch Our Showreel</h2>
-            <p>Experience our creative work through video</p>
-        </div>
-        <div style="max-width: 900px; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
-            <video id="showreel-video" autoplay loop muted playsinline style="width: 100%; display: block; background: #000;">
-                <source src="videos/showreel.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <p style="text-align: center; margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
-            <i class="fas fa-film"></i> Creative Showreel 2026 | EvansMathibe Agency
-        </p>
-    </section>
-
-    <!-- Video Gallery Section -->
-    <section class="blog" id="videos">
-        <div class="section-header">
-            <h2>Video Portfolio</h2>
-            <p>Explore our creative video productions</p>
-        </div>
-        <div class="blog-grid">
-            <div class="blog-card">
-                <video controls style="width:100%;height:200px;object-fit:cover;" poster="images/Google_AI_Studio_2025-12-29T12_25_28.824Z.png">
-                    <source src="videos/photography.mp4" type="video/mp4">
-                </video>
-                <div class="blog-content">
-                    <span class="blog-category">Photography</span>
-                    <h3>Photography Showcase</h3>
-                    <p>Professional photography work and visual storytelling.</p>
-                </div>
-            </div>
-            <div class="blog-card">
-                <video controls style="width:100%;height:200px;object-fit:cover;" poster="images/Google_AI_Studio_2025-12-29T12_42_46.972Z.png">
-                    <source src="videos/film.mp4" type="video/mp4">
-                </video>
-                <div class="blog-content">
-                    <span class="blog-category">Film</span>
-                    <h3>Film Production</h3>
-                    <p>Cinematic video production and direction.</p>
-                </div>
-            </div>
-            <div class="blog-card">
-                <video controls style="width:100%;height:200px;object-fit:cover;" poster="images/Google_AI_Studio_2025-12-29T12_52_44.558Z.png">
-                    <source src="videos/branding.mp4" type="video/mp4">
-                </video>
-                <div class="blog-content">
-                    <span class="blog-category">Branding</span>
-                    <h3>Brand Videos</h3>
-                    <p>Compelling brand identity videos.</p>
-                </div>
-            </div>
-            <div class="blog-card">
-                <video controls style="width:100%;height:200px;object-fit:cover;" poster="images/Google_AI_Studio_2025-12-29T12_58_32.467Z.png">
-                    <source src="videos/advertising.mp4" type="video/mp4">
-                </video>
-                <div class="blog-content">
-                    <span class="blog-category">Advertising</span>
-                    <h3>Ad Campaigns</h3>
-                    <p>Strategic advertising campaign videos.</p>
-                </div>
-            </div>
-            <div class="blog-card">
-                <video controls style="width:100%;height:200px;object-fit:cover;" poster="images/Google_AI_Studio_2025-12-29T13_00_22.115Z.png">
-                    <source src="videos/ai_automation.mp4" type="video/mp4">
-                </video>
-                <div class="blog-content">
-                    <span class="blog-category">AI & Tech</span>
-                    <h3>AI Automation</h3>
-                    <p>AI-powered brand automation solutions.</p>
-                </div>
-            </div>
-            <div class="blog-card">
-                <video controls style="width:100%;height:200px;object-fit:cover;" poster="images/ChatGPT Image Dec 29, 2025, 04_10_33 PM.png">
-                    <source src="videos/events.mp4" type="video/mp4">
-                </video>
-                <div class="blog-content">
-                    <span class="blog-category">Events</span>
-                    <h3>Event Coverage</h3>
-                    <p>Event video production and coverage.</p>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">About EvansMathibe</h2>
+                <p>Based in South Africa (Tshwane, Joburg, Durban, Cape Town) but serving clients worldwide. We are a premier creative agency specializing in advertising, campaigns, design, AI automation, brand management, events, project design, and sales & distribution.</p>
+                <p>Our team combines local insight with global expertise to deliver innovative solutions that resonate with audiences across cultures and markets.</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">8+</div>
+                        <div class="stat-label">Services</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">SA Cities</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Articles</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">Global</div>
+                        <div class="stat-label">Reach</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -827,284 +852,75 @@
 
     <!-- Services Section -->
     <section class="services" id="services">
-        <div class="section-header">
-            <h2>Our Services</h2>
-            <p>Comprehensive creative solutions tailored to elevate your brand across South Africa</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-camera"></i></div>
-                <h3>Photography</h3>
-                <p>Professional photography for events, products, portraits, and commercial campaigns. Serving Johannesburg, Cape Town, Durban, Pretoria and surrounding areas.</p>
-                <button class="service-btn" onclick="addToCart('Photography')">Add to Inquiry Cart</button>
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Our Services</h2>
+                <p style="max-width: 600px; margin: 1.5rem auto 0; color: var(--gray);">Comprehensive creative solutions tailored to elevate your brand and drive results.</p>
             </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-film"></i></div>
-                <h3>Film</h3>
-                <p>Film production including commercials, documentaries, short films, and corporate videos. Cinematic storytelling across South Africa.</p>
-                <button class="service-btn" onclick="addToCart('Film Production')">Add to Inquiry Cart</button>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
-                <h3>Advertising</h3>
-                <p>Strategic advertising campaigns across digital and traditional media platforms. Data-driven strategies for maximum ROI.</p>
-                <button class="service-btn" onclick="addToCart('Advertising')">Add to Inquiry Cart</button>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-robot"></i></div>
-                <h3>AI Brand Automation</h3>
-                <p>AI-powered brand automation solutions for marketing and customer engagement. Smart automation that scales your brand.</p>
-                <button class="service-btn" onclick="addToCart('AI Brand Automation')">Add to Inquiry Cart</button>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-building"></i></div>
-                <h3>Brand Management</h3>
-                <p>Comprehensive brand strategy, positioning, and identity management. Building strong, memorable brands.</p>
-                <button class="service-btn" onclick="addToCart('Brand Management')">Add to Inquiry Cart</button>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-users"></i></div>
-                <h3>Talent Management</h3>
-                <p>Representation and management of creative talent and influencers. Connecting brands with the right voices.</p>
-                <button class="service-btn" onclick="addToCart('Talent Management')">Add to Inquiry Cart</button>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-project-diagram"></i></div>
-                <h3>Project Design Management</h3>
-                <p>End-to-end project design and management services. From concept to execution across South Africa.</p>
-                <button class="service-btn" onclick="addToCart('Project Design Management')">Add to Inquiry Cart</button>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-palette"></i></div>
-                <h3>Brand Design</h3>
-                <p>Visual identity design including logos, brand guidelines, and collateral. Creating distinctive visual languages.</p>
-                <button class="service-btn" onclick="addToCart('Brand Design')">Add to Inquiry Cart</button>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-newspaper"></i></div>
-                <h3>Public Relations</h3>
-                <p>PR strategies, media relations, and reputation management. Building and protecting your brand's image.</p>
-                <button class="service-btn" onclick="addToCart('Public Relations')">Add to Inquiry Cart</button>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-calendar-star"></i></div>
-                <h3>Event Design & Management</h3>
-                <p>Full-service event design, planning, and production. Creating memorable experiences across SA.</p>
-                <button class="service-btn" onclick="addToCart('Event Management')">Add to Inquiry Cart</button>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
-                <h3>Creative Services</h3>
-                <p>Creative direction, concept development, and content creation. Innovative solutions that engage.</p>
-                <button class="service-btn" onclick="addToCart('Creative Services')">Add to Inquiry Cart</button>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-bezier-curve"></i></div>
-                <h3>Design</h3>
-                <p>Graphic design, UI/UX design, and visual communication solutions. Beautiful, functional designs.</p>
-                <button class="service-btn" onclick="addToCart('Design')">Add to Inquiry Cart</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="services" id="projects">
-        <div class="section-header">
-            <h2>Our Projects</h2>
-            <p>Showcasing our creative work and collaborations across South Africa</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-building"></i></div>
-                <h3>Tshwane Youth Centre (TYC)</h3>
-                <p>A flagship youth development initiative in Pretoria, focusing on empowerment through education, skills training, and community engagement. EvansMathibe Agency partnered with TYC to deliver comprehensive branding, marketing materials, and event management services.</p>
-                <button class="service-btn" onclick="addToCart('Tshwane Youth Centre Project')">Inquire About This Project</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="blog" id="gallery">
-        <div class="section-header">
-            <h2>Our Work Gallery</h2>
-            <p>Explore our portfolio of creative projects and photography</p>
-        </div>
-        <div class="blog-grid">
-            <div class="blog-card">
-                <img src="images/Google_AI_Studio_2025-12-29T12_25_28.824Z.png" alt="AI Brand Automation" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">AI & Technology</span>
-                    <h3>AI Brand Automation</h3>
-                    <p>Cutting-edge AI solutions for modern brands.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Advertising</h3>
+                    <p>Strategic advertising campaigns that capture attention and drive conversions. From concept to execution across all media channels.</p>
                 </div>
-            </div>
-            <div class="blog-card">
-                <img src="images/Google_AI_Studio_2025-12-29T12_42_46.972Z.png" alt="Brand Design" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">Design</span>
-                    <h3>Brand Identity</h3>
-                    <p>Professional visual identity design solutions.</p>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <h3>Campaigns</h3>
+                    <p>End-to-end campaign management from strategy development to execution and performance tracking.</p>
                 </div>
-            </div>
-            <div class="blog-card">
-                <img src="images/Google_AI_Studio_2025-12-29T12_52_44.558Z.png" alt="Creative Work" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">Creative</span>
-                    <h3>Creative Direction</h3>
-                    <p>Innovative creative concepts and execution.</p>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Project Design & Management</h3>
+                    <p>Professional project design and management ensuring your initiatives are delivered on time and within budget.</p>
                 </div>
-            </div>
-            <div class="blog-card">
-                <img src="images/Google_AI_Studio_2025-12-29T12_58_32.467Z.png" alt="Marketing" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">Marketing</span>
-                    <h3>Digital Marketing</h3>
-                    <p>Strategic digital marketing campaigns.</p>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Events Design & Management</h3>
+                    <p>Creating memorable events from corporate functions to product launches and experiential marketing.</p>
                 </div>
-            </div>
-            <div class="blog-card">
-                <img src="images/Google_AI_Studio_2025-12-29T13_00_22.115Z.png" alt="Content" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">Content</span>
-                    <h3>Content Creation</h3>
-                    <p>Compelling content for brands.</p>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Design</h3>
+                    <p>Professional design services including graphic design, branding, print, and digital design solutions.</p>
                 </div>
-            </div>
-            <div class="blog-card">
-                <img src="images/ChatGPT Image Dec 29, 2025, 04_10_33 PM.png" alt="TYC Project" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">Project</span>
-                    <h3>Tshwane Youth Centre</h3>
-                    <p>Community branding project.</p>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Automation</h3>
+                    <p>Cutting-edge AI solutions to automate processes, enhance creativity, and streamline business operations.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Extended Gallery Section -->
-    <section class="blog" id="extended-gallery">
-        <div class="section-header">
-            <h2>More Work</h2>
-            <p>Explore more of our creative portfolio</p>
-        </div>
-        <div class="blog-grid">
-            <div class="blog-card">
-                <img src="images/evansmathibe-01-copyright.png" alt="Creative Work 1" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">Design</span>
-                    <h3>Project 01</h3>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Brand Design & Management</h3>
+                    <p>Building and managing powerful brand identities that resonate with your target audience.</p>
                 </div>
-            </div>
-            <div class="blog-card">
-                <img src="images/evansmathibe-02-copyright.png" alt="Creative Work 2" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">Design</span>
-                    <h3>Project 02</h3>
-                </div>
-            </div>
-            <div class="blog-card">
-                <img src="images/evansmathibe-03-copyright.png" alt="Creative Work 3" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">Creative</span>
-                    <h3>Project 03</h3>
-                </div>
-            </div>
-            <div class="blog-card">
-                <img src="images/evansmathibe-04-copyright.jpeg" alt="Creative Work 4" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">AI</span>
-                    <h3>Project 04</h3>
-                </div>
-            </div>
-            <div class="blog-card">
-                <img src="images/evansmathibe-05-copyright.jpeg" alt="Creative Work 5" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">AI</span>
-                    <h3>Project 05</h3>
-                </div>
-            </div>
-            <div class="blog-card">
-                <img src="images/evansmathibe-06-copyright.png" alt="Creative Work 6" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">Branding</span>
-                    <h3>Project 06</h3>
-                </div>
-            </div>
-            <div class="blog-card">
-                <img src="images/evansmathibe-07-copyright.png" alt="Creative Work 7" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">Branding</span>
-                    <h3>Project 07</h3>
-                </div>
-            </div>
-            <div class="blog-card">
-                <img src="images/evansmathibe-08-copyright.png" alt="Creative Work 8" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">Marketing</span>
-                    <h3>Project 08</h3>
-                </div>
-            </div>
-            <div class="blog-card">
-                <img src="images/evansmathibe-09-copyright.png" alt="Creative Work 9" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">Marketing</span>
-                    <h3>Project 09</h3>
-                </div>
-            </div>
-            <div class="blog-card">
-                <img src="images/evansmathibe-10-copyright.png" alt="Creative Work 10" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">Design</span>
-                    <h3>Project 10</h3>
-                </div>
-            </div>
-            <div class="blog-card">
-                <img src="images/evansmathibe-11-copyright.png" alt="Creative Work 11" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">Design</span>
-                    <h3>Project 11</h3>
-                </div>
-            </div>
-            <div class="blog-card">
-                <img src="images/evansmathibe-12-copyright.png" alt="Creative Work 12" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">Creative</span>
-                    <h3>Project 12</h3>
-                </div>
-            </div>
-            <div class="blog-card">
-                <img src="images/evansmathibe-13-copyright.png" alt="Creative Work 13" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">Creative</span>
-                    <h3>Project 13</h3>
-                </div>
-            </div>
-            <div class="blog-card">
-                <img src="images/evansmathibe-14-copyright.png" alt="Creative Work 14" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">AI</span>
-                    <h3>Project 14</h3>
-                </div>
-            </div>
-            <div class="blog-card">
-                <img src="images/evansmathibe-15-copyright.png" alt="Creative Work 15" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">AI</span>
-                    <h3>Project 15</h3>
-                </div>
-            </div>
-            <div class="blog-card">
-                <img src="images/evansmathibe-16-copyright.png" alt="Creative Work 16" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">Branding</span>
-                    <h3>Project 16</h3>
-                </div>
-            </div>
-            <div class="blog-card">
-                <img src="images/evansmathibe-17-copyright.png" alt="Creative Work 17" style="width:100%;height:200px;object-fit:cover;" loading="lazy">
-                <div class="blog-content">
-                    <span class="blog-category">Branding</span>
-                    <h3>Project 17</h3>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Sales & Distribution</h3>
+                    <p>Strategic sales and distribution solutions to expand your market reach and maximize revenue.</p>
                 </div>
             </div>
         </div>
@@ -1112,361 +928,218 @@
 
     <!-- Blog Section -->
     <section class="blog" id="blog">
-        <div class="section-header">
-            <h2>Latest Insights</h2>
-            <p>Expert perspectives on branding, advertising, and the future of creative work</p>
-        </div>
-        <div class="blog-grid">
-            <div class="blog-card">
-                <div class="blog-image"><i class="fas fa-palette"></i></div>
-                <div class="blog-content">
-                    <span class="blog-category">Brand Design</span>
-                    <h3>The Art of Brand Design: Building Identities That Resonate</h3>
-                    <p>Explore the fundamentals of creating memorable brand identities that capture your company's essence and connect with audiences emotionally.</p>
-                    <div class="blog-meta">
-                        <span><i class="fas fa-calendar"></i> Feb 16, 2026</span>
-                        <span><i class="fas fa-clock"></i> 8 min read</span>
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Latest Insights</h2>
+                <p style="max-width: 600px; margin: 1.5rem auto 0; color: var(--gray);">Expert perspectives on advertising, design, AI, and the creative industry.</p>
+            </div>
+            
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <img src="images/evansmathibe-01-copyright.png" alt="AI in Advertising" class="blog-image">
+                    <div class="blog-content">
+                        <span class="blog-tag">#Advertising #AI #SouthAfrica</span>
+                        <h3>How AI is Affecting the Entire Industry in South Africa and the World</h3>
+                        <p>Exploring the transformative impact of artificial intelligence on advertising and marketing...</p>
+                        <div class="blog-meta">By Evans Mathibe</div>
+                        <a href="blog/article1/page1.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
-                </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-image"><i class="fas fa-bullhorn"></i></div>
-                <div class="blog-content">
-                    <span class="blog-category">Advertising</span>
-                    <h3>The Future of Advertising: Trends Shaping 2026 and Beyond</h3>
-                    <p>Discover the latest advertising trends, from AI-powered campaigns to immersive experiences that are redefining how brands connect with consumers.</p>
-                    <div class="blog-meta">
-                        <span><i class="fas fa-calendar"></i> Feb 16, 2026</span>
-                        <span><i class="fas fa-clock"></i> 10 min read</span>
+                </article>
+                
+                <article class="blog-card">
+                    <img src="images/evansmathibe-02-copyright.png" alt="Advertising Trends" class="blog-image">
+                    <div class="blog-content">
+                        <span class="blog-tag">#Advertising #Trends</span>
+                        <h3>Advertising Currently: Trends and Challenges</h3>
+                        <p>An in-depth look at the current state of advertising and the challenges facing agencies...</p>
+                        <div class="blog-meta">By Evans Mathibe</div>
+                        <a href="blog/article2/page1.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
-                </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-image"><i class="fas fa-robot"></i></div>
-                <div class="blog-content">
-                    <span class="blog-category">AI & Creativity</span>
-                    <h3>Mastering AI in Creative Practice: A Strategic Guide</h3>
-                    <p>Learn how to effectively integrate AI into your creative workflow while maintaining authenticity and human connection in your work.</p>
-                    <div class="blog-meta">
-                        <span><i class="fas fa-calendar"></i> Feb 16, 2026</span>
-                        <span><i class="fas fa-clock"></i> 12 min read</span>
+                </article>
+                
+                <article class="blog-card">
+                    <img src="images/evansmathibe-03-copyright.png" alt="Education in Advertising" class="blog-image">
+                    <div class="blog-content">
+                        <span class="blog-tag">#Advertising #Education</span>
+                        <h3>Is It Still Worth Going to School for Advertising?</h3>
+                        <p>Examining the value of formal education in the rapidly evolving advertising landscape...</p>
+                        <div class="blog-meta">By Evans Mathibe</div>
+                        <a href="blog/article3/page1.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
-                </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-image"><i class="fas fa-microchip"></i></div>
-                <div class="blog-content">
-                    <span class="blog-category">AI Automation</span>
-                    <h3>Leveraging AI Automation in Advertising and Creative Work</h3>
-                    <p>How AI is revolutionizing advertising campaigns and creative processes, enabling personalized marketing at scale with unprecedented efficiency.</p>
-                    <div class="blog-meta">
-                        <span><i class="fas fa-calendar"></i> Feb 16, 2026</span>
-                        <span><i class="fas fa-clock"></i> 9 min read</span>
+                </article>
+                
+                <article class="blog-card">
+                    <img src="images/evansmathibe-04-copyright.jpeg" alt="Creativity in Advertising" class="blog-image">
+                    <div class="blog-content">
+                        <span class="blog-tag">#Advertising #Creativity</span>
+                        <h3>Creativity in Advertising Context</h3>
+                        <p>Understanding the role of creativity in effective advertising campaigns...</p>
+                        <div class="blog-meta">By Evans Mathibe</div>
+                        <a href="blog/article4/page1.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
-                </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-image"><i class="fas fa-project-diagram"></i></div>
-                <div class="blog-content">
-                    <span class="blog-category">Project Design</span>
-                    <h3>Project Design in the AI Era: Modern Approaches</h3>
-                    <p>How AI is transforming project design methodologies and creating new possibilities for creative professionals and agencies.</p>
-                    <div class="blog-meta">
-                        <span><i class="fas fa-calendar"></i> Feb 16, 2026</span>
-                        <span><i class="fas fa-clock"></i> 7 min read</span>
+                </article>
+                
+                <article class="blog-card">
+                    <img src="images/evansmathibe-05-copyright.jpeg" alt="Fashion Photography" class="blog-image">
+                    <div class="blog-content">
+                        <span class="blog-tag">#Fashion #Design</span>
+                        <h3>High-End Fashion Photography</h3>
+                        <p>The art and business of high-end fashion photography in South Africa...</p>
+                        <div class="blog-meta">By Evans Mathibe</div>
+                        <a href="blog/article5/page1.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
-                </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-image"><i class="fas fa-tasks"></i></div>
-                <div class="blog-content">
-                    <span class="blog-category">Project Management</span>
-                    <h3>What is Project Management? A Comprehensive Guide</h3>
-                    <p>Understanding the fundamentals of project management and its critical role in delivering successful creative projects on time and within budget.</p>
-                    <div class="blog-meta">
-                        <span><i class="fas fa-calendar"></i> Feb 16, 2026</span>
-                        <span><i class="fas fa-clock"></i> 11 min read</span>
+                </article>
+                
+                <article class="blog-card">
+                    <img src="images/evansmathibe-06-copyright.png" alt="Design Language" class="blog-image">
+                    <div class="blog-content">
+                        <span class="blog-tag">#Design #SouthAfrica</span>
+                        <h3>What is Design Language in South Africa</h3>
+                        <p>Exploring the unique design language emerging from South African culture...</p>
+                        <div class="blog-meta">By Evans Mathibe</div>
+                        <a href="blog/article6/page1.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
-                </div>
+                </article>
             </div>
-            <div class="blog-card">
-                <div class="blog-image"><i class="fas fa-handshake"></i></div>
-                <div class="blog-content">
-                    <span class="blog-category">Networking</span>
-                    <h3>The Art of Business Networking in South Africa</h3>
-                    <p>Master the art of professional networking in South Africa's unique business landscape. Build relationships that drive career and business growth.</p>
-                    <div class="blog-meta">
-                        <span><i class="fas fa-calendar"></i> Feb 16, 2026</span>
-                        <span><i class="fas fa-clock"></i> 8 min read</span>
-                    </div>
-                </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-image"><i class="fas fa-pen-nib"></i></div>
-                <div class="blog-content">
-                    <span class="blog-category">Design</span>
-                    <h3>Design Thinking: Solving Problems Creatively</h3>
-                    <p>How design thinking methodologies can transform problem-solving and drive innovation in your organization and creative projects.</p>
-                    <div class="blog-meta">
-                        <span><i class="fas fa-calendar"></i> Feb 16, 2026</span>
-                        <span><i class="fas fa-clock"></i> 9 min read</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cart Section -->
-    <section class="cart-section" id="cart">
-        <div class="section-header">
-            <h2>Service Inquiry Cart</h2>
-            <p>Select services you're interested in and submit an inquiry</p>
-        </div>
-        <div class="cart-container">
-            <div id="cart-items">
-                <p style="text-align: center; color: var(--text-muted);">No services added yet. Click "Add to Inquiry Cart" on any service above.</p>
-            </div>
-            <div class="cart-total" id="cart-summary" style="display: none;">
-                <h3>Ready to Start Your Project?</h3>
-                <p style="color: var(--text-muted);">Submit your inquiry and our team will contact you within 24 hours.</p>
-                <div class="payment-buttons">
-                    <stripe-buy-button
-                        buy-button-id="buy_btn_1T1WUUEqhcaJaqvt1u2U5v5O"
-                        publishable-key="pk_test_51P5pdOEqhcaJaqvtj59OoD6s890ZPUiNmyLrkhyyMLbaPQrXCU7kV4xRhPJxaeja0XcJ9ot276Ohvg87stY5NyZ500j91jFNUs">
-                    </stripe-buy-button>
-                    <a href="https://paypal.me/evansmathibe82" target="_blank" class="btn btn-gold">
-                        <i class="fab fa-paypal"></i> Pay with PayPal
-                    </a>
-                </div>
+            
+            <div class="text-center mt-4">
+                <a href="blog/" class="btn btn-primary">View All Articles</a>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Let's Create Together</h3>
-                <p style="color: var(--text-muted); margin-bottom: 2rem;">Ready to transform your brand? Get in touch with us today.</p>
-                
-                <div class="contact-item">
-                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
-                    <div class="contact-details">
-                        <h4>Phone</h4>
-                        <p>+27 72 416 5061</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
-                    <div class="contact-details">
-                        <h4>WhatsApp</h4>
-                        <p>+27724165061</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                    <div class="contact-details">
-                        <h4>Email</h4>
-                        <p>evans.mathibe@mail.com</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <div class="contact-details">
-                        <h4>Service Areas</h4>
-                        <p>Johannesburg, Cape Town, Durban, Pretoria, All South Africa</p>
-                    </div>
-                </div>
+        <div class="container contact-content">
+            <div class="text-center">
+                <h2 class="section-title">Get In Touch</h2>
+                <p style="max-width: 600px; margin: 1.5rem auto 0; color: rgba(255,255,255,0.8);">Ready to elevate your brand? Let's discuss your project.</p>
             </div>
             
-            <form class="contact-form" id="contactForm" action="https://formsubmit.co/evans.mathibe@mail.com" method="POST">
-                <input type="hidden" name="_subject" value="New Inquiry from EvansMathibe Agency Website">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="text" name="_honey" style="display:none">
-                <input type="hidden" name="_template" value="table">
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/xpwzgvay" method="POST">
                 <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" name="name" required placeholder="Your name">
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" name="email" required placeholder="your@email.com">
-                </div>
-                <div class="form-group">
-                    <label>Phone</label>
-                    <input type="tel" name="phone" placeholder="+27 XX XXX XXXX">
-                </div>
-                <div class="form-group">
-                    <label>What is your inquiry about?</label>
-                    <select name="service" required>
-                        <option value="">Select a service</option>
-                        <option value="photography">Photography</option>
-                        <option value="film">Film Production</option>
-                        <option value="advertising">Advertising</option>
-                        <option value="ai-automation">AI Brand Automation</option>
-                        <option value="brand-management">Brand Management</option>
-                        <option value="talent-management">Talent Management</option>
-                        <option value="project-management">Project Design Management</option>
-                        <option value="brand-design">Brand Design</option>
-                        <option value="pr">Public Relations</option>
-                        <option value="events">Event Design & Management</option>
-                        <option value="creative">Creative Services</option>
-                        <option value="design">Design</option>
-                        <option value="general">General Inquiry</option>
-                        <option value="other">Other</option>
+                    <label class="form-label" for="service">Service Interested In</label>
+                    <select class="form-control" id="service" name="service" required>
+                        <option value="">Select a Service</option>
+                        <option value="Advertising">Advertising</option>
+                        <option value="Campaigns">Campaigns</option>
+                        <option value="Project Design & Management">Project Design & Management</option>
+                        <option value="Events Design & Management">Events Design & Management</option>
+                        <option value="Design">Design</option>
+                        <option value="AI Automation">AI Automation</option>
+                        <option value="Brand Design & Management">Brand Design & Management</option>
+                        <option value="Sales & Distribution">Sales & Distribution</option>
+                        <option value="Other">Other</option>
                     </select>
                 </div>
+                
                 <div class="form-group">
-                    <label>Message</label>
-                    <textarea name="message" rows="4" required placeholder="Tell us about your project..."></textarea>
+                    <label class="form-label" for="name">Your Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">
-                    <i class="fas fa-paper-plane"></i> Send Inquiry
+                
+                <div class="form-group">
+                    <label class="form-label" for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="message">Message</label>
+                    <textarea class="form-control" id="message" name="message" placeholder="Tell us about your project..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane me-2"></i>Send Message
                 </button>
             </form>
+            
+            <div class="contact-info">
+                <p><i class="fas fa-phone me-2"></i><a href="tel:+274165061">+27 416 5061</a></p>
+                <p><i class="fas fa-envelope me-2"></i><a href="mailto:evans.mathibe@mail.com">evans.mathibe@mail.com</a></p>
+                
+                <div class="social-links">
+                    <a href="https://www.tiktok.com/@evans_mathibe?is_from_webapp=1&sender_device=pc" class="social-link" target="_blank" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="mailto:evans.mathibe@mail.com" class="social-link" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="tel:+274165061" class="social-link" aria-label="Phone">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+                
+                <div class="location-info">
+                    <h4>Based in South Africa</h4>
+                    <p>Serving: Tshwane, Johannesburg, Durban, Cape Town & Worldwide</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <a href="#" class="logo">
-                    <img src="logo.png" alt="EvansMathibe Agency" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" loading="lazy">
-                    <span class="logo-text">EvansMathibe</span>
-                </a>
-                <p>Premier creative agency delivering world-class solutions across South Africa. Serving Johannesburg, Cape Town, Durban, Pretoria, and beyond.</p>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-twitter-x"></i></a>
-                    <a href="https://business.google.com" target="_blank"><i class="fas fa-google"></i></a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-icon" style="width: 40px; height: 40px; font-size: 1rem;">E</div>
+                    <span>EvansMathibe Agency</span>
                 </div>
-            </div>
-            <div class="footer-links">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="#services">Photography</a></li>
-                    <li><a href="#services">Film Production</a></li>
-                    <li><a href="#services">Advertising</a></li>
-                    <li><a href="#services">Brand Management</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="#home">Home</a></li>
+                <ul class="footer-links">
+                    <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-links">
-                <h4>Service Areas</h4>
-                <ul>
-                    <li><a href="#">Johannesburg</a></li>
-                    <li><a href="#">Cape Town</a></li>
-                    <li><a href="#">Durban</a></li>
-                    <li><a href="#">Pretoria</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EvansMathibe Agency. All rights reserved. Based in South Africa, serving globally.</p>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 EvansMathibe Agency. All rights reserved.</p>
         </div>
     </footer>
 
-    <script>
-        // Cart functionality
-        let cart = [];
-
-        function addToCart(service) {
-            if (!cart.includes(service)) {
-                cart.push(service);
-                updateCart();
-            }
-        }
-
-        function removeFromCart(service) {
-            cart = cart.filter(item => item !== service);
-            updateCart();
-        }
-
-        function updateCart() {
-            const cartItems = document.getElementById('cart-items');
-            const cartSummary = document.getElementById('cart-summary');
-            
-            if (cart.length === 0) {
-                cartItems.innerHTML = '<p style="text-align: center; color: var(--text-muted);">No services added yet. Click "Add to Inquiry Cart" on any service above.</p>';
-                cartSummary.style.display = 'none';
-            } else {
-                cartItems.innerHTML = cart.map(service => `
-                    <div class="cart-item">
-                        <div class="cart-item-info">
-                            <h4>${service}</h4>
-                            <p>Service inquiry added</p>
-                        </div>
-                        <button class="service-btn" style="width: auto; padding: 0.5rem 1rem;" onclick="removeFromCart('${service}')">
-                            <i class="fas fa-times"></i> Remove
-                        </button>
-                    </div>
-                `).join('');
-                cartSummary.style.display = 'block';
-            }
-        }
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        }
-
-        // Form submission with FormSubmit.co
-        document.getElementById('contactForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const form = e.target;
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.disabled = true;
-
-            try {
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: new FormData(form)
-                });
-                
-                alert('Thank you for your inquiry! We will get back to you within 24 hours.');
-                form.reset();
-            } catch (error) {
-                alert('Error submitting form. Please try again or contact us directly via WhatsApp.');
-            }
-            
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "EvansMathibe Agency",
+        "description": "Premier creative agency in South Africa offering advertising, design, AI automation, brand management, and more.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "South Africa",
+            "addressRegion": "ZA"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+27-416-5061",
+            "contactType": "customer service",
+            "email": "evans.mathibe@mail.com"
+        },
+        "areaServed": ["Tshwane", "Johannesburg", "Durban", "Cape Town", "South Africa", "Global"],
+        "serviceType": ["Advertising", "Campaigns", "Design", "AI Automation", "Brand Management", "Events", "Project Management", "Sales & Distribution"]
+    }
     </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+    <!-- Slick Slider -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 </body>
 </html>
