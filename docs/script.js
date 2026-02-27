@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize Image Slider
     $('.image-slider').slick({
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 800,
         slidesToShow: 1,
@@ -38,7 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
         fade: true,
         cssEase: 'cubic-bezier(0.4, 0, 0.2, 1)',
         arrows: false,
-        dotsClass: 'slick-dots custom-dots',
+        draggable: false,
+        swipe: false,
+        touchMove: false,
         responsive: [
             {
                 breakpoint: 768,
