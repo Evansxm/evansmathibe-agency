@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
             infinite: true,
             speed: 800,
             slidesToShow: 1,
-            slidesToScroll: 1,
+            slidesToScroll: 1, adaptiveHeight: true,
             autoplay: true,
             autoplaySpeed: 5000,
             fade: true,
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     breakpoint: 768,
                     settings: {
                         slidesToShow: 1,
-                        slidesToScroll: 1
+                        slidesToScroll: 1, adaptiveHeight: true
                     }
                 }
             ]
