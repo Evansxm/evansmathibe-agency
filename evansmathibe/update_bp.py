@@ -115,7 +115,7 @@ def update_business_profile():
                 By.XPATH, "//input[@name='name'] | //input[@aria-label='Business name']"
             )
             name_field.clear()
-            name_field.send_keys("Evans Mathibe | Mone | TYC")
+            name_field.send_keys("Evans Mathibe")
             result["steps"].append("Updated business name")
             time.sleep(1)
         except:

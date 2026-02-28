@@ -1,4 +1,4 @@
-// Dynamic Local SEO Schema Generator for Evans Mathibe | Mone | TYC
+// Dynamic Local SEO Schema Generator for Evans Mathibe
 // Incorporates major South African business districts, shopping centers, and agency hubs.
 
 (function() {
@@ -6,7 +6,7 @@
         "@context": "https://schema.org",
         "@type": "AdvertisingAgency",
         "@id": "https://evansmathibe.github.io/evansmathibe-agency/#local-seo",
-        "name": "Evans Mathibe | Mone | TYC",
+        "name": "Evans Mathibe",
         "description": "Premier South African creative agency specializing in AI Brand Automation, Advertising, and Design. Serving national, provincial, and municipal business hubs.",
         "url": "https://evansmathibe.github.io/evansmathibe-agency/",
         "areaServed": [
