@@ -1,0 +1,40 @@
+name: Update Google Business Profile
+
+on:
+  schedule:
+    # Run daily at 6:00 AM UTC (8:00 AM SAST)
+    - cron: '0 6 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  update-profile:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r evansmathibe/requirements.txt
+
+    - name: Run Update Script
+      env:
+        GOOGLE_EMAIL: ${{ secrets.GOOGLE_EMAIL }}
+        GOOGLE_PASSWORD: ${{ secrets.GOOGLE_PASSWORD }}
+      run: |
+        python evansmathibe/update_bp.py
+
+    - name: Upload Artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: bp-artifacts
+        path: bp_artifacts/
+        retention-days: 5

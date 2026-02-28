@@ -1,0 +1,9 @@
+{
+  "steps": [
+    "Page title: Google Business Profile",
+    "Name field not found",
+    "Description field not found"
+  ],
+  "success": true,
+  "url": "https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fbusiness.google.com%2Flocations%3Fgmbsrc%3Dall-en-z-z-z-gmb-l-z-d&dsh=S-113686165%3A1771186277563530&followup=https%3A%2F%2Fbusiness.google.com%2Flocations%3Fgmbsrc%3Dall-en-z-z-z-gmb-l-z-d&ifkv=AXbMIuC3e4sSEHgepcAIjmGkgHyrlEm171b5LjoMGyicVFvXUDpTWm7AiQZjL0VxwHkpHx0QChFGAQ&passive=1209600&service=lbc&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
+}

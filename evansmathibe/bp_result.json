@@ -1,0 +1,9 @@
+{
+  "status": "partial",
+  "steps": [
+    "Opened: https://business.google.com/en-all/business-profile/?ppsrc=GPDA2",
+    "Description error: Message: element not interactable\n  (Session info: chrome=145.0.7632.75); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception\nStacktrace:\n#0 0x649913a28dba <unknown>\n#1 0x649913438370 <unknown>\n#2 0x649913483d0c <unknown>\n#3 0x6499134812a7 <unknown>\n#4 0x6499134d604b <unknown>\n#5 0x64991347f88f <unknown>\n#6 0x649913480651 <unknown>\n#7 0x6499139ed209 <unknown>\n#8 0x6499139f0111 <unknown>\n#9 0x6499139d99c9 <unknown>\n#10 0x6499139f0cde <unknown>\n#11 0x6499139bfd40 <unknown>\n#12 0x649913a15408 <unknown>\n#13 0x649913a155d8 <unknown>\n#14 0x649913a27403 <unknown>\n#15 0x781620c9caa4 <unknown>\n#16 0x781620d29c6c <unknown>\n"
+  ],
+  "error": null,
+  "url": "https://business.google.com/en-all/business-profile/?ppsrc=GPDA2"
+}

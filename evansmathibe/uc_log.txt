@@ -1,0 +1,52 @@
+============================================================
+🚀 Google Business Profile - Undetected Chrome
+============================================================
+🔧 Starting Chrome...
+Traceback (most recent call last):
+  File "/home/ev/evansmathibe/uc_bp.py", line 136, in <module>
+    run()
+  File "/home/ev/evansmathibe/uc_bp.py", line 21, in run
+    driver = uc.Chrome(headless=False, version_main=None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ev/.local/lib/python3.12/site-packages/undetected_chromedriver/__init__.py", line 466, in __init__
+    super(Chrome, self).__init__(
+  File "/home/ev/.local/lib/python3.12/site-packages/selenium/webdriver/chrome/webdriver.py", line 45, in __init__
+    super().__init__(
+  File "/home/ev/.local/lib/python3.12/site-packages/selenium/webdriver/chromium/webdriver.py", line 66, in __init__
+    super().__init__(command_executor=executor, options=self.options)
+  File "/home/ev/.local/lib/python3.12/site-packages/selenium/webdriver/common/webdriver.py", line 25, in __init__
+    super().__init__(*args, **kwargs)
+  File "/home/ev/.local/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 257, in __init__
+    self.start_session(capabilities)
+  File "/home/ev/.local/lib/python3.12/site-packages/undetected_chromedriver/__init__.py", line 724, in start_session
+    super(selenium.webdriver.chrome.webdriver.WebDriver, self).start_session(
+  File "/home/ev/.local/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 352, in start_session
+    response = self.execute(Command.NEW_SESSION, caps)["value"]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ev/.local/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 432, in execute
+    self.error_handler.check_response(response)
+  File "/home/ev/.local/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.SessionNotCreatedException: Message: session not created: cannot connect to chrome at 127.0.0.1:38369
+from chrome not reachable; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x575b9decedba <unknown>
+#1 0x575b9d8de370 <unknown>
+#2 0x575b9d8c9ab4 <unknown>
+#3 0x575b9d92197a <unknown>
+#4 0x575b9d916791 <unknown>
+#5 0x575b9d9688de <unknown>
+#6 0x575b9d967fcc <unknown>
+#7 0x575b9d92588f <unknown>
+#8 0x575b9d926651 <unknown>
+#9 0x575b9de93209 <unknown>
+#10 0x575b9de96111 <unknown>
+#11 0x575b9de7f9c9 <unknown>
+#12 0x575b9de96cde <unknown>
+#13 0x575b9de65d40 <unknown>
+#14 0x575b9debb408 <unknown>
+#15 0x575b9debb5d8 <unknown>
+#16 0x575b9decd403 <unknown>
+#17 0x7da75b49caa4 <unknown>
+#18 0x7da75b529c6c <unknown>
+
