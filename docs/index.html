@@ -1146,10 +1146,9 @@
             margin-bottom: 1rem;
         }
 
-        /* Floating WhatsApp Button */
-        .whatsapp-float {
+        /* Floating WhatsApp & TikTok Buttons */
+        .whatsapp-float, .tiktok-float {
             position: fixed;
-            bottom: 30px;
             right: 30px;
             width: 60px;
             height: 60px;
@@ -1159,22 +1158,29 @@
             align-items: center;
             justify-content: center;
             color: var(--burgundy);
-            font-size: 30px;
+            font-size: 28px;
             box-shadow: 0 4px 20px rgba(255, 182, 180, 0.5);
             z-index: 1000;
             transition: all 0.3s ease;
             text-decoration: none;
         }
 
-        .whatsapp-float:hover {
+        .tiktok-float {
+            bottom: 100px;
+        }
+
+        .whatsapp-float {
+            bottom: 30px;
+        }
+
+        .whatsapp-float:hover, .tiktok-float:hover {
             transform: scale(1.1);
             box-shadow: 0 6px 25px rgba(255, 182, 180, 0.7);
             background: linear-gradient(135deg, var(--accent-hot-pink), var(--accent-pink));
         }
 
         @media (max-width: 768px) {
-            .whatsapp-float {
-                bottom: 20px;
+            .whatsapp-float, .tiktok-float {
                 right: 20px;
                 width: 55px;
                 height: 55px;
@@ -1606,6 +1612,11 @@
             </div>
         </div>
     </section>
+
+    <!-- Floating TikTok Button -->
+    <a href="https://tiktok.com/@evansmathibe" class="tiktok-float" target="_blank" aria-label="Follow us on TikTok">
+        <i class="fab fa-tiktok"></i>
+    </a>
 
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/27724165061" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
