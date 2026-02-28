@@ -57,6 +57,28 @@
             box-shadow: 0 6px 25px rgba(255, 182, 180, 0.7);
             background: linear-gradient(135deg, var(--accent-hot-pink), var(--accent-pink));
         }
+        .tiktok-float {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-pink), var(--accent-hot-pink));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--burgundy);
+            font-size: 28px;
+            box-shadow: 0 4px 20px rgba(255, 182, 180, 0.5);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .tiktok-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(255, 182, 180, 0.7);
+        }
     </style>
 </head>
 <body>
@@ -95,6 +117,9 @@
         </div>
     </article>
     <footer><div class="container"><p>&copy; 2026 EvansMathibe Agency. <a href="../index.html">Back to Home</a></p></div></footer>
+    <a href="https://tiktok.com/@evansmathibe" class="tiktok-float" target="_blank" aria-label="Follow us on TikTok">
+        <i class="fab fa-tiktok"></i>
+    </a>
     <a href="https://wa.me/27724165061" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
