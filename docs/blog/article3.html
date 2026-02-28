@@ -79,6 +79,11 @@
             transform: scale(1.1);
             box-shadow: 0 6px 25px rgba(255, 182, 180, 0.7);
         }
+        .article-nav { display: flex; justify-content: space-between; margin-bottom: 1.5rem; padding: 0.75rem 0; border-bottom: 1px solid rgba(255, 182, 180, 0.2); }
+        .article-nav-top { margin-bottom: 1.5rem; margin-top: -0.5rem; }
+        .article-nav-bottom { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255, 182, 180, 0.2); border-bottom: none; }
+        .nav-btn { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-pink); text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 8px; transition: all 0.3s ease; background: rgba(255, 182, 180, 0.1); }
+        .nav-btn:hover { background: rgba(255, 182, 180, 0.25); color: var(--white); gap: 0.75rem; }
     </style>
 </head>
 <body>
@@ -92,7 +97,10 @@
     </header>
     <article class="article-content">
         <div class="container">
-            <a href="../index.html#blog" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Articles</a>
+            <div class="article-nav article-nav-top">
+                <a href="../index.html" class="nav-btn"><i class="fas fa-home"></i> Home</a>
+                <a href="../index.html#blog" class="nav-btn"><i class="fas fa-arrow-left"></i> Back to Articles</a>
+            </div>
             <img src="../images/article3-education-thumbnail.png" alt="Education in Advertising" class="article-image">
             <p>This is perhaps the most common question I get from young South Africans looking to enter the advertising industry. With AI tools becoming increasingly sophisticated, and with many agencies now hiring based on portfolio rather than qualifications, the traditional path to advertising careers has been disrupted.</p>
             <h2>The Traditional Path vs. The New Reality</h2>
@@ -115,6 +123,10 @@
                 <h3 style="color: var(--burgundy); margin-bottom: 1rem;">Want to Learn More?</h3>
                 <p style="color: rgba(255,255,255,0.9);">Explore our blog for more insights on advertising, design, and the creative industry.</p>
                 <a href="../index.html#blog" class="cta-btn">View All Articles</a>
+            </div>
+            <div class="article-nav article-nav-bottom">
+                <a href="../index.html" class="nav-btn"><i class="fas fa-home"></i> Home</a>
+                <a href="../index.html#blog" class="nav-btn"><i class="fas fa-arrow-left"></i> Back to Articles</a>
             </div>
         </div>
     </article>

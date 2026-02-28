@@ -79,6 +79,11 @@
             transform: scale(1.1);
             box-shadow: 0 6px 25px rgba(255, 182, 180, 0.7);
         }
+        .article-nav { display: flex; justify-content: space-between; margin-bottom: 1.5rem; padding: 0.75rem 0; border-bottom: 1px solid rgba(255, 182, 180, 0.2); }
+        .article-nav-top { margin-bottom: 1.5rem; margin-top: -0.5rem; }
+        .article-nav-bottom { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255, 182, 180, 0.2); border-bottom: none; }
+        .nav-btn { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-pink); text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 8px; transition: all 0.3s ease; background: rgba(255, 182, 180, 0.1); }
+        .nav-btn:hover { background: rgba(255, 182, 180, 0.25); color: var(--white); gap: 0.75rem; }
     </style>
 </head>
 <body>
@@ -92,7 +97,10 @@
     </header>
     <article class="article-content">
         <div class="container">
-            <a href="../index.html#blog" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Articles</a>
+            <div class="article-nav article-nav-top">
+                <a href="../index.html" class="nav-btn"><i class="fas fa-home"></i> Home</a>
+                <a href="../index.html#blog" class="nav-btn"><i class="fas fa-arrow-left"></i> Back to Articles</a>
+            </div>
             <img src="../images/article6-design-thumbnail.png" alt="South African Design Language" class="article-image">
             <p>Design language is more than a visual style—it's the visual vocabulary that communicates a brand's values, personality, and promise. In South Africa, our design language is evolving as we blend global influences with our rich local heritage.</p>
             <h2>A Nation of Contrasts</h2>
@@ -113,6 +121,10 @@
                 <h3 style="color: var(--burgundy); margin-bottom: 1rem;">Need Design Services?</h3>
                 <p style="color: rgba(255,255,255,0.9);">Let us help you create a design language that resonates.</p>
                 <a href="../index.html#contact" class="cta-btn">Get In Touch</a>
+            </div>
+            <div class="article-nav article-nav-bottom">
+                <a href="../index.html" class="nav-btn"><i class="fas fa-home"></i> Home</a>
+                <a href="../index.html#blog" class="nav-btn"><i class="fas fa-arrow-left"></i> Back to Articles</a>
             </div>
         </div>
     </article>
