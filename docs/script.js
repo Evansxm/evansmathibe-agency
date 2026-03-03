@@ -121,7 +121,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
                 
-                if (response.ok) {
+                const result = await response.json();
+                
+                if (response.ok && (result.success === "true" || result.success === true)) {
                     submitBtn.innerHTML = '<i class="fas fa-check me-2"></i>Message Sent!';
                     submitBtn.style.background = 'var(--success)';
                     this.reset();
@@ -132,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         submitBtn.disabled = false;
                     }, 5000);
                 } else {
-                    throw new Error('Form submission failed');
+                    throw new Error(result.message || 'Form submission failed');
                 }
             } catch (error) {
                 console.error('Error:', error);
