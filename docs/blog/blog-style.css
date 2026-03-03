@@ -1,0 +1,273 @@
+/* Blog Shared Styles - EvansMathibe Agency */
+
+:root {
+    --primary-dark: #5B0A0A;
+    --primary: #800000;
+    --accent-pink: #FFB6B4;
+    --accent-hot-pink: #FF69B4;
+    --burgundy: #4A0404;
+    --soft-pink: #FFC0CB;
+    --gray: #808080;
+    --white: #FFFFFF;
+    --off-white: #F8F8F8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--off-white);
+    color: #1a1a1a;
+    line-height: 1.8;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--burgundy);
+}
+
+/* Navigation */
+.navbar {
+    background: rgba(91, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.nav-link {
+    color: var(--white) !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: var(--accent-pink) !important;
+}
+
+/* Header */
+.article-header {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+    padding: 5rem 0 3rem;
+    color: var(--white);
+    text-align: center;
+}
+
+.article-header h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.article-meta {
+    color: rgba(255,255,255,0.9);
+    font-size: 1rem;
+}
+
+.article-tag {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    background: rgba(255,182,180,0.2);
+    color: var(--accent-pink);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin: 0 0.25rem 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Content */
+.article-content {
+    padding: 4rem 0;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.article-content h2 {
+    font-size: 2rem;
+    margin: 3rem 0 1.5rem;
+    color: var(--burgundy);
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.article-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--accent-pink);
+}
+
+.article-content p {
+    font-size: 1.15rem;
+    color: #333;
+    margin-bottom: 1.75rem;
+}
+
+.article-content blockquote {
+    border-left: 5px solid var(--accent-pink);
+    padding: 1.5rem 2rem;
+    margin: 3rem 0;
+    font-style: italic;
+    color: var(--gray);
+    font-size: 1.3rem;
+    background: rgba(255,182,180,0.05);
+    border-radius: 0 15px 15px 0;
+}
+
+.article-image {
+    width: 100%;
+    height: auto;
+    max-height: 550px;
+    object-fit: contain;
+    border-radius: 20px;
+    margin: 3rem 0;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.1);
+    background: var(--primary-dark);
+}
+
+.stat-box {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    margin: 3rem 0;
+    border-left: 5px solid var(--accent-pink);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+/* CTA Box - Readability Fix */
+.cta-box {
+    background: linear-gradient(135deg, var(--primary-dark), var(--burgundy));
+    color: var(--white);
+    padding: 3.5rem 2rem;
+    border-radius: 25px;
+    text-align: center;
+    margin-top: 5rem;
+    box-shadow: 0 20px 50px rgba(91, 10, 10, 0.3);
+    border: 2px solid var(--accent-pink);
+}
+
+.cta-box h3 {
+    color: var(--accent-pink);
+    font-size: 2.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.cta-box p {
+    color: var(--white);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 1.25rem 2.5rem;
+    background: var(--accent-pink);
+    color: var(--burgundy);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--accent-pink);
+}
+
+.cta-btn:hover {
+    background: transparent;
+    color: var(--accent-pink);
+    transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+    background: var(--burgundy);
+    color: var(--white);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+footer a {
+    color: var(--accent-pink);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Floating Buttons */
+.floating-buttons {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.whatsapp-float, .tiktok-float, .back-to-top {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary), var(--burgundy));
+    border: 2px solid var(--accent-pink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-pink);
+    font-size: 28px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.back-to-top {
+    background: var(--white);
+    color: var(--primary);
+    font-size: 22px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.whatsapp-float:hover, .tiktok-float:hover, .back-to-top:hover {
+    transform: scale(1.1) rotate(5deg);
+    background: var(--accent-pink);
+    color: var(--burgundy);
+}
+
+@media (max-width: 768px) {
+    .article-content { padding: 2rem 1rem; }
+    .floating-buttons { bottom: 20px; right: 20px; }
+    .whatsapp-float, .tiktok-float, .back-to-top { width: 50px; height: 50px; font-size: 22px; }
+}
