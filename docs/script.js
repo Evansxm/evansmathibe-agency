@@ -39,66 +39,37 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize Image Slider
     if ($('.image-slider').length) {
         $('.image-slider').slick({
-            dots: true,
+            dots: false, // Removed dots as per instruction
             infinite: true,
-            speed: 800,
+            speed: 1000, // Smooth transition speed
             slidesToShow: 1,
-            slidesToScroll: 1, adaptiveHeight: true,
+            slidesToScroll: 1,
+            adaptiveHeight: true,
             autoplay: true,
-            autoplaySpeed: 5000,
+            autoplaySpeed: 3000, // 3 seconds interval
             fade: true,
-            cssEase: 'cubic-bezier(0.4, 0, 0.2, 1)',
+            cssEase: 'linear',
             arrows: false,
-            dotsClass: 'slick-dots custom-dots',
-            responsive: [
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1, adaptiveHeight: true
-                    }
-                }
-            ]
+            pauseOnHover: false,
+            pauseOnFocus: false
         });
     }
-
-    // Custom slick dots styling
-    const style = document.createElement('style');
-    style.textContent = `
-        .custom-dots {
-            bottom: 20px !important;
-        }
-        .custom-dots li {
-            margin: 0 5px !important;
-        }
-        .custom-dots li button {
-            width: 12px !important;
-            height: 12px !important;
-            padding: 0 !important;
-            border-radius: 50% !important;
-            background: rgba(255, 182, 180, 0.5) !important;
-            border: 2px solid var(--accent-pink) !important;
-        }
-        .custom-dots li.slick-active button {
-            background: var(--accent-pink) !important;
-            transform: scale(1.2);
-        }
-    `;
-    document.head.appendChild(style);
 
     // Form Real-time Validation
     const contactForm = document.getElementById('contactForm');
     const inputs = contactForm.querySelectorAll('.form-control[required]');
 
-    inputs.forEach(input => {
-        input.addEventListener('input', function() {
-            validateField(this);
+    if (inputs.length) {
+        inputs.forEach(input => {
+            input.addEventListener('input', function() {
+                validateField(this);
+            });
+            
+            input.addEventListener('blur', function() {
+                validateField(this);
+            });
         });
-        
-        input.addEventListener('blur', function() {
-            validateField(this);
-        });
-    });
+    }
 
     function validateField(field) {
         const errorMsg = field.parentElement.querySelector('.error-message');
@@ -155,9 +126,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     submitBtn.style.background = 'var(--success)';
                     this.reset();
                     
-                    // Log to analytics
-                    logFormSubmission('contact');
-                    
                     setTimeout(() => {
                         submitBtn.innerHTML = originalText;
                         submitBtn.style.background = '';
@@ -180,12 +148,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Session tracking (simplified)
-    const sessionId = generateSessionId();
-    
-    // Track page views
-    logPageView();
-
     // Intersection Observer for animations
     const observerOptions = {
         threshold: 0.1,
@@ -204,41 +166,6 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 });
-
-// Generate unique session ID
-function generateSessionId() {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-        const r = Math.random() * 16 | 0;
-        const v = c === 'x' ? r : (r & 0x3 | 0x8);
-        return v.toString(16);
-    });
-}
-
-// Log page view
-function logPageView() {
-    const data = {
-        page: window.location.pathname,
-        title: document.title,
-        timestamp: new Date().toISOString()
-    };
-    
-    let pageViews = JSON.parse(localStorage.getItem('evansmathibe_pageviews') || '[]');
-    pageViews.push(data);
-    if (pageViews.length > 100) pageViews = pageViews.slice(-100);
-    localStorage.setItem('evansmathibe_pageviews', JSON.stringify(pageViews));
-}
-
-// Log form submission
-function logFormSubmission(type) {
-    const data = {
-        type: type,
-        timestamp: new Date().toISOString()
-    };
-    
-    let submissions = JSON.parse(localStorage.getItem('evansmathibe_submissions') || '[]');
-    submissions.push(data);
-    localStorage.setItem('evansmathibe_submissions', JSON.stringify(submissions));
-}
 
 // Add animation class
 const animationStyle = document.createElement('style');
