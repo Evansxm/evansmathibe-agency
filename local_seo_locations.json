@@ -1,0 +1,58 @@
+{
+  "National_Capitals": [
+    "Pretoria (Tshwane) - Administrative Capital",
+    "Cape Town (Western Cape) - Legislative Capital",
+    "Bloemfontein (Free State) - Judicial Capital"
+  ],
+  "Provincial_Hubs": [
+    "Johannesburg (Gauteng)",
+    "Durban (KZN)",
+    "Polokwane (Limpopo)",
+    "Rustenburg (North West)",
+    "Mahikeng (North West)",
+    "Kimberley (Northern Cape)",
+    "Gqeberha (Port Elizabeth - Eastern Cape)",
+    "Mbombela (Nelspruit - Mpumalanga)",
+    "Bloemfontein (Free State)"
+  ],
+  "Major_Business_Districts_CBDs": [
+    "Sandton CBD (Richest Square Mile in Africa)",
+    "Rosebank Business District",
+    "Cape Town City Bowl (CBD)",
+    "Umhlanga Ridge (Durban)",
+    "Century City (Cape Town)",
+    "Menlyn Maine (Pretoria)",
+    "Waterfall City (Midrand)",
+    "Melrose Arch (Johannesburg)",
+    "Illovo Boulevard",
+    "Bryanston Business Hub",
+    "Stellenbosch Technopark",
+    "V&A Waterfront Business District"
+  ],
+  "Strategic_Agency_Hubs": [
+    "Bryanston (Advertising Agency Hub)",
+    "Parkhurst (Creative District)",
+    "Woodstock (Cape Town Creative Hub)",
+    "Maboneng Precinct (Johannesburg)",
+    "Braamfontein (Digital & Youth Culture)",
+    "De Waterkant (Cape Town Ad Agencies)",
+    "Florida Road (Durban Creative Zone)"
+  ],
+  "Major_Shopping_Centers_Proximity": [
+    "Sandton City & Nelson Mandela Square",
+    "Mall of Africa (Midrand)",
+    "Gateway Theatre of Shopping (Umhlanga)",
+    "V&A Waterfront (Cape Town)",
+    "Menlyn Park Shopping Centre (Pretoria)",
+    "Canal Walk (Century City)",
+    "Fourways Mall",
+    "The Pavilion (Westville)",
+    "Eastgate Shopping Centre",
+    "Cresta Shopping Centre",
+    "Brooklyn Mall (Pretoria)",
+    "Tyger Valley Shopping Centre (Bellville)",
+    "Baywest Mall (Gqeberha)",
+    "Mimosa Mall (Bloemfontein)",
+    "Mall of the North (Polokwane)"
+  ]
+}

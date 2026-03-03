@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Navbar scroll effect
     const navbar = document.getElementById('navbar');
+    const backToTop = document.getElementById('backToTop');
     
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
@@ -10,11 +11,20 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             navbar.classList.remove('scrolled');
         }
+
+        // Back to top visibility
+        if (window.scrollY > 300) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
     });
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
+            if (this.getAttribute('href') === '#') return;
+            
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
@@ -27,28 +37,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Initialize Image Slider
-    $('.image-slider').slick({
-        dots: true,
-        infinite: true,
-        speed: 800,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        fade: true,
-        cssEase: 'cubic-bezier(0.4, 0, 0.2, 1)',
-        arrows: false,
-        dotsClass: 'slick-dots custom-dots',
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
+    if ($('.image-slider').length) {
+        $('.image-slider').slick({
+            dots: true,
+            infinite: true,
+            speed: 800,
+            slidesToShow: 1,
+            slidesToScroll: 1, adaptiveHeight: true,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            fade: true,
+            cssEase: 'cubic-bezier(0.4, 0, 0.2, 1)',
+            arrows: false,
+            dotsClass: 'slick-dots custom-dots',
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1, adaptiveHeight: true
+                    }
                 }
-            }
-        ]
-    });
+            ]
+        });
+    }
 
     // Custom slick dots styling
     const style = document.createElement('style');
@@ -74,12 +86,53 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 
-    // Form submission with AJAX
+    // Form Real-time Validation
     const contactForm = document.getElementById('contactForm');
+    const inputs = contactForm.querySelectorAll('.form-control[required]');
+
+    inputs.forEach(input => {
+        input.addEventListener('input', function() {
+            validateField(this);
+        });
+        
+        input.addEventListener('blur', function() {
+            validateField(this);
+        });
+    });
+
+    function validateField(field) {
+        const errorMsg = field.parentElement.querySelector('.error-message');
+        let isValid = true;
+
+        if (field.type === 'email') {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            isValid = emailRegex.test(field.value);
+        } else {
+            isValid = field.value.trim() !== '';
+        }
+
+        if (isValid) {
+            field.classList.remove('invalid');
+            if (errorMsg) errorMsg.style.display = 'none';
+        } else {
+            field.classList.add('invalid');
+            if (errorMsg) errorMsg.style.display = 'block';
+        }
+        return isValid;
+    }
     
+    // Form submission with AJAX
     if (contactForm) {
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
+            
+            // Final validation check
+            let formIsValid = true;
+            inputs.forEach(input => {
+                if (!validateField(input)) formIsValid = false;
+            });
+
+            if (!formIsValid) return;
             
             const submitBtn = this.querySelector('.submit-btn');
             const originalText = submitBtn.innerHTML;
@@ -98,8 +151,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 
                 if (response.ok) {
-                    submitBtn.innerHTML = '<i class="fas fa-check me-2"></i>Sent Successfully!';
-                    submitBtn.style.background = 'linear-gradient(135deg, #28a745, #20c997)';
+                    submitBtn.innerHTML = '<i class="fas fa-check me-2"></i>Message Sent!';
+                    submitBtn.style.background = 'var(--success)';
                     this.reset();
                     
                     // Log to analytics
@@ -109,14 +162,14 @@ document.addEventListener('DOMContentLoaded', function() {
                         submitBtn.innerHTML = originalText;
                         submitBtn.style.background = '';
                         submitBtn.disabled = false;
-                    }, 3000);
+                    }, 5000);
                 } else {
                     throw new Error('Form submission failed');
                 }
             } catch (error) {
                 console.error('Error:', error);
                 submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle me-2"></i>Error - Try Again';
-                submitBtn.style.background = 'linear-gradient(135deg, #dc3545, #c82333)';
+                submitBtn.style.background = '#dc3545';
                 
                 setTimeout(() => {
                     submitBtn.innerHTML = originalText;
@@ -127,15 +180,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Session tracking
+    // Session tracking (simplified)
     const sessionId = generateSessionId();
-    const sessionStart = Date.now();
     
-    window.addEventListener('beforeunload', function() {
-        const sessionDuration = Math.floor((Date.now() - sessionStart) / 1000);
-        logSession(sessionId, sessionDuration);
-    });
-
     // Track page views
     logPageView();
 
@@ -172,96 +219,25 @@ function logPageView() {
     const data = {
         page: window.location.pathname,
         title: document.title,
-        timestamp: new Date().toISOString(),
-        referrer: document.referrer,
-        screenSize: `${window.screen.width}x${window.screen.height}`,
-        userAgent: navigator.userAgent
+        timestamp: new Date().toISOString()
     };
     
-    // Store in localStorage for daily email summary
     let pageViews = JSON.parse(localStorage.getItem('evansmathibe_pageviews') || '[]');
     pageViews.push(data);
-    
-    // Keep only last 100 entries
-    if (pageViews.length > 100) {
-        pageViews = pageViews.slice(-100);
-    }
-    
+    if (pageViews.length > 100) pageViews = pageViews.slice(-100);
     localStorage.setItem('evansmathibe_pageviews', JSON.stringify(pageViews));
-    
-    console.log('Page view logged:', data);
 }
 
 // Log form submission
 function logFormSubmission(type) {
     const data = {
         type: type,
-        timestamp: new Date().toISOString(),
-        page: window.location.pathname
+        timestamp: new Date().toISOString()
     };
     
     let submissions = JSON.parse(localStorage.getItem('evansmathibe_submissions') || '[]');
     submissions.push(data);
     localStorage.setItem('evansmathibe_submissions', JSON.stringify(submissions));
-    
-    console.log('Form submission logged:', data);
-}
-
-// Log session on exit
-function logSession(sessionId, duration) {
-    const data = {
-        sessionId: sessionId,
-        duration: duration,
-        page: window.location.pathname,
-        timestamp: new Date().toISOString()
-    };
-    
-    let sessions = JSON.parse(localStorage.getItem('evansmathibe_sessions') || '[]');
-    sessions.push(data);
-    localStorage.setItem('evansmathibe_sessions', JSON.stringify(sessions));
-    
-    // Check if we should send daily email
-    checkDailyEmail();
-}
-
-// Check if daily email should be sent
-function checkDailyEmail() {
-    const lastEmail = localStorage.getItem('evansmathibe_last_email');
-    const now = new Date();
-    
-    // Send email once per day (at 6 PM)
-    if (now.getHours() >= 18 && (!lastEmail || new Date(lastEmail).getDate() !== now.getDate())) {
-        sendDailySummary();
-    }
-}
-
-// Send daily summary via EmailJS (placeholder - configure with your EmailJS credentials)
-function sendDailySummary() {
-    const pageViews = JSON.parse(localStorage.getItem('evansmathibe_pageviews') || '[]');
-    const submissions = JSON.parse(localStorage.getItem('evansmathibe_submissions') || '[]');
-    const sessions = JSON.parse(localStorage.getItem('evansmathibe_sessions') || '[]');
-    
-    const summary = {
-        date: new Date().toISOString().split('T')[0],
-        pageViews: pageViews.length,
-        formSubmissions: submissions.length,
-        totalSessions: sessions.length,
-        avgSessionDuration: sessions.length > 0 
-            ? Math.round(sessions.reduce((a, b) => a + b.duration, 0) / sessions.length) 
-            : 0,
-        pages: [...new Set(pageViews.map(p => p.page))].length
-    };
-    
-    console.log('Daily Summary:', summary);
-    
-    // Store for EmailJS integration
-    localStorage.setItem('evansmathibe_daily_summary', JSON.stringify(summary));
-    localStorage.setItem('evansmathibe_last_email', new Date().toISOString());
-    
-    // Clear daily data after sending
-    localStorage.removeItem('evansmathibe_pageviews');
-    localStorage.removeItem('evansmathibe_submissions');
-    localStorage.removeItem('evansmathibe_sessions');
 }
 
 // Add animation class
@@ -280,8 +256,8 @@ animationStyle.textContent = `
     .service-card:nth-child(2), .blog-card:nth-child(2), .stat-item:nth-child(2) { animation-delay: 0.2s; }
     .service-card:nth-child(3), .blog-card:nth-child(3), .stat-item:nth-child(3) { animation-delay: 0.3s; }
     .service-card:nth-child(4), .blog-card:nth-child(4), .stat-item:nth-child(4) { animation-delay: 0.4s; }
-    .service-card:nth-child(5), .blog-card:nth-child(5) { animation-delay: 0.5s; }
-    .service-card:nth-child(6), .blog-card:nth-child(6) { animation-delay: 0.6s; }
+    .service-card:nth-child(5) { animation-delay: 0.5s; }
+    .service-card:nth-child(6) { animation-delay: 0.6s; }
     .service-card:nth-child(7) { animation-delay: 0.7s; }
     .service-card:nth-child(8) { animation-delay: 0.8s; }
     

@@ -1,22 +1,24 @@
 <!DOCTYPE html>
+<!-- EvansMathibe Agency - Creative Agency Landing Page -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EvansMathibe Agency | Creative Agency Powering Global Brands from South Africa</title>
-    <meta name="description" content="EvansMathibe Agency - Premier creative agency in South Africa offering Advertising, Campaigns, Design, AI Automation, Brand Management, Events, Project Design & Sales. Serving clients globally from Tshwane, Joburg, Durban, Cape Town.">
-    <meta name="keywords" content="EvansMathibe agency South Africa, creative agency, advertising, AI automation, brand design, project management, events, sales distribution, Johannesburg, Cape Town, Durban, Pretoria, Tshwane">
+    <title>Evans Mathibe - Creative Agency South Africa</title>
+    <meta name="description" content="Evans Mathibe is a premier creative agency in South Africa. We specialize in AI Brand Automation, Advertising, Campaigns, and Project Design. Founded by Evans Mathibe, we power global brands from Johannesburg, Cape Town, and Durban.">
+    <meta name="keywords" content="Evans Mathibe, Creative Agency South Africa, AI Automation, Brand Design, Project Management, Advertising Johannesburg, Evans Mathibe South Africa, Brand Management Cape Town">
     <meta name="author" content="Evans Mathibe">
     <meta name="robots" content="index, follow">
     <meta name="geo.region" content="ZA">
     <meta name="geo.placename" content="South Africa">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="EvansMathibe Agency | Creative Agency Powering Global Brands">
-    <meta property="og:description" content="Based in South Africa, serving clients worldwide. Advertising, Design, AI Automation, Brand Management & more.">
+    <meta property="og:title" content="Evans Mathibe | Creative Agency Powering Global Brands">
+    <meta property="og:description" content="Based in South Africa, serving clients worldwide. Evans Mathibe specializes in Advertising, Design, and AI Automation.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_ZA">
     <meta property="og:url" content="https://evansmathibe.github.io/evansmathibe-agency/">
+    <meta property="og:site_name" content="Evans Mathibe">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
@@ -48,6 +50,7 @@
             --gray: #808080;
             --white: #FFFFFF;
             --off-white: #F8F8F8;
+            --success: #28a745;
         }
 
         * {
@@ -239,11 +242,12 @@
         .btn-primary {
             background: linear-gradient(135deg, var(--accent-pink), var(--accent-hot-pink));
             color: var(--burgundy);
+            box-shadow: 0 8px 25px rgba(255, 182, 180, 0.3);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255, 182, 180, 0.4);
+            box-shadow: 0 15px 40px rgba(255, 182, 180, 0.5);
         }
 
         .btn-outline {
@@ -269,12 +273,14 @@
             overflow: hidden;
             box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
             border: 3px solid rgba(255, 182, 180, 0.3);
+            background: var(--primary-dark);
         }
 
         .slider-container img {
             width: 100%;
-            height: 350px;
+            height: 450px;
             object-fit: contain;
+            object-position: center;
             background: var(--primary-dark);
         }
 
@@ -369,6 +375,10 @@
             border: 1px solid rgba(128, 128, 128, 0.1);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center; cursor: pointer; text-decoration: none; color: inherit;
         }
 
         .service-card::before {
@@ -393,16 +403,23 @@
         }
 
         .service-icon {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             background: linear-gradient(135deg, rgba(255, 182, 180, 0.2), rgba(255, 105, 180, 0.1));
-            border-radius: 20px;
+            border-radius: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1.5rem;
-            font-size: 1.75rem;
+            font-size: 2rem;
             color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            background: linear-gradient(135deg, var(--accent-pink), var(--accent-hot-pink));
+            color: var(--burgundy);
+            transform: rotate(10deg);
         }
 
         .service-card h3 {
@@ -414,88 +431,6 @@
         .service-card p {
             color: var(--gray);
             font-size: 0.95rem;
-        }
-
-        /* Objective Section */
-        .objective {
-            padding: 6rem 0;
-            background: var(--white);
-        }
-
-        .objective-slider {
-            max-width: 900px;
-            margin: 0 auto;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 50px rgba(91, 10, 10, 0.15);
-        }
-
-        .objective-container {
-            display: flex;
-            animation: slide 25s linear infinite;
-        }
-
-        .objective-container img {
-            width: 900px;
-            height: 500px;
-            object-fit: contain;
-            background: var(--primary-dark);
-        }
-
-        @keyframes slide {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
-        }
-
-        /* Floating Buttons */
-        .floating-buttons {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            z-index: 1000;
-        }
-
-        .whatsapp-float {
-            width: 55px;
-            height: 55px;
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 28px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
-        }
-
-        .tiktok-float {
-            width: 55px;
-            height: 55px;
-            background: linear-gradient(135deg, var(--burgundy), var(--primary));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            box-shadow: 0 4px 15px rgba(91, 10, 10, 0.4);
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .tiktok-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(91, 10, 10, 0.6);
         }
 
         /* Blog Section */
@@ -517,6 +452,8 @@
             transition: all 0.4s ease;
             background: var(--off-white);
             border: 1px solid rgba(128, 128, 128, 0.1);
+            display: flex;
+            flex-direction: column; position: relative; cursor: pointer;
         }
 
         .blog-card:hover {
@@ -524,15 +461,45 @@
             box-shadow: 0 20px 60px rgba(91, 10, 10, 0.12);
         }
 
+        .blog-image-container {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+        }
+
         .blog-image {
             width: 100%;
-            height: 200px;
+            height: 100%;
             object-fit: cover;
+            object-position: center;
+            transition: transform 0.5s ease;
             background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+        }
+
+        .blog-card:hover .blog-image {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero-slider { padding: 0 1rem; margin-top: 2rem; }
+            .slider-container img { height: 280px !important; }
+            .blog-image-container {
+                height: 200px;
+            }
         }
 
         .blog-content {
             padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
         }
 
         .blog-tag {
@@ -540,12 +507,18 @@
             padding: 0.25rem 0.75rem;
             background: rgba(255, 182, 180, 0.2);
             color: var(--primary);
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             border-radius: 20px;
-            margin-bottom: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .blog-tag:hover {
+            background: var(--accent-pink);
+            color: var(--burgundy);
         }
 
         .blog-card h3 {
@@ -561,6 +534,15 @@
             margin-bottom: 1rem;
         }
 
+        .blog-footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(128, 128, 128, 0.1);
+        }
+
         .blog-meta {
             font-size: 0.8rem;
             color: var(--gray);
@@ -574,10 +556,12 @@
             align-items: center;
             gap: 0.5rem;
             transition: gap 0.3s ease;
+            font-size: 0.9rem;
         }
 
         .blog-link:hover {
             gap: 0.75rem;
+            color: var(--accent-hot-pink);
         }
 
         /* Contact Section */
@@ -646,6 +630,17 @@
             outline: none;
             border-color: var(--accent-pink);
             box-shadow: 0 0 0 4px rgba(255, 182, 180, 0.2);
+        }
+
+        .form-control.invalid {
+            border-color: #dc3545;
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 0.8rem;
+            margin-top: 0.25rem;
+            display: none;
         }
 
         select.form-control {
@@ -734,6 +729,87 @@
             margin-bottom: 1rem;
         }
 
+        /* Floating WhatsApp & Back to Top Buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .whatsapp-float {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        .back-to-top {
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border: 2px solid var(--accent-pink);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--accent-pink);
+            color: var(--burgundy);
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .hero-slider { padding: 0 1rem; margin-top: 2rem; }
+            .slider-container img { height: 280px !important; }
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                font-size: 26px;
+            }
+            .back-to-top {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+        }
+
         /* Footer */
         footer {
             background: var(--burgundy);
@@ -805,6 +881,8 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .hero-slider { padding: 0 1rem; margin-top: 2rem; }
+            .slider-container img { height: 280px !important; }
             .hero h1 {
                 font-size: 2.25rem;
             }
@@ -841,8 +919,8 @@
     <nav class="navbar navbar-expand-lg" id="navbar">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="logo.png" alt="EvansMathibe Logo" style="height: 45px; margin-right: 10px;">
-                <span class="logo-text">EvansMathibe</span>
+                <img src="logo.png" alt="Evans Mathibe Logo" style="height: 50px; margin-right: 10px;">
+                <span class="logo-text">Evans Mathibe</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border-color: var(--accent-pink);">
                 <i class="fas fa-bars" style="color: var(--accent-pink);"></i>
@@ -863,10 +941,10 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-badge">
-                    <i class="fas fa-rocket me-2"></i>Creative Agency Powering Global Brands
+                    <i class="fas fa-rocket me-2"></i>Evans Mathibe: Creative Agency
                 </div>
-                <h1>EvansMathibe Agency</h1>
-                <p class="hero-tagline">Creative Agency Powering Global Brands from South Africa</p>
+                <h1>Evans Mathibe</h1>
+                <p class="hero-tagline">Creative Powerhouse Founded by Evans Mathibe in South Africa</p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">
                         <i class="fas fa-paper-plane"></i>Get Started
@@ -880,22 +958,31 @@
                 <div class="hero-slider">
                     <div class="slider-container">
                         <div class="image-slider">
-                            <div><img src="images/evansmathibe-01-copyright.png" alt="Creative Work 1"></div>
-                            <div><img src="images/evansmathibe-02-copyright.png" alt="Creative Work 2"></div>
-                            <div><img src="images/evansmathibe-03-copyright.png" alt="Creative Work 3"></div>
-                            <div><img src="images/evansmathibe-04-copyright.jpeg" alt="Creative Work 4"></div>
-                            <div><img src="images/evansmathibe-05-copyright.jpeg" alt="Creative Work 5"></div>
-                            <div><img src="images/evansmathibe-06-copyright.png" alt="Creative Work 6"></div>
-                            <div><img src="images/evansmathibe-07-copyright.png" alt="Creative Work 7"></div>
-                            <div><img src="images/evansmathibe-08-copyright.png" alt="Creative Work 8"></div>
-                            <div><img src="images/evansmathibe-09-copyright.png" alt="Creative Work 9"></div>
-                            <div><img src="images/evansmathibe-10-copyright.png" alt="Creative Work 10"></div>
-                            <div><img src="images/evansmathibe-11-copyright.png" alt="Creative Work 11"></div>
-                            <div><img src="images/evansmathibe-12-copyright.png" alt="Creative Work 12"></div>
-                            <div><img src="images/evansmathibe-13-copyright.png" alt="Creative Work 13"></div>
-                            <div><img src="images/evansmathibe-14-copyright.png" alt="Creative Work 14"></div>
-                            <div><img src="images/evansmathibe-15-copyright.png" alt="Creative Work 15"></div>
-                            <div><img src="images/evansmathibe-16-copyright.png" alt="Creative Work 16"></div>
+                            <div><img src="images/Generated_image_1_-17.png" alt="Creative Work 1" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-19.png" alt="Creative Work 2" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-30.png" alt="Creative Work 3" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-34.png" alt="Creative Work 4" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-39.png" alt="Creative Work 5" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-41.png" alt="Creative Work 6" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-46.png" alt="Creative Work 7" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-52.png" alt="Creative Work 8" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-55.png" alt="Creative Work 9" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-57.png" alt="Creative Work 10" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-58.png" alt="Creative Work 11" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-70.png" alt="Creative Work 12" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-81.png" alt="Creative Work 13" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-83.png" alt="Creative Work 14" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-95.png" alt="Creative Work 15" loading="lazy"></div>
+                            <div><img src="images/img-2025-11-17T184214.269.png" alt="Creative Work 16" loading="lazy"></div>
+                            <div><img src="images/evansmathibe-07-copyright.png" alt="Creative Work 17" loading="lazy"></div>
+                            <div><img src="images/evansmathibe-08-copyright.png" alt="Creative Work 18" loading="lazy"></div>
+                            <div><img src="images/evansmathibe-09-copyright.png" alt="Creative Work 19" loading="lazy"></div>
+                            <div><img src="images/evansmathibe-10-copyright.png" alt="Creative Work 20" loading="lazy"></div>
+                            <div><img src="images/evansmathibe-11-copyright.png" alt="Creative Work 21" loading="lazy"></div>
+                            <div><img src="images/evansmathibe-12-copyright.png" alt="Creative Work 22" loading="lazy"></div>
+                            <div><img src="images/Google_AI_Studio_2025-10-04T15_15_54.000Z.png" alt="Creative Work 23" loading="lazy"></div>
+                            <div><img src="images/Google_AI_Studio_2025-10-17T06_03_49.044Z.png" alt="Creative Work 24" loading="lazy"></div>
+                            <div><img src="images/Google_AI_Studio_2025-10-18T13_16_58.172Z.png" alt="Creative Work 25" loading="lazy"></div>
                         </div>
                     </div>
                 </div>
@@ -911,37 +998,23 @@
                 <p>Based in South Africa (Tshwane, Joburg, Durban, Cape Town) but serving clients worldwide. We are a premier creative agency specializing in advertising, campaigns, design, AI automation, brand management, events, project design, and sales & distribution.</p>
                 <p>Our team combines local insight with global expertise to deliver innovative solutions that resonate with audiences across cultures and markets.</p>
                 
-            </div>
-        </div>
-    </section>
-
-    <!-- Objective Section -->
-    <section class="objective" id="objective">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-title">Our Objective</h2>
-                <p style="max-width: 700px; margin: 1rem auto 2rem; color: var(--gray);">To empower brands with innovative creative solutions that resonate across cultures and markets globally.</p>
-            </div>
-            
-            <div class="objective-slider">
-                <div class="objective-container">
-                    <img src="images/evansmathibe-01-copyright.png" alt="Creative Work 1">
-                    <img src="images/evansmathibe-02-copyright.png" alt="Creative Work 2">
-                    <img src="images/evansmathibe-03-copyright.png" alt="Creative Work 3">
-                    <img src="images/evansmathibe-04-copyright.jpeg" alt="Creative Work 4">
-                    <img src="images/evansmathibe-05-copyright.jpeg" alt="Creative Work 5">
-                    <img src="images/evansmathibe-06-copyright.png" alt="Creative Work 6">
-                    <img src="images/evansmathibe-07-copyright.png" alt="Creative Work 7">
-                    <img src="images/evansmathibe-08-copyright.png" alt="Creative Work 8">
-                    <img src="images/evansmathibe-09-copyright.png" alt="Creative Work 9">
-                    <img src="images/evansmathibe-10-copyright.png" alt="Creative Work 10">
-                    <img src="images/evansmathibe-11-copyright.png" alt="Creative Work 11">
-                    <img src="images/evansmathibe-12-copyright.png" alt="Creative Work 12">
-                    <img src="images/evansmathibe-13-copyright.png" alt="Creative Work 13">
-                    <img src="images/evansmathibe-14-copyright.png" alt="Creative Work 14">
-                    <img src="images/evansmathibe-15-copyright.png" alt="Creative Work 15">
-                    <img src="images/evansmathibe-16-copyright.png" alt="Creative Work 16">
-                    <img src="images/evansmathibe-17-copyright.png" alt="Creative Work 17">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">8+</div>
+                        <div class="stat-label">Services</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">SA Cities</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Articles</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">Global</div>
+                        <div class="stat-label">Reach</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -956,7 +1029,7 @@
             </div>
             
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card" onclick="window.location.hash='#contact'">
                     <div class="service-icon">
                         <i class="fas fa-bullhorn"></i>
                     </div>
@@ -964,7 +1037,7 @@
                     <p>Strategic advertising campaigns that capture attention and drive conversions. From concept to execution across all media channels.</p>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card" onclick="window.location.hash='#contact'">
                     <div class="service-icon">
                         <i class="fas fa-flag"></i>
                     </div>
@@ -972,7 +1045,7 @@
                     <p>End-to-end campaign management from strategy development to execution and performance tracking.</p>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card" onclick="window.location.hash='#contact'">
                     <div class="service-icon">
                         <i class="fas fa-project-diagram"></i>
                     </div>
@@ -980,7 +1053,7 @@
                     <p>Professional project design and management ensuring your initiatives are delivered on time and within budget.</p>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card" onclick="window.location.hash='#contact'">
                     <div class="service-icon">
                         <i class="fas fa-calendar-alt"></i>
                     </div>
@@ -988,7 +1061,7 @@
                     <p>Creating memorable events from corporate functions to product launches and experiential marketing.</p>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card" onclick="window.location.hash='#contact'">
                     <div class="service-icon">
                         <i class="fas fa-palette"></i>
                     </div>
@@ -996,7 +1069,7 @@
                     <p>Professional design services including graphic design, branding, print, and digital design solutions.</p>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card" onclick="window.location.hash='#contact'">
                     <div class="service-icon">
                         <i class="fas fa-robot"></i>
                     </div>
@@ -1004,7 +1077,7 @@
                     <p>Cutting-edge AI solutions to automate processes, enhance creativity, and streamline business operations.</p>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card" onclick="window.location.hash='#contact'">
                     <div class="service-icon">
                         <i class="fas fa-crown"></i>
                     </div>
@@ -1012,7 +1085,7 @@
                     <p>Building and managing powerful brand identities that resonate with your target audience.</p>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card" onclick="window.location.hash='#contact'">
                     <div class="service-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
@@ -1033,74 +1106,83 @@
             
             <div class="blog-grid">
                 <article class="blog-card">
-                    <img src="images/evansmathibe-01-copyright.png" alt="AI in Advertising" class="blog-image">
+                    <div class="blog-image-container">
+                        <img src="images/Generated_image_1_-17.png" alt="AI in Advertising" class="blog-image" loading="lazy">
+                    </div>
                     <div class="blog-content">
-                        <span class="blog-tag">#Advertising #AI #SouthAfrica</span>
+                        <div class="blog-tags">
+                            <span class="blog-tag">#Advertising</span>
+                            <span class="blog-tag">#AI</span>
+                            <span class="blog-tag">#SouthAfrica</span>
+                        </div>
                         <h3>How AI is Affecting the Entire Industry in South Africa and the World</h3>
                         <p>Exploring the transformative impact of artificial intelligence on advertising and marketing...</p>
-                        <div class="blog-meta">By Evans Mathibe</div>
-                        <a href="blog/article1/page1.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        <div class="blog-footer">
+                            <div class="blog-meta">By Evans Mathibe</div>
+                            <a href="blog/article1.html" class="blog-link stretched-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
                 </article>
                 
                 <article class="blog-card">
-                    <img src="images/evansmathibe-02-copyright.png" alt="Advertising Trends" class="blog-image">
+                    <div class="blog-image-container">
+                        <img src="images/Generated_image_1_-19.png" alt="Advertising Trends" class="blog-image" loading="lazy">
+                    </div>
                     <div class="blog-content">
-                        <span class="blog-tag">#Advertising #Trends</span>
+                        <div class="blog-tags">
+                            <span class="blog-tag">#Advertising</span>
+                            <span class="blog-tag">#Trends</span>
+                        </div>
                         <h3>Advertising Currently: Trends and Challenges</h3>
                         <p>An in-depth look at the current state of advertising and the challenges facing agencies...</p>
-                        <div class="blog-meta">By Evans Mathibe</div>
-                        <a href="blog/article2/page1.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        <div class="blog-footer">
+                            <div class="blog-meta">By Evans Mathibe</div>
+                            <a href="blog/article2.html" class="blog-link stretched-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
                 </article>
                 
                 <article class="blog-card">
-                    <img src="images/evansmathibe-03-copyright.png" alt="Education in Advertising" class="blog-image">
+                    <div class="blog-image-container">
+                        <img src="images/Generated_image_1_-30.png" alt="Education in Advertising" class="blog-image" loading="lazy">
+                    </div>
                     <div class="blog-content">
-                        <span class="blog-tag">#Advertising #Education</span>
+                        <div class="blog-tags">
+                            <span class="blog-tag">#Advertising</span>
+                            <span class="blog-tag">#Education</span>
+                        </div>
                         <h3>Is It Still Worth Going to School for Advertising?</h3>
                         <p>Examining the value of formal education in the rapidly evolving advertising landscape...</p>
-                        <div class="blog-meta">By Evans Mathibe</div>
-                        <a href="blog/article3/page1.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        <div class="blog-footer">
+                            <div class="blog-meta">By Evans Mathibe</div>
+                            <a href="blog/article3.html" class="blog-link stretched-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
                 </article>
                 
                 <article class="blog-card">
-                    <img src="images/evansmathibe-04-copyright.jpeg" alt="Creativity in Advertising" class="blog-image">
+                    <div class="blog-image-container">
+                        <img src="images/Generated_image_1_-34.png" alt="Creativity in Advertising" class="blog-image" loading="lazy">
+                    </div>
                     <div class="blog-content">
-                        <span class="blog-tag">#Advertising #Creativity</span>
+                        <div class="blog-tags">
+                            <span class="blog-tag">#Advertising</span>
+                            <span class="blog-tag">#Creativity</span>
+                        </div>
                         <h3>Creativity in Advertising Context</h3>
                         <p>Understanding the role of creativity in effective advertising campaigns...</p>
-                        <div class="blog-meta">By Evans Mathibe</div>
-                        <a href="blog/article4/page1.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-                
-                <article class="blog-card">
-                    <img src="images/evansmathibe-05-copyright.jpeg" alt="Fashion Photography" class="blog-image">
-                    <div class="blog-content">
-                        <span class="blog-tag">#Fashion #Design</span>
-                        <h3>High-End Fashion Photography</h3>
-                        <p>The art and business of high-end fashion photography in South Africa...</p>
-                        <div class="blog-meta">By Evans Mathibe</div>
-                        <a href="blog/article5/page1.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-                
-                <article class="blog-card">
-                    <img src="images/evansmathibe-06-copyright.png" alt="Design Language" class="blog-image">
-                    <div class="blog-content">
-                        <span class="blog-tag">#Design #SouthAfrica</span>
-                        <h3>What is Design Language in South Africa</h3>
-                        <p>Exploring the unique design language emerging from South African culture...</p>
-                        <div class="blog-meta">By Evans Mathibe</div>
-                        <a href="blog/article6/page1.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        <div class="blog-footer">
+                            <div class="blog-meta">By Evans Mathibe</div>
+                            <a href="blog/article4.html" class="blog-link stretched-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
                 </article>
             </div>
             
-            <div class="text-center mt-4">
-                <a href="blog/" class="btn btn-primary">View All Articles</a>
+            <div class="text-center mt-5">
+                <a href="blog/" class="btn btn-primary">
+                    <i class="fas fa-th-large me-2"></i>View All Articles
+                </a>
             </div>
         </div>
     </section>
@@ -1133,16 +1215,19 @@
                 <div class="form-group">
                     <label class="form-label" for="name">Your Name</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                    <div class="error-message">Please enter your name</div>
                 </div>
                 
                 <div class="form-group">
                     <label class="form-label" for="email">Email Address</label>
                     <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                    <div class="error-message">Please enter a valid email address</div>
                 </div>
                 
                 <div class="form-group">
                     <label class="form-label" for="message">Message</label>
                     <textarea class="form-control" id="message" name="message" placeholder="Tell us about your project..." required></textarea>
+                    <div class="error-message">Please enter your message</div>
                 </div>
                 
                 <button type="submit" class="submit-btn">
@@ -1151,7 +1236,7 @@
             </form>
             
             <div class="contact-info">
-                <p><i class="fas fa-phone me-2"></i><a href="tel:+274165061">+27 416 5061</a></p>
+                <p><i class="fas fa-phone me-2"></i><a href="tel:+27724165061">+27 72 416 5061</a></p>
                 <p><i class="fas fa-envelope me-2"></i><a href="mailto:evans.mathibe@mail.com">evans.mathibe@mail.com</a></p>
                 
                 <div class="social-links">
@@ -1161,7 +1246,7 @@
                     <a href="mailto:evans.mathibe@mail.com" class="social-link" aria-label="Email">
                         <i class="fas fa-envelope"></i>
                     </a>
-                    <a href="tel:+274165061" class="social-link" aria-label="Phone">
+                    <a href="tel:+27724165061" class="social-link" aria-label="Phone">
                         <i class="fas fa-phone"></i>
                     </a>
                 </div>
@@ -1176,11 +1261,11 @@
 
     <!-- Floating Buttons -->
     <div class="floating-buttons">
-        <a href="https://wa.me/27724165061" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
-            <i class="fab fa-whatsapp"></i>
+        <a href="#hero" class="back-to-top" id="backToTop" aria-label="Back to top">
+            <i class="fas fa-arrow-up"></i>
         </a>
-        <a href="https://www.tiktok.com/@evans_mathibe" class="tiktok-float" target="_blank" aria-label="TikTok">
-            <i class="fab fa-tiktok"></i>
+        <a href="https://wa.me/27724165061" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
         </a>
     </div>
 
@@ -1189,7 +1274,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="logo.png" alt="EvansMathibe Logo" style="height: 35px; margin-right: 10px;">
+                    <img src="logo.png" alt="EvansMathibe Logo" style="height: 35px; margin-right: 10px;" loading="lazy">
                     <span>EvansMathibe Agency</span>
                 </div>
                 <ul class="footer-links">
@@ -1200,7 +1285,7 @@
                 </ul>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 EvansMathibe Agency. All rights reserved. Based in South Africa, serving globally.</p>
+                <p>&copy; 2025 EvansMathibe Agency. All rights reserved. Based in South Africa, serving globally.</p>
             </div>
         </div>
     </footer>
@@ -1209,22 +1294,32 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "EvansMathibe Agency",
-        "description": "Premier creative agency in South Africa offering advertising, design, AI automation, brand management, and more.",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "South Africa",
-            "addressRegion": "ZA"
-        },
+        "@type": "AdvertisingAgency",
+        "@id": "https://evansmathibe.github.io/evansmathibe-agency/",
+        "name": "Evans Mathibe",
+        "alternateName": ["EvansMathibe Agency"],
+        "description": "Premier creative agency in South Africa specialized in AI Brand Automation, Advertising, and Design. Founded by Evans Mathibe.",
+        "url": "https://evansmathibe.github.io/evansmathibe-agency/",
+        "logo": "https://evansmathibe.github.io/evansmathibe-agency/logo.png",
         "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": "+27-416-5061",
+            "telephone": "+27-72-416-5061",
             "contactType": "customer service",
-            "email": "evans.mathibe@mail.com"
+            "email": "evans.mathibe@mail.com",
+            "areaServed": "ZA",
+            "availableLanguage": "English"
         },
-        "areaServed": ["Tshwane", "Johannesburg", "Durban", "Cape Town", "South Africa", "Global"],
-        "serviceType": ["Advertising", "Campaigns", "Design", "AI Automation", "Brand Management", "Events", "Project Management", "Sales & Distribution"]
+        "sameAs": [
+            "https://www.tiktok.com/@evans_mathibe",
+            "https://wa.me/27724165061"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Johannesburg",
+            "addressRegion": "Gauteng",
+            "addressCountry": "ZA"
+        },
+        "areaServed": ["Tshwane", "Johannesburg", "Durban", "Cape Town", "South Africa", "Global"]
     }
     </script>
 
@@ -1248,5 +1343,7 @@
     
     <!-- Custom JS -->
     <script src="script.js"></script>
+    <!-- Dynamic Local SEO Schema -->
+    <script src="local_seo_schema.js"></script>
 </body>
 </html>
