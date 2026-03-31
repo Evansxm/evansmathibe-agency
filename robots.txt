@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://evansxm.github.io/evansmathibe-agency/sitemap.xml
