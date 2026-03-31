@@ -1,0 +1,119 @@
+/* 
+  Evans Mathibe Agency - V2 Redesign
+  Senior Creative Director Aesthetic
+*/
+
+:root {
+    --brand-salmon: #E87A7D;
+    --brand-black: #080808;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--brand-black);
+    color: white;
+    cursor: crosshair;
+}
+
+/* Background Slider with Opacity Transitions */
+#slider-container .bg-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 2.5s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    animation: grow 20s infinite alternate linear;
+}
+
+#slider-container .bg-slide.active {
+    opacity: 1;
+}
+
+/* Ken Burns Effect */
+@keyframes grow {
+    from { transform: scale(1); }
+    to { transform: scale(1.15); }
+}
+
+/* Scroll Reveal Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.3s; }
+.reveal-delay-2 { transition-delay: 0.6s; }
+
+/* Sticky Header Glassmorphism */
+header {
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+/* Nav Link Hover */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--brand-salmon);
+    transition: width 0.4s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Action Tray Glow */
+.action-icon {
+    position: relative;
+    box-shadow: 0 0 0 rgba(232, 122, 125, 0);
+}
+
+.action-icon:hover {
+    box-shadow: 0 0 30px rgba(232, 122, 125, 0.6);
+}
+
+/* Deep Black Sections for Contrast */
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--brand-black);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--brand-salmon);
+}
+
+/* Custom Selection */
+::selection {
+    background: var(--brand-salmon);
+    color: var(--brand-black);
+}
