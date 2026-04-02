@@ -2,35 +2,25 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evans Mathibe Agency | Premium Creative & AI Automation Agency South Africa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Evans Mathibe | Premium Creative Agency South Africa</title>
     
     <!-- SEO & Metadata -->
-    <meta name="description" content="Evans Mathibe Agency: A premium creative and AI automation agency in South Africa. Specializing in high-fashion photography, brand design, and global marketing solutions.">
-    <meta name="keywords" content="creative agency South Africa, advertising agency Johannesburg, AI automation agency, high-fashion photography, brand design, marketing agency Cape Town">
-    <meta name="author" content="Evans Mathibe">
+    <meta name="description" content="Evans Mathibe is a premium creative, marketing, and AI automation agency based in South Africa. We deliver cinematic brand experiences and intelligent digital solutions.">
+    <meta name="keywords" content="creative agency South Africa, advertising agency Johannesburg, AI automation agency, marketing agency Tshwane, design agency Cape Town, digital marketing Durban">
     <link rel="canonical" href="https://evansxm.github.io/evansmathibe-agency/">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Evans Mathibe | Premium Creative Agency">
+    <meta property="og:description" content="Cinematic brand experiences and intelligent digital solutions. Serving SA & Global.">
+    <meta property="og:image" content="https://evansxm.github.io/evansmathibe-agency/assets/bg-images/Evans%20mathibe%20Logo.jpeg">
     <meta property="og:url" content="https://evansxm.github.io/evansmathibe-agency/">
-    <meta property="og:title" content="Evans Mathibe Agency | Premium Creative & AI Automation">
-    <meta property="og:description" content="Redefining visual narratives through cinematic creative direction and AI-driven marketing.">
-    <meta property="og:image" content="assets/img/logo.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://evansxm.github.io/evansmathibe-agency/">
-    <meta property="twitter:title" content="Evans Mathibe Agency | Premium Creative & AI Automation">
-    <meta property="twitter:description" content="Redefining visual narratives through cinematic creative direction and AI-driven marketing.">
-    <meta property="twitter:image" content="assets/img/logo.jpg">
-
-    <link rel="icon" type="image/x-icon" href="assets/img/logo.jpg">
-
+    <meta property="og:type" content="website">
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -39,308 +29,548 @@
             theme: {
                 extend: {
                     colors: {
-                        'brand-black': '#080808',
-                        'brand-gold': '#C5A059',
-                        'brand-white': '#F5F5F5',
+                        brand: {
+                            gold: '#C5A059',
+                            black: '#080808',
+                            dark: '#121212',
+                            white: '#F5F5F5',
+                        }
                     },
                     fontFamily: {
-                        'sans': ['Montserrat', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
                     }
                 }
             }
         }
     </script>
     
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Evans Mathibe Agency",
-      "image": "https://evansxm.github.io/evansmathibe-agency/assets/img/logo.jpg",
-      "@id": "https://evansxm.github.io/evansmathibe-agency/",
-      "url": "https://evansxm.github.io/evansmathibe-agency/",
-      "telephone": "+27724165061",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Sandton",
-        "addressLocality": "Johannesburg",
-        "addressRegion": "Gauteng",
-        "postalCode": "2196",
-        "addressCountry": "ZA"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -26.1076,
-        "longitude": 28.0567
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/evansmathibe",
-        "https://www.tiktok.com/@evans_mathibe"
-      ],
-      "description": "Premier creative agency specializing in Creative Direction, AI Automation, and High-Fashion Photography."
-    }
+    <!-- Custom Styles for Premium Polish -->
+    <style>
+        .ken-burns {
+            animation: kenburns 20s infinite alternate;
+        }
+        @keyframes kenburns {
+            from { transform: scale(1); }
+            to { transform: scale(1.15); }
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .text-glow:hover {
+            text-shadow: 0 0 15px rgba(197, 160, 89, 0.5);
+        }
+        #hero-slider div {
+            transition: opacity 2s ease-in-out;
+        }
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #C5A059;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+        }
+        @media (max-width: 768px) { .custom-cursor { display: none; } }
+    </style>
+
+    <!-- GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
     </script>
 
-    <!-- EmailJS (for visitor notification) -->
+    <!-- EmailJS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
-<body class="bg-brand-black text-brand-white font-sans overflow-x-hidden selection:bg-brand-gold selection:text-brand-black">
+<body class="bg-brand-black text-brand-white font-sans selection:bg-brand-gold selection:text-brand-black overflow-x-hidden">
 
-    <!-- Cinematic Background Slider -->
-    <div id="bg-slider" class="fixed inset-0 z-[-1] pointer-events-none">
-        <div id="slider-container" class="relative w-full h-full overflow-hidden">
-            <!-- Background images will be injected via JS -->
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- Navigation -->
+    <nav id="nav" class="fixed w-full z-50 transition-all duration-500 py-6 px-8 md:px-16 flex justify-between items-center">
+        <a href="#" class="flex items-center gap-4 group">
+            <img src="assets/bg-images/Evans mathibe Logo.jpeg" alt="Logo" class="w-12 h-12 rounded-full border border-brand-gold/30 group-hover:border-brand-gold transition-all">
+            <span class="font-serif text-xl font-bold tracking-tight">EVANS MATHIBE</span>
+        </a>
+        
+        <div class="hidden md:flex gap-12 items-center">
+            <a href="#about" class="text-sm font-semibold tracking-widest hover:text-brand-gold transition-colors">ABOUT</a>
+            <a href="#services" class="text-sm font-semibold tracking-widest hover:text-brand-gold transition-colors">SERVICES</a>
+            <a href="#insights" class="text-sm font-semibold tracking-widest hover:text-brand-gold transition-colors">INSIGHTS</a>
+            <a href="#contact" class="px-6 py-3 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-black transition-all text-xs font-bold tracking-[0.2em]">GET IN TOUCH</a>
         </div>
-        <div class="absolute inset-0 bg-brand-black/50 z-10 backdrop-blur-[2px]"></div>
-    </div>
 
-    <!-- Sticky Navigation -->
-    <header class="fixed top-0 w-full z-50 backdrop-blur-md bg-black/10 border-b border-white/5 px-8 py-6 transition-all duration-500" id="main-nav">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="logo-container">
-                <a href="#hero" class="flex items-center space-x-4">
-                    <img src="assets/img/logo.jpg" alt="Evans Mathibe Logo" class="h-12 w-auto object-contain brightness-0 invert shadow-2xl transition-transform hover:scale-110">
-                    <span class="hidden md:block text-xs uppercase tracking-[0.5em] font-black italic">Evans Mathibe Agency</span>
+        <button id="menu-toggle" class="md:hidden flex flex-col gap-2">
+            <span class="w-8 h-0.5 bg-brand-white"></span>
+            <span class="w-8 h-0.5 bg-brand-white"></span>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div id="hero-slider" class="absolute inset-0 z-0">
+            <!-- Slides will be injected by JS -->
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-black/60 via-brand-black/40 to-brand-black/80 z-10"></div>
+        
+        <div class="relative z-20 text-center px-6 max-w-5xl">
+            <p class="text-brand-gold font-bold tracking-[0.5em] text-xs mb-6 reveal">CREATIVE &bull; MARKETING &bull; AI</p>
+            <h1 class="font-serif text-5xl md:text-8xl font-black leading-tight mb-8 reveal">
+                Elevating Brands <br> <span class="italic text-brand-gold">Beyond Horizons</span>
+            </h1>
+            <p class="text-lg md:text-xl text-brand-white/70 max-w-2xl mx-auto mb-12 font-light leading-relaxed reveal">
+                A premium agency architecture for the modern era. We blend cinematic storytelling with intelligent automation to create global impact from the heart of South Africa.
+            </p>
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center reveal">
+                <a href="#contact" class="px-10 py-5 bg-brand-gold text-brand-black font-bold tracking-widest hover:bg-brand-white transition-all transform hover:-translate-y-1">COMMENCE PROJECT</a>
+                <a href="#services" class="group flex items-center gap-3 text-sm font-bold tracking-widest transition-all">
+                    EXPLORE SERVICES 
+                    <span class="w-10 h-0.5 bg-brand-gold group-hover:w-16 transition-all"></span>
                 </a>
             </div>
-            <nav class="hidden md:flex space-x-12 text-[10px] uppercase tracking-[0.4em] font-bold">
-                <a href="#hero" class="hover:text-brand-gold transition-colors">Home</a>
-                <a href="#services" class="hover:text-brand-gold transition-colors">Services</a>
-                <a href="#insights" class="hover:text-brand-gold transition-colors">Insights</a>
-                <a href="#expertise" class="hover:text-brand-gold transition-colors">Expertise</a>
-                <a href="#contact" class="hover:text-brand-gold transition-colors border-b border-brand-gold pb-1">Contact</a>
-            </nav>
-            <div class="md:hidden">
-                <button id="menu-toggle" class="text-brand-gold">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
+        </div>
+
+        <!-- Hero Stats Overlay -->
+        <div class="absolute bottom-12 left-0 w-full z-20 px-16 hidden md:flex justify-between items-end">
+            <div class="flex gap-16">
+                <div>
+                    <span class="block font-serif text-3xl font-bold text-brand-gold">08+</span>
+                    <span class="text-[10px] tracking-[0.3em] text-brand-white/40 uppercase">Global Services</span>
+                </div>
+                <div>
+                    <span class="block font-serif text-3xl font-bold text-brand-gold">04</span>
+                    <span class="text-[10px] tracking-[0.3em] text-brand-white/40 uppercase">SA Hubs</span>
+                </div>
+                <div>
+                    <span class="block font-serif text-3xl font-bold text-brand-gold">25+</span>
+                    <span class="text-[10px] tracking-[0.3em] text-brand-white/40 uppercase">Industry Insights</span>
+                </div>
+            </div>
+            <div class="flex flex-col items-end gap-4">
+                <span class="text-[10px] tracking-[0.5em] text-brand-white/40 rotate-90 origin-right translate-y-[-50px]">SCROLL TO EXPLORE</span>
+                <div class="w-0.5 h-24 bg-gradient-to-b from-brand-gold to-transparent"></div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-brand-black flex flex-col items-center justify-center space-y-8 opacity-0 pointer-events-none transition-opacity duration-500 font-black">
-        <button id="menu-close" class="absolute top-8 right-8 text-brand-gold">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-        </button>
-        <a href="#hero" class="text-3xl uppercase tracking-widest hover:text-brand-gold transition-colors menu-link">Home</a>
-        <a href="#services" class="text-3xl uppercase tracking-widest hover:text-brand-gold transition-colors menu-link">Services</a>
-        <a href="#insights" class="text-3xl uppercase tracking-widest hover:text-brand-gold transition-colors menu-link">Insights</a>
-        <a href="#expertise" class="text-3xl uppercase tracking-widest hover:text-brand-gold transition-colors menu-link">Expertise</a>
-        <a href="#contact" class="text-3xl uppercase tracking-widest text-brand-gold menu-link">Contact</a>
-    </div>
-
-    <main>
-        <!-- Section: Hero -->
-        <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-20">
+    <!-- About Section -->
+    <section id="about" class="py-32 px-8 md:px-24 bg-brand-dark relative overflow-hidden">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
+            <div class="relative reveal">
+                <div class="aspect-[4/5] overflow-hidden rounded-sm">
+                    <img src="assets/bg-images/Google_AI_Studio_2025-10-22T15_43_44.500Z.webp" alt="Evans Mathibe Workspace" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                </div>
+                <div class="absolute -bottom-8 -right-8 w-64 h-64 border border-brand-gold/20 -z-10"></div>
+            </div>
             <div class="reveal">
-                <h2 class="text-xs uppercase tracking-[1em] text-brand-gold mb-6 font-bold">Creative Excellence</h2>
-                <h1 class="text-5xl md:text-9xl font-black uppercase tracking-tighter mb-8 leading-tight">
-                    Beyond <br> <span class="text-brand-gold italic">Aesthetics.</span>
-                </h1>
-                <p class="max-w-2xl mx-auto text-sm md:text-xl font-light tracking-[0.2em] uppercase text-white/70 mb-12 leading-relaxed">
-                    A premium South African agency redefining global brands through cinematic vision and AI-driven marketing strategies.
-                </p>
-                <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 text-[10px] uppercase tracking-[0.3em] font-black mt-12">
-                    <div class="stat-item">8+ Services</div>
-                    <div class="stat-item">4 SA Cities</div>
-                    <div class="stat-item">25+ Articles</div>
-                    <div class="stat-item">Global Reach</div>
+                <p class="text-brand-gold font-bold tracking-[0.3em] text-xs mb-8">THE ARCHITECT</p>
+                <h2 class="font-serif text-4xl md:text-6xl font-bold leading-tight mb-8">
+                    Crafting Tomorrow's <br> <span class="italic font-normal">Legacy Today.</span>
+                </h2>
+                <div class="space-y-6 text-brand-white/60 text-lg font-light leading-relaxed">
+                    <p>Evans Mathibe is a multi-disciplinary creative force operating at the intersection of high-end design and advanced technology. Our mission is to transform South African business landscapes into global benchmarks of excellence.</p>
+                    <p>By integrating AI-driven efficiency with human-centric creativity, we provide a premium suite of services that scales brands with surgical precision. From Tshwane to the world, we are the standard of modern marketing.</p>
                 </div>
-            </div>
-            <div class="absolute bottom-12 animate-bounce opacity-40">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
-            </div>
-        </section>
-
-        <!-- Section: Services -->
-        <section id="services" class="py-32 px-8 bg-brand-black/95 backdrop-blur-sm border-y border-white/5 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-96 h-96 bg-brand-gold/5 blur-[150px] -z-10"></div>
-            <div class="max-w-7xl mx-auto">
-                <div class="flex flex-col md:flex-row justify-between items-end mb-24 reveal">
+                <div class="mt-12 grid grid-cols-2 gap-8">
                     <div>
-                        <h2 class="text-xs uppercase tracking-[0.5em] text-brand-gold mb-4">What we define</h2>
-                        <h3 class="text-4xl md:text-6xl font-black uppercase">Core Capabilities.</h3>
+                        <span class="block text-brand-gold font-bold text-xl mb-1">98%</span>
+                        <span class="text-[10px] tracking-widest text-brand-white/40 uppercase">Client Retention</span>
                     </div>
-                    <div class="hidden md:block text-[10px] uppercase tracking-[0.2em] opacity-40 max-w-xs text-right font-bold">
-                        Harnessing human creativity and algorithmic precision to scale your vision.
-                    </div>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Service 1 -->
-                    <div class="service-card reveal-delay-1 p-10 border border-white/5 bg-white/5 backdrop-blur-md group hover:border-brand-gold/50 transition-all duration-700">
-                        <div class="mb-8 text-brand-gold group-hover:scale-110 transition-transform duration-500">
-                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                        </div>
-                        <h4 class="text-2xl font-bold uppercase mb-6 tracking-widest">Creative Direction</h4>
-                        <p class="text-sm font-light text-white/60 leading-relaxed mb-8">
-                            Editorial vision that transcends traditional photography. High-fashion cinematic content that commands attention.
-                        </p>
-                        <ul class="text-[9px] uppercase tracking-[0.2em] space-y-2 opacity-40">
-                            <li>• Campaign Design</li>
-                            <li>• Visual Storytelling</li>
-                            <li>• Brand Narrative</li>
-                        </ul>
-                    </div>
-                    <!-- Service 2 -->
-                    <div class="service-card reveal-delay-2 p-10 border border-white/5 bg-white/5 backdrop-blur-md group hover:border-brand-gold/50 transition-all duration-700">
-                        <div class="mb-8 text-brand-gold group-hover:scale-110 transition-transform duration-500">
-                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
-                        </div>
-                        <h4 class="text-2xl font-bold uppercase mb-6 tracking-widest">AI Brand Automation</h4>
-                        <p class="text-sm font-light text-white/60 leading-relaxed mb-8">
-                            Next-gen strategies utilizing AI to automate engagement, personalize content, and optimize marketing ROI.
-                        </p>
-                        <ul class="text-[9px] uppercase tracking-[0.2em] space-y-2 opacity-40">
-                            <li>• Workflow Optimization</li>
-                            <li>• Generative AI Content</li>
-                            <li>• Data-Driven Insights</li>
-                        </ul>
-                    </div>
-                    <!-- Service 3 -->
-                    <div class="service-card reveal-delay-3 p-10 border border-white/5 bg-white/5 backdrop-blur-md group hover:border-brand-gold/50 transition-all duration-700">
-                        <div class="mb-8 text-brand-gold group-hover:scale-110 transition-transform duration-500">
-                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                        </div>
-                        <h4 class="text-2xl font-bold uppercase mb-6 tracking-widest">Brand Growth</h4>
-                        <p class="text-sm font-light text-white/60 leading-relaxed mb-8">
-                            Project management and sales distribution systems designed for exponential scale and market dominance.
-                        </p>
-                        <ul class="text-[9px] uppercase tracking-[0.2em] space-y-2 opacity-40">
-                            <li>• Event Management</li>
-                            <li>• Sales Strategy</li>
-                            <li>• Distribution Networks</li>
-                        </ul>
+                    <div>
+                        <span class="block text-brand-gold font-bold text-xl mb-1">Global</span>
+                        <span class="text-[10px] tracking-widest text-brand-white/40 uppercase">Execution Reach</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Section: Latest Insights -->
-        <section id="insights" class="py-32 px-8 bg-transparent relative">
-            <div class="max-w-7xl mx-auto">
-                <div class="flex flex-col md:flex-row justify-between items-center mb-24 reveal">
-                    <h3 class="text-4xl md:text-6xl font-black uppercase mb-8 md:mb-0">Latest Insights.</h3>
-                    <a href="#" class="text-[10px] uppercase tracking-[0.5em] border-b border-brand-gold pb-1 font-black hover:text-brand-gold transition-colors">View All Articles</a>
+    <!-- Services Section -->
+    <section id="services" class="py-32 px-8 md:px-24 bg-brand-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-24 reveal">
+                <div class="max-w-2xl">
+                    <p class="text-brand-gold font-bold tracking-[0.3em] text-xs mb-8">OUR CAPABILITIES</p>
+                    <h2 class="font-serif text-4xl md:text-6xl font-bold leading-tight">
+                        Surgical Creativity. <br> <span class="italic font-normal">Technical Mastery.</span>
+                    </h2>
                 </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <article class="insight-card reveal group relative overflow-hidden border border-white/5 bg-black/40 p-8 hover:bg-black/60 transition-all duration-500">
-                        <div class="flex items-center space-x-4 mb-6 text-[9px] uppercase tracking-widest text-brand-gold font-bold">
-                            <span>March 2026</span>
-                            <span class="w-8 h-[1px] bg-brand-gold/30"></span>
-                            <span>Technology</span>
-                        </div>
-                        <h4 class="text-3xl font-bold uppercase mb-6 group-hover:text-brand-gold transition-colors duration-500">How AI is Affecting the Industry in South Africa.</h4>
-                        <p class="text-sm font-light text-white/50 leading-relaxed mb-10">Exploring the paradigm shift in creative workflows and marketing automation across the continent.</p>
-                        <a href="#" class="inline-flex items-center space-x-3 text-[10px] font-black uppercase tracking-[0.3em] group-hover:translate-x-2 transition-transform">
-                            <span>Read Depth</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </a>
-                    </article>
-                    
-                    <article class="insight-card reveal-delay-1 group relative overflow-hidden border border-white/5 bg-black/40 p-8 hover:bg-black/60 transition-all duration-500">
-                        <div class="flex items-center space-x-4 mb-6 text-[9px] uppercase tracking-widest text-brand-gold font-bold">
-                            <span>Feb 2026</span>
-                            <span class="w-8 h-[1px] bg-brand-gold/30"></span>
-                            <span>Advertising</span>
-                        </div>
-                        <h4 class="text-3xl font-bold uppercase mb-6 group-hover:text-brand-gold transition-colors duration-500">Creativity in the Modern Advertising Context.</h4>
-                        <p class="text-sm font-light text-white/50 leading-relaxed mb-10">Why visual emotional triggers remain the most powerful currency in a data-saturated world.</p>
-                        <a href="#" class="inline-flex items-center space-x-3 text-[10px] font-black uppercase tracking-[0.3em] group-hover:translate-x-2 transition-transform">
-                            <span>Read Depth</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </a>
-                    </article>
+                <p class="text-brand-white/40 max-w-sm text-sm hidden md:block pb-2">We provide end-to-end transformation services designed for high-growth enterprises and visionary entrepreneurs.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-1px bg-brand-white/10 border border-brand-white/10">
+                <!-- Service Cards -->
+                <div class="bg-brand-black p-12 hover:bg-brand-dark transition-all group reveal">
+                    <div class="w-12 h-12 mb-8 border border-brand-gold flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-black transition-all">01</div>
+                    <h3 class="font-serif text-2xl font-bold mb-4">Brand Identity</h3>
+                    <p class="text-brand-white/50 text-sm font-light leading-relaxed">High-fidelity visual architectures and strategic positioning for market dominance.</p>
+                </div>
+                <div class="bg-brand-black p-12 hover:bg-brand-dark transition-all group reveal reveal-delay-1">
+                    <div class="w-12 h-12 mb-8 border border-brand-gold flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-black transition-all">02</div>
+                    <h3 class="font-serif text-2xl font-bold mb-4">AI Automation</h3>
+                    <p class="text-brand-white/50 text-sm font-light leading-relaxed">Scaling operations through intelligent workflows and custom machine learning integrations.</p>
+                </div>
+                <div class="bg-brand-black p-12 hover:bg-brand-dark transition-all group reveal reveal-delay-2">
+                    <div class="w-12 h-12 mb-8 border border-brand-gold flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-black transition-all">03</div>
+                    <h3 class="font-serif text-2xl font-bold mb-4">Digital Ecosystems</h3>
+                    <p class="text-brand-white/50 text-sm font-light leading-relaxed">Ultra-fast, high-conversion web architectures optimized for global search performance.</p>
+                </div>
+                <div class="bg-brand-black p-12 hover:bg-brand-dark transition-all group reveal">
+                    <div class="w-12 h-12 mb-8 border border-brand-gold flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-black transition-all">04</div>
+                    <h3 class="font-serif text-2xl font-bold mb-4">Media Production</h3>
+                    <p class="text-brand-white/50 text-sm font-light leading-relaxed">Cinematic content production that captures attention and drives emotional engagement.</p>
+                </div>
+                <div class="bg-brand-black p-12 hover:bg-brand-dark transition-all group reveal reveal-delay-1">
+                    <div class="w-12 h-12 mb-8 border border-brand-gold flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-black transition-all">05</div>
+                    <h3 class="font-serif text-2xl font-bold mb-4">Growth Strategy</h3>
+                    <p class="text-brand-white/50 text-sm font-light leading-relaxed">Data-driven performance marketing and comprehensive market expansion roadmaps.</p>
+                </div>
+                <div class="bg-brand-black p-12 hover:bg-brand-dark transition-all group reveal reveal-delay-2">
+                    <div class="w-12 h-12 mb-8 border border-brand-gold flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-black transition-all">06</div>
+                    <h3 class="font-serif text-2xl font-bold mb-4">Social Influence</h3>
+                    <p class="text-brand-white/50 text-sm font-light leading-relaxed">Aggressive social media orchestration and community-building frameworks.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Section: Expertise & Locations -->
-        <section id="expertise" class="py-32 px-8 bg-brand-black/95 border-t border-white/5">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+    <!-- Regional Expertise -->
+    <section id="regions" class="py-32 bg-brand-dark border-y border-brand-white/5">
+        <div class="px-8 md:px-24">
+             <div class="grid md:grid-cols-4 gap-12 text-center">
+                 <div class="reveal">
+                    <span class="text-[10px] tracking-[0.5em] text-brand-gold mb-4 block">PRETORIA</span>
+                    <h4 class="font-serif text-2xl font-bold">TSHWANE</h4>
+                 </div>
+                 <div class="reveal reveal-delay-1">
+                    <span class="text-[10px] tracking-[0.5em] text-brand-gold mb-4 block">JO'BURG</span>
+                    <h4 class="font-serif text-2xl font-bold">GIG CITY</h4>
+                 </div>
+                 <div class="reveal reveal-delay-2">
+                    <span class="text-[10px] tracking-[0.5em] text-brand-gold mb-4 block">KWAZULU-NATAL</span>
+                    <h4 class="font-serif text-2xl font-bold">DURBAN</h4>
+                 </div>
+                 <div class="reveal reveal-delay-3">
+                    <span class="text-[10px] tracking-[0.5em] text-brand-gold mb-4 block">MOTHER CITY</span>
+                    <h4 class="font-serif text-2xl font-bold">CAPE TOWN</h4>
+                 </div>
+             </div>
+        </div>
+    </section>
+
+    <!-- Insights Grid -->
+    <section id="insights" class="py-32 px-8 md:px-24 bg-brand-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-24 text-center reveal">
+                <p class="text-brand-gold font-bold tracking-[0.3em] text-xs mb-8">INTELLECTUAL CAPITAL</p>
+                <h2 class="font-serif text-4xl md:text-6xl font-bold leading-tight">Latest Insights</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-12">
                 <div class="reveal">
-                    <h2 class="text-xs uppercase tracking-[0.5em] text-brand-gold mb-8 font-black">Regional Expertise</h2>
-                    <h3 class="text-5xl md:text-8xl font-black uppercase mb-12 tracking-tighter">Native Roots. <br> <span class="text-brand-gold italic">Global Range.</span></h3>
-                    <p class="text-lg font-light text-white/70 leading-relaxed mb-12">
-                        Strategic operations across South Africa's most influential hubs, delivering localized excellence with international standards.
-                    </p>
-                    <div class="grid grid-cols-2 gap-8 text-[10px] font-black uppercase tracking-[0.3em]">
-                        <div class="flex items-center space-x-4"><span class="w-2 h-2 bg-brand-gold rounded-full shadow-[0_0_10px_rgba(197,160,89,0.5)]"></span><span>Tshwane</span></div>
-                        <div class="flex items-center space-x-4"><span class="w-2 h-2 bg-brand-gold rounded-full shadow-[0_0_10px_rgba(197,160,89,0.5)]"></span><span>Johannesburg</span></div>
-                        <div class="flex items-center space-x-4"><span class="w-2 h-2 bg-brand-gold rounded-full shadow-[0_0_10px_rgba(197,160,89,0.5)]"></span><span>Durban</span></div>
-                        <div class="flex items-center space-x-4"><span class="w-2 h-2 bg-brand-gold rounded-full shadow-[0_0_10px_rgba(197,160,89,0.5)]"></span><span>Cape Town</span></div>
+                    <div class="aspect-video overflow-hidden mb-8">
+                        <img src="assets/bg-images/Google_AI_Studio_2025-10-18T13_16_58.172Z.webp" alt="AI Insight" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
                     </div>
+                    <span class="text-brand-gold text-[10px] tracking-widest font-bold block mb-4">AI & DESIGN</span>
+                    <h3 class="text-xl font-bold mb-4">The Convergence of AI and Human Creativity</h3>
+                    <p class="text-brand-white/40 text-sm font-light">How we leverage machine learning to amplify creative output.</p>
                 </div>
-                <div class="relative reveal-delay-1 group h-[500px] overflow-hidden border border-white/10 shadow-2xl">
-                    <img src="assets/bg-images/Generated image 1 (17).webp" alt="Regional Reach" class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000 transform group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent pointer-events-none"></div>
-                    <div class="absolute bottom-8 left-8">
-                        <div class="text-[8px] uppercase tracking-[0.5em] opacity-40 mb-2">Network Hub</div>
-                        <div class="text-2xl font-black uppercase tracking-widest text-brand-gold">South Africa & Beyond.</div>
+                <div class="reveal reveal-delay-1">
+                    <div class="aspect-video overflow-hidden mb-8">
+                        <img src="assets/bg-images/Google_AI_Studio_2025-10-30T17_00_18.963Z(1).webp" alt="Strategy Insight" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <span class="text-brand-gold text-[10px] tracking-widest font-bold block mb-4">BRANDING</span>
+                    <h3 class="text-xl font-bold mb-4">Hyper-Localization in a Global Market</h3>
+                    <p class="text-brand-white/40 text-sm font-light">Why South African brands must master local nuances to win globally.</p>
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <div class="aspect-video overflow-hidden mb-8">
+                        <img src="assets/bg-images/Google_AI_Studio_2025-11-24T16_06_23.687Z.webp" alt="Growth Insight" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <span class="text-brand-gold text-[10px] tracking-widest font-bold block mb-4">STRATEGY</span>
+                    <h3 class="text-xl font-bold mb-4">Efficiency as the Ultimate Competitive Advantage</h3>
+                    <p class="text-brand-white/40 text-sm font-light">Architecting agency workflows for maximum velocity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 px-8 md:px-24 bg-brand-dark">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24">
+            <div class="reveal">
+                <p class="text-brand-gold font-bold tracking-[0.3em] text-xs mb-8">INITIATION</p>
+                <h2 class="font-serif text-4xl md:text-6xl font-bold leading-tight mb-8">Ready to <br> <span class="italic font-normal text-brand-gold">Scale?</span></h2>
+                <p class="text-brand-white/60 text-lg font-light mb-12 max-w-md">Our intake process is selective, ensuring every partnership receives the full weight of our strategic intelligence.</p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-6">
+                        <div class="w-12 h-12 rounded-full border border-brand-gold/30 flex items-center justify-center text-brand-gold">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <span class="text-sm tracking-widest text-brand-white/80">CONTACT@EVANSMATHIBE.COM</span>
+                    </div>
+                    <div class="flex items-center gap-6">
+                        <div class="w-12 h-12 rounded-full border border-brand-gold/30 flex items-center justify-center text-brand-gold">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <span class="text-sm tracking-widest text-brand-white/80">GAUTENG, SOUTH AFRICA</span>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Section: Contact -->
-        <section id="contact" class="py-32 px-8 bg-brand-black border-t border-white/5 relative overflow-hidden">
-            <div class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-gold/30 to-transparent"></div>
-            <div class="max-w-4xl mx-auto text-center reveal">
-                <h3 class="text-4xl md:text-8xl font-black uppercase mb-12 tracking-tighter">Initiate <br> <span class="text-brand-gold italic">The Narrative.</span></h3>
-                <p class="text-lg font-light text-white/50 uppercase tracking-widest mb-16">Ready to scale your vision?</p>
-                
-                <form id="contact-form" class="text-left space-y-12">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                        <div class="relative group border-b border-white/10 focus-within:border-brand-gold transition-colors duration-500 py-4">
-                            <label class="absolute -top-4 left-0 text-[8px] uppercase tracking-[0.5em] text-brand-gold font-black">Identity</label>
-                            <input type="text" name="user_name" placeholder="YOUR NAME" class="w-full bg-transparent border-none focus:ring-0 text-sm uppercase tracking-widest font-bold placeholder:text-white/10" required>
-                        </div>
-                        <div class="relative group border-b border-white/10 focus-within:border-brand-gold transition-colors duration-500 py-4">
-                            <label class="absolute -top-4 left-0 text-[8px] uppercase tracking-[0.5em] text-brand-gold font-black">Contact</label>
-                            <input type="email" name="user_email" placeholder="EMAIL ADDRESS" class="w-full bg-transparent border-none focus:ring-0 text-sm uppercase tracking-widest font-bold placeholder:text-white/10" required>
-                        </div>
+            
+            <form id="contact-form" class="space-y-8 reveal">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-2">
+                        <label class="text-[10px] tracking-widest text-brand-white/40 uppercase">Full Identity</label>
+                        <input type="text" placeholder="EVANS MATHIBE" class="w-full bg-brand-black border-b border-brand-white/10 py-4 focus:border-brand-gold outline-none transition-all text-sm font-light">
                     </div>
-                    <div class="relative group border-b border-white/10 focus-within:border-brand-gold transition-colors duration-500 py-4">
-                        <label class="absolute -top-4 left-0 text-[8px] uppercase tracking-[0.5em] text-brand-gold font-black">Vision</label>
-                        <textarea name="message" rows="1" placeholder="DESCRIBE YOUR PROJECT" class="w-full bg-transparent border-none focus:ring-0 text-sm uppercase tracking-widest font-bold placeholder:text-white/10 resize-none overflow-hidden" required></textarea>
+                    <div class="space-y-2">
+                        <label class="text-[10px] tracking-widest text-brand-white/40 uppercase">Email Protocol</label>
+                        <input type="email" placeholder="YOUR@EMAIL.COM" class="w-full bg-brand-black border-b border-brand-white/10 py-4 focus:border-brand-gold outline-none transition-all text-sm font-light">
                     </div>
-                    <div class="flex justify-center pt-8">
-                        <button type="submit" class="group relative px-12 py-5 overflow-hidden border border-brand-gold transition-all duration-500 hover:bg-brand-gold">
-                            <span class="relative z-10 text-[10px] font-black uppercase tracking-[0.5em] group-hover:text-brand-black transition-colors duration-500">Dispatch Request</span>
-                            <div class="absolute inset-0 bg-brand-gold translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <!-- Floating Action Tray -->
-    <div class="fixed bottom-12 right-12 z-[100] flex flex-col space-y-6">
-        <a href="https://wa.me/27724165061" target="_blank" class="w-16 h-16 bg-brand-gold rounded-full flex items-center justify-center shadow-2xl hover:scale-110 hover:-rotate-12 transition-all duration-300 group">
-            <svg class="w-8 h-8 text-brand-black" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.171c1.589.943 3.13 1.411 4.757 1.411 5.42 0 9.831-4.412 9.831-9.833 0-2.628-1.022-5.1-2.876-6.954-1.856-1.853-4.33-2.873-6.955-2.873-5.42 0-9.831 4.412-9.831 9.834 0 1.93.574 3.73 1.66 5.218l-1.082 3.953 4.047-1.062zm9.261-7.143c.123.118.232.21.325.328.167.213.252.446.252.673 0 .848-.52 1.539-.46 2.314.05.718.75 1.154 1.18 1.531.141.124.272.246.385.373.401.451.956 1.01 1.032 1.087.547.546.943.485 1.361.066l.71-.71c.226-.226.435-.435.626-.625.451-.452.482-.503.065-1.356l-.372-.744c-.126-.252-.251-.504-.377-.756-.451-.904-.515-1.023-.106-1.432l.248-.248c.11-.11.22-.22.33-.331.395-.395.455-.456.124-1.041l-.226-.452c-.113-.226-.226-.452-.338-.678-.395-.791-.456-.912-.116-1.252l.216-.216c.102-.102.204-.204.306-.306.401-.401.456-.456.096-1.026l-.344-.518c-.12-.181-.241-.362-.361-.543-.367-.552-.435-.655-.078-1.012l.235-.236c.084-.084.168-.168.252-.252.457-.457.519-.519.034-1.126l-.149-.188c-.08-.101-.16-.201-.24-.301-.312-.394-.43-.544.028-1.002l.214-.214c.104-.104.208-.208.312-.312.455-.455.514-.514.045-1.218l-.354-.531c-.131-.197-.261-.393-.392-.59-.344-.517-.41-.617-.067-.96l.209-.209c.08-.08.16-.16.241-.24.457-.457.519-.519.031-1.167l-.1-.133c-.078-.104-.156-.208-.234-.312-.349-.465-.439-.585.044-1.068l.152-.152c.077-.077.154-.154.231-.231.422-.422.484-.484.053-1.062l-.187-.25c-.104-.139-.208-.278-.312-.417-.312-.417-.43-.574.01-.998l.17-.165c.055-.054.109-.108.164-.162.441-.433.501-.492.038-1.132l-.24-.33c-.118-.163-.236-.326-.354-.489-.312-.417-.434-.58-.04-1.012.012-.013.024-.026.036-.039l.135-.148c.112-.112.235-.235.358-.358.309-.309.432-.432.05-.884l-.11-.13c-.1-.118-.2-.236-.3-.354-.3-.354-.45-.531-.057-.962l.142-.155c.052-.057.104-.114.156-.171.424-.464.484-.53.045-1.154l-.33-.469c-.111-.157-.222-.314-.333-.471-.312-.442-.424-.601.031-1.026.126-.118.252-.236.378-.354.331-.31.411-.385.121-.861l-.226-.37c-.1-.164-.2-.328-.3-.492-.312-.513-.435-.714-.028-1.144l.214-.226c.074-.078.148-.156.222-.234.39-.411.455-.48.067-.978l-.348-.447c-.114-.146-.228-.292-.342-.438-.328-.42-.423-.541.02-.992l.184-.187c.071-.072.142-.144.213-.216.425-.432.481-.489.043-1.056l-.21-.271c-.08-.103-.16-.206-.24-.309-.344-.443-.432-.556.046-1.053l.186-.194c.063-.066.126-.132.189-.198.423-.443.486-.509.052-1.107l-.234-.323c-.111-.153-.222-.306-.333-.459-.312-.43-.432-.596.03-.984l.23-.193c.097-.081.194-.162.291-.243.344-.288.421-.353.137-.779l-.271-.407c-.088-.132-.176-.264-.264-.396-.341-.512-.432-.649.034-1.084l.19-.177c.07-.065.14-.13.21-.195.42-.39.48-.445.045-.989l-.25-.312c-.104-.13-.208-.26-.312-.39-.344-.43-.45-.563.023-1.02l.17-.164c.1-.097.2-.194.3-.291.42-.408.483-.469.055-.992l-.33-.404c-.11-.135-.22-.27-.33-.405-.333-.41-.44-.542.031-1.01l.162-.161c.1-.1.2-.2.3-.3.424-.424.484-.484.053-1.026l-.326-.411c-.108-.137-.216-.274-.324-.411-.328-.417-.432-.55.031-.998l.184-.179c.102-.099.204-.198.306-.297.424-.411.487-.472.052-1.016l-.32-.4c-.106-.133-.212-.266-.318-.399-.331-.414-.435-.544.028-.992l.184-.177c.1-.096.2-.192.3-.288.424-.408.484-.465.053-.981l-.32-.383c-.106-.127-.212-.254-.318-.381-.328-.394-.432-.519.031-.962l.187-.18c.1-.096.2-.192.3-.288.424-.408.484-.465.053-.981l-.32-.383c-.106-.127-.212-.254-.318-.381-.328-.394-.432-.519.031-.962l.187-.18c.1-.096.2-.192.3-.288.424-.408.484-.465.053-.981l-.32-.383c-.106-.127-.212-.254-.318-.381-.328-.394-.432-.519.031-.962l.187-.18z"/></svg>
-            <span class="absolute right-full mr-4 bg-brand-gold text-brand-black px-3 py-1 text-[8px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Consult via WhatsApp</span>
-        </a>
-        <a href="https://www.tiktok.com/@evans_mathibe" target="_blank" class="w-16 h-16 bg-brand-gold rounded-full flex items-center justify-center shadow-2xl hover:scale-110 hover:rotate-12 transition-all duration-300 group">
-            <svg class="w-8 h-8 text-brand-black" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.032 2.61-.019 3.91-.006.03 1.22.61 2.21 1.58 2.84 1.02.66 2.13.87 3.24.91v3.71c-1.28-.06-2.43-.5-3.39-1.39-.08-.07-.15-.15-.24-.22v7.82c0 1.28-.19 2.54-.74 3.71-1.36 2.87-4.14 4.54-7.24 4.58-3.08.05-5.91-1.61-7.23-4.41-1.12-2.38-.85-5.26.7-7.4 1.49-2.07 3.8-3.1 6.32-2.89v3.86c-1.02-.16-2.06.02-2.88.69-.54.44-.84 1.05-.9 1.74-.02.26 0 .53.05.79.13.63.49 1.18 1 1.55.81.58 1.81.65 2.67.25.54-.25.93-.68 1.14-1.22.14-.38.19-.77.19-1.17V0c-.3-.01-.6-.02-.91-.02z"/></svg>
-            <span class="absolute right-full mr-4 bg-brand-gold text-brand-black px-3 py-1 text-[8px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Follow on TikTok</span>
-        </a>
-    </div>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-[10px] tracking-widest text-brand-white/40 uppercase">Project Architecture</label>
+                    <select class="w-full bg-brand-black border-b border-brand-white/10 py-4 focus:border-brand-gold outline-none transition-all text-sm font-light appearance-none">
+                        <option>SELECT CAPABILITY</option>
+                        <option>BRAND ARCHITECTURE</option>
+                        <option>AI AUTOMATION</option>
+                        <option>DIGITAL ECOSYSTEM</option>
+                        <option>GROWTH STRATEGY</option>
+                    </select>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-[10px] tracking-widest text-brand-white/40 uppercase">Brief Description</label>
+                    <textarea rows="4" placeholder="HOW CAN WE ASSIST YOUR GLOBAL EXPANSION?" class="w-full bg-brand-black border-b border-brand-white/10 py-4 focus:border-brand-gold outline-none transition-all text-sm font-light resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full py-6 bg-brand-gold text-brand-black font-bold tracking-[0.3em] hover:bg-brand-white transition-all">DISPATCH BRIEF</button>
+            </form>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-brand-black py-20 px-8 border-t border-white/5 text-center">
-        <div class="max-w-7xl mx-auto opacity-40 text-[9px] uppercase tracking-[0.6em] font-bold space-y-4">
-            <p>&copy; 2026 Evans Mathibe Agency. All Rights Reserved.</p>
-            <p>South Africa: Sandton • Cape Town • Durban • Umhlanga</p>
-            <p class="font-black italic">Creative Direction • AI Automation • Luxury Branding</p>
+    <footer class="py-16 px-8 md:px-24 bg-brand-black border-t border-brand-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
+            <div class="flex items-center gap-4">
+                <img src="assets/bg-images/Evans mathibe Logo.jpeg" alt="Logo" class="w-10 h-10 grayscale opacity-50">
+                <span class="font-serif text-lg font-bold text-brand-white/30 tracking-tight">&copy; 2026 EVANS MATHIBE AGENCY.</span>
+            </div>
+            <div class="flex gap-8">
+                <a href="#" class="text-brand-white/30 hover:text-brand-gold transition-colors text-[10px] tracking-widest font-bold">INSTAGRAM</a>
+                <a href="https://www.tiktok.com/@evansxm" target="_blank" class="text-brand-white/30 hover:text-brand-gold transition-colors text-[10px] tracking-widest font-bold">TIKTOK</a>
+                <a href="#" class="text-brand-white/30 hover:text-brand-gold transition-colors text-[10px] tracking-widest font-bold">LINKEDIN</a>
+            </div>
+            <div class="text-[10px] tracking-widest text-brand-white/20 font-bold">ARCHITECTED IN SOUTH AFRICA</div>
         </div>
     </footer>
 
-    <script src="app.js"></script>
+    <!-- Floating Socials -->
+    <div class="fixed bottom-8 right-8 z-[100] flex flex-col gap-4">
+        <a href="https://wa.me/27000000000" class="w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform">
+            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@evansxm" class="w-14 h-14 bg-black rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform border-2 border-[#25F4EE]">
+            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.86-.6-4.12-1.31a6.47 6.47 0 01-1.56-1.12c-.01 1.63.02 3.26-.02 4.89-.04 2.29-.39 4.64-1.8 6.55-1.38 1.95-3.81 3.04-6.19 3.03-2.33.04-4.75-.93-6.17-2.79-1.61-2.02-1.99-4.88-1.07-7.23.82-2.18 2.85-3.88 5.16-4.18 1.1-.15 2.24-.04 3.3.36V7.4c-1.3-.4-2.73-.48-4.06-.21-2.01.4-3.85 1.76-4.84 3.55-1.17 2.06-1.22 4.6-.13 6.64 1.11 2.16 3.51 3.65 5.92 3.65 2.5 0 5.04-1.57 5.96-3.88.54-1.26.68-2.65.65-4V.02z"/></svg>
+        </a>
+    </div>
+
+    <!-- Core Engine -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initCursor();
+            initSlider();
+            initReveal();
+            initNav();
+            initAnalytics();
+        });
+
+        // Custom Cursor
+        function initCursor() {
+            const cursor = document.getElementById('cursor');
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`;
+            });
+        }
+
+        // Immersive Cinematic Slider
+        function initSlider() {
+            const images = [
+                'Evans mathibe Logo.webp',
+                'Generated image 1 (17).webp',
+                'Generated image 1 (19).webp',
+                'Generated image 1 - 2025-11-15T123734.061.webp',
+                'Generated image 1 - 2025-11-15T144736.481.webp',
+                'Generated image 1 - 2025-11-15T144947.944.webp',
+                'Generated image 1 - 2025-11-15T145413.675.webp',
+                'Generated image 1 - 2025-11-16T092719.365.webp',
+                'Generated image 1 - 2025-11-17T073747.254.webp',
+                'Generated image 1 - 2025-11-17T183012.280.webp',
+                'Generated image 1 - 2025-11-17T184214.269.webp',
+                'Generated image 1 - 2025-11-17T184246.332.webp',
+                'Generated image 1 - 2025-11-17T184533.824.webp',
+                'Generated image 1 (30).webp',
+                'Generated image 1 (34).webp',
+                'Generated image 1 (39).webp',
+                'Generated image 1 (41).webp',
+                'Generated image 1 (46).webp',
+                'Generated image 1 (52).webp',
+                'Generated image 1 (55).webp',
+                'Generated image 1 (57).webp',
+                'Generated image 1 (58).webp',
+                'Generated image 1 (69).webp',
+                'Generated image 1 (70).webp',
+                'Generated image 1 (74).webp',
+                'Generated image 1 (80).webp',
+                'Generated image 1 (81).webp',
+                'Generated image 1 (83).webp',
+                'Generated image 1 (95).webp',
+                'Generated Image September 15, 2025 - 3_23PM.webp',
+                'Google_AI_Studio_2025-09-15T17_58_41.857Z.webp',
+                'Google_AI_Studio_2025-09-15T17_59_48.509Z.webp',
+                'Google_AI_Studio_2025-09-28T13_44_55.299Z.webp',
+                'Google_AI_Studio_2025-10-03T12_29_22.497Z.webp',
+                'Google_AI_Studio_2025-10-03T12_30_19.857Z.webp',
+                'Google_AI_Studio_2025-10-04T15_15_54.000Z.webp',
+                'Google_AI_Studio_2025-10-06T15_34_28.224Z.webp',
+                'Google_AI_Studio_2025-10-06T15_44_44.669Z.webp',
+                'Google_AI_Studio_2025-10-07T10_21_13.774Z.webp',
+                'Google_AI_Studio_2025-10-09T15_10_55.370Z.webp',
+                'Google_AI_Studio_2025-10-09T17_28_12.373Z.webp',
+                'Google_AI_Studio_2025-10-14T09_13_14.389Z.webp',
+                'Google_AI_Studio_2025-10-17T06_03_49.044Z.webp',
+                'Google_AI_Studio_2025-10-18T13_16_58.172Z.webp',
+                'Google_AI_Studio_2025-10-18T14_32_10.122Z.webp',
+                'Google_AI_Studio_2025-10-20T13_14_02.068Z.webp',
+                'Google_AI_Studio_2025-10-20T15_15_56.351Z.webp',
+                'Google_AI_Studio_2025-10-22T15_43_44.500Z.webp',
+                'Google_AI_Studio_2025-10-22T15_46_17.421Z.webp',
+                'Google_AI_Studio_2025-10-23T16_03_59.396Z.webp',
+                'Google_AI_Studio_2025-10-24T08_17_57.927Z.webp',
+                'Google_AI_Studio_2025-10-24T18_44_08.934Z.webp',
+                'Google_AI_Studio_2025-10-25T08_57_38.179Z.webp',
+                'Google_AI_Studio_2025-10-25T08_59_36.355Z.webp',
+                'Google_AI_Studio_2025-10-25T15_02_12.712Z.webp',
+                'Google_AI_Studio_2025-10-27T16_01_49.846Z.webp',
+                'Google_AI_Studio_2025-10-29T09_04_17.091Z.webp',
+                'Google_AI_Studio_2025-10-30T17_00_18.963Z(1).webp',
+                'Google_AI_Studio_2025-10-30T17_06_03.969Z.webp',
+                'Google_AI_Studio_2025-10-30T17_09_24.432Z(1).webp',
+                'Google_AI_Studio_2025-10-30T17_09_24.432Z.webp',
+                'Google_AI_Studio_2025-11-24T16_06_23.687Z.webp',
+                'Google_AI_Studio_2025-11-25T14_03_24.867Z.webp',
+                'Google_AI_Studio_2025-11-25T14_13_52.271Z.webp',
+                'Google_AI_Studio_2025-11-27T17_36_53.179Z.webp',
+                'Google_AI_Studio_2025-11-27T17_55_33.493Z.webp',
+                'Google_AI_Studio_2025-12-03T15_05_55.074Z.webp',
+                'Google_AI_Studio_2025-12-03T18_41_10.030Z.webp',
+                'Google_AI_Studio_2025-12-19T09_45_28.147Z.webp',
+                'Google_AI_Studio_2025-12-19T09_49_57.794Z.webp',
+                'Google_AI_Studio_2025-12-19T09_58_52.071Z.webp',
+                'Google_AI_Studio_2025-12-21T11_17_05.316Z.webp',
+                'Google_AI_Studio_2025-12-21T11_38_25.317Z.webp',
+                'Google_AI_Studio_2026-01-06T15_52_53.853Z.webp',
+                'Google_AI_Studio_2026-01-06T16_11_28.684Z.webp',
+                'Google_AI_Studio_2026-01-13T12_39_50.916Z.webp',
+                'Google_AI_Studio_2026-01-13T12_49_31.615Z.webp',
+                'Google_AI_Studio_2026-01-13T12_57_07.139Z.webp',
+                'Google_AI_Studio_2026-01-13T13_02_42.352Z.webp',
+                'Google_AI_Studio_2026-01-15T05_49_53.935Z.webp',
+                'Google_AI_Studio_2026-01-15T05_59_53.455Z.webp',
+                'Google_AI_Studio_2026-01-20T09_07_43.021Z.webp',
+                'Google_AI_Studio_2026-01-22T08_52_10.982Z.webp',
+                'Google_AI_Studio_2026-01-23T19_28_03.259Z.webp',
+                'Google_AI_Studio_2026-01-31T09_59_13.855Z.webp',
+                'Google_AI_Studio_2026-01-31T10_22_58.884Z.webp',
+                'Google_AI_Studio_2026-02-01T09_48_08.392Z.webp'
+            ];
+
+            const slider = document.getElementById('hero-slider');
+            images.forEach((img, idx) => {
+                const slide = document.createElement('div');
+                slide.className = `absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${idx === 0 ? 'opacity-100' : 'opacity-0'}`;
+                slide.style.backgroundImage = `url('assets/bg-images/${img}')`;
+                
+                const inner = document.createElement('div');
+                inner.className = "w-full h-full ken-burns";
+                inner.style.backgroundImage = `url('assets/bg-images/${img}')`;
+                inner.style.backgroundSize = "cover";
+                inner.style.backgroundPosition = "center";
+                
+                slide.appendChild(inner);
+                slider.appendChild(slide);
+            });
+
+            let current = 0;
+            const slides = slider.querySelectorAll('div.absolute');
+            setInterval(() => {
+                slides[current].classList.replace('opacity-100', 'opacity-0');
+                current = (current + 1) % slides.length;
+                slides[current].classList.replace('opacity-0', 'opacity-100');
+            }, 6000);
+        }
+
+        // Scroll Reveal
+        function initReveal() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('active');
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
+
+        // Nav Glassmorphism
+        function initNav() {
+            const nav = document.getElementById('nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add('bg-brand-black/80', 'backdrop-blur-xl', 'py-4', 'border-b', 'border-brand-white/5');
+                    nav.classList.remove('py-6');
+                } else {
+                    nav.classList.remove('bg-brand-black/80', 'backdrop-blur-xl', 'py-4', 'border-b', 'border-brand-white/5');
+                    nav.classList.add('py-6');
+                }
+            });
+        }
+
+        // Analytics & Session Logger
+        function initAnalytics() {
+            const startTime = Date.now();
+            const sessionData = {
+                timestamp: new Date().toISOString(),
+                device: navigator.userAgent,
+                screen: `${window.screen.width}x${window.screen.height}`,
+                language: navigator.language,
+                referrer: document.referrer || 'Direct'
+            };
+
+            // Log visit details (Simulated EmailJS dispatch)
+            console.log("[System] Session Init:", sessionData);
+
+            window.addEventListener('beforeunload', () => {
+                const duration = Math.round((Date.now() - startTime) / 1000);
+                /* 
+                   Example EmailJS Call:
+                   emailjs.send("service_id", "template_id", {
+                       ...sessionData,
+                       duration: duration + 's'
+                   });
+                */
+                console.log("[System] Session End. Duration:", duration, "s");
+            });
+        }
+    </script>
 </body>
 </html>
