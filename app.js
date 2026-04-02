@@ -1,53 +1,54 @@
 /**
  * Evans Mathibe Agency - Interaction Engine
+ * Features: Cinematic Slider, Scroll Reveals, Visitor Tracking
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    initBackgroundSlider();
+    initCinematicSlider();
     initScrollReveal();
-    initHeaderControl();
-    initMobileMenu();
-    initSpyglassAnalytics();
+    initNavigation();
+    initVisitorTracking();
 });
 
 /**
- * Phase 2: Background Slider
- * Implements a Cross-Fade Slider with a Ken Burns effect
+ * Cinematic Background Slider
+ * Uses all optimized .webp images from assets/bg-images/
  */
-function initBackgroundSlider() {
+function initCinematicSlider() {
     const images = [
-        'assets/bg-images/Generated image 1 (17).webp',
-        'assets/bg-images/Generated image 1 (19).webp',
-        'assets/bg-images/Generated image 1 - 2025-11-15T123734.061.webp',
-        'assets/bg-images/Generated image 1 - 2025-11-15T144736.481.webp',
-        'assets/bg-images/Generated image 1 - 2025-11-15T144947.944.webp',
-        'assets/bg-images/Generated image 1 - 2025-11-15T145413.675.webp'
+        'Evans mathibe Logo.webp',
+        'Generated image 1 (17).webp',
+        'Generated image 1 (19).webp',
+        'Generated image 1 - 2025-11-15T123734.061.webp',
+        'Generated image 1 - 2025-11-15T144736.481.webp',
+        'Generated image 1 - 2025-11-15T144947.944.webp',
+        'Generated image 1 - 2025-11-15T145413.675.webp',
+        'Generated image 1 - 2025-11-16T092719.365.webp'
     ];
-    
+
     const container = document.getElementById('slider-container');
     if (!container) return;
 
-    // Create slider elements
-    images.forEach((src, index) => {
-        const div = document.createElement('div');
-        div.style.backgroundImage = `url('${src}')`;
-        if (index === 0) div.classList.add('active');
-        container.appendChild(div);
+    // Preload and Create Slides
+    images.forEach((img, index) => {
+        const slide = document.createElement('div');
+        slide.style.backgroundImage = `url('assets/bg-images/${img}')`;
+        if (index === 0) slide.classList.add('active');
+        container.appendChild(slide);
     });
 
-    let current = 0;
+    let currentSlide = 0;
     const slides = container.querySelectorAll('div');
 
     setInterval(() => {
-        slides[current].classList.remove('active');
-        current = (current + 1) % slides.length;
-        slides[current].classList.add('active');
-    }, 5000); // 5s interval as per Agent: Layout Architect requirements
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }, 6000); // 6 second interval
 }
 
 /**
- * Phase 4: Scroll Reveal
- * Uses Intersection Observer API for smooth transitions
+ * Intersection Observer for Scroll Reveals
  */
 function initScrollReveal() {
     const observerOptions = {
@@ -59,93 +60,104 @@ function initScrollReveal() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                // Optional: Unobserve after revealing
-                // observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    const revealElements = document.querySelectorAll('.reveal, .reveal-delay-1, .reveal-delay-2');
+    const revealElements = document.querySelectorAll('.reveal, .reveal-delay-1, .reveal-delay-2, .reveal-delay-3');
     revealElements.forEach(el => observer.observe(el));
 }
 
 /**
- * Sticky Header Control
+ * Navigation Effects
  */
-function initHeaderControl() {
-    const header = document.getElementById('main-header');
+function initNavigation() {
+    const nav = document.getElementById('main-nav');
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuLinks = document.querySelectorAll('.menu-link');
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 100) {
-            header.classList.add('shrunk');
+            nav.classList.add('scrolled');
         } else {
-            header.classList.remove('shrunk');
+            nav.classList.remove('scrolled');
         }
     });
+
+    const toggleMenu = () => mobileMenu.classList.toggle('active');
+
+    menuToggle.addEventListener('click', toggleMenu);
+    menuClose.addEventListener('click', toggleMenu);
+    menuLinks.forEach(link => link.addEventListener('click', toggleMenu));
 }
 
 /**
- * Mobile Menu Toggle
+ * Visitor Tracking & Notifications (GA4 + EmailJS)
  */
-function initMobileMenu() {
-    const toggle = document.getElementById('menu-toggle');
-    const close = document.getElementById('menu-close');
-    const menu = document.getElementById('mobile-menu');
-    const links = document.querySelectorAll('.menu-link');
+function initVisitorTracking() {
+    // GA4 Placeholder (Replace with your actual Measurement ID)
+    // window.dataLayer = window.dataLayer || [];
+    // function gtag(){dataLayer.push(arguments);}
+    // gtag('js', new Date());
+    // gtag('config', 'G-XXXXXXXXXX');
 
-    toggle.addEventListener('click', () => {
-        menu.classList.remove('opacity-0', 'pointer-events-none');
-    });
-
-    const hideMenu = () => {
-        menu.classList.add('opacity-0', 'pointer-events-none');
-    };
-
-    close.addEventListener('click', hideMenu);
-    links.forEach(link => link.addEventListener('click', hideMenu));
-}
-
-/**
- * Phase 3: The Spyglass Script
- * Lightweight analytics hook for tracking session duration and metadata
- */
-function initSpyglassAnalytics() {
     const startTime = Date.now();
-    const visitorData = {
+    
+    // Capture basic metadata
+    const visitorInfo = {
         userAgent: navigator.userAgent,
-        screenResolution: `${window.screen.width}x${window.screen.height}`,
+        screenRes: `${window.screen.width}x${window.screen.height}`,
         language: navigator.language,
-        referrer: document.referrer || 'Direct',
-        timestamp: new Date().toISOString()
+        referrer: document.referrer || 'Direct Entry',
+        timestamp: new Date().toLocaleString()
     };
 
-    // Trigger on landing
-    logToSpyglass('Session Started', visitorData);
+    // Lightweight Session Logger via EmailJS
+    // Note: User needs to set up EmailJS and provide Service/Template/Public Key
+    // emailjs.init("YOUR_PUBLIC_KEY");
 
-    // Trigger on long session (e.g., 30 seconds)
-    setTimeout(() => {
-        logToSpyglass('Session Milestone: 30s', { ...visitorData, timeSpent: '30s' });
-    }, 30000);
-
-    // Trigger before unload
     window.addEventListener('beforeunload', () => {
-        const endTime = Date.now();
-        const duration = (endTime - startTime) / 1000;
-        logToSpyglass('Session Ended', { ...visitorData, duration: `${duration}s` });
+        const timeSpent = Math.round((Date.now() - startTime) / 1000);
+        console.log(`[Analytics] Session ended. Duration: ${timeSpent}s`);
+        
+        // Example EmailJS Dispatch (Uncomment and configure to use)
+        /*
+        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+            visitor_id: Math.random().toString(36).substring(7),
+            timestamp: visitorInfo.timestamp,
+            device: visitorInfo.userAgent,
+            duration: `${timeSpent}s`,
+            location_ref: visitorInfo.referrer
+        });
+        */
     });
+
+    console.log('[Analytics] Monitoring session engagement...');
 }
 
 /**
- * Webhook Dispatcher
- * In a real scenario, this would point to a secure edge function
+ * Contact Form Logic
  */
-function logToSpyglass(event, data) {
-    console.log(`[Spyglass Analytics] ${event}:`, data);
-    
-    // Placeholder for Webhook or GitHub Action trigger
-    // fetch('https://webhook-endpoint.example.com/spyglass', {
-    //     method: 'POST',
-    //     mode: 'no-cors',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ event, data })
-    // }).catch(err => console.debug('Spyglass silent error'));
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = contactForm.querySelector('button');
+        const originalText = btn.innerHTML;
+        
+        btn.innerHTML = 'Dispatching...';
+        btn.disabled = true;
+
+        // Simulate dispatch
+        setTimeout(() => {
+            btn.innerHTML = 'Transmission Received.';
+            contactForm.reset();
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }, 3000);
+        }, 1500);
+    });
 }

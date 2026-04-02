@@ -1,11 +1,12 @@
 /* 
-  Evans Mathibe Agency - V2 Redesign
-  Senior Creative Director Aesthetic
+  Evans Mathibe Agency - Redesign V2
+  Premium Aesthetic: 84Paris & Favorit Studio Inspired
 */
 
 :root {
-    --brand-salmon: #E87A7D;
+    --brand-gold: #C5A059;
     --brand-black: #080808;
+    --brand-white: #F5F5F5;
 }
 
 * {
@@ -16,36 +17,30 @@
 
 body {
     background-color: var(--brand-black);
-    color: white;
-    cursor: crosshair;
+    color: var(--brand-white);
+    overflow-x: hidden;
 }
 
-/* Background Slider with Opacity Transitions */
-#slider-container .bg-slide {
+/* Cinematic Background Slider */
+#slider-container div {
     position: absolute;
     inset: 0;
     opacity: 0;
-    transition: opacity 2.5s ease-in-out;
+    transition: opacity 2.5s ease-in-out, transform 10s linear;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    animation: grow 20s infinite alternate linear;
 }
 
-#slider-container .bg-slide.active {
+#slider-container div.active {
     opacity: 1;
-}
-
-/* Ken Burns Effect */
-@keyframes grow {
-    from { transform: scale(1); }
-    to { transform: scale(1.15); }
+    transform: scale(1.1);
 }
 
 /* Scroll Reveal Animations */
 .reveal {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(50px);
     transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -54,54 +49,20 @@ body {
     transform: translateY(0);
 }
 
-.reveal-delay-1 { transition-delay: 0.3s; }
-.reveal-delay-2 { transition-delay: 0.6s; }
+.reveal-delay-1 { transition-delay: 0.2s; }
+.reveal-delay-2 { transition-delay: 0.4s; }
+.reveal-delay-3 { transition-delay: 0.6s; }
 
-/* Sticky Header Glassmorphism */
-header {
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+/* Navigation Glassmorphism */
+header.scrolled {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem 2rem;
+    backdrop-filter: blur(20px);
 }
 
-/* Nav Link Hover */
-.nav-link {
-    position: relative;
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: var(--brand-salmon);
-    transition: width 0.4s ease;
-}
-
-.nav-link:hover::after {
-    width: 100%;
-}
-
-/* Action Tray Glow */
-.action-icon {
-    position: relative;
-    box-shadow: 0 0 0 rgba(232, 122, 125, 0);
-}
-
-.action-icon:hover {
-    box-shadow: 0 0 30px rgba(232, 122, 125, 0.6);
-}
-
-/* Deep Black Sections for Contrast */
-section {
-    position: relative;
-    overflow: hidden;
-}
-
-/* Scrollbar Customization */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-    width: 3px;
+    width: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -109,11 +70,62 @@ section {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--brand-salmon);
+    background: var(--brand-gold);
 }
 
-/* Custom Selection */
-::selection {
-    background: var(--brand-salmon);
-    color: var(--brand-black);
-}/* Cache Bust: Wed 01 Apr 2026 01:21:02 SAST */
+/* Service Card Hover */
+.service-card {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.5s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-15px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Action Tray Glow */
+.group:hover svg {
+    filter: drop-shadow(0 0 15px var(--brand-gold));
+}
+
+/* Mobile Menu */
+#mobile-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Stats Item */
+.stat-item {
+    position: relative;
+    padding: 0 10px;
+}
+
+.stat-item:after {
+    content: '';
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    width: 20px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.stat-item:last-child:after {
+    display: none;
+}
+
+/* Typographic Nuance */
+h1, h2, h3, h4 {
+    letter-spacing: -0.02em;
+}
+
+.tracking-ultra-wide {
+    letter-spacing: 0.8em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .reveal {
+        transition-duration: 0.8s;
+    }
+}
