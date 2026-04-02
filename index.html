@@ -63,9 +63,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-        .text-glow:hover {
-            text-shadow: 0 0 15px rgba(197, 160, 89, 0.5);
-        }
         #hero-slider div {
             transition: opacity 2s ease-in-out;
         }
@@ -90,9 +87,6 @@
         gtag('js', new Date());
         gtag('config', 'G-XXXXXXXXXX');
     </script>
-
-    <!-- EmailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body class="bg-brand-black text-brand-white font-sans selection:bg-brand-gold selection:text-brand-black overflow-x-hidden">
 
@@ -111,11 +105,6 @@
             <a href="#insights" class="text-sm font-semibold tracking-widest hover:text-brand-gold transition-colors">INSIGHTS</a>
             <a href="#contact" class="px-6 py-3 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-black transition-all text-xs font-bold tracking-[0.2em]">GET IN TOUCH</a>
         </div>
-
-        <button id="menu-toggle" class="md:hidden flex flex-col gap-2">
-            <span class="w-8 h-0.5 bg-brand-white"></span>
-            <span class="w-8 h-0.5 bg-brand-white"></span>
-        </button>
     </nav>
 
     <!-- Hero Section -->
@@ -131,36 +120,10 @@
                 Elevating Brands <br> <span class="italic text-brand-gold">Beyond Horizons</span>
             </h1>
             <p class="text-lg md:text-xl text-brand-white/70 max-w-2xl mx-auto mb-12 font-light leading-relaxed reveal">
-                A premium agency architecture for the modern era. We blend cinematic storytelling with intelligent automation to create global impact from the heart of South Africa.
+                A premium agency architecture for the modern era. We blend cinematic storytelling with intelligent automation to create global impact.
             </p>
             <div class="flex flex-col md:flex-row gap-6 justify-center items-center reveal">
                 <a href="#contact" class="px-10 py-5 bg-brand-gold text-brand-black font-bold tracking-widest hover:bg-brand-white transition-all transform hover:-translate-y-1">COMMENCE PROJECT</a>
-                <a href="#services" class="group flex items-center gap-3 text-sm font-bold tracking-widest transition-all">
-                    EXPLORE SERVICES 
-                    <span class="w-10 h-0.5 bg-brand-gold group-hover:w-16 transition-all"></span>
-                </a>
-            </div>
-        </div>
-
-        <!-- Hero Stats Overlay -->
-        <div class="absolute bottom-12 left-0 w-full z-20 px-16 hidden md:flex justify-between items-end">
-            <div class="flex gap-16">
-                <div>
-                    <span class="block font-serif text-3xl font-bold text-brand-gold">08+</span>
-                    <span class="text-[10px] tracking-[0.3em] text-brand-white/40 uppercase">Global Services</span>
-                </div>
-                <div>
-                    <span class="block font-serif text-3xl font-bold text-brand-gold">04</span>
-                    <span class="text-[10px] tracking-[0.3em] text-brand-white/40 uppercase">SA Hubs</span>
-                </div>
-                <div>
-                    <span class="block font-serif text-3xl font-bold text-brand-gold">25+</span>
-                    <span class="text-[10px] tracking-[0.3em] text-brand-white/40 uppercase">Industry Insights</span>
-                </div>
-            </div>
-            <div class="flex flex-col items-end gap-4">
-                <span class="text-[10px] tracking-[0.5em] text-brand-white/40 rotate-90 origin-right translate-y-[-50px]">SCROLL TO EXPLORE</span>
-                <div class="w-0.5 h-24 bg-gradient-to-b from-brand-gold to-transparent"></div>
             </div>
         </div>
     </section>
@@ -168,139 +131,13 @@
     <!-- About Section -->
     <section id="about" class="py-32 px-8 md:px-24 bg-brand-dark relative overflow-hidden">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
-            <div class="relative reveal">
-                <div class="aspect-[4/5] overflow-hidden rounded-sm">
-                    <img src="assets/bg-images/Google_AI_Studio_2025-10-22T15_43_44.500Z.webp" alt="Evans Mathibe Workspace" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
-                </div>
-                <div class="absolute -bottom-8 -right-8 w-64 h-64 border border-brand-gold/20 -z-10"></div>
-            </div>
             <div class="reveal">
                 <p class="text-brand-gold font-bold tracking-[0.3em] text-xs mb-8">THE ARCHITECT</p>
                 <h2 class="font-serif text-4xl md:text-6xl font-bold leading-tight mb-8">
                     Crafting Tomorrow's <br> <span class="italic font-normal">Legacy Today.</span>
                 </h2>
                 <div class="space-y-6 text-brand-white/60 text-lg font-light leading-relaxed">
-                    <p>Evans Mathibe is a multi-disciplinary creative force operating at the intersection of high-end design and advanced technology. Our mission is to transform South African business landscapes into global benchmarks of excellence.</p>
-                    <p>By integrating AI-driven efficiency with human-centric creativity, we provide a premium suite of services that scales brands with surgical precision. From Tshwane to the world, we are the standard of modern marketing.</p>
-                </div>
-                <div class="mt-12 grid grid-cols-2 gap-8">
-                    <div>
-                        <span class="block text-brand-gold font-bold text-xl mb-1">98%</span>
-                        <span class="text-[10px] tracking-widest text-brand-white/40 uppercase">Client Retention</span>
-                    </div>
-                    <div>
-                        <span class="block text-brand-gold font-bold text-xl mb-1">Global</span>
-                        <span class="text-[10px] tracking-widest text-brand-white/40 uppercase">Execution Reach</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-32 px-8 md:px-24 bg-brand-black">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-24 reveal">
-                <div class="max-w-2xl">
-                    <p class="text-brand-gold font-bold tracking-[0.3em] text-xs mb-8">OUR CAPABILITIES</p>
-                    <h2 class="font-serif text-4xl md:text-6xl font-bold leading-tight">
-                        Surgical Creativity. <br> <span class="italic font-normal">Technical Mastery.</span>
-                    </h2>
-                </div>
-                <p class="text-brand-white/40 max-w-sm text-sm hidden md:block pb-2">We provide end-to-end transformation services designed for high-growth enterprises and visionary entrepreneurs.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-1px bg-brand-white/10 border border-brand-white/10">
-                <!-- Service Cards -->
-                <div class="bg-brand-black p-12 hover:bg-brand-dark transition-all group reveal">
-                    <div class="w-12 h-12 mb-8 border border-brand-gold flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-black transition-all">01</div>
-                    <h3 class="font-serif text-2xl font-bold mb-4">Brand Identity</h3>
-                    <p class="text-brand-white/50 text-sm font-light leading-relaxed">High-fidelity visual architectures and strategic positioning for market dominance.</p>
-                </div>
-                <div class="bg-brand-black p-12 hover:bg-brand-dark transition-all group reveal reveal-delay-1">
-                    <div class="w-12 h-12 mb-8 border border-brand-gold flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-black transition-all">02</div>
-                    <h3 class="font-serif text-2xl font-bold mb-4">AI Automation</h3>
-                    <p class="text-brand-white/50 text-sm font-light leading-relaxed">Scaling operations through intelligent workflows and custom machine learning integrations.</p>
-                </div>
-                <div class="bg-brand-black p-12 hover:bg-brand-dark transition-all group reveal reveal-delay-2">
-                    <div class="w-12 h-12 mb-8 border border-brand-gold flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-black transition-all">03</div>
-                    <h3 class="font-serif text-2xl font-bold mb-4">Digital Ecosystems</h3>
-                    <p class="text-brand-white/50 text-sm font-light leading-relaxed">Ultra-fast, high-conversion web architectures optimized for global search performance.</p>
-                </div>
-                <div class="bg-brand-black p-12 hover:bg-brand-dark transition-all group reveal">
-                    <div class="w-12 h-12 mb-8 border border-brand-gold flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-black transition-all">04</div>
-                    <h3 class="font-serif text-2xl font-bold mb-4">Media Production</h3>
-                    <p class="text-brand-white/50 text-sm font-light leading-relaxed">Cinematic content production that captures attention and drives emotional engagement.</p>
-                </div>
-                <div class="bg-brand-black p-12 hover:bg-brand-dark transition-all group reveal reveal-delay-1">
-                    <div class="w-12 h-12 mb-8 border border-brand-gold flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-black transition-all">05</div>
-                    <h3 class="font-serif text-2xl font-bold mb-4">Growth Strategy</h3>
-                    <p class="text-brand-white/50 text-sm font-light leading-relaxed">Data-driven performance marketing and comprehensive market expansion roadmaps.</p>
-                </div>
-                <div class="bg-brand-black p-12 hover:bg-brand-dark transition-all group reveal reveal-delay-2">
-                    <div class="w-12 h-12 mb-8 border border-brand-gold flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-black transition-all">06</div>
-                    <h3 class="font-serif text-2xl font-bold mb-4">Social Influence</h3>
-                    <p class="text-brand-white/50 text-sm font-light leading-relaxed">Aggressive social media orchestration and community-building frameworks.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Regional Expertise -->
-    <section id="regions" class="py-32 bg-brand-dark border-y border-brand-white/5">
-        <div class="px-8 md:px-24">
-             <div class="grid md:grid-cols-4 gap-12 text-center">
-                 <div class="reveal">
-                    <span class="text-[10px] tracking-[0.5em] text-brand-gold mb-4 block">PRETORIA</span>
-                    <h4 class="font-serif text-2xl font-bold">TSHWANE</h4>
-                 </div>
-                 <div class="reveal reveal-delay-1">
-                    <span class="text-[10px] tracking-[0.5em] text-brand-gold mb-4 block">JO'BURG</span>
-                    <h4 class="font-serif text-2xl font-bold">GIG CITY</h4>
-                 </div>
-                 <div class="reveal reveal-delay-2">
-                    <span class="text-[10px] tracking-[0.5em] text-brand-gold mb-4 block">KWAZULU-NATAL</span>
-                    <h4 class="font-serif text-2xl font-bold">DURBAN</h4>
-                 </div>
-                 <div class="reveal reveal-delay-3">
-                    <span class="text-[10px] tracking-[0.5em] text-brand-gold mb-4 block">MOTHER CITY</span>
-                    <h4 class="font-serif text-2xl font-bold">CAPE TOWN</h4>
-                 </div>
-             </div>
-        </div>
-    </section>
-
-    <!-- Insights Grid -->
-    <section id="insights" class="py-32 px-8 md:px-24 bg-brand-black">
-        <div class="max-w-7xl mx-auto">
-            <div class="mb-24 text-center reveal">
-                <p class="text-brand-gold font-bold tracking-[0.3em] text-xs mb-8">INTELLECTUAL CAPITAL</p>
-                <h2 class="font-serif text-4xl md:text-6xl font-bold leading-tight">Latest Insights</h2>
-            </div>
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="reveal">
-                    <div class="aspect-video overflow-hidden mb-8">
-                        <img src="assets/bg-images/Google_AI_Studio_2025-10-18T13_16_58.172Z.webp" alt="AI Insight" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
-                    </div>
-                    <span class="text-brand-gold text-[10px] tracking-widest font-bold block mb-4">AI & DESIGN</span>
-                    <h3 class="text-xl font-bold mb-4">The Convergence of AI and Human Creativity</h3>
-                    <p class="text-brand-white/40 text-sm font-light">How we leverage machine learning to amplify creative output.</p>
-                </div>
-                <div class="reveal reveal-delay-1">
-                    <div class="aspect-video overflow-hidden mb-8">
-                        <img src="assets/bg-images/Google_AI_Studio_2025-10-30T17_00_18.963Z(1).webp" alt="Strategy Insight" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
-                    </div>
-                    <span class="text-brand-gold text-[10px] tracking-widest font-bold block mb-4">BRANDING</span>
-                    <h3 class="text-xl font-bold mb-4">Hyper-Localization in a Global Market</h3>
-                    <p class="text-brand-white/40 text-sm font-light">Why South African brands must master local nuances to win globally.</p>
-                </div>
-                <div class="reveal reveal-delay-2">
-                    <div class="aspect-video overflow-hidden mb-8">
-                        <img src="assets/bg-images/Google_AI_Studio_2025-11-24T16_06_23.687Z.webp" alt="Growth Insight" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
-                    </div>
-                    <span class="text-brand-gold text-[10px] tracking-widest font-bold block mb-4">STRATEGY</span>
-                    <h3 class="text-xl font-bold mb-4">Efficiency as the Ultimate Competitive Advantage</h3>
-                    <p class="text-brand-white/40 text-sm font-light">Architecting agency workflows for maximum velocity.</p>
+                    <p>Evans Mathibe is a multi-disciplinary creative force operating at the intersection of high-end design and advanced technology.</p>
                 </div>
             </div>
         </div>
@@ -308,72 +145,12 @@
 
     <!-- Contact Section -->
     <section id="contact" class="py-32 px-8 md:px-24 bg-brand-dark">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24">
-            <div class="reveal">
-                <p class="text-brand-gold font-bold tracking-[0.3em] text-xs mb-8">INITIATION</p>
-                <h2 class="font-serif text-4xl md:text-6xl font-bold leading-tight mb-8">Ready to <br> <span class="italic font-normal text-brand-gold">Scale?</span></h2>
-                <p class="text-brand-white/60 text-lg font-light mb-12 max-w-md">Our intake process is selective, ensuring every partnership receives the full weight of our strategic intelligence.</p>
-                <div class="space-y-4">
-                    <div class="flex items-center gap-6">
-                        <div class="w-12 h-12 rounded-full border border-brand-gold/30 flex items-center justify-center text-brand-gold">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        </div>
-                        <span class="text-sm tracking-widest text-brand-white/80">CONTACT@EVANSMATHIBE.COM</span>
-                    </div>
-                    <div class="flex items-center gap-6">
-                        <div class="w-12 h-12 rounded-full border border-brand-gold/30 flex items-center justify-center text-brand-gold">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                        </div>
-                        <span class="text-sm tracking-widest text-brand-white/80">GAUTENG, SOUTH AFRICA</span>
-                    </div>
-                </div>
-            </div>
-            
-            <form id="contact-form" class="space-y-8 reveal">
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="space-y-2">
-                        <label class="text-[10px] tracking-widest text-brand-white/40 uppercase">Full Identity</label>
-                        <input type="text" placeholder="EVANS MATHIBE" class="w-full bg-brand-black border-b border-brand-white/10 py-4 focus:border-brand-gold outline-none transition-all text-sm font-light">
-                    </div>
-                    <div class="space-y-2">
-                        <label class="text-[10px] tracking-widest text-brand-white/40 uppercase">Email Protocol</label>
-                        <input type="email" placeholder="YOUR@EMAIL.COM" class="w-full bg-brand-black border-b border-brand-white/10 py-4 focus:border-brand-gold outline-none transition-all text-sm font-light">
-                    </div>
-                </div>
-                <div class="space-y-2">
-                    <label class="text-[10px] tracking-widest text-brand-white/40 uppercase">Project Architecture</label>
-                    <select class="w-full bg-brand-black border-b border-brand-white/10 py-4 focus:border-brand-gold outline-none transition-all text-sm font-light appearance-none">
-                        <option>SELECT CAPABILITY</option>
-                        <option>BRAND ARCHITECTURE</option>
-                        <option>AI AUTOMATION</option>
-                        <option>DIGITAL ECOSYSTEM</option>
-                        <option>GROWTH STRATEGY</option>
-                    </select>
-                </div>
-                <div class="space-y-2">
-                    <label class="text-[10px] tracking-widest text-brand-white/40 uppercase">Brief Description</label>
-                    <textarea rows="4" placeholder="HOW CAN WE ASSIST YOUR GLOBAL EXPANSION?" class="w-full bg-brand-black border-b border-brand-white/10 py-4 focus:border-brand-gold outline-none transition-all text-sm font-light resize-none"></textarea>
-                </div>
-                <button type="submit" class="w-full py-6 bg-brand-gold text-brand-black font-bold tracking-[0.3em] hover:bg-brand-white transition-all">DISPATCH BRIEF</button>
-            </form>
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="font-serif text-4xl md:text-6xl font-bold mb-12">Let's Connect</h2>
+            <p class="text-brand-white/60 mb-12">Ready to scale your vision?</p>
+            <a href="mailto:contact@evansmathibe.com" class="text-brand-gold text-2xl font-bold border-b border-brand-gold pb-2">contact@evansmathibe.com</a>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="py-16 px-8 md:px-24 bg-brand-black border-t border-brand-white/5">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
-            <div class="flex items-center gap-4">
-                <img src="assets/bg-images/Evans mathibe Logo.jpeg" alt="Logo" class="w-10 h-10 grayscale opacity-50">
-                <span class="font-serif text-lg font-bold text-brand-white/30 tracking-tight">&copy; 2026 EVANS MATHIBE AGENCY.</span>
-            </div>
-            <div class="flex gap-8">
-                <a href="#" class="text-brand-white/30 hover:text-brand-gold transition-colors text-[10px] tracking-widest font-bold">INSTAGRAM</a>
-                <a href="https://www.tiktok.com/@evansxm" target="_blank" class="text-brand-white/30 hover:text-brand-gold transition-colors text-[10px] tracking-widest font-bold">TIKTOK</a>
-                <a href="#" class="text-brand-white/30 hover:text-brand-gold transition-colors text-[10px] tracking-widest font-bold">LINKEDIN</a>
-            </div>
-            <div class="text-[10px] tracking-widest text-brand-white/20 font-bold">ARCHITECTED IN SOUTH AFRICA</div>
-        </div>
-    </footer>
 
     <!-- Floating Socials -->
     <div class="fixed bottom-8 right-8 z-[100] flex flex-col gap-4">
@@ -392,10 +169,8 @@
             initSlider();
             initReveal();
             initNav();
-            initAnalytics();
         });
 
-        // Custom Cursor
         function initCursor() {
             const cursor = document.getElementById('cursor');
             document.addEventListener('mousemove', (e) => {
@@ -403,7 +178,6 @@
             });
         }
 
-        // Immersive Cinematic Slider
         function initSlider() {
             const images = [
                 'Evans mathibe Logo.webp',
@@ -500,13 +274,11 @@
                 const slide = document.createElement('div');
                 slide.className = `absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${idx === 0 ? 'opacity-100' : 'opacity-0'}`;
                 slide.style.backgroundImage = `url('assets/bg-images/${img}')`;
-                
                 const inner = document.createElement('div');
                 inner.className = "w-full h-full ken-burns";
                 inner.style.backgroundImage = `url('assets/bg-images/${img}')`;
                 inner.style.backgroundSize = "cover";
                 inner.style.backgroundPosition = "center";
-                
                 slide.appendChild(inner);
                 slider.appendChild(slide);
             });
@@ -520,55 +292,23 @@
             }, 6000);
         }
 
-        // Scroll Reveal
         function initReveal() {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) entry.target.classList.add('active');
                 });
             }, { threshold: 0.1 });
-
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         }
 
-        // Nav Glassmorphism
         function initNav() {
             const nav = document.getElementById('nav');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
-                    nav.classList.add('bg-brand-black/80', 'backdrop-blur-xl', 'py-4', 'border-b', 'border-brand-white/5');
-                    nav.classList.remove('py-6');
+                    nav.classList.add('bg-brand-black/80', 'backdrop-blur-xl', 'py-4');
                 } else {
-                    nav.classList.remove('bg-brand-black/80', 'backdrop-blur-xl', 'py-4', 'border-b', 'border-brand-white/5');
-                    nav.classList.add('py-6');
+                    nav.classList.remove('bg-brand-black/80', 'backdrop-blur-xl', 'py-4');
                 }
-            });
-        }
-
-        // Analytics & Session Logger
-        function initAnalytics() {
-            const startTime = Date.now();
-            const sessionData = {
-                timestamp: new Date().toISOString(),
-                device: navigator.userAgent,
-                screen: `${window.screen.width}x${window.screen.height}`,
-                language: navigator.language,
-                referrer: document.referrer || 'Direct'
-            };
-
-            // Log visit details (Simulated EmailJS dispatch)
-            console.log("[System] Session Init:", sessionData);
-
-            window.addEventListener('beforeunload', () => {
-                const duration = Math.round((Date.now() - startTime) / 1000);
-                /* 
-                   Example EmailJS Call:
-                   emailjs.send("service_id", "template_id", {
-                       ...sessionData,
-                       duration: duration + 's'
-                   });
-                */
-                console.log("[System] Session End. Duration:", duration, "s");
             });
         }
     </script>
