@@ -24,13 +24,13 @@
 | memory-bank | ./skills/memory-bank/ | Ready | 0.4.0 |
 | secure-governance | ./skills/secure-governance/ | Ready | 0.5.0 |
 | mcp-orchestrator | ./skills/mcp-orchestrator/ | Ready | 0.7.0 |
-| kairos-daemon | ./skills/kairos-daemon/ | Ready | 0.9-persistent-competitive |
+| kairos-daemon | ./skills/kairos-daemon/ | Ready | 0.9-persistent-unified |
 
 ## Active Tasks
 - Core skills initialization: completed
 - Universal Research Agent: v0.2-async released
 - Research Orchestrator: v1.0 deployed
-- KAIROS-Hybrid Super-Agent: v0.9-persistent-competitive with persistent session daemon
+- KAIROS-Hybrid Super-Agent: v0.9-persistent-unified — PersistentDaemonState unified as single source of truth
 
 ## Sub-Agent Pool
 - Explore: available
