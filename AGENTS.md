@@ -36,7 +36,10 @@
 | memory-bank | Persistent vector/memory storage for long-term context |
 | secure-governance | Security governance with tool allow-lists, permissions, isolation |
 | mcp-orchestrator | Model Context Protocol orchestration with real-time streaming |
-| kairos-daemon | Persistent background daemon for always-on proactive mode |
+| kairos-daemon | Persistent background daemon with tick cycles, autoDream, and persistent session state |
+| secure-credentials | Encrypted credential vault with AES-256 + just-in-time injection (zero leaks) |
+| multi-llm-router | Autonomous LLM routing based on risk/complexity assessment (high-speed vs high-reasoning) |
+| tenant-isolation-benchmark | Process-level isolation and multi-tenant benchmarking |
 
 ---
 
