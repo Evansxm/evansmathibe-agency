@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Youth Centre | Building South Africa's Future</title>
+    <meta name="description" content="National Youth Centre - Empowering young people through 4IR, technology, arts, and entrepreneurship programs in South Africa.">
+    <meta name="keywords" content="National Youth Centre, TYC, youth development, South Africa, Johannesburg, empowerment, 4IR, AI, entrepreneurship">
+    <meta name="author" content="National Youth Centre">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0082C9">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="National Youth Centre | Building South Africa's Future">
+    <meta property="og:description" content="Empowering young people through 4IR, arts, technology, and entrepreneurship programs.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/tyc-logo.jpeg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="images/tyc-logo.jpeg">
+    <link rel="apple-touch-icon" href="images/tyc-logo.jpeg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-color: #1a237e;
+            --secondary-color: #3949ab;
+            --accent-color: #fb8c00;
+            --text-color: #2c3e50;
+            --light-bg: #f4f7f6;
+            --white: #fff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .reveal-section {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal-section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            transition: var(--transition);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5em;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 45px;
+            margin-right: 12px;
+        }
+
+        .logo .badge {
+            background: var(--secondary-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.6em;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            padding: 5px 0;
+            transition: var(--transition);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 35, 126, 0.8), rgba(57, 73, 171, 0.7)), url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 180px 20px 120px;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5em, 5vw, 4em);
+            margin-bottom: 25px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            animation: fadeInUp 1s ease;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: clamp(1em, 2vw, 1.4em);
+            margin-bottom: 40px;
+            max-width: 800px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--accent-color), #f57c00);
+            color: var(--white);
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(251, 140, 0, 0.3);
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(251, 140, 0, 0.4);
+            filter: brightness(1.1);
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--white);
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+            font-weight: 700;
+        }
+
+        section h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -10px;
+            border-radius: 2px;
+        }
+
+        section > .container > p {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            color: #555;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+            text-align: left;
+        }
+
+        .about-content .text-content {
+            flex: 1.2;
+            min-width: 300px;
+        }
+
+        .about-content .text-content p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .about-content .image-content {
+            flex: 0.8;
+            min-width: 300px;
+        }
+
+        .about-content img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 20px 20px 0px var(--secondary-color);
+        }
+
+        /* Programmes Grid */
+        .programmes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .programme-card {
+            background-color: var(--white);
+            padding: 50px 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .programme-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .programme-card .icon {
+            font-size: 3.5em;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 25px;
+            transition: var(--transition);
+        }
+
+        .programme-card:hover .icon {
+            transform: scale(1.1);
+        }
+
+        .programme-card h3 {
+            font-size: 1.5em;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .programme-card::after {
+            content: 'Learn More →';
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: 600;
+            color: var(--secondary-color);
+            font-size: 0.9em;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .programme-card:hover::after {
+            opacity: 1;
+            bottom: 25px;
+        }
+
+        /* Impact Section */
+        .impact-stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .stat-item {
+            background: var(--primary-color);
+            color: white;
+            padding: 40px 20px;
+            border-radius: 20px;
+            flex: 1;
+            min-width: 200px;
+            max-width: 260px;
+        }
+
+        .stat-item .number {
+            font-size: 3em;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .stat-item .label {
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        /* Testimonials */
+        .testimonials-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 30px;
+            padding: 20px 0;
+            scrollbar-width: none;
+        }
+
+        .testimonials-slider::-webkit-scrollbar { display: none; }
+
+        .testimonial-card {
+            flex: 0 0 100%;
+            max-width: 600px;
+            scroll-snap-align: center;
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            text-align: left;
+            margin: 0 auto;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            font-size: 1.2em;
+            margin-bottom: 25px;
+            color: #444;
+        }
+
+        .testimonial-card .author {
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-card .author::before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background: var(--accent-color);
+            margin-right: 15px;
+        }
+
+        /* Modals */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 35, 126, 0.4);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 30px;
+            max-width: 700px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+            animation: fadeInUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            font-size: 2em;
+            cursor: pointer;
+            color: #ccc;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 40px;
+            margin: 0 20px 80px;
+            padding: 80px 20px;
+        }
+
+        .cta-section h2 { color: white; }
+        .cta-section p { color: rgba(255,255,255,0.9); }
+
+        /* Footer */
+        footer {
+            background: #121212;
+            color: #888;
+            padding: 80px 0 40px;
+        }
+
+        footer h4 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 1.2em;
+        }
+
+        footer .social-icons { margin-top: 20px; }
+        footer .social-icons a {
+            color: white;
+            font-size: 1.2em;
+            margin-right: 20px;
+            opacity: 0.6;
+            transition: var(--transition);
+        }
+
+        footer .social-icons a:hover { opacity: 1; color: var(--accent-color); }
+
+        footer .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        footer ul { list-style: none; padding: 0; }
+        footer ul li { margin-bottom: 12px; }
+        footer ul li a { color: #888; text-decoration: none; transition: var(--transition); }
+        footer ul li a:hover { color: white; }
+
+        .bottom-bar {
+            border-top: 1px solid #222;
+            padding-top: 40px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 40px 0;
+                box-shadow: var(--shadow);
+            }
+            nav ul.show { display: flex; }
+            nav ul li { margin: 15px 0; }
+            .menu-toggle { display: block; }
+            .about-content { flex-direction: column; }
+            .cta-section { border-radius: 0; margin: 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="#home" class="logo">
+                <img src="images/tyc-logo.jpeg" alt="National Youth Centre Logo">
+                <span class="title">National Youth Centre</span>
+            </a>
+            <nav>
+                <ul id="main-nav">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Programs</a></li>
+                    <li><a href="#contact">Get Involved</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h1>Empowering Youth,<br>Building South Africa's Future.</h1>
+            <p>National Youth Centre - Dedicated to fostering growth through 4IR, technology, arts, and entrepreneurship.</p>
+            <a href="#contact" class="cta-button">Get Involved</a>
+        </section>
+
+        <section id="about" class="container reveal-section">
+            <h2>About the National Youth Centre</h2>
+            <div class="about-content">
+                <div class="text-content">
+                    <p>The National Youth Centre (NYC) is at the forefront of youth empowerment in South Africa. We are committed to equipping the next generation with the skills and opportunities they need to thrive in a rapidly evolving world, focusing on the critical pillars of the National Youth Policy (NYP 2020-2030).</p>
+                    <p>Our programs are designed to bridge the gap between potential and achievement, fostering innovation, digital literacy, and entrepreneurial spirit. We work closely with national, provincial, and municipal stakeholders to ensure our initiatives have a lasting, positive impact across the country.</p>
+                </div>
+                <div class="image-content">
+                    <img src="images/youth-empowerment.jpg" alt="Youth learning and collaborating">
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="container reveal-section">
+            <h2>Our Programs</h2>
+            <p>Discover how we're making a difference through our key initiatives.</p>
+            <div class="project-grid">
+                <div class="project-card" data-project="4IR">
+                    <div class="project-icon" style="background: var(--primary-color);"><i class="fas fa-microchip"></i></div>
+                    <h3>4IR & Tech Skills</h3>
+                    <p>Building the digital future with training in AI, coding, and data science.</p>
+                </div>
+                <div class="project-card" data-project="arts">
+                    <div class="project-icon" style="background: var(--accent-hot-pink);"><i class="fas fa-palette"></i></div>
+                    <h3>Arts & Culture</h3>
+                    <p>Nurturing creativity and expression through diverse artistic platforms.</p>
+                </div>
+                <div class="project-card" data-project="entrepreneurship">
+                    <div class="project-icon" style="background: var(--accent-pink);"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Entrepreneurship Hub</h3>
+                    <p>Igniting business ideas and providing resources for young founders.</p>
+                </div>
+                <div class="project-card" data-project="community">
+                    <div class="project-icon" style="background: var(--primary-dark);"><i class="fas fa-users"></i></div>
+                    <h3>Community Leadership</h3>
+                    <p>Empowering youth to drive positive change in their local communities.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="cta-section container reveal-section">
+            <h2>Get Involved</h2>
+            <p>Join us in building a brighter future for South Africa's youth. Your support, time, or partnership can make a significant impact.</p>
+            <a href="mailto:national.youth@tyc.org.za" class="btn btn-primary">Contact Us</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <img src="images/tyc-logo.jpeg" alt="TYC Logo" class="footer-logo">
+                    <p>National Youth Centre is dedicated to empowering young South Africans through innovative programs and sustainable development initiatives.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#projects">Programs</a></li>
+                        <li><a href="#contact">Get Involved</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <span><i class="fas fa-envelope"></i> national.youth@tyc.org.za</span>
+                    <span><i class="fas fa-phone"></i> +27 11 123 4567</span>
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i> Headquarters<br>
+                        12th Floor, Braamfontein Centre,<br>
+                        Johannesburg, 2001, South Africa
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 National Youth Centre. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals (example structure, JS needed for functionality) -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="tracker.js"></script>
+    <script>
+        // Basic Navigation Toggle
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = 80; // Adjust based on your header height
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                    // Close menu if open on mobile
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+
+        // Reveal sections on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.reveal-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+        // Placeholder for Modal Functionality (requires actual modal content and JS logic)
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectCards = document.querySelectorAll('.project-card');
+            const modal = document.getElementById('project-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDescription = document.getElementById('modal-description');
+            const closeModal = document.querySelector('.close-modal');
+
+            // Example project data (replace with actual data)
+            const projectData = {
+                '4IR': {
+                    title: '4IR & Tech Skills',
+                    description: 'Our 4IR & Tech Skills program empowers youth with cutting-edge knowledge in Artificial Intelligence, Data Science, Robotics, and more. We partner with industry leaders to provide hands-on training and real-world project experience, preparing participants for the future of work.'
+                },
+                'arts': {
+                    title: 'Arts & Culture Development',
+                    description: 'The Arts & Culture program nurtures creativity and cultural expression among young South Africans. Through workshops, mentorship, and community projects, we support emerging artists in music, visual arts, performing arts, and digital media.'
+                },
+                'entrepreneurship': {
+                    title: 'Entrepreneurship Hub',
+                    description: 'Our Entrepreneurship Hub provides aspiring young business leaders with the resources, mentorship, and seed funding opportunities they need to launch and grow their ventures. We focus on fostering innovation, financial literacy, and sustainable business practices.'
+                },
+                'community': {
+                    title: 'Community Leadership Initiative',
+                    description: 'This program empowers young people to become active agents of change in their communities. Participants engage in leadership training, project management, and advocacy, addressing local challenges and driving positive social impact.'
+                }
+            };
+
+            projectCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const projectId = card.getAttribute('data-project');
+                    const project = projectData[projectId];
+                    modalTitle.textContent = project.title;
+                    modalDescription.textContent = project.description;
+                    modal.style.display = 'block';
+                });
+            });
+
+            closeModal.onclick = () => {
+                modal.style.display = 'none';
+            };
+
+            window.onclick = (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            };
+        });
+    </script>
+</body>
+</html>
