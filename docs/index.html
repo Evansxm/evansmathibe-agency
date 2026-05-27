@@ -1342,20 +1342,51 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "AdvertisingAgency",
+        "@type": ["AdvertisingAgency", "ProfessionalService"],
         "@id": "https://evansxm.github.io/evansmathibe-agency/",
         "name": "Evans Mathibe",
         "alternateName": ["EvansMathibe Agency"],
         "description": "Premier creative agency in South Africa specialized in AI Brand Automation, Advertising, and Design. Founded by Evans Mathibe.",
         "url": "https://evansxm.github.io/evansmathibe-agency/",
         "logo": "https://evansxm.github.io/evansmathibe-agency/logo.png",
+        "image": "https://evansxm.github.io/evansmathibe-agency/images/evansmathibe-02-copyright.jpg",
+        "foundingDate": "2024",
+        "foundingLocation": {
+            "@type": "Place",
+            "name": "Sandton, South Africa"
+        },
+        "knowsAbout": [
+            "AI Brand Automation",
+            "Advertising",
+            "Video Production",
+            "Digital Marketing",
+            "Brand Strategy",
+            "Social Media Management",
+            "Film Production",
+            "Web Design"
+        ],
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+                "opens": "08:00",
+                "closes": "17:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "09:00",
+                "closes": "13:00"
+            }
+        ],
+        "priceRange": "$$$",
         "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+27-72-416-5061",
             "contactType": "customer service",
             "email": "evans.mathibe@mail.com",
             "areaServed": "ZA",
-            "availableLanguage": "English"
+            "availableLanguage": ["English", "Zulu", "Xhosa"]
         },
         "location": [
             {
@@ -1404,12 +1435,36 @@
                 }
             }
         ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Creative & Media Services",
+            "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Brand Automation" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Video & Film Production" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Advertising Campaigns" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Digital Marketing" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brand Strategy & Design" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Media Management" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Project Management" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Photography" } }
+            ]
+        },
         "sameAs": [
             "https://www.tiktok.com/@evans_mathibe",
             "https://wa.me/27724165061",
-            "https://www.linkedin.com/in/evansmathibe"
+            "https://www.linkedin.com/in/evansmathibe",
+            "https://www.facebook.com/evans.mathibe",
+            "https://www.instagram.com/evans_mathibe/"
         ],
-        "areaServed": ["Tshwane", "Johannesburg", "Durban", "Cape Town", "South Africa", "Global"]
+        "areaServed": [
+            { "@type": "City", "name": "Johannesburg" },
+            { "@type": "City", "name": "Sandton" },
+            { "@type": "City", "name": "Cape Town" },
+            { "@type": "City", "name": "Durban" },
+            { "@type": "City", "name": "Pretoria" },
+            { "@type": "Country", "name": "South Africa" },
+            { "@type": "Continent", "name": "Global" }
+        ]
     }
     </script>
 
