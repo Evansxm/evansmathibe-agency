@@ -129,5 +129,8 @@ data/agency_data.json
 /Work/
 /skills/
 
+# Website video files (keep locally, not in git — 167MB)
+website/videos/
+
 # Backup dirs
 images_backup/
