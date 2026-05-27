@@ -18,6 +18,10 @@
 
 ---
 
+## Branding Notes
+- All work is done under **Evans Mathibe AI** (not just "EvansMathibe Agency"). Use "Evans Mathibe AI" as the brand name in all outputs.
+- "Evans Mathibe AI" refers to the full AI-powered agency system. "EvansMathibe Agency" can be used interchangeably for the website but AI tasks cite "Evans Mathibe AI".
+
 ## Available Skills
 
 | Skill | Purpose |
