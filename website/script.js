@@ -169,63 +169,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Volume Control
-const volumeToggle = document.getElementById('volumeToggle');
-const volumeSlider = document.getElementById('volumeSlider');
-const volumeContainer = document.getElementById('volumeSliderContainer');
-const volumeControl = document.getElementById('volumeControl');
-let audioCtx, gainNode, oscillator;
-let isPlaying = false;
-
-volumeToggle.addEventListener('click', function(e) {
-    e.stopPropagation();
-    volumeContainer.classList.toggle('open');
-    this.classList.toggle('active');
-    if (!isPlaying) startAmbientAudio();
-});
-
-volumeSlider.addEventListener('input', function() {
-    if (gainNode) gainNode.gain.value = parseFloat(this.value);
-});
-
-document.addEventListener('click', function(e) {
-    if (!volumeControl.contains(e.target)) {
-        volumeContainer.classList.remove('open');
-        volumeToggle.classList.remove('active');
-    }
-});
-
-function startAmbientAudio() {
-    try {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        gainNode = audioCtx.createGain();
-        gainNode.gain.value = parseFloat(volumeSlider.value);
-        gainNode.connect(audioCtx.destination);
-
-        const bufferSize = audioCtx.sampleRate * 4;
-        const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
-        const data = buffer.getChannelData(0);
-
-        for (let i = 0; i < bufferSize; i++) {
-            const t = i / audioCtx.sampleRate;
-            data[i] = (
-                Math.sin(2 * Math.PI * 110 * t) * 0.08 +
-                Math.sin(2 * Math.PI * 165 * t) * 0.04 +
-                Math.sin(2 * Math.PI * 220 * t) * 0.02
-            );
-        }
-
-        oscillator = audioCtx.createBufferSource();
-        oscillator.buffer = buffer;
-        oscillator.loop = true;
-        oscillator.connect(gainNode);
-        oscillator.start();
-        isPlaying = true;
-    } catch (e) {
-        console.log('Audio context not available:', e);
-    }
-}
-
 // Add animation class
 const animationStyle = document.createElement('style');
 animationStyle.textContent = `
