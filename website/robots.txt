@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /images_backup/
+Disallow: /videos/
 
 Sitemap: https://evansxm.github.io/evansmathibe-agency/sitemap.xml
