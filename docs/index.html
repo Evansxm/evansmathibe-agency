@@ -559,6 +559,61 @@
             color: var(--accent-hot-pink);
         }
 
+        /* Testimonials Section */
+        .testimonials {
+            padding: 6rem 0;
+            background: var(--white);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: var(--off-white);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(128,128,128,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(91,10,10,0.1);
+        }
+
+        .testimonial-stars {
+            color: #f59e0b;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            color: var(--gray);
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-author strong {
+            display: block;
+            color: var(--burgundy);
+            font-size: 0.95rem;
+        }
+
+        .testimonial-author span {
+            display: block;
+            color: var(--gray);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+        }
+
         /* Contact Section */
         .contact {
             padding: 6rem 0;
@@ -881,6 +936,8 @@
             .footer-links { flex-wrap: wrap; justify-content: center; }
             .services-grid { grid-template-columns: 1fr; }
             .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+            .testimonial-grid { grid-template-columns: 1fr; padding: 0 1rem; }
+            .testimonials { padding: 4rem 0; }
         }
         @media (max-width: 480px) {
             .hero h1 { font-size: 1.75rem; }
@@ -913,6 +970,7 @@
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tel:+27724165061" style="display:flex;align-items:center;gap:6px;background:var(--accent-pink);color:var(--burgundy)!important;border-radius:50px;padding:0.5rem 1.25rem!important;margin-left:0.5rem;"><i class="fas fa-phone"></i> +27 72 416 5061</a></li>
                 </ul>
             </div>
         </div>
@@ -926,9 +984,10 @@
                     <i class="fas fa-rocket me-2"></i>Evans Mathibe: Creative Agency
                 </div>
                 <h1>Evans Mathibe</h1>
+                <p class="hero-tagline">Creative Agency &bull; AI Automation &bull; Brand Strategy<br><small style="font-size:0.8rem;opacity:0.7;">Johannesburg &bull; Cape Town &bull; Durban</small></p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">
-                        <i class="fas fa-paper-plane"></i>Get Started
+                        <i class="fas fa-paper-plane"></i>Free Consultation
                     </a>
                     <a href="#services" class="btn btn-outline">
                         <i class="fas fa-briefcase"></i>Our Services
@@ -939,26 +998,26 @@
                 <div class="hero-slider">
                     <div class="slider-container">
                         <div class="image-slider">
-                            <div><img src="images/Generated_image_1_-17-.jpg" alt="Creative Work 1" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-19-.jpg" alt="Creative Work 2" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-30-.jpg" alt="Creative Work 3" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-34-.jpg" alt="Creative Work 4" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-39-.jpg" alt="Creative Work 5" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-41-.jpg" alt="Creative Work 6" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-46-.jpg" alt="Creative Work 7" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-52-.jpg" alt="Creative Work 8" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-55-.jpg" alt="Creative Work 9" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-57-.jpg" alt="Creative Work 10" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-58-.jpg" alt="Creative Work 11" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-70-.jpg" alt="Creative Work 12" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-81-.jpg" alt="Creative Work 13" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-83-.jpg" alt="Creative Work 14" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-95-.jpg" alt="Creative Work 15" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-_2025-11-15T144947.944.jpg" alt="Creative Work 16" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-_2025-11-15T145413.675.jpg" alt="Creative Work 17" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-_2025-11-16T092719.365.jpg" alt="Creative Work 18" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-_2025-11-17T073747.254.jpg" alt="Creative Work 19" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-_2025-11-17T183012.280.jpg" alt="Creative Work 20" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-17-.webp" alt="Creative Work 1" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-19-.webp" alt="Creative Work 2" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-30-.webp" alt="Creative Work 3" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-34-.webp" alt="Creative Work 4" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-39-.webp" alt="Creative Work 5" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-41-.webp" alt="Creative Work 6" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-46-.webp" alt="Creative Work 7" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-52-.webp" alt="Creative Work 8" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-55-.webp" alt="Creative Work 9" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-57-.webp" alt="Creative Work 10" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-58-.webp" alt="Creative Work 11" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-70-.webp" alt="Creative Work 12" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-81-.webp" alt="Creative Work 13" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-83-.webp" alt="Creative Work 14" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-95-.webp" alt="Creative Work 15" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-_2025-11-15T144947.944.webp" alt="Creative Work 16" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-_2025-11-15T145413.675.webp" alt="Creative Work 17" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-_2025-11-16T092719.365.webp" alt="Creative Work 18" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-_2025-11-17T073747.254.webp" alt="Creative Work 19" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-_2025-11-17T183012.280.webp" alt="Creative Work 20" loading="lazy"></div>
                         </div>
                     </div>
                 </div>
@@ -1083,7 +1142,7 @@
             <div class="blog-grid">
                 <article class="blog-card">
                     <div class="blog-image-container">
-                        <img src="images/Google_AI_Studio_2025-10-04T15_15_54.000Z.jpg" alt="AI in Advertising" class="blog-image" loading="lazy">
+                        <img src="images/Google_AI_Studio_2025-10-04T15_15_54.000Z.webp" alt="AI in Advertising" class="blog-image" loading="lazy">
                     </div>
                     <div class="blog-content">
                         <div class="blog-tags">
@@ -1102,7 +1161,7 @@
                 
                 <article class="blog-card">
                     <div class="blog-image-container">
-                        <img src="images/Google_AI_Studio_2025-10-17T06_03_49.044Z.jpg" alt="Advertising Trends" class="blog-image" loading="lazy">
+                        <img src="images/Google_AI_Studio_2025-10-17T06_03_49.044Z.webp" alt="Advertising Trends" class="blog-image" loading="lazy">
                     </div>
                     <div class="blog-content">
                         <div class="blog-tags">
@@ -1120,7 +1179,7 @@
                 
                 <article class="blog-card">
                     <div class="blog-image-container">
-                        <img src="images/Google_AI_Studio_2025-10-18T13_16_58.172Z.jpg" alt="Education in Advertising" class="blog-image" loading="lazy">
+                        <img src="images/Google_AI_Studio_2025-10-18T13_16_58.172Z.webp" alt="Education in Advertising" class="blog-image" loading="lazy">
                     </div>
                     <div class="blog-content">
                         <div class="blog-tags">
@@ -1138,7 +1197,7 @@
                 
                 <article class="blog-card">
                     <div class="blog-image-container">
-                        <img src="images/Google_AI_Studio_2025-10-18T14_32_10.122Z.jpg" alt="Creativity in Advertising" class="blog-image" loading="lazy">
+                        <img src="images/Google_AI_Studio_2025-10-18T14_32_10.122Z.webp" alt="Creativity in Advertising" class="blog-image" loading="lazy">
                     </div>
                     <div class="blog-content">
                         <div class="blog-tags">
@@ -1156,7 +1215,7 @@
                 
                 <article class="blog-card">
                     <div class="blog-image-container">
-                        <img src="images/Generated_image_1_-39-.jpg" alt="African Identity" class="blog-image" loading="lazy">
+                        <img src="images/Generated_image_1_-39-.webp" alt="African Identity" class="blog-image" loading="lazy">
                     </div>
                     <div class="blog-content">
                         <div class="blog-tags">
@@ -1174,7 +1233,7 @@
                 
                 <article class="blog-card">
                     <div class="blog-image-container">
-                        <img src="images/Generated_image_1_-41-.jpg" alt="Global Branding" class="blog-image" loading="lazy">
+                        <img src="images/Generated_image_1_-41-.webp" alt="Global Branding" class="blog-image" loading="lazy">
                     </div>
                     <div class="blog-content">
                         <div class="blog-tags">
@@ -1199,12 +1258,46 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Trusted by Brands</h2>
+            <p style="text-align: center; max-width: 600px; margin: 1rem auto 3rem; color: var(--gray);">We help businesses across South Africa build brands that matter.</p>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"EvansMathibe transformed our brand identity. Their strategic approach to AI automation and advertising elevated our market presence significantly."</p>
+                    <div class="testimonial-author">
+                        <strong>— Marketing Director</strong>
+                        <span>Leading SA Retail Group</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"The video production and campaign strategy exceeded expectations. Professional, creative, and results-driven. Highly recommended for any brand looking to scale."</p>
+                    <div class="testimonial-author">
+                        <strong>— CEO</strong>
+                        <span>Johannesburg Tech Startup</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"From brand strategy to digital marketing execution, EvansMathibe delivered a complete package. Our engagement metrics improved 3x in the first quarter."</p>
+                    <div class="testimonial-author">
+                        <strong>— Head of Marketing</strong>
+                        <span>Cape Town Media Company</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container contact-content">
             <div class="text-center">
-                <h2 class="section-title">Get In Touch</h2>
-                <p style="max-width: 600px; margin: 1.5rem auto 0; color: rgba(255,255,255,0.8);">Ready to elevate your brand? Let's discuss your project.</p>
+                <h2 class="section-title">Let's Build Something Great Together</h2>
+                <p style="max-width: 600px; margin: 1.5rem auto 0; color: rgba(255,255,255,0.8);">Tell us about your project and get a free, no-obligation proposal within 48 hours.</p>
             </div>
             
             <form class="contact-form" id="contactForm" action="https://formspree.io/f/xpwzgvay" method="POST">
@@ -1244,7 +1337,7 @@
                 </div>
                 
                 <button type="submit" class="submit-btn">
-                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                    <i class="fas fa-file-invoice me-2"></i>Get Your Free Proposal
                 </button>
             </form>
             
@@ -1349,7 +1442,7 @@
         "description": "Premier creative agency in South Africa specialized in AI Brand Automation, Advertising, and Design. Founded by Evans Mathibe.",
         "url": "https://evansxm.github.io/evansmathibe-agency/",
         "logo": "https://evansxm.github.io/evansmathibe-agency/logo.png",
-        "image": "https://evansxm.github.io/evansmathibe-agency/images/evansmathibe-02-copyright.jpg",
+        "image": "https://evansxm.github.io/evansmathibe-agency/images/evansmathibe-02-copyright.webp",
         "foundingDate": "2024",
         "foundingLocation": {
             "@type": "Place",
