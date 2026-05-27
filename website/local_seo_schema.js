@@ -5,10 +5,10 @@
     const localSeoData = {
         "@context": "https://schema.org",
         "@type": "AdvertisingAgency",
-        "@id": "https://evansmathibe.github.io/evansmathibe-agency/#local-seo",
+        "@id": "https://evansxm.github.io/evansmathibe-agency/#local-seo",
         "name": "Evans Mathibe",
         "description": "Premier South African creative agency specializing in AI Brand Automation, Advertising, and Design. Serving national, provincial, and municipal business hubs.",
-        "url": "https://evansmathibe.github.io/evansmathibe-agency/",
+        "url": "https://evansxm.github.io/evansmathibe-agency/",
         "areaServed": [
             // National Capitals
             { "@type": "City", "name": "Pretoria", "alternateName": "Tshwane", "description": "Administrative Capital" },

@@ -40,6 +40,9 @@
     <meta property="og:locale" content="en_ZA">
     <meta property="og:url" content="https://evansxm.github.io/evansmathibe-agency/">
     <meta property="og:site_name" content="Evans Mathibe">
+    <meta property="og:image" content="https://evansxm.github.io/evansmathibe-agency/logo.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
@@ -480,14 +483,6 @@
             transform: scale(1.05);
         }
 
-        @media (max-width: 768px) {
-            .hero-slider { padding: 0 1rem; margin-top: 2rem; }
-            .slider-container img { max-height: 400px; }
-            .blog-image-container {
-                height: 200px;
-            }
-        }
-
         .blog-content {
             padding: 1.5rem;
             flex-grow: 1;
@@ -794,23 +789,107 @@
             transform: translateY(-5px);
         }
 
-        @media (max-width: 768px) {
-            .hero-slider { padding: 0 1rem; margin-top: 2rem; }
-            .slider-container img { height: 280px !important; }
-            .floating-buttons {
-                bottom: 20px;
-                right: 20px;
-            }
-            .whatsapp-float, .tiktok-float {
-                width: 55px;
-                height: 55px;
-                font-size: 26px;
-            }
-            .back-to-top {
-                width: 45px;
-                height: 45px;
-                font-size: 18px;
-            }
+        /* Volume Control */
+        .volume-control {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .volume-float {
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border: 2px solid var(--accent-pink);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .volume-float:hover {
+            background: var(--accent-pink);
+            color: var(--burgundy);
+            transform: scale(1.1);
+        }
+
+        .volume-float.active {
+            background: var(--accent-pink);
+            color: var(--burgundy);
+        }
+
+        .volume-slider-container {
+            position: absolute;
+            right: 60px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--white);
+            border: 2px solid var(--accent-pink);
+            border-radius: 25px;
+            padding: 12px 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            display: none;
+            white-space: nowrap;
+            z-index: 10;
+        }
+
+        .volume-slider-container.open {
+            display: block;
+        }
+
+        .volume-slider-inner {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .volume-icon-low, .volume-icon-high {
+            color: var(--primary);
+            font-size: 14px;
+            width: 16px;
+            text-align: center;
+        }
+
+        .volume-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 120px;
+            height: 6px;
+            border-radius: 3px;
+            background: linear-gradient(90deg, var(--accent-pink), var(--accent-hot-pink));
+            outline: none;
+            cursor: pointer;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+            border: 2px solid var(--accent-pink);
+            transition: all 0.2s ease;
+        }
+
+        .volume-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+
+        .volume-slider::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+            border: 2px solid var(--accent-pink);
         }
 
         /* Footer */
@@ -885,35 +964,37 @@
         /* Responsive */
         @media (max-width: 768px) {
             .hero-slider { padding: 0 1rem; margin-top: 2rem; }
-            .slider-container img { height: 280px !important; }
-            .hero h1 {
-                font-size: 2.25rem;
-            }
-
-            .hero-tagline {
-                font-size: 1.125rem;
-            }
-
+            .slider-container img { height: 280px; object-fit: contain; }
+            .hero h1 { font-size: 2.25rem; }
+            .hero-tagline { font-size: 1.125rem; }
             .navbar-collapse {
                 background: var(--primary-dark);
                 padding: 1rem;
                 border-radius: 10px;
                 margin-top: 1rem;
             }
-
-            .contact-form {
-                padding: 2rem;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .footer-links {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+            .floating-buttons { bottom: 20px; right: 20px; }
+            .whatsapp-float, .tiktok-float, .volume-float { width: 55px; height: 55px; font-size: 26px; }
+            .back-to-top { width: 45px; height: 45px; font-size: 18px; }
+            .volume-slider-container { right: 65px; padding: 10px 12px; }
+            .volume-slider { width: 80px; }
+            .blog-image-container { height: 200px; }
+            .contact-form { padding: 2rem; }
+            .footer-content { flex-direction: column; text-align: center; }
+            .footer-links { flex-wrap: wrap; justify-content: center; }
+            .services-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.75rem; }
+            .hero-tagline { font-size: 1rem; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .btn { width: 100%; justify-content: center; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+            .stat-number { font-size: 1.75rem; }
+            .contact-form { padding: 1.5rem; }
+            .social-links { gap: 1rem; }
+            .social-link { width: 44px; height: 44px; font-size: 1rem; }
         }
     </style>
 </head>
@@ -961,26 +1042,26 @@
                 <div class="hero-slider">
                     <div class="slider-container">
                         <div class="image-slider">
-                            <div><img src="images/Generated_image_1_-17-.png" alt="Creative Work 1" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-19-.png" alt="Creative Work 2" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-30-.png" alt="Creative Work 3" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-34-.png" alt="Creative Work 4" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-39-.png" alt="Creative Work 5" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-41-.png" alt="Creative Work 6" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-46-.png" alt="Creative Work 7" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-52-.png" alt="Creative Work 8" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-55-.png" alt="Creative Work 9" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-57-.png" alt="Creative Work 10" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-58-.png" alt="Creative Work 11" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-70-.png" alt="Creative Work 12" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-81-.png" alt="Creative Work 13" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-83-.png" alt="Creative Work 14" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-95-.png" alt="Creative Work 15" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-_2025-11-15T144947.944.png" alt="Creative Work 16" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-_2025-11-15T145413.675.png" alt="Creative Work 17" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-_2025-11-16T092719.365.png" alt="Creative Work 18" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-_2025-11-17T073747.254.png" alt="Creative Work 19" loading="lazy"></div>
-                            <div><img src="images/Generated_image_1_-_2025-11-17T183012.280.png" alt="Creative Work 20" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-17-.jpg" alt="Creative Work 1" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-19-.jpg" alt="Creative Work 2" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-30-.jpg" alt="Creative Work 3" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-34-.jpg" alt="Creative Work 4" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-39-.jpg" alt="Creative Work 5" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-41-.jpg" alt="Creative Work 6" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-46-.jpg" alt="Creative Work 7" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-52-.jpg" alt="Creative Work 8" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-55-.jpg" alt="Creative Work 9" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-57-.jpg" alt="Creative Work 10" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-58-.jpg" alt="Creative Work 11" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-70-.jpg" alt="Creative Work 12" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-81-.jpg" alt="Creative Work 13" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-83-.jpg" alt="Creative Work 14" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-95-.jpg" alt="Creative Work 15" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-_2025-11-15T144947.944.jpg" alt="Creative Work 16" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-_2025-11-15T145413.675.jpg" alt="Creative Work 17" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-_2025-11-16T092719.365.jpg" alt="Creative Work 18" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-_2025-11-17T073747.254.jpg" alt="Creative Work 19" loading="lazy"></div>
+                            <div><img src="images/Generated_image_1_-_2025-11-17T183012.280.jpg" alt="Creative Work 20" loading="lazy"></div>
                         </div>
                     </div>
                 </div>
@@ -1105,7 +1186,7 @@
             <div class="blog-grid">
                 <article class="blog-card">
                     <div class="blog-image-container">
-                        <img src="images/Google_AI_Studio_2025-10-04T15_15_54.000Z.png" alt="AI in Advertising" class="blog-image" loading="lazy">
+                        <img src="images/Google_AI_Studio_2025-10-04T15_15_54.000Z.jpg" alt="AI in Advertising" class="blog-image" loading="lazy">
                     </div>
                     <div class="blog-content">
                         <div class="blog-tags">
@@ -1124,7 +1205,7 @@
                 
                 <article class="blog-card">
                     <div class="blog-image-container">
-                        <img src="images/Google_AI_Studio_2025-10-17T06_03_49.044Z.png" alt="Advertising Trends" class="blog-image" loading="lazy">
+                        <img src="images/Google_AI_Studio_2025-10-17T06_03_49.044Z.jpg" alt="Advertising Trends" class="blog-image" loading="lazy">
                     </div>
                     <div class="blog-content">
                         <div class="blog-tags">
@@ -1142,7 +1223,7 @@
                 
                 <article class="blog-card">
                     <div class="blog-image-container">
-                        <img src="images/Google_AI_Studio_2025-10-18T13_16_58.172Z.png" alt="Education in Advertising" class="blog-image" loading="lazy">
+                        <img src="images/Google_AI_Studio_2025-10-18T13_16_58.172Z.jpg" alt="Education in Advertising" class="blog-image" loading="lazy">
                     </div>
                     <div class="blog-content">
                         <div class="blog-tags">
@@ -1160,7 +1241,7 @@
                 
                 <article class="blog-card">
                     <div class="blog-image-container">
-                        <img src="images/Google_AI_Studio_2025-10-18T14_32_10.122Z.png" alt="Creativity in Advertising" class="blog-image" loading="lazy">
+                        <img src="images/Google_AI_Studio_2025-10-18T14_32_10.122Z.jpg" alt="Creativity in Advertising" class="blog-image" loading="lazy">
                     </div>
                     <div class="blog-content">
                         <div class="blog-tags">
@@ -1172,6 +1253,42 @@
                         <div class="blog-footer">
                             <div class="blog-meta">By Evans Mathibe</div>
                             <a href="blog/article4.html" class="blog-link stretched-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-image-container">
+                        <img src="images/Generated_image_1_-39-.jpg" alt="African Identity" class="blog-image" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-tags">
+                            <span class="blog-tag">#Culture</span>
+                            <span class="blog-tag">#Identity</span>
+                        </div>
+                        <h3>The Essence of African Identity</h3>
+                        <p>Exploring the wide spectrum of how Africans live, celebrating the diversity and multifaceted nature of the continent.</p>
+                        <div class="blog-footer">
+                            <div class="blog-meta">By Evans Mathibe</div>
+                            <a href="blog/article5.html" class="blog-link stretched-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-image-container">
+                        <img src="images/Generated_image_1_-41-.jpg" alt="Global Branding" class="blog-image" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-tags">
+                            <span class="blog-tag">#GlobalBranding</span>
+                            <span class="blog-tag">#Design</span>
+                        </div>
+                        <h3>Powering Global Brands from South Africa</h3>
+                        <p>How EvansMathibe Agency uses AI Brand Automation and expert design to power global brands from South Africa.</p>
+                        <div class="blog-footer">
+                            <div class="blog-meta">By Evans Mathibe</div>
+                            <a href="blog/article6.html" class="blog-link stretched-link">Read More <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </article>
@@ -1246,6 +1363,9 @@
                     <a href="https://www.tiktok.com/@evans_mathibe?is_from_webapp=1&sender_device=pc" class="social-link" target="_blank" aria-label="TikTok">
                         <i class="fab fa-tiktok"></i>
                     </a>
+                    <a href="https://www.linkedin.com/in/evansmathibe" class="social-link" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
                     <a href="mailto:evans.mathibe@mail.com" class="social-link" aria-label="Email">
                         <i class="fas fa-envelope"></i>
                     </a>
@@ -1301,6 +1421,18 @@
         <a href="https://www.tiktok.com/@evans_mathibe" class="tiktok-float" target="_blank" aria-label="Follow us on TikTok">
             <i class="fab fa-tiktok"></i>
         </a>
+        <div class="volume-control" id="volumeControl">
+            <button class="volume-float" id="volumeToggle" aria-label="Volume control">
+                <i class="fas fa-music"></i>
+            </button>
+            <div class="volume-slider-container" id="volumeSliderContainer">
+                <div class="volume-slider-inner">
+                    <i class="fas fa-volume-down volume-icon-low"></i>
+                    <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.05" value="0.5">
+                    <i class="fas fa-volume-up volume-icon-high"></i>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Footer -->
@@ -1319,7 +1451,7 @@
                 </ul>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 EvansMathibe Agency. All rights reserved. Based in South Africa, serving globally.</p>
+                <p>&copy; 2026 EvansMathibe Agency. All rights reserved. Based in South Africa, serving globally.</p>
             </div>
         </div>
     </footer>
@@ -1407,47 +1539,37 @@
         gtag('js', new Date());
         gtag('config', 'G-XXXXXXXXXX');
     </script>
+    <!-- REPLACE G-XXXXXXXXXX with your real Google Analytics ID. Get one at https://analytics.google.com -->
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     
     <!-- Slick Slider -->
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     
     <!-- Custom JS -->
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
     <!-- Dynamic Local SEO Schema -->
-    <script src="local_seo_schema.js"></script>
-    <!-- Visitor Tracking System -->
+    <script defer src="local_seo_schema.js"></script>
+    <!-- Basic Page Tracking (lightweight, no eval) -->
     <script>
     (function() {
       var start = Date.now();
-      fetch("https://ipapi.co/json/")
-        .then(function(r) { return r.json(); })
-        .then(function(l) {
-          window.onbeforeunload = function() {
-            var diff = Date.now() - start;
-            var dur = Math.floor(diff / 1000) + "s";
-            var p = {};
-            p.location = l.city + " " + l.region;
-            p.device = navigator.platform;
-            p.browser = navigator.userAgent;
-            p.country = l.country_name;
-            p.time = new Date().toISOString();
-            p.page = window.location.pathname;
-            p.duration = dur;
-            p.search = window.location.search;
-            var url = "YOUR_GAS_DEPLOYED_URL";
-            var body = JSON.stringify(p);
-            var xhr = new XMLHttpRequest();
-            var c = "\x2C";
-            eval("xhr.open('POST'" + c + " url)");
-            xhr.send(body);
-          };
-        });
+      window.addEventListener('beforeunload', function() {
+        var diff = Date.now() - start;
+        var data = {
+          page: window.location.pathname,
+          duration: Math.floor(diff / 1000) + 's',
+          referrer: document.referrer || 'direct',
+          timestamp: new Date().toISOString()
+        };
+        if (navigator.sendBeacon) {
+          navigator.sendBeacon('/track', JSON.stringify(data));
+        }
+      });
     })();
     </script>
 </body>

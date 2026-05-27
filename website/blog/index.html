@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Articles | EvansMathibe Agency Blog</title>
+    <meta name="description" content="Explore all articles from EvansMathibe Agency on advertising, AI, design, and creative industry insights.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Evans Mathibe">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="blog-style.css">
+    <style>
+        .blog-listing { padding: 6rem 0; }
+        .page-title { text-align: center; margin-bottom: 3rem; }
+        .page-title h1 { font-size: clamp(2rem, 4vw, 3rem); color: var(--burgundy); }
+        .page-title h1::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-pink), var(--accent-hot-pink));
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+        .page-title p { color: var(--gray); font-size: 1.1rem; margin-top: 1rem; }
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .blog-card { border-radius: 20px; overflow: hidden; transition: all 0.4s ease; background: var(--off-white); border: 1px solid rgba(128, 128, 128, 0.1); display: flex; flex-direction: column; }
+        .blog-card:hover { transform: translateY(-10px); box-shadow: 0 20px 60px rgba(91, 10, 10, 0.12); }
+        .blog-image-container { width: 100%; height: 220px; overflow: hidden; }
+        .blog-image { width: 100%; height: 100%; object-fit: contain; object-position: center; transition: transform 0.5s ease; background: linear-gradient(135deg, var(--primary-dark), var(--primary)); }
+        .blog-card:hover .blog-image { transform: scale(1.05); }
+        .blog-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .blog-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+        .blog-tag { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(255, 182, 180, 0.2); color: var(--primary); font-size: 0.7rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+        .blog-content h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--burgundy); line-height: 1.4; }
+        .blog-content p { color: var(--gray); font-size: 0.9rem; margin-bottom: 1rem; }
+        .blog-footer { margin-top: auto; display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid rgba(128, 128, 128, 0.1); }
+        .blog-meta { font-size: 0.8rem; color: var(--gray); }
+        .blog-link { color: var(--primary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: gap 0.3s ease; font-size: 0.9rem; }
+        .blog-link:hover { gap: 0.75rem; color: var(--accent-hot-pink); }
+        .back-home { text-align: center; margin-top: 3rem; }
+        @media (max-width: 768px) {
+            .blog-image-container { height: 200px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../logo.png" alt="EvansMathibe Logo" style="height: 40px; margin-right: 10px;">
+                <span class="logo-text">Evans Mathibe</span>
+            </a>
+            <div class="ms-auto">
+                <a class="nav-link" href="../index.html"><i class="fas fa-home me-1"></i> Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="blog-listing">
+        <div class="container">
+            <div class="page-title">
+                <h1>All Articles</h1>
+                <p>Expert perspectives on advertising, design, AI, and the creative industry.</p>
+            </div>
+
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image-container">
+                        <img src="../images/Google_AI_Studio_2025-10-04T15_15_54.000Z.jpg" alt="AI in Advertising" class="blog-image" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-tags">
+                            <span class="blog-tag">#Advertising</span>
+                            <span class="blog-tag">#AI</span>
+                            <span class="blog-tag">#SouthAfrica</span>
+                        </div>
+                        <h3>How AI is Affecting the Entire Industry in South Africa and the World</h3>
+                        <p>Exploring the transformative impact of artificial intelligence on advertising and marketing...</p>
+                        <div class="blog-footer">
+                            <div class="blog-meta">By Evans Mathibe</div>
+                            <a href="article1.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image-container">
+                        <img src="../images/Google_AI_Studio_2025-10-17T06_03_49.044Z.jpg" alt="Advertising Trends" class="blog-image" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-tags">
+                            <span class="blog-tag">#Advertising</span>
+                            <span class="blog-tag">#Trends</span>
+                        </div>
+                        <h3>Advertising Currently: Trends and Challenges</h3>
+                        <p>An in-depth look at the current state of advertising and the challenges facing agencies...</p>
+                        <div class="blog-footer">
+                            <div class="blog-meta">By Evans Mathibe</div>
+                            <a href="article2.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image-container">
+                        <img src="../images/Google_AI_Studio_2025-10-18T13_16_58.172Z.jpg" alt="Education in Advertising" class="blog-image" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-tags">
+                            <span class="blog-tag">#Advertising</span>
+                            <span class="blog-tag">#Education</span>
+                        </div>
+                        <h3>Is It Still Worth Going to School for Advertising?</h3>
+                        <p>Examining the value of formal education in the rapidly evolving advertising landscape...</p>
+                        <div class="blog-footer">
+                            <div class="blog-meta">By Evans Mathibe</div>
+                            <a href="article3.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image-container">
+                        <img src="../images/Google_AI_Studio_2025-10-18T14_32_10.122Z.jpg" alt="Creativity in Advertising" class="blog-image" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-tags">
+                            <span class="blog-tag">#Advertising</span>
+                            <span class="blog-tag">#Creativity</span>
+                        </div>
+                        <h3>Creativity in Advertising Context</h3>
+                        <p>Understanding the role of creativity in effective advertising campaigns...</p>
+                        <div class="blog-footer">
+                            <div class="blog-meta">By Evans Mathibe</div>
+                            <a href="article4.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image-container">
+                        <img src="../images/Generated_image_1_-39-.jpg" alt="African Identity" class="blog-image" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-tags">
+                            <span class="blog-tag">#Culture</span>
+                            <span class="blog-tag">#Identity</span>
+                        </div>
+                        <h3>The Essence of African Identity</h3>
+                        <p>Exploring the wide spectrum of how Africans live, celebrating the diversity and multifaceted nature of the continent.</p>
+                        <div class="blog-footer">
+                            <div class="blog-meta">By Evans Mathibe</div>
+                            <a href="article5.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image-container">
+                        <img src="../images/Generated_image_1_-41-.jpg" alt="Global Branding" class="blog-image" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-tags">
+                            <span class="blog-tag">#GlobalBranding</span>
+                            <span class="blog-tag">#Design</span>
+                        </div>
+                        <h3>Powering Global Brands from South Africa</h3>
+                        <p>How EvansMathibe Agency uses AI Brand Automation and expert design to power global brands from South Africa.</p>
+                        <div class="blog-footer">
+                            <div class="blog-meta">By Evans Mathibe</div>
+                            <a href="article6.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="back-home">
+                <a href="../index.html" class="btn btn-primary">
+                    <i class="fas fa-home me-2"></i>Back to Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 EvansMathibe Agency. <a href="../index.html">Back to Home</a></p>
+        </div>
+    </footer>
+</body>
+</html>
