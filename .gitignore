@@ -22,9 +22,75 @@ build/
 # OS
 .DS_Store
 Thumbs.db
+.local/
+.cache/
+.config/
+.nvm/
+.npm/
+.npm-global/
+.cargo/
+.rustup/
+.ollama/
+.pki/
+.gnome/
+.themes/
+.icons/
+.wine/
+.wine32/
+.wine-*/
+.mozilla/
+.thunderbird/
+.mt5/
+.mt5_test/
+.playwright-mcp/
+.ruff_cache/
+.bun/
+.crewai/
+.ev_ai/
+.gemini/
+.git/
+.aider/
+.wdm/
+
+# User directories
+Downloads/
+Music/
+Pictures/
+Videos/
+videos/
+Desktop/
+Public/
+Templates/
+Temp/
+Archive/
+Sessions/
+state/
+Logs/
+
+# Virtual environment
+venv/
+env/
+.venv/
+job_automation_venv/
 
 # Node
 node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
 
 # GitHub Pages
 _site/
@@ -34,3 +100,34 @@ _site/
 *.log
 logs/
 data/agency_data.json
+
+# Browser automation
+.opencode-browser/
+
+# Database files
+*.db
+*.sqlite
+
+# Temp files
+*.tmp
+*~
+
+# Personal dirs (root level only)
+/EvansMathibe AI/
+/Documents/
+/Projects/
+/Downloads/
+/Music/
+/Pictures/
+/Videos/
+/Desktop/
+/Public/
+/Templates/
+/snap/
+/bin/
+/go/
+/Work/
+/skills/
+
+# Backup dirs
+images_backup/
