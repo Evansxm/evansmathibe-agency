@@ -101,6 +101,9 @@ evans-backup verify
 - `/home/ev/EvansMathibe_Agency/website/images/` - Gallery images
 - `/home/ev/EvansMathibe_Agency/website/videos/` - Video assets
 - `/home/ev/EvansMathibe_Agency/website/logo.png` - Logo
+- `/home/ev/EvansMathibe_Agency/website/93c56b1a6f1f4b1f8a2d3e4c5b6a7d8c.txt` - IndexNow verification key
+- `/home/ev/EvansMathibe_Agency/website/scripts/submit-indexnow.py` - IndexNow submission script
+- `/home/ev/EvansMathibe_Agency/.github/workflows/indexnow-submit.yml` - Auto-indexing workflow
 
 **Before Making Changes:**
 ```bash
@@ -432,3 +435,43 @@ evans-backup backup "before making changes"
 
 ### Dependencies missing?
 - Run `npm install` / `pnpm install` / `pip install -r requirements.txt`
+
+---
+
+## Google Search Console Setup (Required for Google Indexing)
+
+The site is **NOT indexed by Google** (0 pages found). Google does NOT use IndexNow. The only way to get indexed is through **Google Search Console**.
+
+### Step-by-Step (YOU need to do this):
+
+1. Go to https://search.google.com/search-console
+2. Click **"Add Property"** → choose **"URL prefix"** method
+3. Enter: `https://evansxm.github.io/evansmathibe-agency/`
+4. Choose **"HTML tag"** verification method
+5. Google gives you a meta tag like:
+   ```html
+   <meta name="google-site-verification" content="RANDOM_STRING">
+   ```
+6. Copy the `content="RANDOM_STRING"` value
+7. Edit `/home/ev/website/index.html` on line 19, uncomment the meta tag and replace `VERIFICATION_CODE`:
+   ```html
+   <meta name="google-site-verification" content="RANDOM_STRING">
+   ```
+8. Commit and push
+9. Go back to Search Console and click **"Verify"**
+10. Once verified, go to **Sitemaps** section and submit `sitemap.xml`
+11. Use **URL Inspection** tool to request indexing of key pages:
+    - `https://evansxm.github.io/evansmathibe-agency/`
+    - `https://evansxm.github.io/evansmathibe-agency/solutions/`
+    - And all 14 location pages
+
+### Auto-Indexing (Already Set Up)
+
+| Search Engine | Method | Status |
+|--------------|--------|--------|
+| Bing | IndexNow + sitemap | ✅ Working |
+| Yandex | IndexNow + sitemap | ✅ Working |
+| Naver | IndexNow | ✅ Working |
+| **Google** | Search Console only | **⛔ Needs your action above** |
+
+A GitHub Actions workflow (`.github/workflows/indexnow-submit.yml`) automatically submits all URLs to IndexNow on every push to master. You can also manually trigger it from GitHub Actions UI.
