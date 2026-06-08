@@ -1,0 +1,8 @@
+name = "evansmathibe-agency"
+main = "src/index.js"
+compatibility_date = "2026-06-08"
+account_id = "a8fa931b584c4592a2a194b167d7e37e"
+
+[[kv_namespaces]]
+binding = "LEADS_KV"
+id = "a8fa931b584c4592a2a194b167d7e37e"

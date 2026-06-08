@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The South African Business Automation Blueprint | Evans Mathibe Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#000000',
+                            gold: '#D4AF37',
+                            white: '#FFFFFF',
+                            dark: '#111111',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+    <style>
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-brand-black text-brand-white font-sans selection:bg-brand-gold selection:text-brand-black">
+
+    <div class="max-w-4xl mx-auto px-6 py-20 md:py-32">
+        <!-- Headline Section -->
+        <header class="text-center mb-16 reveal">
+            <h1 class="font-serif text-3xl md:text-5xl font-black leading-tight mb-6">
+                How Local Enterprises Are Scaling Operations and <span class="text-brand-gold">Cutting Overhead Costs</span> Without Hiring More Staff
+            </h1>
+            <p class="text-lg md:text-xl text-brand-white/70 max-w-2xl mx-auto italic">
+                A Blueprint for South African Business Owners Who Are Tired of Wasting Money on Traditional Marketing Agencies That Deliver Zero Results
+            </p>
+        </header>
+
+        <!-- The Hook -->
+        <section class="mb-20 space-y-8 text-lg text-brand-white/80 leading-relaxed reveal">
+            <p>
+                Every business owner in Sandton, Menlyn, and Century City faces the exact same problem right now. Costs are rising. Reliable talent is hard to secure. Customer acquisition is becoming more expensive by the day.
+            </p>
+            <p>
+                Most agencies offer generic marketing packages. They promise brand awareness. They talk about impressions. They do not talk about your bottom line.
+            </p>
+            <p class="font-bold text-brand-white">
+                There is a systematic way to fix this.
+            </p>
+            <p>
+                You can download a complimentary copy of <span class="text-brand-gold font-bold">The South African Business Automation Blueprint</span>. This guide outlines the exact framework utilized to optimize operations and maximize sales conversions.
+            </p>
+        </section>
+
+        <!-- What's Inside -->
+        <section class="bg-brand-dark border border-brand-gold/20 p-8 md:p-12 mb-20 reveal">
+            <h2 class="font-serif text-2xl md:text-3xl font-bold mb-8 text-brand-gold">What is inside this blueprint:</h2>
+            <ul class="space-y-6">
+                <li class="flex gap-4">
+                    <span class="text-brand-gold font-bold text-xl">01.</span>
+                    <p>The three friction points in South African customer acquisition channels and how to eliminate them completely.</p>
+                </li>
+                <li class="flex gap-4">
+                    <span class="text-brand-gold font-bold text-xl">02.</span>
+                    <p>A step-by-step workflow to integrate automated AI systems into your current customer support structure to capture leads 24 hours a day.</p>
+                </li>
+                <li class="flex gap-4">
+                    <span class="text-brand-gold font-bold text-xl">03.</span>
+                    <p>The exact script our agency uses to turn cold traffic from major industrial sectors into scheduled consultation appointments.</p>
+                </li>
+                <li class="flex gap-4">
+                    <span class="text-brand-gold font-bold text-xl">04.</span>
+                    <p>How to reduce your monthly marketing overhead by automating redundant creative tasks without sacrificing brand quality.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Form Section -->
+        <section class="text-center mb-20 reveal">
+            <p class="text-lg mb-8">
+                This blueprint does not contain theoretical fluff. It contains actionable strategies you can deploy into your business this week.
+            </p>
+            
+            <form id="lead-form" class="max-w-md mx-auto space-y-4">
+                <input type="email" id="email" placeholder="Corporate Email Address" required 
+                    class="w-full px-6 py-4 bg-transparent border border-brand-white/30 text-brand-white focus:border-brand-gold outline-none transition-all text-center placeholder:text-brand-white/40">
+                
+                <button type="submit" class="w-full py-5 bg-brand-gold text-brand-black font-bold tracking-widest hover:bg-brand-white transition-all transform hover:-translate-y-1">
+                    GET THE FREE BLUEPRINT NOW
+                </button>
+            </form>
+
+            <p class="mt-8 text-xs text-brand-white/40 uppercase tracking-widest">
+                Our Transparency Guarantee: Your data remains completely secure. We hate spam as much as you do.
+            </p>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center pt-20 border-t border-brand-white/10">
+            <p class="text-sm text-brand-white/60">
+                &copy; 2026 EVANS MATHIBE AGENCY. All rights reserved. <br>
+                Sandton | Rosebank | Menlyn | Century City | Umhlanga Ridge
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Form Submission
+        document.getElementById('lead-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+            
+            btn.innerText = 'SENDING...';
+            btn.disabled = true;
+
+            const workerUrl = "https://evansmathibe-agency.evansmathibe.workers.dev";
+
+            try {
+                const response = await fetch(workerUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, industry: 'Unknown', source: 'Blueprint Landing Page' })
+                });
+
+                if (response.ok) {
+                    btn.innerText = 'SUCCESS! CHECK YOUR INBOX';
+                    btn.style.backgroundColor = '#22c55e'; // green
+                    e.target.reset();
+                } else {
+                    throw new Error('Failed to capture lead');
+                }
+            } catch (err) {
+                btn.innerText = 'ERROR. TRY AGAIN';
+                btn.style.backgroundColor = '#ef4444'; // red
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.backgroundColor = '';
+                    btn.disabled = false;
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>
