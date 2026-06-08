@@ -1,0 +1,15 @@
+{
+  "name": "evansmathibe-agency-seo",
+  "version": "1.0.0",
+  "description": "SEO automation for Evans Mathibe Agency",
+  "main": "index-now.js",
+  "scripts": {
+    "index": "node index-now.js"
+  },
+  "dependencies": {
+    "googleapis": "^67.0.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.98.0"
+  }
+}
