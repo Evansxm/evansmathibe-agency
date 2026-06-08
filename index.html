@@ -1,731 +1,270 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>National Youth Centre | South Africa</title>
-    <meta name="description" content="National Youth Centre is a dynamic non-profit organization dedicated to empowering young people across South Africa.">
-    <link rel="icon" href="favicon.png" type="image/png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
-
-        :root {
-            --primary-color: #1a237e;
-            --secondary-color: #3949ab;
-            --accent-color: #fb8c00;
-            --success-color: #43a047;
-            --text-color: #2c3e50;
-            --light-bg: #f4f7f6;
-            --white: #fff;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--light-bg);
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .reveal-section {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s ease-out;
-        }
-
-        .reveal-section.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: var(--shadow);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            padding: 15px 0;
-            transition: var(--transition);
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            font-size: 1.5em;
-            font-weight: 800;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .logo img {
-            height: 45px;
-            margin-right: 12px;
-        }
-
-        .logo .badge {
-            background: var(--secondary-color);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.6em;
-            margin-left: 10px;
-            vertical-align: middle;
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-        }
-
-        nav ul li {
-            margin-left: 30px;
-        }
-
-        nav ul li a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 600;
-            position: relative;
-            padding: 5px 0;
-            transition: var(--transition);
-        }
-
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-color);
-            transition: var(--transition);
-        }
-
-        nav ul li a:hover {
-            color: var(--secondary-color);
-        }
-
-        nav ul li a:hover::after {
-            width: 100%;
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 1.5em;
-            cursor: pointer;
-            color: var(--primary-color);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(26, 35, 126, 0.8), rgba(57, 73, 171, 0.7)), url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-            color: var(--white);
-            text-align: center;
-            padding: 180px 20px 120px;
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5em, 5vw, 4em);
-            margin-bottom: 25px;
-            font-weight: 800;
-            letter-spacing: -1px;
-            animation: fadeInUp 1s ease;
-            line-height: 1.1;
-        }
-
-        .hero p {
-            font-size: clamp(1em, 2vw, 1.4em);
-            margin-bottom: 40px;
-            max-width: 800px;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease 0.2s backwards;
-        }
-
-        .cta-button {
-            background: linear-gradient(135deg, var(--accent-color), #f57c00);
-            color: var(--white);
-            padding: 14px 32px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(251, 140, 0, 0.3);
-            transition: var(--transition);
-            display: inline-block;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(251, 140, 0, 0.4);
-            filter: brightness(1.1);
-        }
-
-        /* Sections */
-        section {
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        section:nth-child(even) {
-            background-color: var(--white);
-        }
-
-        section h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-            position: relative;
-            display: inline-block;
-            font-weight: 700;
-        }
-
-        section h2::after {
-            content: '';
-            width: 60px;
-            height: 4px;
-            background-color: var(--accent-color);
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: -10px;
-            border-radius: 2px;
-        }
-
-        section > .container > p {
-            font-size: 1.1em;
-            max-width: 800px;
-            margin: 0 auto 50px;
-            color: #555;
-        }
-
-        /* About Section */
-        .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 50px;
-            text-align: left;
-        }
-
-        .about-content .text-content {
-            flex: 1.2;
-            min-width: 300px;
-        }
-
-        .about-content .text-content p {
-            margin-bottom: 20px;
-            font-size: 1.1em;
-        }
-
-        .about-content .image-content {
-            flex: 0.8;
-            min-width: 300px;
-        }
-
-        .about-content img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 20px 20px 0px var(--secondary-color);
-        }
-
-        /* Programmes Grid */
-        .programmes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-        }
-
-        .programme-card {
-            background-color: var(--white);
-            padding: 50px 30px;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            text-align: center;
-            transition: var(--transition);
-            cursor: pointer;
-            border: 1px solid rgba(0,0,0,0.05);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .programme-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border-color: var(--secondary-color);
-        }
-
-        .programme-card .icon {
-            font-size: 3.5em;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 25px;
-            transition: var(--transition);
-        }
-
-        .programme-card:hover .icon {
-            transform: scale(1.1);
-        }
-
-        .programme-card h3 {
-            font-size: 1.5em;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .programme-card::after {
-            content: 'Learn More →';
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-weight: 600;
-            color: var(--secondary-color);
-            font-size: 0.9em;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .programme-card:hover::after {
-            opacity: 1;
-            bottom: 25px;
-        }
-
-        /* Impact Section */
-        .impact-stats {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        .stat-item {
-            background: var(--primary-color);
-            color: white;
-            padding: 40px 20px;
-            border-radius: 20px;
-            flex: 1;
-            min-width: 200px;
-            max-width: 260px;
-        }
-
-        .stat-item .number {
-            font-size: 3em;
-            font-weight: 800;
-            margin-bottom: 10px;
-            color: var(--accent-color);
-        }
-
-        .stat-item .label {
-            font-weight: 600;
-            opacity: 0.9;
-        }
-
-        /* Testimonials */
-        .testimonials-slider {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            gap: 30px;
-            padding: 20px 0;
-            scrollbar-width: none;
-        }
-
-        .testimonials-slider::-webkit-scrollbar { display: none; }
-
-        .testimonial-card {
-            flex: 0 0 100%;
-            max-width: 600px;
-            scroll-snap-align: center;
-            background-color: var(--white);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            text-align: left;
-            margin: 0 auto;
-        }
-
-        .testimonial-card p {
-            font-style: italic;
-            font-size: 1.2em;
-            margin-bottom: 25px;
-            color: #444;
-        }
-
-        .testimonial-card .author {
-            font-weight: 700;
-            color: var(--primary-color);
-            display: flex;
-            align-items: center;
-        }
-
-        .testimonial-card .author::before {
-            content: '';
-            width: 30px;
-            height: 2px;
-            background: var(--accent-color);
-            margin-right: 15px;
-        }
-
-        /* Modals */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(26, 35, 126, 0.4);
-            backdrop-filter: blur(8px);
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-content {
-            background: var(--white);
-            padding: 50px;
-            border-radius: 30px;
-            max-width: 700px;
-            width: 90%;
-            position: relative;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
-            animation: fadeInUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 25px;
-            right: 30px;
-            font-size: 2em;
-            cursor: pointer;
-            color: #ccc;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            border-radius: 40px;
-            margin: 0 20px 80px;
-            padding: 80px 20px;
-        }
-
-        .cta-section h2 { color: white; }
-        .cta-section p { color: rgba(255,255,255,0.9); }
-
-        /* Footer */
-        footer {
-            background: #121212;
-            color: #888;
-            padding: 80px 0 40px;
-        }
-
-        footer h4 {
-            color: white;
-            margin-bottom: 25px;
-            font-size: 1.2em;
-        }
-
-        footer .social-icons { margin-top: 20px; }
-        footer .social-icons a {
-            color: white;
-            font-size: 1.2em;
-            margin-right: 20px;
-            opacity: 0.6;
-            transition: var(--transition);
-        }
-
-        footer .social-icons a:hover { opacity: 1; color: var(--accent-color); }
-
-        footer .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-
-        footer ul { list-style: none; padding: 0; }
-        footer ul li { margin-bottom: 12px; }
-        footer ul li a { color: #888; text-decoration: none; transition: var(--transition); }
-        footer ul li a:hover { color: white; }
-
-        .bottom-bar {
-            border-top: 1px solid #222;
-            padding-top: 40px;
-            text-align: center;
-            font-size: 0.9em;
-        }
-
-        /* Mobile */
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 75px;
-                left: 0;
-                width: 100%;
-                background: white;
-                padding: 40px 0;
-                box-shadow: var(--shadow);
-            }
-            nav ul.show { display: flex; }
-            nav ul li { margin: 15px 0; }
-            .menu-toggle { display: block; }
-            .about-content { flex-direction: column; }
-            .cta-section { border-radius: 0; margin: 0; }
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Evans Mathibe Agency | Creative Direction & Project Management</title>
+    <meta name="description" content="Evans Mathibe Agency offers elite media consultancy and high-fashion editorial services in Pretoria, South Africa. Professional creative direction and project management.">
+    <link rel="canonical" href="https://evansxm.github.io/evansmathibe-agency/">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Evans Mathibe Agency",
+      "email": "evans.mathibe@mail.com",
+      "telephone": "+27 72 416 5061",
+      "url": "https://evansxm.github.io/evansmathibe-agency/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pretoria",
+        "addressCountry": "ZA"
+      },
+      "description": "Elite media consultancy and high-fashion editorial services based in Pretoria, South Africa.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Creative Direction" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Project Management" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Media Consultancy" } }
+        ]
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Brand",
+      "name": "Evans Mathibe Agency",
+      "url": "https://evansxm.github.io/evansmathibe-agency/",
+      "logo": "https://evansxm.github.io/evansmathibe-agency/assets/bg-images/Evans%20mathibe%20Logo.jpeg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+27 72 416 5061",
+        "contactType": "customer service",
+        "email": "evans.mathibe@mail.com"
+      }
+    }
+    </script>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <a href="#" class="logo">
-                <img src="logo.png" alt="NYC Logo">
-                National Youth Centre <span class="badge">NYC</span>
-            </a>
-            <nav>
-                <ul id="main-nav">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#programmes">Programmes</a></li>
-                    <li><a href="#impact">Impact</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="menu-toggle" id="mobile-menu">
-                <i class="fas fa-bars"></i>
+<body class="bg-brand-black text-brand-white font-sans selection:bg-brand-gold selection:text-brand-black overflow-x-hidden">
+
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- Navigation -->
+    <nav id="nav" class="fixed w-full z-50 transition-all duration-500 py-6 px-8 md:px-16 flex justify-between items-center">
+        <a href="https://evansxm.github.io/evansmathibe-agency/" class="flex items-center gap-4 group">
+            <img src="assets/bg-images/Evans mathibe Logo.jpeg" alt="Logo" class="w-12 h-12 rounded-full border border-brand-gold/30 group-hover:border-brand-gold transition-all">
+            <span class="font-serif text-xl font-bold tracking-tight">EVANS MATHIBE</span>
+        </a>
+        
+        <div class="hidden md:flex gap-12 items-center">
+            <a href="#about" class="text-sm font-semibold tracking-widest hover:text-brand-gold transition-colors">ABOUT</a>
+            <a href="#services" class="text-sm font-semibold tracking-widest hover:text-brand-gold transition-colors">SERVICES</a>
+            <a href="#insights" class="text-sm font-semibold tracking-widest hover:text-brand-gold transition-colors">INSIGHTS</a>
+            <a href="#contact" class="px-6 py-3 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-black transition-all text-xs font-bold tracking-[0.2em]">GET IN TOUCH</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div id="hero-slider" class="absolute inset-0 z-0">
+            <!-- Slides will be injected by JS -->
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-black/60 via-brand-black/40 to-brand-black/80 z-10"></div>
+        
+        <div class="relative z-20 text-center px-6 max-w-5xl">
+            <p class="text-brand-gold font-bold tracking-[0.5em] text-xs mb-6 reveal">CREATIVE &bull; MARKETING &bull; AI</p>
+            <h1 class="font-serif text-5xl md:text-8xl font-black leading-tight mb-8 reveal">
+                Elevating Brands <br> <span class="italic text-brand-gold">Beyond Horizons</span>
+            </h1>
+            <p class="text-lg md:text-xl text-brand-white/70 max-w-2xl mx-auto mb-12 font-light leading-relaxed reveal">
+                A premium agency architecture for the modern era. We blend cinematic storytelling with intelligent automation to create global impact from South Africa.
+            </p>
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center reveal">
+                <a href="#contact" class="px-10 py-5 bg-brand-gold text-brand-black font-bold tracking-widest hover:bg-brand-white transition-all transform hover:-translate-y-1">COMMENCE PROJECT</a>
             </div>
         </div>
-    </header>
 
-    <main>
-        <section id="home" class="hero">
-            <h1>Empowering Youth,<br>Building Futures.</h1>
-            <p>National Youth Centre is a dynamic hub dedicated to empowering young South Africans through transformative education, skills development, and community leadership.</p>
-            <a href="#programmes" class="cta-button">Explore Our Programmes</a>
-        </section>
-
-        <section id="about" class="container reveal-section">
-            <h2>About the Organisation</h2>
-            <div class="about-content">
-                <div class="text-content">
-                    <p>At the National Youth Centre (NYC), we don't just see youth as the leaders of tomorrow—we see you as the heartbeat of today. Our journey began with a simple yet powerful conviction: every single young person in South Africa, from the bustling streets of Jo'burg to the quietest corners of our rural provinces, deserves a real shot at greatness.</p>
-                    <p>Our mission is deeply rooted in the <strong>National Youth Policy (NYP 2020-2030)</strong>. We act as a vital bridge, translating national vision into local action. By working hand-in-hand with provincial and municipal structures, we ensure that the policy's pillars—economic transformation, education, health, and social cohesion—aren't just words on a page, but lived realities for our youth.</p>
+        <div class="absolute bottom-12 left-0 w-full z-20 px-16 hidden md:flex justify-between items-end">
+            <div class="flex gap-16">
+                <div>
+                    <span class="block font-serif text-3xl font-bold text-brand-gold">08+</span>
+                    <span class="text-[10px] tracking-[0.3em] text-brand-white/40 uppercase">Services</span>
                 </div>
-                <div class="image-content">
-                    <img src="https://images.unsplash.com/photo-1523240715181-014b9f56a5c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Youth Development">
+                <div>
+                    <span class="block font-serif text-3xl font-bold text-brand-gold">04</span>
+                    <span class="text-[10px] tracking-[0.3em] text-brand-white/40 uppercase">SA Cities</span>
                 </div>
-            </div>
-        </section>
-
-        <section id="programmes" class="container reveal-section">
-            <h2>Our Core Programmes</h2>
-            <p>We offer a range of impactful programmes designed to address key areas of youth development. Click on any card to learn more.</p>
-            <div class="programmes-grid">
-                <div class="programme-card" data-programme="education">
-                    <div class="icon"><i class="fas fa-user-graduate"></i></div>
-                    <h3>Education & Skills</h3>
-                    <p>Bridging the gap between learning and earning through modern vocational training.</p>
+                <div>
+                    <span class="block font-serif text-3xl font-bold text-brand-gold">25+</span>
+                    <span class="text-[10px] tracking-[0.3em] text-brand-white/40 uppercase">Articles</span>
                 </div>
-                <div class="programme-card" data-programme="health">
-                    <div class="icon"><i class="fas fa-heartbeat"></i></div>
-                    <h3>Health & Wellness</h3>
-                    <p>Supporting mental and physical resilience for a healthier youth generation.</p>
-                </div>
-                <div class="programme-card" data-programme="innovation">
-                    <div class="icon"><i class="fas fa-rocket"></i></div>
-                    <h3>Innovation & Startup</h3>
-                    <p>Turning bold ideas into sustainable businesses and economic independence.</p>
-                </div>
-                <div class="programme-card" data-programme="civic">
-                    <div class="icon"><i class="fas fa-fist-raised"></i></div>
-                    <h3>Civic Leadership</h3>
-                    <p>Empowering young voices to lead change in their own local communities.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="impact" class="container reveal-section">
-            <h2>Our Impact in Numbers</h2>
-            <p>See the tangible difference National Youth Centre is making across South Africa.</p>
-            <div class="impact-stats">
-                <div class="stat-item">
-                    <div class="number">10,000+</div>
-                    <div class="label">Youth Empowered</div>
-                </div>
-                <div class="stat-item">
-                    <div class="number">500+</div>
-                    <div class="label">Skills Graduates</div>
-                </div>
-                <div class="stat-item">
-                    <div class="number">150+</div>
-                    <div class="label">Local Projects</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="testimonials" class="container reveal-section">
-            <h2>What Our Youth Say</h2>
-            <div class="testimonials-slider">
-                <div class="testimonial-card">
-                    <p>"NYC gave me the confidence and skills I needed to start my own small business. I'm forever grateful for their support."</p>
-                    <div class="author">Thandeka Z., Entrepreneur</div>
-                </div>
-                <div class="testimonial-card">
-                    <p>"The health and wellness workshops were eye-opening. I learned so much about self-care and mental health."</p>
-                    <div class="author">Sipho N., Student</div>
-                </div>
-                <div class="testimonial-card">
-                    <p>"Being part of NYC's civic engagement projects made me realize the power of youth voices in our community."</p>
-                    <div class="author">Lindiwe M., Community Activist</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="cta-section container reveal-section">
-            <h2>Join the NYC Movement</h2>
-            <p>Your support can make a profound difference. Partner with us or volunteer today.</p>
-            <a href="mailto:info@nyc.org.za" class="cta-button">Get in Touch</a>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <h4>National Youth Centre</h4>
-                <p>Empowering youth for a brighter South Africa.</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#programmes">Programmes</a></li>
-                    <li><a href="#impact">Our Impact</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Contact Us</h4>
-                <p><i class="fas fa-envelope"></i> info@nyc.org.za</p>
-                <p><i class="fas fa-phone"></i> +27 11 123 4567</p>
             </div>
         </div>
-        <div class="bottom-bar">
-            <p>&copy; 2026 National Youth Centre. All Rights Reserved.</p>
-        </div>
-    </footer>
+    </section>
 
-    <!-- Modals -->
-    <div id="programme-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div id="modal-body" class="modal-body"></div>
+    <!-- Content Sections (About, Services, Contact etc.) -->
+    <section id="about" class="py-32 px-8 md:px-24 bg-brand-dark">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
+            <div class="reveal">
+                <p class="text-brand-gold font-bold tracking-[0.3em] text-xs mb-8">THE ARCHITECT</p>
+                <h2 class="font-serif text-4xl md:text-6xl font-bold leading-tight mb-8">Crafting Tomorrow's Legacy Today.</h2>
+                <p class="text-brand-white/60 text-lg font-light leading-relaxed mb-6">Evans Mathibe is a multi-disciplinary creative force operating at the intersection of high-end design and advanced technology.</p>
+            </div>
         </div>
-    </div>
+    </section>
 
+
+    <!-- Core Engine -->
     <script>
-        const programmeDetails = {
-            education: {
-                title: "Education & Skills",
-                content: "Our Education & Skills programme focuses on practical, high-demand skills for the modern economy. From coding bootcamps to advanced vocational trades, we partner with industry leaders to ensure our graduates are first in line for employment."
-            },
-            health: {
-                title: "Health & Wellness",
-                content: "We provide safe spaces for mental health support, nutritional guidance, and physical fitness. By building emotional resilience today, we're ensuring a stronger, more capable generation for tomorrow."
-            },
-            innovation: {
-                title: "Innovation & Startup",
-                content: "Have a bold idea? We help you build it. Our incubator provides young entrepreneurs with mentorship, seed funding access, and the strategic guidance needed to turn a dream into a thriving enterprise."
-            },
-            civic: {
-                title: "Civic Leadership",
-                content: "Your voice matters. Our programme trains young people in community organizing, policy advocacy, and ethical leadership, ensuring they make a real difference in their local municipalities."
-            }
-        };
-
-        const modal = document.getElementById('programme-modal');
-        const modalBody = document.getElementById('modal-body');
-        const closeModal = document.querySelector('.close-modal');
-
-        document.querySelectorAll('.programme-card').forEach(card => {
-            card.addEventListener('click', () => {
-                const prog = card.getAttribute('data-programme');
-                const detail = programmeDetails[prog];
-                modalBody.innerHTML = `<h3>${detail.title}</h3><p>${detail.content}</p>`;
-                modal.style.display = 'flex';
-            });
+        document.addEventListener('DOMContentLoaded', () => {
+            initCursor();
+            initSlider();
+            initReveal();
+            initNav();
         });
 
-        closeModal.onclick = () => modal.style.display = 'none';
-        window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
-
-        document.getElementById('mobile-menu').onclick = () => {
-            document.getElementById('main-nav').classList.toggle('show');
-        };
-
-        const reveal = () => {
-            document.querySelectorAll('.reveal-section').forEach(sec => {
-                if (sec.getBoundingClientRect().top < window.innerHeight - 100) sec.classList.add('active');
+        function initCursor() {
+            const cursor = document.getElementById('cursor');
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`;
             });
-        };
-        window.onscroll = reveal;
-        window.onload = reveal;
+        }
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.onclick = function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
-                    document.getElementById('main-nav').classList.remove('show');
+        function initSlider() {
+            const images = [
+                'Evans mathibe Logo.webp',
+                'Generated image 1 (17).webp',
+                'Generated image 1 (19).webp',
+                'Generated image 1 - 2025-11-15T123734.061.webp',
+                'Generated image 1 - 2025-11-15T144736.481.webp',
+                'Generated image 1 - 2025-11-15T144947.944.webp',
+                'Generated image 1 - 2025-11-15T145413.675.webp',
+                'Generated image 1 - 2025-11-16T092719.365.webp',
+                'Generated image 1 - 2025-11-17T073747.254.webp',
+                'Generated image 1 - 2025-11-17T183012.280.webp',
+                'Generated image 1 - 2025-11-17T184214.269.webp',
+                'Generated image 1 - 2025-11-17T184246.332.webp',
+                'Generated image 1 - 2025-11-17T184533.824.webp',
+                'Generated image 1 (30).webp',
+                'Generated image 1 (34).webp',
+                'Generated image 1 (39).webp',
+                'Generated image 1 (41).webp',
+                'Generated image 1 (46).webp',
+                'Generated image 1 (52).webp',
+                'Generated image 1 (55).webp',
+                'Generated image 1 (57).webp',
+                'Generated image 1 (58).webp',
+                'Generated image 1 (69).webp',
+                'Generated image 1 (70).webp',
+                'Generated image 1 (74).webp',
+                'Generated image 1 (80).webp',
+                'Generated image 1 (81).webp',
+                'Generated image 1 (83).webp',
+                'Generated image 1 (95).webp',
+                'Generated Image September 15, 2025 - 3_23PM.webp',
+                'Google_AI_Studio_2025-09-15T17_58_41.857Z.webp',
+                'Google_AI_Studio_2025-09-15T17_59_48.509Z.webp',
+                'Google_AI_Studio_2025-09-28T13_44_55.299Z.webp',
+                'Google_AI_Studio_2025-10-03T12_29_22.497Z.webp',
+                'Google_AI_Studio_2025-10-03T12_30_19.857Z.webp',
+                'Google_AI_Studio_2025-10-04T15_15_54.000Z.webp',
+                'Google_AI_Studio_2025-10-06T15_34_28.224Z.webp',
+                'Google_AI_Studio_2025-10-06T15_44_44.669Z.webp',
+                'Google_AI_Studio_2025-10-07T10_21_13.774Z.webp',
+                'Google_AI_Studio_2025-10-09T15_10_55.370Z.webp',
+                'Google_AI_Studio_2025-10-09T17_28_12.373Z.webp',
+                'Google_AI_Studio_2025-10-14T09_13_14.389Z.webp',
+                'Google_AI_Studio_2025-10-17T06_03_49.044Z.webp',
+                'Google_AI_Studio_2025-10-18T13_16_58.172Z.webp',
+                'Google_AI_Studio_2025-10-18T14_32_10.122Z.webp',
+                'Google_AI_Studio_2025-10-20T13_14_02.068Z.webp',
+                'Google_AI_Studio_2025-10-20T15_15_56.351Z.webp',
+                'Google_AI_Studio_2025-10-22T15_43_44.500Z.webp',
+                'Google_AI_Studio_2025-10-22T15_46_17.421Z.webp',
+                'Google_AI_Studio_2025-10-23T16_03_59.396Z.webp',
+                'Google_AI_Studio_2025-10-24T08_17_57.927Z.webp',
+                'Google_AI_Studio_2025-10-24T18_44_08.934Z.webp',
+                'Google_AI_Studio_2025-10-25T08_57_38.179Z.webp',
+                'Google_AI_Studio_2025-10-25T08_59_36.355Z.webp',
+                'Google_AI_Studio_2025-10-25T15_02_12.712Z.webp',
+                'Google_AI_Studio_2025-10-27T16_01_49.846Z.webp',
+                'Google_AI_Studio_2025-10-29T09_04_17.091Z.webp',
+                'Google_AI_Studio_2025-10-30T17_00_18.963Z(1).webp',
+                'Google_AI_Studio_2025-10-30T17_06_03.969Z.webp',
+                'Google_AI_Studio_2025-10-30T17_09_24.432Z(1).webp',
+                'Google_AI_Studio_2025-10-30T17_09_24.432Z.webp',
+                'Google_AI_Studio_2025-11-24T16_06_23.687Z.webp',
+                'Google_AI_Studio_2025-11-25T14_03_24.867Z.webp',
+                'Google_AI_Studio_2025-11-25T14_13_52.271Z.webp',
+                'Google_AI_Studio_2025-11-27T17_36_53.179Z.webp',
+                'Google_AI_Studio_2025-11-27T17_55_33.493Z.webp',
+                'Google_AI_Studio_2025-12-03T15_05_55.074Z.webp',
+                'Google_AI_Studio_2025-12-03T18_41_10.030Z.webp',
+                'Google_AI_Studio_2025-12-19T09_45_28.147Z.webp',
+                'Google_AI_Studio_2025-12-19T09_49_57.794Z.webp',
+                'Google_AI_Studio_2025-12-19T09_58_52.071Z.webp',
+                'Google_AI_Studio_2025-12-21T11_17_05.316Z.webp',
+                'Google_AI_Studio_2025-12-21T11_38_25.317Z.webp',
+                'Google_AI_Studio_2026-01-06T15_52_53.853Z.webp',
+                'Google_AI_Studio_2026-01-06T16_11_28.684Z.webp',
+                'Google_AI_Studio_2026-01-13T12_39_50.916Z.webp',
+                'Google_AI_Studio_2026-01-13T12_49_31.615Z.webp',
+                'Google_AI_Studio_2026-01-13T12_57_07.139Z.webp',
+                'Google_AI_Studio_2026-01-13T13_02_42.352Z.webp',
+                'Google_AI_Studio_2026-01-15T05_49_53.935Z.webp',
+                'Google_AI_Studio_2026-01-15T05_59_53.455Z.webp',
+                'Google_AI_Studio_2026-01-20T09_07_43.021Z.webp',
+                'Google_AI_Studio_2026-01-22T08_52_10.982Z.webp',
+                'Google_AI_Studio_2026-01-23T19_28_03.259Z.webp',
+                'Google_AI_Studio_2026-01-31T09_59_13.855Z.webp',
+                'Google_AI_Studio_2026-01-31T10_22_58.884Z.webp',
+                'Google_AI_Studio_2026-02-01T09_48_08.392Z.webp'
+            ];
+
+            const slider = document.getElementById('hero-slider');
+            images.forEach((img, idx) => {
+                const slide = document.createElement('div');
+                slide.className = `absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${idx === 0 ? 'opacity-100' : 'opacity-0'}`;
+                slide.style.backgroundImage = `url('assets/bg-images/${img}')`;
+                const inner = document.createElement('div');
+                inner.className = "w-full h-full ken-burns";
+                inner.style.backgroundImage = `url('assets/bg-images/${img}')`;
+                inner.style.backgroundSize = "cover";
+                inner.style.backgroundPosition = "center";
+                slide.appendChild(inner);
+                slider.appendChild(slide);
+            });
+
+            let current = 0;
+            const slides = slider.querySelectorAll('div.absolute');
+            setInterval(() => {
+                slides[current].classList.replace('opacity-100', 'opacity-0');
+                current = (current + 1) % slides.length;
+                slides[current].classList.replace('opacity-0', 'opacity-100');
+            }, 6000);
+        }
+
+        function initReveal() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('active');
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
+
+        function initNav() {
+            const nav = document.getElementById('nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add('bg-brand-black/80', 'backdrop-blur-xl', 'py-4');
+                } else {
+                    nav.classList.remove('bg-brand-black/80', 'backdrop-blur-xl', 'py-4');
                 }
-            };
-        });
+            });
+        }
     </script>
 </body>
 </html>
