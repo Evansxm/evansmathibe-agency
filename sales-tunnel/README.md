@@ -1,37 +1,44 @@
-# Evans Mathibe Agency Sales Tunnel
+# Evans Mathibe Agency Sales Tunnel (Edge-Native)
 
-This directory contains the automated sales tunnel for the agency, designed to convert cold South African business traffic into high-value leads.
+This directory contains an automated, high-conversion sales tunnel architected to run on the **Cloudflare Edge**. It is designed to capture and nurture high-value business leads across South Africa's major commercial and provincial hubs.
 
-## Structure
-- `/assets`: Contains the lead magnet (`blueprint.md`).
-- `/landing-page`: Contains the high-converting landing page (`index.html`).
-- `/backend`: Contains the Node.js Express server for lead capture and delivery.
+## 📍 Target Regions
+The tunnel is localized for maximum ROI in:
+Sandton, Midrand, Cape Town, Pietermaritzburg, Polokwane, Lebowakgomo, Tzaneen, Tshwane, Pretoria East, Menlyn, Centurion, Rustenburg, Brits, Mahikeng, Bloemfontein, Springs, Benoni, and Hartbeespoort.
 
-## Deployment Instructions
+## 🏗️ Architecture
+- **`/src`**: Edge-optimized Cloudflare Worker (`index.js`).
+- **`/landing-page`**: High-converting, mobile-responsive frontend (`index.html`).
+- **`/assets`**: The Lead Magnet: *The South African Business Automation Blueprint*.
+- **`/backend`**: (Legacy/Classic) Node.js fallback server.
 
-### 1. Backend Setup
-Navigate to the `backend` directory and install dependencies:
+## 🚀 Deployment Instructions (Recommended: Edge)
+
+### 1. Configure Cloudflare
+Ensure you have the KV Namespace ID and Account ID ready in `wrangler.toml`.
+
+### 2. Provision Secrets
 ```bash
-cd backend
-npm install
+# Set your transactional email API key
+echo "YOUR_API_KEY" | npx wrangler secret put EMAIL_API_KEY
 ```
 
-Start the server:
+### 3. Deploy to Production
 ```bash
-npm start
+npx wrangler deploy
 ```
-The server will run on `http://localhost:3000`.
+The tunnel will be live at `https://evansmathibe-agency.evansmathibe.workers.dev`.
 
-### 2. Frontend Connection
-The landing page is currently configured to send POST requests to `/api/capture-lead`. Ensure your web server (e.g., Nginx or Apache) routes these requests to the Node.js backend or update the `fetch` URL in `landing-page/index.html` to the full backend URL.
+---
 
-### 3. Lead Management
-Leads are automatically stored in `backend/leads.json` in a structured format, acting as a lightweight CRM.
+## 🏛️ Deployment Instructions (Alternative: Classic Node.js)
 
-### 4. Email Delivery
-The backend uses `nodemailer` with a mock transport. To enable real email delivery, update the `transporter` configuration in `backend/server.js` with your SMTP credentials (e.g., Gmail, SendGrid, or Postmark).
+If you prefer a traditional VPS deployment:
+1. Navigate to `/backend`.
+2. Run `npm install && npm start`.
+3. Update the `fetch` URL in `landing-page/index.html` to your server's IP/Domain.
 
-## Strategy
-- **Targeting**: Focus on commercial and provincial hubs (Sandton, Midrand, Cape Town, Pietermaritzburg, Polokwane, Lebowakgomo, Tzaneen, Tshwane, Pretoria East, Menlyn, Centurion, Rustenburg, Brits, Mahikeng, Bloemfontein, Springs, Benoni, Hartbeespoort).
-- **Hook**: Operational efficiency and cost reduction through AI.
-- **CTA**: Immediate value delivery via the Blueprint.
+## 📈 Strategy
+- **Hook**: Operational efficiency and 30% overhead reduction via AI.
+- **CTA**: Instant download of the localized Automation Blueprint.
+- **CRM**: Leads are automatically tagged by region and saved to Cloudflare KV (Edge) or `leads.json` (Classic).
