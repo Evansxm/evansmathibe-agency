@@ -32,6 +32,6 @@ Leads are automatically stored in `backend/leads.json` in a structured format, a
 The backend uses `nodemailer` with a mock transport. To enable real email delivery, update the `transporter` configuration in `backend/server.js` with your SMTP credentials (e.g., Gmail, SendGrid, or Postmark).
 
 ## Strategy
-- **Targeting**: Focus on commercial hubs (Sandton, Century City, etc.).
+- **Targeting**: Focus on commercial and provincial hubs (Sandton, Midrand, Cape Town, Pietermaritzburg, Polokwane, Lebowakgomo, Tzaneen, Tshwane, Pretoria East, Menlyn, Centurion, Rustenburg, Brits, Mahikeng, Bloemfontein, Springs, Benoni, Hartbeespoort).
 - **Hook**: Operational efficiency and cost reduction through AI.
 - **CTA**: Immediate value delivery via the Blueprint.
