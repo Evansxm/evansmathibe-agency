@@ -33,7 +33,7 @@ Implement an AI-driven chatbot integrated with WhatsApp and your website:
 
 ### Phase 4: Reducing Marketing Overhead
 
-- **Automated Content Personalization**: Use AI to generate localized ad variants for different regions (e.g., tailoring copy for the Durban market vs. Cape Town).
+- **Automated Content Personalization**: Use AI to generate localized ad variants for different regions (e.g., tailoring copy for the Durban market, Pretoria East, or Bloemfontein).
 - **Sentiment Analysis**: Monitor brand mentions across local social media and news to react instantly to market shifts.
 
 ---
@@ -44,3 +44,4 @@ Deployment of these systems should take no longer than 14 days. Start small, aut
 ---
 **Evans Mathibe Agency**
 *Creative Direction | Project Management | AI Automation*
+ Midrand, Cape Town, Pietermaritzburg, Polokwane, Lebowakgomo, Tzaneen, Tshwane, Pretoria East, Menlyn, Centurion, Rustenburg, Brits, Mahikeng, Bloemfontein, Springs, Benoni, Hartbeespoort.*
