@@ -1,0 +1,371 @@
+Restored session: tick=460
+KAIROS Daemon v0.9-persistent-competitive
+Tick interval: 30s, Budget: 15s
+Starting daemon...
+
+[Tick 461] idle
+[Tick 462] idle
+[Tick 463] idle
+[Tick 464] idle
+[Tick 465] idle
+[Tick 466] idle
+[Tick 467] idle
+[Tick 468] idle
+[Tick 469] idle
+[Tick 470] idle
+[Tick 471] idle
+[Tick 472] idle
+[Tick 473] idle
+[Tick 474] idle
+[Tick 475] idle
+[Tick 476] idle
+[Tick 477] idle
+[Tick 478] idle
+[Tick 479] idle
+[Tick 480] idle
+[Tick 481] idle
+[Tick 482] idle
+[Tick 483] idle
+[Tick 484] idle
+[Tick 485] idle
+[Tick 486] idle
+[Tick 487] idle
+[Tick 488] idle
+[Tick 489] idle
+[Tick 490] idle
+[Tick 491] idle
+[Tick 492] idle
+[Tick 493] idle
+[Tick 494] idle
+[Tick 495] idle
+[Tick 496] idle
+[Tick 497] idle
+[Tick 498] idle
+[Tick 499] idle
+[Tick 500] idle
+[Tick 501] idle
+[Tick 502] idle
+[Tick 503] idle
+[Tick 504] idle
+[Tick 505] idle
+[Tick 506] idle
+[Tick 507] idle
+[Tick 508] idle
+[Tick 509] idle
+[Tick 510] idle
+[Tick 511] idle
+[Tick 512] idle
+[Tick 513] idle
+[Tick 514] idle
+[Tick 515] idle
+[Tick 516] idle
+[Tick 517] idle
+[Tick 518] idle
+[Tick 519] idle
+[Tick 520] idle
+[Tick 521] idle
+[Tick 522] idle
+[Tick 523] idle
+[Tick 524] idle
+[Tick 525] idle
+[Tick 526] idle
+[Tick 527] idle
+[Tick 528] idle
+[Tick 529] idle
+[Tick 530] idle
+[Tick 531] idle
+[Tick 532] idle
+[Tick 533] idle
+[Tick 534] idle
+[Tick 535] idle
+[Tick 536] idle
+[Tick 537] idle
+[Tick 538] idle
+[Tick 539] idle
+[Tick 540] idle
+[Tick 541] idle
+[Tick 542] idle
+[Tick 543] idle
+[Tick 544] idle
+[Tick 545] idle
+[Tick 546] idle
+[Tick 547] idle
+[Tick 548] idle
+[Tick 549] idle
+[Tick 550] idle
+[Tick 551] idle
+[Tick 552] idle
+[Tick 553] idle
+[Tick 554] idle
+[Tick 555] idle
+[Tick 556] idle
+[Tick 557] idle
+[Tick 558] idle
+[Tick 559] Executing: Confirm KAIROS v0.9 persisten
+[Tick 560] idle
+[Tick 561] idle
+[Tick 562] idle
+[Tick 563] idle
+[Tick 564] idle
+[Tick 565] idle
+[Tick 566] idle
+[Tick 567] idle
+[Tick 568] idle
+[Tick 569] idle
+
+Daemon shutting down...
+[2026-04-04T22:24:30.467839] Session saved at tick 570
+[2026-04-04T22:25:25.745447] Cleanup triggered
+[2026-04-04T22:25:26.238842] Cleanup triggered
+[2026-04-04T22:25:30.498847] Task completed: Confirm KAIROS v0.9 persistent session is active
+[2026-04-04T22:26:32.760137] Cleanup triggered
+[2026-04-04T22:27:00.655355] Session saved at tick 575
+[2026-04-04T22:27:35.380336] Cleanup triggered
+[2026-04-04T22:27:55.285893] Cleanup triggered
+[2026-04-04T22:29:30.731214] Session saved at tick 580
+[2026-04-04T22:29:53.345640] Session saved at tick 580
+[2026-04-04T22:32:00.829933] Session saved at tick 585
+[2026-04-04T22:32:23.385008] Session saved at tick 585
+[2026-04-04T22:34:30.878887] Session saved at tick 590
+[2026-04-04T22:34:53.436505] Session saved at tick 590
+[2026-04-04T22:37:00.973028] Session saved at tick 595
+[2026-04-04T22:37:23.478277] Session saved at tick 595
+[2026-04-04T22:39:31.033266] Session saved at tick 600
+[2026-04-04T22:39:53.530468] Session saved at tick 600
+[2026-04-04T22:42:01.114447] Session saved at tick 605
+[2026-04-04T22:42:23.585145] Session saved at tick 605
+[2026-04-04T22:44:31.175403] Session saved at tick 610
+[2026-04-04T22:44:53.651466] Session saved at tick 610
+[2026-04-04T22:47:01.245514] Session saved at tick 615
+[2026-04-04T22:47:23.706507] Session saved at tick 615
+[2026-04-04T22:49:31.305016] Session saved at tick 620
+[2026-04-04T22:49:53.765008] Session saved at tick 620
+[2026-04-04T22:52:01.399037] Session saved at tick 625
+[2026-04-04T22:52:23.890106] Session saved at tick 625
+[2026-04-04T22:54:31.594583] Session saved at tick 630
+[2026-04-04T22:54:54.185693] Session saved at tick 630
+[2026-04-04T22:55:43.324492] Shutdown initiated
+[2026-04-04T22:55:43.324885] Shutdown initiated
+[2026-04-04T22:55:45.129991] Cleanup triggered
+[2026-04-04T22:56:01.751990] Cleanup triggered
+[2026-04-04T22:58:18.267288] Session restored: tick=632, tasks=0
+[2026-04-04T22:58:18.276038] Session saved (exit) at tick 632
+[2026-04-04T22:58:40.209414] Session restored: tick=632, tasks=0
+[2026-04-04T22:58:40.222174] Session saved (restart_test) at tick 632
+[2026-04-04T22:58:40.232113] Session restored: tick=632, tasks=1
+[2026-04-04T22:58:40.240264] Session saved (exit) at tick 632
+[2026-04-04T22:58:40.244661] Session saved (exit) at tick 632
+[2026-04-04T22:58:54.249622] Session restored: tick=632, tasks=2
+[2026-04-04T22:58:57.250740] Session restored: tick=632, tasks=2
+[2026-04-04T22:58:57.268079] Session saved (exit) at tick 632
+[2026-04-04T22:59:32.592471] Session restored: tick=632, tasks=6
+[2026-04-04T22:59:32.624873] Session saved (exit) at tick 632
+[2026-04-04T22:59:54.334056] Session saved (periodic) at tick 635
+[2026-04-04T23:00:36.532247] Session restored: tick=635, tasks=10
+[2026-04-04T23:00:36.538833] Session saved (exit) at tick 635
+[2026-04-04T23:02:24.524255] Session saved (periodic) at tick 640
+[2026-04-04T23:04:55.046603] Session saved (periodic) at tick 645
+[2026-04-04T23:07:25.180202] Session saved (periodic) at tick 650
+[2026-04-04T23:09:55.309623] Session saved (periodic) at tick 655
+[2026-04-04T23:12:26.394198] Session saved (periodic) at tick 660
+[2026-04-04T23:14:56.438953] Session saved (periodic) at tick 665
+[2026-04-04T23:17:26.792257] Session saved (periodic) at tick 670
+[2026-04-04T23:19:56.928759] Session saved (periodic) at tick 675
+[2026-04-04T23:22:26.996995] Session saved (periodic) at tick 680
+[2026-04-04T23:24:57.038075] Session saved (periodic) at tick 685
+[2026-04-04T23:27:27.085694] Session saved (periodic) at tick 690
+[2026-04-04T23:29:57.255461] Session saved (periodic) at tick 695
+[2026-04-04T23:32:27.312919] Session saved (periodic) at tick 700
+[2026-04-04T23:34:57.375645] Session saved (periodic) at tick 705
+[2026-04-04T23:37:27.426320] Session saved (periodic) at tick 710
+[2026-04-04T23:39:57.471620] Session saved (periodic) at tick 715
+[2026-04-04T23:42:27.512109] Session saved (periodic) at tick 720
+[2026-04-04T23:44:57.626628] Session saved (periodic) at tick 725
+[2026-04-04T23:47:27.687840] Session saved (periodic) at tick 730
+[2026-04-04T23:49:57.735011] Session saved (periodic) at tick 735
+[2026-04-04T23:52:27.802659] Session saved (periodic) at tick 740
+[2026-04-04T23:54:57.848765] Session saved (periodic) at tick 745
+[2026-04-04T23:57:27.915120] Session saved (periodic) at tick 750
+[2026-04-04T23:59:57.961192] Session saved (periodic) at tick 755
+[2026-04-05T00:02:28.035741] Session saved (periodic) at tick 760
+[2026-04-05T00:04:58.087231] Session saved (periodic) at tick 765
+[2026-04-05T00:07:28.127229] Session saved (periodic) at tick 770
+[2026-04-05T00:09:58.174542] Session saved (periodic) at tick 775
+[2026-04-05T00:12:16.402569] Session restored: tick=775, tasks=0
+[2026-04-05T00:12:16.411605] Cleanup triggered
+[2026-04-05T00:12:16.420357] Session saved (exit) at tick 775
+[2026-04-05T00:12:23.605443] Session restored: tick=775, tasks=1
+[2026-04-05T00:12:23.610229] Cleanup triggered
+[2026-04-05T00:12:23.613753] Session saved (exit) at tick 775
+[2026-04-05T00:12:28.244650] Session saved (periodic) at tick 780
+[2026-04-05T00:12:38.281032] Session restored: tick=780, tasks=2
+[2026-04-05T00:12:38.284396] Cleanup triggered
+[2026-04-05T00:12:38.287324] Session saved (exit) at tick 780
+[2026-04-05T00:12:38.617761] Session restored: tick=780, tasks=4
+[2026-04-05T00:12:38.619675] Cleanup triggered
+[2026-04-05T00:12:38.622702] Session saved (exit) at tick 780
+[2026-04-05T00:14:58.440452] Session saved (periodic) at tick 785
+[2026-04-05T00:17:28.547236] Session saved (periodic) at tick 790
+[2026-04-05T00:19:58.645355] Session saved (periodic) at tick 795
+[2026-04-05T00:20:16.498996] Session restored: tick=795, tasks=0
+[2026-04-05T00:20:16.507326] Cleanup triggered
+[2026-04-05T00:20:16.510340] Session saved (exit) at tick 795
+[2026-04-05T00:20:23.779762] Session restored: tick=795, tasks=1
+[2026-04-05T00:20:23.788502] Cleanup triggered
+[2026-04-05T00:20:23.796446] Session saved (exit) at tick 795
+[2026-04-05T00:20:31.033348] Session restored: tick=795, tasks=3
+[2026-04-05T00:20:31.040838] Cleanup triggered
+[2026-04-05T00:20:31.045575] Session saved (exit) at tick 795
+[2026-04-05T00:20:43.419455] Session restored: tick=795, tasks=6
+[2026-04-05T00:20:43.426975] Cleanup triggered
+[2026-04-05T00:20:43.430280] Session saved (exit) at tick 795
+[2026-04-05T00:21:02.354151] Session restored: tick=795, tasks=13
+[2026-04-05T00:21:02.367103] GOVERNANCE: blocked - sudo rm -rf / (Critical risk: rm\s+-rf\s+/)
+[2026-04-05T00:21:02.367427] BLOCKED by governance: sudo rm -rf / (Critical risk: rm\s+-rf\s+/)
+[2026-04-05T00:21:04.366902] Session restored: tick=795, tasks=13
+[2026-04-05T00:21:04.376063] Cleanup triggered
+[2026-04-05T00:21:04.381723] Session saved (exit) at tick 795
+[2026-04-05T00:21:32.410293] GOVERNANCE: allowed - summarize project status (Low risk - safe task)
+[2026-04-05T00:21:33.476661] Task completed (isolated): summarize project status
+[2026-04-05T00:21:39.761388] Session restored: tick=795, tasks=38
+[2026-04-05T00:21:39.766222] Cleanup triggered
+[2026-04-05T00:21:39.770424] Session saved (exit) at tick 795
+[2026-04-05T00:22:03.499992] GOVERNANCE: allowed - simulate high cpu (Medium risk - allowed with audit logging)
+[2026-04-05T00:22:14.507089] Task failed (isolated): simulate high cpu - 
+[2026-04-05T00:22:15.472696] Session restored: tick=795, tasks=75
+[2026-04-05T00:22:15.478035] Cleanup triggered
+[2026-04-05T00:22:15.485865] Session saved (exit) at tick 795
+[2026-04-05T00:22:28.774169] Session saved (periodic) at tick 800
+[2026-04-05T00:22:44.542700] GOVERNANCE: blocked - sudo rm -rf / (Critical risk: rm\s+-rf\s+/)
+[2026-04-05T00:22:44.543098] BLOCKED by governance: sudo rm -rf / (Critical risk: rm\s+-rf\s+/)
+[2026-04-05T00:23:01.375518] Session restored: tick=800, tasks=148
+[2026-04-05T00:23:01.381083] Cleanup triggered
+[2026-04-05T00:23:01.392131] Session saved (exit) at tick 800
+[2026-04-05T00:23:14.580452] GOVERNANCE: allowed - summarize project status (Low risk - safe task)
+[2026-04-05T00:23:15.651240] Task completed (isolated): summarize project status
+[2026-04-05T00:23:15.676547] Session saved (periodic) at tick 800
+[2026-04-05T00:23:36.685705] Shutdown initiated
+[2026-04-05T00:23:36.722615] Session saved (shutdown) at tick 802
+[2026-04-05T00:23:45.453848] Session restored: tick=802, tasks=293
+[2026-04-05T00:23:45.460457] Cleanup triggered
+[2026-04-05T00:23:45.495958] Session saved (exit) at tick 802
+[2026-04-05T00:23:49.667255] Session restored: tick=802, tasks=586
+[2026-04-05T00:23:49.670758] Cleanup triggered
+[2026-04-05T00:23:49.705326] Session saved (exit) at tick 802
+[2026-04-05T00:23:58.905491] Session saved (exit) at tick 802
+[2026-04-05T00:33:23.282218] Session restored: tick=802, tasks=1172
+[2026-04-05T00:33:23.330143] GOVERNANCE: allowed - simulate high cpu (Risk: unknown, Complexity: low)
+[2026-04-05T00:33:23.330419] ROUTING: task='simulate high cpu' -> google / gemini-1.5-pro (high-reasoning)
+[2026-04-05T00:33:24.029305] Session restored: tick=802, tasks=1172
+[2026-04-05T00:33:24.037125] Cleanup triggered
+[2026-04-05T00:33:24.219564] Session saved (exit) at tick 802
+[2026-04-05T00:33:35.468635] Task failed (isolated): simulate high cpu - 
+[2026-04-05T00:34:05.541261] GOVERNANCE: allowed - simulate high memory (Risk: unknown, Complexity: low)
+[2026-04-05T00:34:05.541605] ROUTING: task='simulate high memory' -> google / gemini-1.5-pro (high-reasoning)
+[2026-04-05T00:34:05.828563] Task completed (isolated): simulate high memory via gemini-1.5-pro
+[2026-04-05T00:34:16.010992] Session restored: tick=802, tasks=3517
+[2026-04-05T00:34:16.016056] Cleanup triggered
+[2026-04-05T00:34:16.187164] Session saved (exit) at tick 802
+[2026-04-05T00:34:35.928738] GOVERNANCE: allowed - summarize project status (Risk: unknown, Complexity: low)
+[2026-04-05T00:34:35.929092] ROUTING: task='summarize project status' -> google / gemini-1.5-flash (high-speed)
+[2026-04-05T00:34:37.045189] Task completed (isolated): summarize project status via gemini-1.5-flash
+[2026-04-05T00:34:37.368343] Session saved (periodic) at tick 805
+[2026-04-05T00:35:31.491374] Session restored: tick=805, tasks=7032
+[2026-04-05T00:35:31.501722] Cleanup triggered
+[2026-04-05T00:35:32.067095] Session saved (exit) at tick 805
+[2026-04-05T00:37:11.452430] Session restored: tick=805, tasks=14064
+[2026-04-05T00:37:11.498188] Cleanup triggered
+[2026-04-05T00:37:12.399291] Session saved (exit) at tick 805
+[2026-04-05T00:49:28.911400] Session restored: tick=805, tasks=28128
+[2026-04-05T00:49:28.981537] GOVERNANCE: allowed - what is the date? (Risk: unknown, Complexity: low)
+[2026-04-05T00:49:28.986518] GOVERNANCE: allowed - analyze isolation vs KiloClaw (Risk: unknown, Complexity: high)
+[2026-04-05T00:49:30.160175] Cleanup triggered
+[2026-04-05T00:49:32.405501] Session saved (exit) at tick 805
+[2026-04-06T10:35:00.630931] GOVERNANCE: blocked - echo $GOOGLE_API_KEY (Risk: unknown, Complexity: low)
+[2026-04-06T10:35:00.639700] GOVERNANCE: blocked - print(os.environ) (Risk: unknown, Complexity: low)
+[2026-04-06T10:35:00.644800] GOVERNANCE: blocked - print(os.getenv('DATABASE_URL')) (Risk: unknown, Complexity: low)
+[2026-04-06T10:35:00.653829] GOVERNANCE: blocked - cat .env (Risk: unknown, Complexity: low)
+[2026-04-06T10:35:00.660463] GOVERNANCE: blocked - printenv (Risk: unknown, Complexity: low)
+[2026-04-06T10:35:00.671562] GOVERNANCE: blocked - rm -rf / (Risk: unknown, Complexity: low)
+[2026-04-06T10:35:00.676577] GOVERNANCE: allowed - ls -la (Risk: unknown, Complexity: low)
+[2026-04-06T10:35:00.686725] GOVERNANCE: allowed - check file existence (Risk: unknown, Complexity: low)
+[2026-04-06T10:48:04.562234] No previous session found, starting fresh
+[2026-04-06T10:48:05.109790] GOVERNANCE: allowed - Check if DUMMY_API_KEY is present in environment (safe check) (Risk: unknown, Complexity: medium)
+[2026-04-06T10:48:05.110743] ROUTING: gemini-1.5-flash (high-speed)
+[2026-04-06T10:48:06.178189] Task completed: Check if DUMMY_API_KEY is present in environment (
+[2026-04-06T10:48:06.188773] GOVERNANCE: blocked - echo $DUMMY_API_KEY (Risk: unknown, Complexity: low)
+[2026-04-06T10:48:06.189032] BLOCKED by governance: echo $DUMMY_API_KEY
+[2026-04-06T10:48:06.198770] Session saved (exit) at tick 2
+[2026-04-06T15:14:12.337027] Session restored: tick=2, tasks=0
+[2026-04-06T15:14:12.752476] Session saved (exit) at tick 2
+[2026-04-06T15:14:26.241426] Session restored: tick=2, tasks=0
+[2026-04-06T15:14:26.534219] Session saved (exit) at tick 2
+[2026-04-06T15:14:43.209037] Session restored: tick=2, tasks=0
+[2026-04-06T15:14:43.231869] Session saved (exit) at tick 2
+[2026-04-06T15:14:57.408152] Session restored: tick=2, tasks=1
+[2026-04-06T15:14:57.419999] Session saved (exit) at tick 2
+[2026-04-06T15:15:12.168455] Session restored: tick=2, tasks=2
+[2026-04-06T15:15:12.188900] GOVERNANCE: allowed - Summarize current KAIROS capabilities as of v0.13 (Risk: unknown, Complexity: medium)
+[2026-04-06T15:15:12.529921] ROUTING: gemini-1.5-flash (high-speed)
+[2026-04-06T15:15:13.604961] Task completed: Summarize current KAIROS capabilities as of v0.13
+[2026-04-06T15:15:43.623791] GOVERNANCE: allowed - Summarize current KAIROS capabilities as of v0.13 (Risk: unknown, Complexity: medium)
+[2026-04-06T15:15:43.625062] ROUTING: gemini-1.5-flash (high-speed)
+[2026-04-06T15:15:44.721113] Task completed: Summarize current KAIROS capabilities as of v0.13
+[2026-04-06T15:16:11.832444] Shutdown initiated
+[2026-04-06T15:16:11.838164] Session saved (shutdown) at tick 4
+[2026-04-06T15:16:14.734019] Session saved (exit) at tick 4
+[2026-04-06T15:16:39.877080] Session restored: tick=4, tasks=2
+[2026-04-06T15:16:39.881065] Session saved (exit) at tick 4
+[2026-04-06T15:19:08.045742] Session restored: tick=4, tasks=4
+[2026-04-06T15:19:08.056168] Session saved (exit) at tick 4
+[2026-04-06T16:05:45.407255] Session restored: tick=4, tasks=8
+[2026-04-06T16:05:45.421576] Session saved (exit) at tick 4
+[2026-04-06T17:08:41.158734] Session restored: tick=4, tasks=17
+[2026-04-06T17:08:41.182418] MeshManager v0.14 listening on 127.0.0.1:5000
+[2026-04-06T17:08:41.206140] GOVERNANCE: allowed - Summarize current KAIROS capabilities as of v0.13 (Risk: unknown, Complexity: medium)
+[2026-04-06T17:08:41.507180] ROUTING: gemini-1.5-flash (high-speed)
+[2026-04-06T17:08:42.605063] Task completed: Summarize current KAIROS capabilities as of v0.13
+[2026-04-06T17:08:42.632257] Session saved (periodic) at tick 5
+[2026-04-06T17:08:43.247046] Session restored: tick=5, tasks=33
+[2026-04-06T17:08:43.255134] MeshManager v0.14 listening on 127.0.0.1:5001
+[2026-04-06T17:08:43.267228] GOVERNANCE: allowed - Summarize current KAIROS capabilities as of v0.13 (Risk: unknown, Complexity: medium)
+[2026-04-06T17:08:43.440389] ROUTING: gemini-1.5-flash (high-speed)
+[2026-04-06T17:08:44.523667] Task completed: Summarize current KAIROS capabilities as of v0.13
+[2026-04-06T17:08:45.081556] Session restored: tick=5, tasks=33
+[2026-04-06T17:08:45.082442] Peer added: 127.0.0.1:5000
+[2026-04-06T17:08:45.088561] Session saved (exit) at tick 5
+[2026-04-06T17:08:46.032793] Session restored: tick=5, tasks=98
+[2026-04-06T17:08:46.046997] Session saved (exit) at tick 5
+[2026-04-06T17:08:52.623497] Session restored: tick=5, tasks=197
+[2026-04-06T17:08:52.639372] Session saved (exit) at tick 5
+[2026-04-06T17:08:52.699698] Shutdown initiated
+[2026-04-06T17:08:52.721286] Session saved (shutdown) at tick 5
+[2026-04-06T17:09:07.158979] Session restored: tick=5, tasks=394
+[2026-04-06T17:09:07.187563] Session saved (exit) at tick 5
+[2026-05-26T14:17:19.090897] Session restored: tick=5, tasks=788
+[2026-05-26T14:17:19.093387] MeshManager v0.14 listening on 127.0.0.1:5000
+[2026-05-26T14:17:19.234879] GOVERNANCE: allowed - Summarize current KAIROS capabilities as of v0.13 (Risk: unknown, Complexity: medium)
+[2026-05-26T14:17:19.244205] ROUTING: gemini-1.5-flash (high-speed)
+[2026-05-26T14:17:20.319983] Task completed: Summarize current KAIROS capabilities as of v0.13
+[2026-05-26T14:17:26.476592] Session restored: tick=5, tasks=788
+[2026-05-26T14:17:26.477635] MeshManager v0.14 listening on 127.0.0.1:5001
+[2026-05-26T14:17:26.582188] GOVERNANCE: allowed - Summarize current KAIROS capabilities as of v0.13 (Risk: unknown, Complexity: medium)
+[2026-05-26T14:17:26.588315] ROUTING: gemini-1.5-flash (high-speed)
+[2026-05-26T14:17:27.627455] Task completed: Summarize current KAIROS capabilities as of v0.13
+[2026-05-26T14:17:34.095071] Session restored: tick=5, tasks=788
+[2026-05-26T14:17:34.095426] Peer added: 127.0.0.1:5000
+[2026-05-26T14:17:34.171542] Session saved (exit) at tick 5
+[2026-05-26T14:17:55.004060] GOVERNANCE: allowed - Summarize current KAIROS capabilities as of v0.13 (Risk: unknown, Complexity: medium)
+[2026-05-26T14:17:55.004994] ROUTING: gemini-1.5-flash (high-speed)
+[2026-05-26T14:17:56.113984] Task completed: Summarize current KAIROS capabilities as of v0.13
+[2026-05-26T14:18:05.650862] Session saved (exit) at tick 7
+[2026-05-26T14:18:10.510982] Session restored: tick=5, tasks=3150
+[2026-05-26T14:18:11.046808] Session saved (exit) at tick 5
+[2026-05-26T14:18:27.185202] GOVERNANCE: allowed - Summarize current KAIROS capabilities as of v0.13 (Risk: unknown, Complexity: medium)
+[2026-05-26T14:18:27.185602] ROUTING: gemini-1.5-flash (high-speed)
+[2026-05-26T14:18:28.222669] Task completed: Summarize current KAIROS capabilities as of v0.13
+[2026-05-26T14:18:43.928986] Session restored: tick=5, tasks=6300
+[2026-05-26T14:18:44.127947] Session saved (exit) at tick 5
+[2026-05-26T14:18:44.215298] Shutdown initiated
+[2026-05-26T14:21:39.229003] Session restored: tick=5, tasks=12599
+[2026-05-26T14:21:39.637907] Session saved (exit) at tick 5
