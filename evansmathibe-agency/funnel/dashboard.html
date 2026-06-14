@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lead Dashboard | Evans Mathibe AI</title>
+  <meta name="description" content="Sales funnel dashboard — track leads, conversions, and goal progress">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="funnel-engine.css">
+  <style>
+    body { overflow-x: hidden; }
+    .dash-sidebar-logo { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem; }
+    .dash-sidebar-logo img { height: 32px; width: auto; filter: brightness(0) invert(1); opacity: 0.5; }
+    .dash-sidebar-logo span { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+    @media (max-width: 768px) {
+      .dash-mobile-header { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem; background: rgba(255,255,255,0.02); border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .dash-mobile-header img { height: 28px; filter: brightness(0) invert(1); opacity: 0.5; }
+      .mobile-menu-toggle { background: none; border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 0.5rem 0.75rem; border-radius: 8px; cursor: pointer; font-size: 0.8rem; }
+    }
+    @media (min-width: 769px) { .dash-mobile-header { display: none; } }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+  </style>
+</head>
+<body>
+  <div class="dash-mobile-header">
+    <img src="../assets/img/evans_mathibe_logo.jpeg" alt="Evans Mathibe AI">
+    <span style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;">Lead Dashboard</span>
+    <button class="mobile-menu-toggle" onclick="document.querySelector('.dash-sidebar').style.display=document.querySelector('.dash-sidebar').style.display==='block'?'none':'block';">☰</button>
+  </div>
+
+  <div class="dashboard-layout">
+    <aside class="dash-sidebar">
+      <div class="dash-sidebar-logo">
+        <img src="../assets/img/evans_mathibe_logo.jpeg" alt="Evans Mathibe AI">
+        <span>Evans Mathibe AI</span>
+      </div>
+      <nav>
+        <a href="#" class="dash-nav-item active" onclick="return false;">
+          <span>📊</span> Dashboard
+        </a>
+        <a href="capture.html" class="dash-nav-item">
+          <span>🎯</span> Capture Form
+        </a>
+        <a href="../index.html" class="dash-nav-item">
+          <span>🏠</span> Main Site
+        </a>
+        <a href="#" class="dash-nav-item" onclick="FunnelEngine.exportCSV();return false;">
+          <span>📥</span> Export CSV
+        </a>
+        <a href="#" class="dash-nav-item" style="color:rgba(212,92,92,0.5);" onclick="FunnelEngine.resetTestData();return false;">
+          <span>🗑</span> Clear Data
+        </a>
+      </nav>
+      <div style="margin-top:auto;padding-top:2rem;font-size:0.6rem;color:rgba(255,255,255,0.1);">
+        v1.0 · Evans Mathibe AI
+      </div>
+    </aside>
+
+    <main class="dash-main" id="dash-container">
+      <div style="text-align:center;padding:4rem;">
+        <div class="spinner" style="width:40px;height:40px;border-width:3px;margin:0 auto 1rem;"></div>
+        <p style="color:rgba(255,255,255,0.3);font-size:0.85rem;">Loading dashboard…</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="funnel-engine.js"></script>
+</body>
+</html>

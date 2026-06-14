@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evans Mathibe Agency | High-End Creative Direction & Photography</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Evans Mathibe Agency: Premier creative direction, brand management, and high-fashion photography based in South Africa. Global excellence in advertising and AI automation.">
+    <meta name="keywords" content="Evans Mathibe Agency, Creative Direction, High-Fashion Photography, South Africa, Advertising, Brand Management, AI Automation">
+    <meta name="author" content="Evans Mathibe">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Evans Mathibe Agency | Creative Direction">
+    <meta property="og:description" content="Immersive creative experiences and luxury branding.">
+    <meta property="og:image" content="assets/img/logo.jpg">
+    <meta property="og:url" content="https://evansxm.github.io/evansmathibe-agency/">
+    
+    <link rel="icon" type="image/x-icon" href="assets/img/logo.jpg">
+    
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-black': '#080808',
+                        'brand-salmon': '#E87A7D',
+                    },
+                    fontFamily: {
+                        'sans': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Evans Mathibe Agency",
+      "image": "https://evansxm.github.io/evansmathibe-agency/assets/img/logo.jpg",
+      "@id": "https://evansxm.github.io/evansmathibe-agency/",
+      "url": "https://evansxm.github.io/evansmathibe-agency/",
+      "telephone": "+27724165061",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sandton",
+        "addressLocality": "Johannesburg",
+        "addressRegion": "Gauteng",
+        "postalCode": "2196",
+        "addressCountry": "ZA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -26.1076,
+        "longitude": 28.0567
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/evansmathibe",
+        "https://www.tiktok.com/@evans_mathibe"
+      ],
+      "description": "Premier creative agency specializing in Creative Direction, High-Fashion Photography, and AI Brand Automation."
+    }
+    </script>
+</head>
+<body class="bg-brand-black text-white font-sans overflow-x-hidden">
+
+    <!-- Cinematic Background Slider -->
+    <div id="bg-slider" class="fixed inset-0 z-[-1] pointer-events-none">
+        <div id="slider-container" class="relative w-full h-full overflow-hidden">
+            <!-- Background images injected via Intersection Observer in spyglass.js or main app script -->
+        </div>
+        <div class="absolute inset-0 bg-brand-black/40 z-10"></div>
+    </div>
+
+    <!-- Sticky Glassmorphism Header -->
+    <header class="fixed top-0 w-full z-50 backdrop-blur-lg bg-white/5 border-b border-white/10 px-8 py-4 transition-all duration-500" id="main-header">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="logo-container">
+                <img src="assets/img/logo.jpg" alt="Evans Mathibe Logo" class="max-h-[80px] w-auto object-contain brightness-0 invert shadow-2xl transition-transform duration-500 hover:scale-105">
+            </div>
+            <nav class="hidden md:flex space-x-12 text-[10px] uppercase tracking-[0.4em] font-bold">
+                <a href="#hero" class="nav-link hover:text-brand-salmon transition-colors">Home</a>
+                <a href="#services" class="nav-link hover:text-brand-salmon transition-colors">Services</a>
+                <a href="#essence" class="nav-link hover:text-brand-salmon transition-colors">Essence</a>
+                <a href="#contact" class="nav-link hover:text-brand-salmon transition-colors">Contact</a>
+                <a href="funnel/capture.html" class="nav-link text-brand-salmon hover:text-white transition-colors font-bold">Free Audit</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-brand-salmon p-2">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-20">
+        <!-- Section 1: Hero -->
+        <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-4" data-bg="Evans mathibe Logo.webp">
+            <h1 class="text-5xl md:text-9xl font-black uppercase tracking-tighter mb-4 reveal">
+                Evans <span class="text-brand-salmon italic">Mathibe</span>
+            </h1>
+            <p class="text-xs md:text-lg font-light tracking-[0.8em] uppercase text-white/60 reveal-delay-1">
+                Creative Director & Visionary
+            </p>
+        </section>
+
+        <!-- Section 2: Services -->
+        <section id="services" class="min-h-screen flex items-center py-32 px-8" data-bg="Generated image 1 (17).webp">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-24">
+                <div class="reveal">
+                    <h2 class="text-xs uppercase tracking-[0.5em] text-brand-salmon mb-8">Capabilities</h2>
+                    <h3 class="text-4xl md:text-6xl font-bold uppercase mb-12 leading-tight">Architecting <br>the Aesthetic</h3>
+                    <p class="text-lg font-light text-white/70 leading-relaxed mb-8">
+                        Specializing in the intersection of luxury brand identity and cutting-edge technology. We define the visual narrative for the modern elite.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 gap-12">
+                    <div class="p-8 border-l border-brand-salmon/30 hover:bg-white/5 transition-all reveal-delay-1">
+                        <h4 class="text-xl font-bold uppercase mb-2">High-Fashion Photography</h4>
+                        <p class="text-sm text-white/50">Capturing the soul of fashion with editorial precision and cinematic depth.</p>
+                    </div>
+                    <div class="p-8 border-l border-brand-salmon/30 hover:bg-white/5 transition-all reveal-delay-2">
+                        <h4 class="text-xl font-bold uppercase mb-2">Creative Direction</h4>
+                        <p class="text-sm text-white/50">End-to-end vision management for global campaigns and brand launches.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Essence -->
+        <section id="essence" class="min-h-screen flex items-center justify-center text-center px-8" data-bg="Generated image 1 (19).webp">
+            <div class="max-w-4xl reveal">
+                <h2 class="text-7xl md:text-[12rem] font-black uppercase text-white/10 absolute -top-12 left-0 pointer-events-none">Essence</h2>
+                <h3 class="text-4xl md:text-7xl font-bold uppercase mb-8 relative z-10 italic underline decoration-brand-salmon decoration-4 underline-offset-8">Visual Mastery</h3>
+                <p class="text-xl md:text-2xl font-light tracking-widest text-white/80 uppercase">The future is directed, not observed.</p>
+            </div>
+        </section>
+
+        <!-- Section 4: Funnel CTA -->
+        <section id="funnel-cta" class="min-h-[60vh] flex flex-col justify-center items-center px-8 text-center relative" data-bg="Generated image 1 (19).webp">
+            <div class="max-w-4xl reveal">
+                <h2 class="text-4xl md:text-7xl font-black uppercase mb-8 leading-tight">
+                    Free <span class="text-brand-salmon">AI Brand Audit</span>
+                </h2>
+                <p class="text-lg font-light text-white/60 max-w-2xl mx-auto mb-12">
+                    Get a 48-hour brand analysis with actionable AI automation opportunities tailored to your location and industry.
+                </p>
+                <div class="flex flex-col md:flex-row gap-6 justify-center">
+                    <a href="funnel/capture.html" class="inline-flex items-center gap-2 px-10 py-5 bg-brand-salmon text-brand-black font-bold text-sm uppercase tracking-widest rounded-full hover:bg-white transition-all duration-300 hover:scale-105">
+                        Get My Free Audit
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </a>
+                    <a href="funnel/dashboard.html" class="inline-flex items-center gap-2 px-10 py-5 border border-white/20 text-white font-bold text-sm uppercase tracking-widest rounded-full hover:bg-white/10 transition-all duration-300">
+                        View Dashboard
+                    </a>
+                </div>
+                <p class="mt-8 text-xs text-white/30 uppercase tracking-widest">
+                    Serving SA brands from Sandton to Sea Point · 1,000 lead goal
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 5: Contact -->
+        <section id="contact" class="min-h-screen flex flex-col justify-center items-center px-8 text-center" data-bg="Generated image 1 - 2025-11-15T144736.481.webp">
+            <h2 class="text-4xl md:text-8xl font-black uppercase mb-16 reveal">Let's Create.</h2>
+            <div class="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-16 text-sm uppercase tracking-[0.5em] font-bold reveal-delay-1">
+                <a href="mailto:evans.mathibe@mail.com" class="hover:text-brand-salmon transition-colors border-b border-white/20 pb-2">Email</a>
+                <a href="tel:+27724165061" class="hover:text-brand-salmon transition-colors border-b border-white/20 pb-2">WhatsApp</a>
+                <a href="https://www.linkedin.com/in/evansmathibe" class="hover:text-brand-salmon transition-colors border-b border-white/20 pb-2">LinkedIn</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating Action Tray -->
+    <div class="fixed bottom-12 right-12 z-[100] flex flex-col space-y-6">
+        <a href="https://wa.me/27724165061" target="_blank" class="action-icon w-16 h-16 bg-brand-salmon rounded-full flex items-center justify-center shadow-2xl hover:scale-110 hover:-rotate-12 transition-all duration-300 group">
+            <svg class="w-8 h-8 text-brand-black" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.171c1.589.943 3.13 1.411 4.757 1.411 5.42 0 9.831-4.412 9.831-9.833 0-2.628-1.022-5.1-2.876-6.954-1.856-1.853-4.33-2.873-6.955-2.873-5.42 0-9.831 4.412-9.831 9.834 0 1.93.574 3.73 1.66 5.218l-1.082 3.953 4.047-1.062zm9.261-7.143c.123.118.232.21.325.328.167.213.252.446.252.673 0 .848-.52 1.539-.46 2.314.05.718.75 1.154 1.18 1.531.141.124.272.246.385.373.401.451.956 1.01 1.032 1.087.547.546.943.485 1.361.066l.71-.71c.226-.226.435-.435.626-.625.451-.452.482-.503.065-1.356l-.372-.744c-.126-.252-.251-.504-.377-.756-.451-.904-.515-1.023-.106-1.432l.248-.248c.11-.11.22-.22.33-.331.395-.395.455-.456.124-1.041l-.226-.452c-.113-.226-.226-.452-.338-.678-.395-.791-.456-.912-.116-1.252l.216-.216c.102-.102.204-.204.306-.306.401-.401.456-.456.096-1.026l-.344-.518c-.12-.181-.241-.362-.361-.543-.367-.552-.435-.655-.078-1.012l.235-.236c.084-.084.168-.168.252-.252.457-.457.519-.519.034-1.126l-.149-.188c-.08-.101-.16-.201-.24-.301-.312-.394-.43-.544.028-1.002l.214-.214c.104-.104.208-.208.312-.312.455-.455.514-.514.045-1.218l-.354-.531c-.131-.197-.261-.393-.392-.59-.344-.517-.41-.617-.067-.96l.209-.209c.08-.08.16-.16.241-.24.457-.457.519-.519.031-1.167l-.1-.133c-.078-.104-.156-.208-.234-.312-.349-.465-.439-.585.044-1.068l.152-.152c.077-.077.154-.154.231-.231.422-.422.484-.484.053-1.062l-.187-.25c-.104-.139-.208-.278-.312-.417-.312-.417-.43-.574.01-.998l.17-.165c.055-.054.109-.108.164-.162.441-.433.501-.492.038-1.132l-.24-.33c-.118-.163-.236-.326-.354-.489-.312-.417-.434-.58-.04-1.012.012-.013.024-.026.036-.039l.135-.148c.112-.112.235-.235.358-.358.309-.309.432-.432.05-.884l-.11-.13c-.1-.118-.2-.236-.3-.354-.3-.354-.45-.531-.057-.962l.142-.155c.052-.057.104-.114.156-.171.424-.464.484-.53.045-1.154l-.33-.469c-.111-.157-.222-.314-.333-.471-.312-.442-.424-.601.031-1.026.126-.118.252-.236.378-.354.331-.31.411-.385.121-.861l-.226-.37c-.1-.164-.2-.328-.3-.492-.312-.513-.435-.714-.028-1.144l.214-.226c.074-.078.148-.156.222-.234.39-.411.455-.48.067-.978l-.348-.447c-.114-.146-.228-.292-.342-.438-.328-.42-.423-.541.02-.992l.184-.187c.071-.072.142-.144.213-.216.425-.432.481-.489.043-1.056l-.21-.271c-.08-.103-.16-.206-.24-.309-.344-.443-.432-.556.046-1.053l.186-.194c.063-.066.126-.132.189-.198.423-.443.486-.509.052-1.107l-.234-.323c-.111-.153-.222-.306-.333-.459-.312-.43-.432-.596.03-.984l.23-.193c.097-.081.194-.162.291-.243.344-.288.421-.353.137-.779l-.271-.407c-.088-.132-.176-.264-.264-.396-.341-.512-.432-.649.034-1.084l.19-.177c.07-.065.14-.13.21-.195.42-.39.48-.445.045-.989l-.25-.312c-.104-.13-.208-.26-.312-.39-.344-.43-.45-.563.023-1.02l.17-.164c.1-.097.2-.194.3-.291.42-.408.483-.469.055-.992l-.33-.404c-.11-.135-.22-.27-.33-.405-.333-.41-.44-.542.031-1.01l.162-.161c.1-.1.2-.2.3-.3.424-.424.484-.484.053-1.026l-.326-.411c-.108-.137-.216-.274-.324-.411-.328-.417-.432-.55.031-.998l.184-.179c.102-.099.204-.198.306-.297.424-.411.487-.472.052-1.016l-.32-.4c-.106-.133-.212-.266-.318-.399-.331-.414-.435-.544.028-.992l.184-.177c.1-.096.2-.192.3-.288.424-.408.484-.465.053-.981l-.32-.383c-.106-.127-.212-.254-.318-.381-.328-.394-.432-.519.031-.962l.187-.18c.1-.096.2-.192.3-.288.424-.408.484-.465.053-.981l-.32-.383c-.106-.127-.212-.254-.318-.381-.328-.394-.432-.519.031-.962l.187-.18c.1-.096.2-.192.3-.288.424-.408.484-.465.053-.981l-.32-.383c-.106-.127-.212-.254-.318-.381-.328-.394-.432-.519.031-.962l.187-.18z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@evans_mathibe" target="_blank" class="action-icon w-16 h-16 bg-brand-salmon rounded-full flex items-center justify-center shadow-2xl hover:scale-110 hover:rotate-12 transition-all duration-300 group">
+            <svg class="w-8 h-8 text-brand-black" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.032 2.61-.019 3.91-.006.03 1.22.61 2.21 1.58 2.84 1.02.66 2.13.87 3.24.91v3.71c-1.28-.06-2.43-.5-3.39-1.39-.08-.07-.15-.15-.24-.22v7.82c0 1.28-.19 2.54-.74 3.71-1.36 2.87-4.14 4.54-7.24 4.58-3.08.05-5.91-1.61-7.23-4.41-1.12-2.38-.85-5.26.7-7.4 1.49-2.07 3.8-3.1 6.32-2.89v3.86c-1.02-.16-2.06.02-2.88.69-.54.44-.84 1.05-.9 1.74-.02.26 0 .53.05.79.13.63.49 1.18 1 1.55.81.58 1.81.65 2.67.25.54-.25.93-.68 1.14-1.22.14-.38.19-.77.19-1.17V0c-.3-.01-.6-.02-.91-.02z"/></svg>
+        </a>
+    </div>
+
+    <script src="spyglass.js"></script>
+    <script>
+      // Funnel lead tracking integration
+      if (window.FunnelEngine) {
+        document.querySelectorAll('[data-funnel-cta]').forEach(el => {
+          el.addEventListener('click', () => {
+            FunnelEngine.showToast('→ Opening audit form');
+          });
+        });
+      }
+    </script>
+</body>
+</html>
