@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sequence Templates | Evans Mathibe AI Funnel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="funnel-engine.css">
+  <style>
+    .tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .tab-btn { padding: 0.6rem 1.25rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 100px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.4); cursor: pointer; transition: all 0.2s ease; font-family: inherit; font-weight: 600; }
+    .tab-btn.active { background: rgba(212,92,92,0.15); border-color: var(--brand-coral); color: var(--brand-coral); }
+    .tab-btn:hover { border-color: rgba(255,255,255,0.2); }
+    .template-group { display: none; }
+    .template-group.active { display: block; }
+    .template-card { margin-bottom: 1.5rem; }
+    .template-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; cursor: pointer; }
+    .template-header h3 { font-size: 0.9rem; font-weight: 600; }
+    .template-meta { font-size: 0.65rem; color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 0.05em; }
+    .template-body { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.04); border-radius: 12px; padding: 1.25rem; font-size: 0.85rem; line-height: 1.7; white-space: pre-wrap; color: rgba(255,255,255,0.6); display: none; }
+    .template-body.open { display: block; }
+    .template-body strong { color: rgba(255,255,255,0.9); }
+    .dynamic-var { color: var(--brand-coral); font-weight: 600; }
+    .channel-icon { font-size: 1.2rem; }
+    .sequence-legend { display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem; padding: 1rem; background: rgba(255,255,255,0.02); border-radius: 12px; }
+    .sequence-legend-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+    .copy-btn { background: none; border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.3); padding: 0.3rem 0.75rem; border-radius: 6px; font-size: 0.65rem; cursor: pointer; transition: all 0.2s ease; font-family: inherit; }
+    .copy-btn:hover { border-color: var(--brand-coral); color: var(--brand-coral); }
+  </style>
+</head>
+<body>
+  <div style="padding:2rem 1.5rem;max-width:900px;margin:0 auto;">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-bottom:2rem;">
+      <div>
+        <h1 style="font-size:1.5rem;font-weight:700;">Sequence Templates</h1>
+        <p style="font-size:0.8rem;color:rgba(255,255,255,0.3);">5 emails + 5 WhatsApp templates per vertical · 15 total sequences</p>
+      </div>
+      <a href="index.html" class="btn-outline" style="padding:0.5rem 1rem;font-size:0.7rem;">← Back to Funnel</a>
+    </div>
+
+    <div class="sequence-legend">
+      <div class="sequence-legend-item"><span class="channel-icon">✉</span> Email</div>
+      <div class="sequence-legend-item"><span class="channel-icon">💬</span> WhatsApp</div>
+      <div class="sequence-legend-item"><span style="color:var(--brand-coral);font-weight:700;">{{var}}</span> Dynamic variables</div>
+      <div class="sequence-legend-item"><span style="font-size:0.7rem;">⏱ T+N</span> Time from capture</div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('media-agency',this)">📺 Media & Agency</button>
+      <button class="tab-btn" onclick="switchTab('university',this)">🎓 University</button>
+      <button class="tab-btn" onclick="switchTab('corporate',this)">🏢 Corporate</button>
+      <button class="tab-btn" onclick="switchTab('whatsapp',this)">💬 WhatsApp</button>
+    </div>
+
+    <!-- SEQUENCE A: Media & Agency -->
+    <div id="tab-media-agency" class="template-group active">
+      <p style="font-size:0.75rem;color:var(--brand-coral);margin-bottom:1.5rem;">SEQUENCE A · White-Label Partner · Media Houses & Ad Agencies</p>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleBody(this)">
+          <div>
+            <h3>✉ Email 1 — Welcome & Confirmation</h3>
+            <div class="template-meta">T+0 · Trigger: Form submit · Subject: "{{first_name}}, your Evans Mathibe audit ({{location}})"</div>
+          </div>
+          <button class="copy-btn" onclick="event.stopPropagation();copyTemplate('media-email-1')">Copy</button>
+        </div>
+        <div id="media-email-1" class="template-body">
+<strong>Subject:</strong> {{first_name}}, your Evans Mathibe audit ({{location}})
+
+<strong>From:</strong> Evans Mathibe &lt;evans.mathibe@mail.com&gt;
+
+Hi {{first_name}},
+
+Thank you for requesting your AI Brand Audit for {{company}} in {{location}}.
+
+We've received your request and I will review it personally within 48 hours. Here's what happens next:
+
+1. We analyze your current brand presence across digital channels
+2. Identify AI automation opportunities specific to {{vertical}}
+3. Deliver a custom strategy tailored to the {{location}} market
+
+<strong>Want to fast-track?</strong> Book a 15-minute call with me directly:
+https://calendly.com/evansmathibe/15min
+
+In the meantime, feel free to WhatsApp me if anything is urgent:
+https://wa.me/27724165061?text=Hi+Evans,+I'm+{{first_name}}+from+{{company}}
+
+Best,
+Evans Mathibe
+Evans Mathibe AI · Serving {{location}} brands from Sandton to Sea Point
+        </div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleBody(this)">
+          <div>
+            <h3>✉ Email 2 — Case Study: Media Automation</h3>
+            <div class="template-meta">T+30min · Subject: "How we automated promos for a MultiChoice-style channel"</div>
+          </div>
+          <button class="copy-btn" onclick="event.stopPropagation();copyTemplate('media-email-2')">Copy</button>
+        </div>
+        <div id="media-email-2" class="template-body">
+<strong>Subject:</strong> How we automated promos for a MultiChoice-style channel
+
+Hi {{first_name}},
+
+I wanted to share a quick story from {{location}}.
+
+We worked with a media client who was spending 20+ hours per week manually scheduling promo slots across their channels. Their team was burning out and errors were creeping in.
+
+<strong>What we did:</strong>
+We built an AI automation layer that:
+• Analysed 6 months of scheduling data
+• Predicted optimal promo placement by time slot
+• Auto-generated scheduling reports
+• Reduced manual work by 80%
+
+<strong>Result:</strong> The team reclaimed 16 hours per week and saw a 23% increase in promo efficiency.
+
+Can we explore what this could look like for {{company}}? Let's find 15 minutes this week.
+
+https://calendly.com/evansmathibe/15min
+
+Best,
+Evans
+
+Serving {{location}} brands from Sandton to Sea Point
+        </div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleBody(this)">
+          <div>
+            <h3>✉ Email 3 — Personalized Audit Teaser</h3>
+            <div class="template-meta">Day 1 (10:00 SAST) · Subject: "{{company}} — your AI audit preview"</div>
+          </div>
+          <button class="copy-btn" onclick="event.stopPropagation();copyTemplate('media-email-3')">Copy</button>
+        </div>
+        <div id="media-email-3" class="template-body">
+<strong>Subject:</strong> {{company}} — your AI audit preview
+
+Hi {{first_name}},
+
+I've started reviewing {{company}}'s brand presence. Here's a quick preview of what I'm looking at:
+
+<strong>Initial observations for {{location}}:</strong>
+• Your competitors in {{vertical}} are adopting AI at pace
+• There's an opportunity to differentiate through automated brand consistency
+• The {{location}} market is primed for what you do
+
+I've attached a teaser PDF with some preliminary thoughts — including a {{company}} logo mockup.
+
+<strong>Next step:</strong> Let's schedule 15 minutes to discuss the full findings.
+
+https://calendly.com/evansmathibe/15min
+
+Best,
+Evans
+
+P.S. If you'd prefer to chat on WhatsApp, reply here and I'll message you directly.
+        </div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleBody(this)">
+          <div>
+            <h3>✉ Email 4 — Social Proof (Same City + Vertical)</h3>
+            <div class="template-meta">Day 4 · Subject: "How a {{location}} media team transformed their workflow"</div>
+          </div>
+          <button class="copy-btn" onclick="event.stopPropagation();copyTemplate('media-email-4')">Copy</button>
+        </div>
+        <div id="media-email-4" class="template-body">
+<strong>Subject:</strong> How a {{location}} media team transformed their workflow
+
+Hi {{first_name}},
+
+A {{location}}-based media team came to us with a challenge: their content approval process was taking 5+ days per campaign.
+
+<strong>What changed:</strong>
+After implementing our AI-powered workflow automation:
+• Approval time dropped from 5 days to 4 hours
+• Campaign output increased by 3x
+• Team stress levels dropped significantly
+
+<strong>"Evans understood our {{location}} market immediately. The AI tools he implemented saved us an entire headcount worth of time."</strong>
+— Media Director, {{location}}
+
+Sound familiar? Let's see what we can do for {{company}}.
+
+https://calendly.com/evansmathibe/15min
+
+Best,
+Evans
+
+Serving {{location}} brands from Sandton to Sea Point
+        </div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleBody(this)">
+          <div>
+            <h3>✉ Email 5 — Limited Offer: Free Campaign Mockup</h3>
+            <div class="template-meta">Day 7 · Subject: "First 20 {{location}} brands get a free campaign mockup"</div>
+          </div>
+          <button class="copy-btn" onclick="event.stopPropagation();copyTemplate('media-email-5')">Copy</button>
+        </div>
+        <div id="media-email-5" class="template-body">
+<strong>Subject:</strong> First 20 {{location}} brands get a free campaign mockup
+
+Hi {{first_name}},
+
+I'm offering the first 20 {{location}} brands in the {{vertical}} space a <strong>free campaign mockup</strong> this month — no strings attached.
+
+Here's what you'll get:
+• A full campaign concept designed for {{company}}
+• AI-optimised copy and creative direction
+• Channel distribution strategy for {{location}}
+• Valued at R5,000 — yours free as a {{location}} pioneer
+
+This is a limited offer. Reply to claim yours or book here:
+https://calendly.com/evansmathibe/15min
+
+Best,
+Evans
+
+Serving {{location}} brands from Sandton to Sea Point
+        </div>
+      </div>
+    </div>
+
+    <!-- SEQUENCE B: University -->
+    <div id="tab-university" class="template-group">
+      <p style="font-size:0.75rem;color:var(--brand-coral);margin-bottom:1.5rem;">SEQUENCE B · Student Recruitment · Universities & Creative Schools</p>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleBody(this)">
+          <div>
+            <h3>✉ Email 1 — Welcome & Confirmation</h3>
+            <div class="template-meta">T+0 · Subject: "{{first_name}}, your Evans Mathibe audit ({{location}})"</div>
+          </div>
+          <button class="copy-btn" onclick="event.stopPropagation();copyTemplate('uni-email-1')">Copy</button>
+        </div>
+        <div id="uni-email-1" class="template-body">
+<strong>Subject:</strong> {{first_name}}, your Evans Mathibe audit ({{location}})
+
+Hi {{first_name}},
+
+Thank you for requesting your AI Brand Audit for {{company}} in {{location}}.
+
+I'll review your institution's brand presence personally within 48 hours. Here's what to expect:
+
+1. Audit of your current student recruitment channels
+2. Analysis of competitor institutions in {{location}}
+3. AI-powered campaign opportunities to fill open days
+
+<strong>Fast-track this:</strong> Book a 15-minute call:
+https://calendly.com/evansmathibe/15min
+
+WhatsApp me anytime:
+https://wa.me/27724165061?text=Hi+Evans,+I'm+{{first_name}}+from+{{company}}
+
+Best,
+Evans Mathibe
+Evans Mathibe AI · Serving {{location}} brands from Sandton to Sea Point
+        </div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleBody(this)">
+          <div>
+            <h3>✉ Email 2 — Case Study: University Campaigns</h3>
+            <div class="template-meta">T+30min · Subject: "3 AI campaigns that filled open days at Wits and UCT"</div>
+          </div>
+          <button class="copy-btn" onclick="event.stopPropagation();copyTemplate('uni-email-2')">Copy</button>
+        </div>
+        <div id="uni-email-2" class="template-body">
+<strong>Subject:</strong> 3 AI campaigns that filled open days at Wits and UCT
+
+Hi {{first_name}},
+
+Universities in SA are facing a challenge: how to stand out and fill open days in a crowded market.
+
+Here are 3 AI-powered campaigns that worked for institutions like yours:
+
+<strong>1. Hyper-Personalised Prospect Outreach</strong>
+AI analysed past attendee data and sent personalised video invites. Open day attendance increased 47%.
+
+<strong>2. Automated Social Proof Campaign</strong>
+Current student testimonials were dynamically served to prospects based on their course interest. Conversion rate: 34%.
+
+<strong>3. Predictive Ad Targeting</strong>
+AI identified which high schools in {{location}} had the most likely applicants and focused ad spend there. Cost per lead dropped 52%.
+
+Want to see which of these would work for {{company}}?
+
+https://calendly.com/evansmathibe/15min
+
+Best,
+Evans
+
+Serving {{location}} brands from Sandton to Sea Point
+        </div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleBody(this)">
+          <div>
+            <h3>✉ Email 3 — Personalized Audit Teaser</h3>
+            <div class="template-meta">Day 1 (10:00 SAST) · Subject: "{{company}} — your education brand audit preview"</div>
+          </div>
+          <button class="copy-btn" onclick="event.stopPropagation();copyTemplate('uni-email-3')">Copy</button>
+        </div>
+        <div id="uni-email-3" class="template-body">
+<strong>Subject:</strong> {{company}} — your education brand audit preview
+
+Hi {{first_name}},
+
+I'm reviewing {{company}}'s position in the {{location}} education market. Early findings:
+
+• Student recruitment is increasingly digital-first
+• Institutions using AI see 3x higher inquiry-to-application conversion
+• {{location}} is an untapped opportunity for innovative campaigns
+
+I've prepared a teaser PDF with {{company}} branding and preliminary recommendations.
+
+<strong>Let's discuss:</strong>
+https://calendly.com/evansmathibe/15min
+
+Best,
+Evans
+
+P.S. WhatsApp is faster — let me know if you prefer chat:
+https://wa.me/27724165061
+        </div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleBody(this)">
+          <div>
+            <h3>✉ Email 4 — Social Proof (Education Sector)</h3>
+            <div class="template-meta">Day 4 · Subject: "How a {{location}} institution boosted applications 40%"</div>
+          </div>
+          <button class="copy-btn" onclick="event.stopPropagation();copyTemplate('uni-email-4')">Copy</button>
+        </div>
+        <div id="uni-email-4" class="template-body">
+<strong>Subject:</strong> How a {{location}} institution boosted applications 40%
+
+Hi {{first_name}},
+
+A university in {{location}} came to us with a problem: applications were flat year-on-year despite increased marketing spend.
+
+<strong>Our solution:</strong>
+We implemented an AI-driven campaign that:
+• Targeted prospective students based on online behaviour
+• Automated follow-up sequences for inquiries
+• Personalised open day communications
+
+<strong>Result:</strong> 40% increase in applications · 28% lower cost per lead · Record open day attendance
+
+"I was sceptical about AI in education marketing. After working with Evans, I'm a convert."
+— Marketing Director, {{location}} Institution
+
+Let's write a similar story for {{company}}.
+
+https://calendly.com/evansmathibe/15min
+
+Best,
+Evans
+
+Serving {{location}} brands from Sandton to Sea Point
+        </div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleBody(this)">
+          <div>
+            <h3>✉ Email 5 — Limited Offer: Free Campaign Mockup</h3>
+            <div class="template-meta">Day 7 · Subject: "First 20 {{location}} institutions get a free campaign mockup"</div>
+          </div>
+          <button class="copy-btn" onclick="event.stopPropagation();copyTemplate('uni-email-5')">Copy</button>
+        </div>
+        <div id="uni-email-5" class="template-body">
+<strong>Subject:</strong> First 20 {{location}} institutions get a free campaign mockup
+
+Hi {{first_name}},
+
+I'm offering the first 20 educational institutions in {{location}} a <strong>free AI-powered campaign mockup</strong> this month.
+
+You'll receive:
+• A complete student recruitment campaign concept
+• AI-optimised messaging for your target demographic
+• Channel strategy specific to {{location}}
+• Valued at R5,000 — free for pioneer partners
+
+This is limited. Reply to claim or book here:
+https://calendly.com/evansmathibe/15min
+
+Best,
+Evans
+
+Serving {{location}} brands from Sandton to Sea Point
+        </div>
+      </div>
+    </div>
+
+    <!-- SEQUENCE C: Corporate -->
+    <div id="tab-corporate" class="template-group">
+      <p style="font-size:0.75rem;color:var(--brand-coral);margin-bottom:1.5rem;">SEQUENCE C · Corporate Growth · Corporate HQs, Radio & Nightlife</p>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleBody(this)">
+          <div>
+            <h3>✉ Email 1 — Welcome & Confirmation</h3>
+            <div class="template-meta">T+0 · Subject: "{{first_name}}, your Evans Mathibe audit ({{location}})"</div>
+          </div>
+          <button class="copy-btn" onclick="event.stopPropagation();copyTemplate('corp-email-1')">Copy</button>
+        </div>
+        <div id="corp-email-1" class="template-body">
+<strong>Subject:</strong> {{first_name}}, your Evans Mathibe audit ({{location}})
+
+Hi {{first_name}},
+
+Thank you for requesting your AI Brand Audit for {{company}} in {{location}}.
+
+I'll personally review your brand within 48 hours. Here's the process:
+
+1. We analyse your current brand presence and market position
+2. Identify AI automation opportunities for {{vertical}}
+3. Deliver a custom strategy tailored to {{location}}
+
+<strong>Want to accelerate?</strong> Book a 15-minute call:
+https://calendly.com/evansmathibe/15min
+
+Or WhatsApp me directly:
+https://wa.me/27724165061?text=Hi+Evans,+I'm+{{first_name}}+from+{{company}}
+
+Best,
+Evans Mathibe
+Evans Mathibe AI · Serving {{location}} brands from Sandton to Sea Point
+        </div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleBody(this)">
+          <div>
+            <h3>✉ Email 2 — Case Study: Corporate Cost Savings</h3>
+            <div class="template-meta">T+2 hours · Subject: "Sandton brand cut agency costs 32% with AI"</div>
+          </div>
+          <button class="copy-btn" onclick="event.stopPropagation();copyTemplate('corp-email-2')">Copy</button>
+        </div>
+        <div id="corp-email-2" class="template-body">
+<strong>Subject:</strong> Sandton brand cut agency costs 32% with AI
+
+Hi {{first_name}},
+
+A Sandton-based corporate client came to us with a challenge: their agency costs were spiralling and campaign turnarounds were too slow.
+
+<strong>What we built:</strong>
+An AI-powered brand operations system that:
+• Automated repetitive design tasks
+• Streamlined campaign approvals
+• Generated data-driven creative briefs
+• Reduced agency dependency
+
+<strong>Results:</strong>
+• 32% reduction in agency costs
+• 60% faster campaign turnaround
+• 2x content output with same team size
+
+"Evans brought Silicon Valley efficiency to our Sandton boardroom."
+— CMO, Sandton Corporate
+
+Could {{company}} benefit from similar savings?
+
+https://calendly.com/evansmathibe/15min
+
+Best,
+Evans
+
+Serving {{location}} brands from Sandton to Sea Point
+        </div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleBody(this)">
+          <div>
+            <h3>✉ Email 3 — Personalized Audit Teaser</h3>
+            <div class="template-meta">Day 1 (10:00 SAST) · Subject: "{{company}} — your corporate brand audit preview"</div>
+          </div>
+          <button class="copy-btn" onclick="event.stopPropagation();copyTemplate('corp-email-3')">Copy</button>
+        </div>
+        <div id="corp-email-3" class="template-body">
+<strong>Subject:</strong> {{company}} — your corporate brand audit preview
+
+Hi {{first_name}},
+
+I've started analysing {{company}}'s brand position in {{location}}. Here's what I see so far:
+
+• The {{vertical}} space in {{location}} is growing rapidly
+• AI adoption is separating market leaders from followers
+• There's a clear opportunity to streamline your brand operations
+
+I've prepared a teaser PDF with {{company}} branding and initial recommendations.
+
+<strong>Let's discuss the full picture:</strong>
+https://calendly.com/evansmathibe/15min
+
+Best,
+Evans
+
+P.S. Prefer WhatsApp? Chat with me directly:
+https://wa.me/27724165061
+        </div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleBody(this)">
+          <div>
+            <h3>✉ Email 4 — Social Proof (Corporate, Same City)</h3>
+            <div class="template-meta">Day 4 · Subject: "How a {{location}} HQ transformed their brand operations"</div>
+          </div>
+          <button class="copy-btn" onclick="event.stopPropagation();copyTemplate('corp-email-4')">Copy</button>
+        </div>
+        <div id="corp-email-4" class="template-body">
+<strong>Subject:</strong> How a {{location}} HQ transformed their brand operations
+
+Hi {{first_name}},
+
+A corporate HQ in {{location}} faced a common challenge: their brand was inconsistent across 5 divisions, each using different agencies and templates.
+
+<strong>Our approach:</strong>
+We deployed an AI brand management system that:
+• Centralised all brand assets
+• Automated brand compliance checks
+• Enabled self-service campaign creation for each division
+• Maintained consistency without stifling creativity
+
+<strong>The result:</strong>
+• Brand consistency score went from 43% to 94%
+• Agency costs reduced 28%
+• Time-to-market for new campaigns halved
+
+"Finally, our brand looks like one company across all touchpoints."
+— Brand Director, {{location}} HQ
+
+Let's do this for {{company}}.
+
+https://calendly.com/evansmathibe/15min
+
+Best,
+Evans
+
+Serving {{location}} brands from Sandton to Sea Point
+        </div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleBody(this)">
+          <div>
+            <h3>✉ Email 5 — Limited Offer: Free Campaign Mockup</h3>
+            <div class="template-meta">Day 7 · Subject: "First 20 {{location}} brands get a free campaign mockup"</div>
+          </div>
+          <button class="copy-btn" onclick="event.stopPropagation();copyTemplate('corp-email-5')">Copy</button>
+        </div>
+        <div id="corp-email-5" class="template-body">
+<strong>Subject:</strong> First 20 {{location}} brands get a free campaign mockup
+
+Hi {{first_name}},
+
+I'm offering the first 20 {{location}} brands in the {{vertical}} space a <strong>free campaign mockup</strong> this month.
+
+Includes:
+• Full campaign concept for {{company}}
+• AI-optimised creative and copy
+• {{location}}-specific channel strategy
+• Valued at R5,000 — free for early adopters
+
+Limited to 20. Claim yours here:
+https://calendly.com/evansmathibe/15min
+
+Best,
+Evans
+
+Serving {{location}} brands from Sandton to Sea Point
+        </div>
+      </div>
+    </div>
+
+    <!-- WHATSAPP TEMPLATES -->
+    <div id="tab-whatsapp" class="template-group">
+      <p style="font-size:0.75rem;color:#25D366;margin-bottom:1.5rem;">WhatsApp Sequences · 5 Templates · Shared Across All Verticals</p>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleBody(this)">
+          <div>
+            <h3>💬 WhatsApp T1 — Initial Nudge</h3>
+            <div class="template-meta">T+5 min · Trigger: Form submit</div>
+          </div>
+          <button class="copy-btn" onclick="event.stopPropagation();copyTemplate('wa-1')">Copy</button>
+        </div>
+        <div id="wa-1" class="template-body">
+Hey {{first_name}}, it's Evans. Saw your request from {{company}}. Are you free for 15 mins tomorrow to discuss your AI Brand Audit for {{location}}?
+        </div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleBody(this)">
+          <div>
+            <h3>💬 WhatsApp T2 — Calendar Follow-Up</h3>
+            <div class="template-meta">Day 2 · Trigger: Calendar clicked but not booked</div>
+          </div>
+          <button class="copy-btn" onclick="event.stopPropagation();copyTemplate('wa-2')">Copy</button>
+        </div>
+        <div id="wa-2" class="template-body">
+Hey {{first_name}}, quick one — I noticed you checked my calendar but didn't book. Want a slot at 2pm tomorrow? I've got time set aside for {{company}}'s audit. 🎯
+        </div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleBody(this)">
+          <div>
+            <h3>💬 WhatsApp T3 — Email Nudge</h3>
+            <div class="template-meta">Day 1 + 12h · Trigger: Email not opened in 12h</div>
+          </div>
+          <button class="copy-btn" onclick="event.stopPropagation();copyTemplate('wa-3')">Copy</button>
+        </div>
+        <div id="wa-3" class="template-body">
+Hi {{first_name}} — Evans here. Just checking you received my email about the {{company}} brand audit. Sometimes they land in spam. Want me to send the key points here on WhatsApp instead?
+        </div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleBody(this)">
+          <div>
+            <h3>💬 WhatsApp T4 — Pricing Page Alert (HOT Lead)</h3>
+            <div class="template-meta">Trigger: Lead visits pricing page</div>
+          </div>
+          <button class="copy-btn" onclick="event.stopPropagation();copyTemplate('wa-4')">Copy</button>
+        </div>
+        <div id="wa-4" class="template-body">
+🔥 Hi {{first_name}}, I see you're checking out our services. Great timing — I was just putting the finishing touches on {{company}}'s brand audit. Let me personally put together a custom package for {{location}}. Free 15-min call to walk through it?
+        </div>
+      </div>
+
+      <div class="template-card">
+        <div class="template-header" onclick="toggleBody(this)">
+          <div>
+            <h3>💬 WhatsApp T5 — Appointment Reminder</h3>
+            <div class="template-meta">2h before + 30min before booked call</div>
+          </div>
+          <button class="copy-btn" onclick="event.stopPropagation();copyTemplate('wa-5')">Copy</button>
+        </div>
+        <div id="wa-5" class="template-body">
+⏰ Reminder: You and Evans are meeting in 2 hours to discuss {{company}}'s AI Brand Audit for {{location}}. Grab the link here: https://calendly.com/evansmathibe/15min
+
+⏰ 30-minute reminder: Evans is ready for you! See you shortly to talk {{company}} + {{location}} strategy.
+        </div>
+      </div>
+
+      <div style="margin-top:2rem;padding:1rem;background:rgba(37,211,102,0.05);border:1px solid rgba(37,211,102,0.1);border-radius:12px;">
+        <h3 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:#25D366;margin-bottom:0.5rem;">WhatsApp Automation Notes</h3>
+        <ul style="font-size:0.75rem;color:rgba(255,255,255,0.5);list-style:disc;padding-left:1.25rem;line-height:1.8;">
+          <li>All templates use <span class="dynamic-var">{{dynamic vars}}</span> for personalisation</li>
+          <li>Channel switching: If lead sends 2+ replies, pause emails → WhatsApp-only</li>
+          <li>If lead replies "STOP" → Remove from all sequences immediately</li>
+          <li>Gauteng leads: 09:00-17:00 | CT leads: 09:30-17:30 | KZN: 09:00-16:30</li>
+          <li>CT/KZN leads: Use local testimonials and timing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function switchTab(tabId, btn) {
+      document.querySelectorAll('.template-group').forEach(g => g.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('tab-' + tabId).classList.add('active');
+      btn.classList.add('active');
+    }
+
+    function toggleBody(header) {
+      const body = header.nextElementSibling;
+      body.classList.toggle('open');
+    }
+
+    function copyTemplate(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const text = el.textContent.trim();
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = el.previousElementSibling.querySelector('.copy-btn');
+        const orig = btn.textContent;
+        btn.textContent = '✓ Copied';
+        setTimeout(() => btn.textContent = orig, 2000);
+      }).catch(() => {
+        alert('Copy failed. Select and copy manually.');
+      });
+    }
+
+    // Open first template in each group by default
+    document.querySelectorAll('.template-group.active .template-body').forEach((el, i) => {
+      if (i < 2) el.classList.add('open');
+    });
+  </script>
+</body>
+</html>

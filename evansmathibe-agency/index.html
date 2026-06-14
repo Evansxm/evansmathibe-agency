@@ -107,6 +107,7 @@
                 <a href="#services" class="nav-link hover:text-brand-salmon transition-colors">Services</a>
                 <a href="#essence" class="nav-link hover:text-brand-salmon transition-colors">Essence</a>
                 <a href="#contact" class="nav-link hover:text-brand-salmon transition-colors">Contact</a>
+                <a href="funnel/capture.html" class="nav-link text-brand-salmon hover:text-white transition-colors font-bold">Free Audit</a>
             </nav>
             <div class="md:hidden">
                 <button id="menu-toggle" class="text-brand-salmon p-2">
@@ -159,7 +160,31 @@
             </div>
         </section>
 
-        <!-- Section 4: Contact -->
+        <!-- Section 4: Funnel CTA -->
+        <section id="funnel-cta" class="min-h-[60vh] flex flex-col justify-center items-center px-8 text-center relative" data-bg="Generated image 1 (19).webp">
+            <div class="max-w-4xl reveal">
+                <h2 class="text-4xl md:text-7xl font-black uppercase mb-8 leading-tight">
+                    Free <span class="text-brand-salmon">AI Brand Audit</span>
+                </h2>
+                <p class="text-lg font-light text-white/60 max-w-2xl mx-auto mb-12">
+                    Get a 48-hour brand analysis with actionable AI automation opportunities tailored to your location and industry.
+                </p>
+                <div class="flex flex-col md:flex-row gap-6 justify-center">
+                    <a href="funnel/capture.html" class="inline-flex items-center gap-2 px-10 py-5 bg-brand-salmon text-brand-black font-bold text-sm uppercase tracking-widest rounded-full hover:bg-white transition-all duration-300 hover:scale-105">
+                        Get My Free Audit
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </a>
+                    <a href="funnel/dashboard.html" class="inline-flex items-center gap-2 px-10 py-5 border border-white/20 text-white font-bold text-sm uppercase tracking-widest rounded-full hover:bg-white/10 transition-all duration-300">
+                        View Dashboard
+                    </a>
+                </div>
+                <p class="mt-8 text-xs text-white/30 uppercase tracking-widest">
+                    Serving SA brands from Sandton to Sea Point · 1,000 lead goal
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 5: Contact -->
         <section id="contact" class="min-h-screen flex flex-col justify-center items-center px-8 text-center" data-bg="Generated image 1 - 2025-11-15T144736.481.webp">
             <h2 class="text-4xl md:text-8xl font-black uppercase mb-16 reveal">Let's Create.</h2>
             <div class="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-16 text-sm uppercase tracking-[0.5em] font-bold reveal-delay-1">
@@ -181,5 +206,15 @@
     </div>
 
     <script src="spyglass.js"></script>
+    <script>
+      // Funnel lead tracking integration
+      if (window.FunnelEngine) {
+        document.querySelectorAll('[data-funnel-cta]').forEach(el => {
+          el.addEventListener('click', () => {
+            FunnelEngine.showToast('→ Opening audit form');
+          });
+        });
+      }
+    </script>
 </body>
 </html>

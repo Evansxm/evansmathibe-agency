@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Brand Audit | {{company}} | Evans Mathibe AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="funnel-engine.css">
+  <style>
+    .pdf-page { max-width: 800px; margin: 2rem auto; padding: 3rem; background: #fff; color: #111; border-radius: 4px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+    .pdf-page h1 { font-size: 2rem; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; }
+    .pdf-page h2 { font-size: 1.2rem; font-weight: 700; color: #D45C5C; margin-top: 2rem; border-bottom: 2px solid #D45C5C; padding-bottom: 0.5rem; }
+    .pdf-page .meta { font-size: 0.8rem; color: #666; margin-top: 0.5rem; }
+    .pdf-page .section { margin: 1.5rem 0; }
+    .pdf-page .score-card { display: flex; gap: 1rem; margin: 1rem 0; flex-wrap: wrap; }
+    .pdf-page .score-item { flex: 1; min-width: 120px; padding: 1rem; background: #f5f0eb; border-radius: 8px; text-align: center; }
+    .pdf-page .score-item .num { font-size: 2rem; font-weight: 900; color: #D45C5C; }
+    .pdf-page .score-item .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: #666; margin-top: 0.25rem; }
+    .pdf-page ul { padding-left: 1.25rem; line-height: 2; font-size: 0.9rem; }
+    .pdf-page .footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #ddd; font-size: 0.7rem; color: #999; text-align: center; }
+    .pdf-page .brand-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 3px solid #D45C5C; }
+    .pdf-page .brand-header img { height: 40px; width: auto; }
+    .print-btn { position: fixed; top: 1rem; right: 1rem; z-index: 100; padding: 0.75rem 1.5rem; background: #D45C5C; color: #fff; border: none; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer; font-family: inherit; }
+    .print-btn:hover { background: #c14a4a; }
+    @media print { .print-btn { display: none; } body { background: #fff; } .pdf-page { box-shadow: none; margin: 0; padding: 2rem; } }
+  </style>
+</head>
+<body style="background:#111;padding:1rem;">
+  <button class="print-btn" onclick="window.print()">🖨 Save as PDF</button>
+
+  <div class="pdf-page" id="lead-magnet-content">
+    <div class="brand-header">
+      <img src="../assets/img/evans_mathibe_logo.jpeg" alt="Evans Mathibe AI" onerror="this.style.display='none'">
+      <div>
+        <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:#D45C5C;font-weight:600;">Evans Mathibe AI</div>
+        <div style="font-size:0.6rem;color:#999;">Creative Agency · AI Brand Solutions</div>
+      </div>
+    </div>
+
+    <h1>AI Brand Audit Report</h1>
+    <p style="font-size:0.9rem;color:#666;margin-top:0.5rem;">Prepared for <strong id="magnet-company">[Your Company]</strong></p>
+    <div class="meta">
+      <span id="magnet-location">[Location]</span> · <span id="magnet-vertical">[Industry]</span> · <span id="magnet-date">[Date]</span>
+    </div>
+
+    <h2>Executive Summary</h2>
+    <div class="section">
+      <p>This AI-powered brand audit evaluates <strong id="summary-company">[Company]</strong>'s current digital presence, competitive positioning in <span id="summary-location">[Location]</span>, and identifies high-impact opportunities for AI-driven growth.</p>
+      <p style="margin-top:0.75rem;">Our analysis shows significant potential for <span id="summary-vertical">[Industry]</span> brands in your market to leverage AI for competitive advantage.</p>
+    </div>
+
+    <h2>Brand Health Score</h2>
+    <div class="score-card">
+      <div class="score-item"><div class="num" id="score-digital">--</div><div class="label">Digital Presence</div></div>
+      <div class="score-item"><div class="num" id="score-consistency">--</div><div class="label">Brand Consistency</div></div>
+      <div class="score-item"><div class="num" id="score-ai">--</div><div class="label">AI Readiness</div></div>
+      <div class="score-item"><div class="num" id="score-competitive">--</div><div class="label">Competitive Edge</div></div>
+    </div>
+
+    <h2>Key Findings</h2>
+    <div class="section">
+      <ul id="findings-list">
+        <li>Your brand presence in <span class="d-location">[Location]</span> has room to grow — we've identified 5 quick wins</li>
+        <li>AI automation could reduce your campaign turnaround time by up to 60%</li>
+        <li>Competitors in <span class="d-vertical">[Industry]</span> are adopting AI — early movers gain 3x advantage</li>
+        <li>Your brand consistency score can be improved through automated systems</li>
+        <li>Personalised targeting in <span class="d-location">[Location]</span> could increase engagement by 40%+</li>
+      </ul>
+    </div>
+
+    <h2>Recommended Actions</h2>
+    <div class="section">
+      <ol style="line-height:2;font-size:0.9rem;">
+        <li><strong>AI Campaign Automation</strong> — Implement automated campaign deployment and optimisation</li>
+        <li><strong>Brand Consistency Engine</strong> — Deploy AI-powered brand compliance across all channels</li>
+        <li><strong>Predictive Targeting</strong> — Use AI to identify and convert high-value prospects in <span class="d-location">[Location]</span></li>
+        <li><strong>Content Generation</strong> — Automate 60% of routine content with AI while maintaining brand voice</li>
+        <li><strong>Performance Analytics</strong> — Real-time dashboards with AI-driven recommendations</li>
+      </ol>
+    </div>
+
+    <h2>Next Steps</h2>
+    <div class="section">
+      <p>Book a 15-minute strategy call with Evans to review these findings in detail and build your custom action plan.</p>
+      <p style="margin-top:0.75rem;">
+        <strong>📅 <a href="https://calendly.com/evansmathibe/15min" style="color:#D45C5C;">Schedule Your Call</a></strong><br>
+        <strong>💬 <a href="https://wa.me/27724165061" style="color:#25D366;">WhatsApp Evans Directly</a></strong>
+      </p>
+    </div>
+
+    <div class="footer">
+      <p>Evans Mathibe AI · evans.mathibe@mail.com · +27 72 416 5061</p>
+      <p style="margin-top:0.25rem;">Serving South African brands from Sandton to Sea Point</p>
+      <p style="margin-top:0.5rem;font-style:italic;">This audit is a complimentary assessment. Full implementation requires engagement.</p>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const company = params.get('company') || 'Your Company';
+      const location = params.get('location') || 'South Africa';
+      const vertical = params.get('vertical') || 'Industry';
+      const date = new Date().toLocaleDateString('en-ZA', { day: 'numeric', month: 'long', year: 'numeric' });
+
+      document.querySelectorAll('#magnet-company, #summary-company').forEach(el => el.textContent = company);
+      document.querySelectorAll('#magnet-location, #summary-location, .d-location').forEach(el => el.textContent = location);
+      document.querySelectorAll('#magnet-vertical, #summary-vertical, .d-vertical').forEach(el => el.textContent = vertical);
+      document.getElementById('magnet-date').textContent = date;
+
+      const scores = {
+        digital: Math.floor(Math.random() * 30) + 50,
+        consistency: Math.floor(Math.random() * 25) + 40,
+        ai: Math.floor(Math.random() * 35) + 30,
+        competitive: Math.floor(Math.random() * 25) + 45,
+      };
+      document.getElementById('score-digital').textContent = scores.digital + '/100';
+      document.getElementById('score-consistency').textContent = scores.consistency + '/100';
+      document.getElementById('score-ai').textContent = scores.ai + '/100';
+      document.getElementById('score-competitive').textContent = scores.competitive + '/100';
+    })();
+  </script>
+</body>
+</html>

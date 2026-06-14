@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Funnel | Evans Mathibe AI</title>
+  <meta name="description" content="Adaptive B2B sales funnel for Evans Mathibe AI Creative Agency. Capture and convert qualified leads.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="funnel-engine.css">
+  <style>
+    .funnel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 2rem auto 0; }
+    .funnel-card { padding: 2rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; text-align: center; transition: all 0.3s ease; text-decoration: none; color: inherit; display: block; }
+    .funnel-card:hover { transform: translateY(-4px); border-color: var(--brand-coral); background: rgba(212,92,92,0.05); }
+    .funnel-card-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .funnel-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .funnel-card p { font-size: 0.8rem; color: rgba(255,255,255,0.3); }
+    .funnel-card .badge { margin-top: 1rem; }
+    .quick-links { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-top: 1.5rem; }
+    .params-demo { background: rgba(255,255,255,0.02); border-radius: 12px; padding: 1rem; margin-top: 2rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+    .params-demo code { font-size: 0.7rem; color: var(--brand-coral); word-break: break-all; }
+  </style>
+</head>
+<body>
+  <div class="funnel-hero" style="min-height:60vh;">
+    <div style="text-align:center;padding:6rem 1.5rem 3rem;max-width:800px;">
+      <img src="../assets/img/evans_mathibe_logo.jpeg" alt="Evans Mathibe AI" class="brand-logo" style="height:50px;">
+      <h1 class="display-1">Sales Funnel</h1>
+      <p style="font-size:1rem;color:rgba(255,255,255,0.4);margin-top:0.75rem;">
+        Capture, nurture, and convert B2B leads from SA's top business hubs
+      </p>
+      <div class="quick-links">
+        <a href="../index.html" class="btn-outline">← Main Site</a>
+        <a href="dashboard.html" class="btn-outline">Dashboard</a>
+        <a href="templates.html" class="btn-outline">Templates</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="padding-bottom:4rem;">
+    <div class="funnel-grid">
+      <a href="capture.html" class="funnel-card">
+        <div class="funnel-card-icon">🎯</div>
+        <h3>Capture Form</h3>
+        <p>AI Brand Audit lead capture with dynamic location & vertical targeting</p>
+        <span class="badge badge-hot">Default Entry</span>
+      </a>
+      <a href="capture.html?location=Sandton+CBD+(Rivonia)&vertical=Media+Houses+(SABC,+MultiChoice,+eMedia,+Primedia)" class="funnel-card">
+        <div class="funnel-card-icon">🏢</div>
+        <h3>Media & Agency Variant</h3>
+        <p>Pre-targeted for Sandton media houses and ad agencies</p>
+        <span class="badge badge-warm">Demo Link</span>
+      </a>
+      <a href="capture.html?location=Braamfontein&vertical=Universities+%26+Creative+Schools+(Wits,+UJ,+UP,+UCT,+Stellenbosch,+UKZN,+AFDA,+Vega,+Open+Window)" class="funnel-card">
+        <div class="funnel-card-icon">🎓</div>
+        <h3>University Variant</h3>
+        <p>Pre-targeted for Braamfontein universities and creative schools</p>
+        <span class="badge badge-warm">Demo Link</span>
+      </a>
+      <a href="capture.html?location=V%26A+Waterfront&vertical=Corporate+HQs+%26+Nightlife+Groups" class="funnel-card">
+        <div class="funnel-card-icon">🏙</div>
+        <h3>Corporate Variant</h3>
+        <p>Pre-targeted for Cape Town corporate headquarters</p>
+        <span class="badge badge-warm">Demo Link</span>
+      </a>
+      <a href="thank-you.html?first_name=Demo&company=Test+Brand&location=Sandton+CBD+(Rivonia)&vertical=Media+Houses" class="funnel-card">
+        <div class="funnel-card-icon">✅</div>
+        <h3>Thank You Page</h3>
+        <p>Post-submission page with WhatsApp + calendar + video</p>
+        <span class="badge badge-cold">Preview</span>
+      </a>
+      <a href="dashboard.html" class="funnel-card">
+        <div class="funnel-card-icon">📊</div>
+        <h3>Lead Dashboard</h3>
+        <p>Track leads by location, vertical, stage — 1,000 goal tracker</p>
+        <span class="badge badge-cold">Live Data</span>
+      </a>
+    </div>
+
+    <div class="params-demo">
+      <h3 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.3);margin-bottom:0.75rem;">Quick Start URLs</h3>
+      <p style="font-size:0.75rem;margin-bottom:0.5rem;">Use these URL parameters to pre-fill location & vertical:</p>
+      <code>?location=Sandton+CBD+(Rivonia)&vertical=Media+Houses+(SABC,+MultiChoice,+eMedia,+Primedia)</code>
+      <p style="font-size:0.7rem;color:rgba(255,255,255,0.2);margin-top:0.75rem;">
+        Supported locations: Sandton CBD, Rosebank, Midrand Waterfall, Menlyn Maine, Auckland Park, Braamfontein, CT CBD, Century City, Woodstock, V&A Waterfront, Green Point, Umhlanga Ridge, Durban Central, Morningside
+      </p>
+    </div>
+  </div>
+
+  <footer style="text-align:center;padding:2rem;border-top:1px solid rgba(255,255,255,0.04);">
+    <p style="font-size:0.6rem;color:rgba(255,255,255,0.1);letter-spacing:0.1em;text-transform:uppercase;">
+      Evans Mathibe AI · Adaptive Sales Funnel · v1.0
+    </p>
+  </footer>
+</body>
+</html>
