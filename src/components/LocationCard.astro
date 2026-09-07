@@ -1,0 +1,47 @@
+---
+interface Props {
+  region: string;
+  role: string;
+  blurb: string;
+  capabilities: string[];
+  coordinates?: [number, number];
+  slug: string;
+}
+
+const { region, role, blurb, capabilities, coordinates, slug } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+---
+
+<a 
+  href={`${baseUrl}locations/${slug}`}
+  class="group block bg-paper p-8 border-2 border-ink hover:border-brass transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(27,23,18,1)] hover:shadow-[8px_8px_0px_0px_rgba(168,135,63,1)] hover:-translate-y-1"
+>
+  <div class="flex items-center justify-between mb-4">
+    <span class="font-mono text-xs text-brass font-bold uppercase tracking-wider">
+      {coordinates ? `${coordinates[0]}°, ${coordinates[1]}°` : 'HQ & REMOTE'}
+    </span>
+    <span class="text-xs font-mono font-semibold text-paper bg-ink px-2.5 py-1 uppercase tracking-wider">
+      {role}
+    </span>
+  </div>
+
+  <h3 class="font-display text-2xl font-bold text-ink group-hover:text-brass transition-colors mb-3">
+    {region}
+  </h3>
+
+  <p class="text-sm font-sans text-slate leading-relaxed mb-6">
+    {blurb}
+  </p>
+
+  <div class="space-y-1 border-t border-ink/10 pt-4">
+    <span class="text-[11px] font-mono font-semibold tracking-wider text-ink uppercase block mb-2">
+      Regional Focus:
+    </span>
+    {capabilities.slice(0, 3).map((item) => (
+      <div class="flex items-center gap-2 text-xs font-sans text-ink/80">
+        <span class="w-1.5 h-1.5 bg-brass rounded-full"></span>
+        <span>{item}</span>
+      </div>
+    ))}
+  </div>
+</a>

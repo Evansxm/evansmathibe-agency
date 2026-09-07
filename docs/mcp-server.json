@@ -1,0 +1,40 @@
+{
+  "mcp_version": "1.0",
+  "server": {
+    "name": "evans-mathibe-agency-mcp",
+    "description": "Bridges Evans Mathibe Agency website data with AI research tools and LLM ecosystems.",
+    "version": "1.0.0"
+  },
+  "resources": [
+    {
+      "uri": "mcp://agency/services",
+      "name": "Services Listing",
+      "mimeType": "application/json",
+      "description": "List of all advertising and AI services offered."
+    },
+    {
+      "uri": "mcp://agency/locations",
+      "name": "Geospatial Data",
+      "mimeType": "application/json",
+      "description": "Locations and business districts served in South Africa."
+    },
+    {
+      "uri": "mcp://agency/insights",
+      "name": "Industry Insights",
+      "mimeType": "text/markdown",
+      "description": "Latest blog posts and industry analysis."
+    }
+  ],
+  "tools": [
+    {
+      "name": "query_agency_services",
+      "description": "Find specific services based on business needs.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string" }
+        }
+      }
+    }
+  ]
+}

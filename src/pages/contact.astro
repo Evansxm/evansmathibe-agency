@@ -1,0 +1,148 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const hubLocations = [
+  { region: "Johannesburg HQ", email: "jhb@evansmathibe.co.za", phone: "+27 (0)11 555 0192", address: "Sandton City Office Tower, Sandton, Johannesburg" },
+  { region: "Cape Town Studio", email: "cpt@evansmathibe.co.za", phone: "+27 (0)21 444 0811", address: "V&A Silo District, Waterfront, Cape Town" },
+  { region: "Durban Branch", email: "dur@evansmathibe.co.za", phone: "+27 (0)31 333 0422", address: "Umhlanga Arch Ridge, Umhlanga, Durban" },
+  { region: "Global Mandates", email: "executive@evansmathibe.co.za", phone: "+27 (0)10 900 1200", address: "Nationwide & International Digital Hub" },
+];
+---
+
+<Layout 
+  title="Contact & Executive Briefings | Evans Mathibe Agency"
+  description="Schedule a strategy session, request a proposal, or contact Evans Mathibe Agency across our Johannesburg, Cape Town, Durban, and Remote offices."
+>
+  <section class="bg-paper py-16 sm:py-20 border-b border-ink/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-mono font-bold tracking-widest text-ember uppercase">
+          // Direct Engagement
+        </span>
+        <h1 class="font-display text-4xl sm:text-6xl font-bold text-ink">
+          Initiate an <span class="font-serif italic text-ember font-normal">Executive Briefing</span>
+        </h1>
+        <p class="font-sans text-lg text-slate leading-relaxed">
+          Tell us about your brand challenge, campaign requirements, or AI automation goals. We respond to qualified inquiries within 24 hours.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Form Column -->
+        <div class="lg:col-span-7 bg-paper p-8 border-2 border-ink shadow-[8px_8px_0px_0px_rgba(27,23,18,1)]">
+          <h2 class="font-display text-2xl font-bold text-ink mb-6">Project Inquiry Form</h2>
+          
+          <form 
+            action="https://formspree.io/f/placeholder" 
+            method="POST"
+            class="space-y-6"
+            id="contact-form"
+          >
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="full-name" class="block text-xs font-mono font-bold text-ink uppercase tracking-wider mb-2">Full Name *</label>
+                <input 
+                  type="text" 
+                  id="full-name" 
+                  name="name" 
+                  required 
+                  placeholder="e.g. Sarah Jenkins"
+                  class="w-full bg-paper border-2 border-ink/40 p-3 text-sm font-sans focus:border-ember focus:outline-none transition-colors"
+                />
+              </div>
+
+              <div>
+                <label for="email" class="block text-xs font-mono font-bold text-ink uppercase tracking-wider mb-2">Corporate Email *</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  required 
+                  placeholder="sarah@enterprise.com"
+                  class="w-full bg-paper border-2 border-ink/40 p-3 text-sm font-sans focus:border-ember focus:outline-none transition-colors"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="company" class="block text-xs font-mono font-bold text-ink uppercase tracking-wider mb-2">Organization / Brand</label>
+                <input 
+                  type="text" 
+                  id="company" 
+                  name="company" 
+                  placeholder="Company Ltd"
+                  class="w-full bg-paper border-2 border-ink/40 p-3 text-sm font-sans focus:border-ember focus:outline-none transition-colors"
+                />
+              </div>
+
+              <div>
+                <label for="service-interest" class="block text-xs font-mono font-bold text-ink uppercase tracking-wider mb-2">Primary Interest</label>
+                <select 
+                  id="service-interest" 
+                  name="interest"
+                  class="w-full bg-paper border-2 border-ink/40 p-3 text-sm font-sans focus:border-ember focus:outline-none transition-colors"
+                >
+                  <option value="brand-strategy">Brand Strategy & Identity</option>
+                  <option value="ai-automation">AI & Content Automation</option>
+                  <option value="campaigns">Advertising & Campaign Direction</option>
+                  <option value="experiential">Experiential & Events</option>
+                  <option value="other">General Strategy Consultation</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="message" class="block text-xs font-mono font-bold text-ink uppercase tracking-wider mb-2">Brief Summary of Requirements *</label>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="5" 
+                required 
+                placeholder="Outline your timeline, objectives, or current challenges..."
+                class="w-full bg-paper border-2 border-ink/40 p-3 text-sm font-sans focus:border-ember focus:outline-none transition-colors"
+              ></textarea>
+            </div>
+
+            <button 
+              type="submit" 
+              class="w-full py-4 bg-ink text-paper font-sans text-xs font-bold uppercase tracking-widest hover:bg-ember transition-colors border border-ink shadow-[4px_4px_0px_0px_rgba(222,101,109,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]"
+            >
+              Submit Strategic Inquiry &rarr;
+            </button>
+          </form>
+        </div>
+
+        <!-- Info / Regional Hubs Column -->
+        <div class="lg:col-span-5 space-y-6">
+          <h2 class="font-display text-2xl font-bold text-ink">Regional Offices</h2>
+          
+          <div class="space-y-4">
+            {hubLocations.map((hub) => (
+              <div class="bg-paper/80 p-6 border-2 border-ink">
+                <h3 class="font-display text-lg font-bold text-ink mb-1">{hub.region}</h3>
+                <p class="text-xs font-sans text-slate mb-3">{hub.address}</p>
+                <div class="space-y-1 text-xs font-mono text-ink/80">
+                  <div>Mail: <a href={`mailto:${hub.email}`} class="text-ember hover:underline">{hub.email}</a></div>
+                  <div>Phone: {hub.phone}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</Layout>

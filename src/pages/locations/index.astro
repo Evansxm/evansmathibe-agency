@@ -1,0 +1,46 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import LocationCard from '../../components/LocationCard.astro';
+import { getCollection } from 'astro:content';
+
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const locations = await getCollection('locations');
+---
+
+<Layout 
+  title="Geographic Hubs & Locations | Evans Mathibe Agency"
+  description="Strategic operations and agency presence in Johannesburg & Tshwane, Cape Town & Western Cape, Durban & KZN, and Nationwide/Remote."
+>
+  <section class="bg-paper py-16 border-b border-ink/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-mono font-bold tracking-widest text-brass uppercase">
+          // Geographic Command
+        </span>
+        <h1 class="font-display text-4xl sm:text-6xl font-bold text-ink">
+          Regional Hubs & <span class="font-serif italic font-normal text-brass font-normal">Global Reach</span>
+        </h1>
+        <p class="font-sans text-lg text-slate leading-relaxed">
+          Rooted in South Africa's commercial hubs with the agility to execute brand, creative, and technical mandates anywhere in the world.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {locations.map((loc) => (
+          <LocationCard
+            region={loc.data.region}
+            role={loc.data.role}
+            blurb={loc.data.blurb}
+            capabilities={loc.data.capabilities}
+            coordinates={loc.data.coordinates}
+            slug={loc.slug}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

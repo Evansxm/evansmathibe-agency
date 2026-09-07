@@ -1,0 +1,47 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import { getCollection } from 'astro:content';
+
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const services = await getCollection('services');
+const sortedServices = services.sort((a, b) => (a.data.order || 99) - (b.data.order || 99));
+---
+
+<Layout 
+  title="Capabilities & Services | Evans Mathibe Agency"
+  description="Explore our full spectrum of creative direction, brand identity systems, AI automation, campaign strategy, and experiential marketing services."
+>
+  <section class="bg-paper py-16 border-b border-ink/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-mono font-bold tracking-widest text-ember uppercase">
+          // Agency Capabilities
+        </span>
+        <h1 class="font-display text-4xl sm:text-6xl font-bold text-ink">
+          Strategic Services & <span class="font-serif italic font-normal text-ember font-normal">Execution Systems</span>
+        </h1>
+        <p class="font-sans text-lg text-slate leading-relaxed">
+          From high-level enterprise positioning to bespoke AI workflow integration, we craft disciplined creative solutions built for commercial impact and brand longevity.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {sortedServices.map((service, idx) => (
+          <ServiceCard
+            title={service.data.title}
+            shortTitle={service.data.shortTitle}
+            positionLine={service.data.positionLine}
+            deliverables={service.data.deliverables}
+            slug={service.slug}
+            order={idx + 1}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,30 @@
+{
+  "name": "Evans Mathibe Agency AI Context",
+  "version": "1.0.0",
+  "description": "Comprehensive context for Evans Mathibe Agency services, locations, and creative insights in South Africa.",
+  "author": "Evans Mathibe",
+  "capabilities": {
+    "search": {
+      "endpoints": ["https://evansxm.github.io/evansmathibe-agency/blog/"]
+    },
+    "services": {
+      "listing": [
+        "AI Brand Automation",
+        "Advertising & Campaigns",
+        "Project & Event Design",
+        "Brand Management",
+        "Sales & Distribution"
+      ]
+    },
+    "locations": {
+      "hubs": ["Sandton", "Rosebank", "Pretoria", "Cape Town", "Durban"],
+      "geo_data": "https://evansxm.github.io/evansmathibe-agency/GEOSPATIAL.md"
+    }
+  },
+  "mcp_endpoints": [
+    {
+      "type": "json-ld",
+      "url": "https://evansxm.github.io/evansmathibe-agency/index.html"
+    }
+  ]
+}

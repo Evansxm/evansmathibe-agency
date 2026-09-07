@@ -1,0 +1,43 @@
+---
+---
+<div id="custom-cursor-dot" class="fixed top-0 left-0 w-3 h-3 bg-ember rounded-full pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 transition-transform duration-75 ease-out hidden md:block"></div>
+<div id="custom-cursor-ring" class="fixed top-0 left-0 w-10 h-10 border border-ink/40 rounded-full pointer-events-none z-[9998] -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 ease-out hidden md:block"></div>
+
+<script>
+  const dot = document.getElementById('custom-cursor-dot');
+  const ring = document.getElementById('custom-cursor-ring');
+
+  if (dot && ring && matchMedia('(pointer: fine)').matches) {
+    document.body.classList.add('has-custom-cursor');
+    
+    let mouseX = -100, mouseY = -100;
+    let ringX = -100, ringY = -100;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+    });
+
+    function animateRing() {
+      ringX += (mouseX - ringX) * 0.15;
+      ringY += (mouseY - ringY) * 0.15;
+      ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
+      requestAnimationFrame(animateRing);
+    }
+    animateRing();
+
+    // Hover scales
+    const interactiveElements = document.querySelectorAll('a, button, [role="button"], input, textarea, select');
+    interactiveElements.forEach((el) => {
+      el.addEventListener('mouseenter', () => {
+        dot.classList.add('scale-150', 'bg-ember-deep');
+        ring.classList.add('scale-150', 'border-ember', 'bg-ember/10');
+      });
+      el.addEventListener('mouseleave', () => {
+        dot.classList.remove('scale-150', 'bg-ember-deep');
+        ring.classList.remove('scale-150', 'border-ember', 'bg-ember/10');
+      });
+    });
+  }
+</script>
