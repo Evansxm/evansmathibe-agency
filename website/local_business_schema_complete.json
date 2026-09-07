@@ -1,0 +1,769 @@
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "AdvertisingAgency",
+    "ProfessionalService",
+    "LocalBusiness"
+  ],
+  "@id": "https://evansxm.github.io/evansmathibe-agency/",
+  "name": "Evans Mathibe AI",
+  "alternateName": [
+    "EvansMathibe Agency",
+    "Evans Mathibe Creative Agency"
+  ],
+  "description": "EvansMathibe Agency is a full-service creative agency based in Sandton, Johannesburg. We specialize in brand strategy, digital marketing, video production, and AI-powered advertising solutions. We serve clients across South Africa from offices in Sandton, Cape Town, and Durban.",
+  "url": "https://evansxm.github.io/evansmathibe-agency/",
+  "logo": "https://evansxm.github.io/evansmathibe-agency/logo.png",
+  "image": "https://evansxm.github.io/evansmathibe-agency/images/evansmathibe-02-copyright.webp",
+  "foundingDate": "2024",
+  "foundingLocation": {
+    "@type": "Place",
+    "name": "Sandton, South Africa"
+  },
+  "knowsAbout": [
+    "AI Brand Automation",
+    "Advertising",
+    "Video Production",
+    "Digital Marketing",
+    "Brand Strategy",
+    "Social Media Management",
+    "Film Production",
+    "Web Design",
+    "Brand Identity Design",
+    "Commercial Video Production",
+    "AI Advertising & Automation",
+    "Content Marketing & SEO",
+    "Photography & Visual Assets",
+    "Digital Strategy Consulting"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "08:00",
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "13:00"
+    }
+  ],
+  "priceRange": "$$$",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+27-72-416-5061",
+    "contactType": "customer service",
+    "email": "evans.mathibe@mail.com",
+    "areaServed": "ZA",
+    "availableLanguage": [
+      "English",
+      "Zulu",
+      "Xhosa"
+    ]
+  },
+  "location": [
+    {
+      "@type": "Place",
+      "name": "Sandton Headquarters",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-26.1076",
+        "longitude": "28.0567"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sandton",
+        "addressRegion": "Gauteng",
+        "postalCode": "2196",
+        "addressCountry": "ZA"
+      },
+      "telephone": "+27-72-416-5061",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "17:00"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Cape Town Creative Hub",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-33.9249",
+        "longitude": "18.4241"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cape Town",
+        "addressRegion": "Western Cape",
+        "postalCode": "8001",
+        "addressCountry": "ZA"
+      },
+      "telephone": "+27-72-416-5061"
+    },
+    {
+      "@type": "Place",
+      "name": "Durban Office (Umhlanga Ridge)",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-29.7258",
+        "longitude": "31.0660"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Umhlanga",
+        "addressRegion": "KwaZulu-Natal",
+        "postalCode": "4001",
+        "addressCountry": "ZA"
+      },
+      "telephone": "+27-72-416-5061"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Creative & Media Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AI Brand Automation"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Video & Film Production"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Advertising Campaigns"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Digital Marketing"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Brand Strategy & Design"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Social Media Management"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Project Management"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Photography & Visual Assets"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Events Design & Management"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Sales & Distribution"
+        }
+      }
+    ]
+  },
+  "sameAs": [
+    "https://www.tiktok.com/@evans_mathibe",
+    "https://wa.me/27724165061",
+    "https://www.linkedin.com/in/evansmathibe",
+    "https://www.facebook.com/evans.mathibe",
+    "https://www.instagram.com/evans_mathibe/",
+    "https://evansxm.github.io/em/index.html"
+  ],
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Sandton",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Gauteng"
+      },
+      "description": "Head Office / Richest Square Mile in Africa"
+    },
+    {
+      "@type": "City",
+      "name": "Johannesburg",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Gauteng"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Pretoria",
+      "alternateName": "Tshwane",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Gauteng"
+      },
+      "description": "Administrative Capital of South Africa"
+    },
+    {
+      "@type": "City",
+      "name": "Cape Town",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Western Cape"
+      },
+      "description": "Legislative Capital of South Africa"
+    },
+    {
+      "@type": "City",
+      "name": "Bloemfontein",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Free State"
+      },
+      "description": "Judicial Capital of South Africa"
+    },
+    {
+      "@type": "City",
+      "name": "Durban",
+      "alternateName": "eThekwini",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "KwaZulu-Natal"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Polokwane",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Limpopo"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Rustenburg",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "North West"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Mahikeng",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "North West"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Kimberley",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Northern Cape"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Gqeberha",
+      "alternateName": "Port Elizabeth",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Eastern Cape"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Mbombela",
+      "alternateName": "Nelspruit",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Mpumalanga"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Centurion",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Gauteng"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Midrand",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Gauteng"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Stellenbosch",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Western Cape"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Pietermaritzburg",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "KwaZulu-Natal"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "East London",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Eastern Cape"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "George",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Western Cape"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Rosebank Business District",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Johannesburg"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Sandton CBD",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Sandton"
+      },
+      "description": "Richest Square Mile in Africa"
+    },
+    {
+      "@type": "Place",
+      "name": "Cape Town City Bowl",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Cape Town"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Umhlanga Ridge",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Durban"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Century City",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Cape Town"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Menlyn Maine",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Pretoria"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Waterfall City",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Midrand"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Melrose Arch",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Johannesburg"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Illovo Boulevard",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Johannesburg"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Bryanston Business Hub",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Johannesburg"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Stellenbosch Technopark",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Stellenbosch"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "V&A Waterfront Business District",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Cape Town"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Bryanston",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Johannesburg"
+      },
+      "description": "Advertising Agency Hub"
+    },
+    {
+      "@type": "Place",
+      "name": "Parkhurst",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Johannesburg"
+      },
+      "description": "Creative District"
+    },
+    {
+      "@type": "Place",
+      "name": "Woodstock",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Cape Town"
+      },
+      "description": "Cape Town Creative Hub"
+    },
+    {
+      "@type": "Place",
+      "name": "Maboneng Precinct",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Johannesburg"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Braamfontein",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Johannesburg"
+      },
+      "description": "Digital & Youth Culture"
+    },
+    {
+      "@type": "Place",
+      "name": "De Waterkant",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Cape Town"
+      },
+      "description": "Cape Town Ad Agencies"
+    },
+    {
+      "@type": "Place",
+      "name": "Florida Road",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Durban"
+      },
+      "description": "Durban Creative Zone"
+    },
+    {
+      "@type": "Place",
+      "name": "Sandton City & Nelson Mandela Square",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Sandton"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Mall of Africa",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Midrand"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Gateway Theatre of Shopping",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Umhlanga"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "V&A Waterfront",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Cape Town"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Menlyn Park Shopping Centre",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Pretoria"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Canal Walk",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Century City"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Fourways Mall",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Johannesburg"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "The Pavilion",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Westville"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Eastgate Shopping Centre",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Johannesburg"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Cresta Shopping Centre",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Johannesburg"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Brooklyn Mall",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Pretoria"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Tyger Valley Shopping Centre",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Bellville"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Baywest Mall",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Gqeberha"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Mimosa Mall",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Bloemfontein"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Mall of the North",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "Polokwane"
+      }
+    },
+    {
+      "@type": "Country",
+      "name": "South Africa"
+    },
+    {
+      "@type": "Continent",
+      "name": "Africa"
+    }
+  ],
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Brand Strategy & Identity Design"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Digital Marketing & SEO"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Video Production (Commercial, Corporate, Event)"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "AI Advertising & Automation"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Social Media Management"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Web Design & Development"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Creative Direction & Brand Strategy"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Photography & Content Creation"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Film & Video Production"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Events Design & Management"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Sales & Distribution Strategy"
+      }
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "bestRating": "5",
+    "ratingCount": "3",
+    "reviewCount": "3"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Sandton",
+    "addressRegion": "Gauteng",
+    "postalCode": "2196",
+    "addressCountry": "ZA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "-26.1076",
+    "longitude": "28.0567"
+  },
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "-26.1076",
+      "longitude": "28.0567"
+    },
+    "geoRadius": "500000"
+  }
+}

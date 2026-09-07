@@ -18,9 +18,27 @@ jobs:
         with:
           ref: master
 
-      - name: Deploy
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies & build
+        run: |
+          npm install
+          npx astro build
+          rsync -av dist/ website/
+
+      - name: Deploy to gh-pages (docs)
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./website
           destination_dir: docs
+
+      - name: Deploy to gh-pages (root)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./website
+          keep_files: true

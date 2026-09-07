@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 60" fill="none" class="logo-full-svg">
+  <!-- Logo Mark Icon -->
+  <g stroke="#DE656D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="26,12 8,40 44,40" />
+    <polygon points="8,40 2,24 18,24" />
+    <polygon points="44,40 50,24 34,24" />
+    <circle cx="26" cy="50" r="4" fill="#DE656D" />
+  </g>
+  <!-- Wordmark Text -->
+  <text x="64" y="32" fill="#1B1712" font-family="'Clash Display', sans-serif" font-weight="700" font-size="20" letter-spacing="0.05em">EVANS MATHIBE</text>
+  <text x="65" y="46" fill="#4B5A5E" font-family="'Switzer', sans-serif" font-weight="500" font-size="9" letter-spacing="0.25em">AGENCY · -26.1076, 28.0567</text>
+</svg>
