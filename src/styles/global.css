@@ -1,0 +1,73 @@
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=switzer@400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --paper: #F1ECE2;
+    --ink: #1B1712;
+    --ember: #DE656D;
+    --ember-deep: #B13A42;
+    --brass: #A8873F;
+    --slate: #4B5A5E;
+  }
+
+  html {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: 'Switzer', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* Focus visible accessibility styling */
+  *:focus-visible {
+    outline: 2px solid var(--ember-deep);
+    outline-offset: 3px;
+  }
+}
+
+/* Custom Cursor styles */
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  body.has-custom-cursor {
+    cursor: none;
+  }
+  body.has-custom-cursor a,
+  body.has-custom-cursor button,
+  body.has-custom-cursor [role="button"],
+  body.has-custom-cursor input,
+  body.has-custom-cursor select,
+  body.has-custom-cursor textarea {
+    cursor: none;
+  }
+}
+
+/* View Transitions animation */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.35s;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* SVG draw animations */
+.stroke-draw {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawStroke 1.2s ease-in-out forwards;
+}
+
+@keyframes drawStroke {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

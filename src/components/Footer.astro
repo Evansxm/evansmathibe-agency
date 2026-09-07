@@ -1,0 +1,97 @@
+---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const servicesList = [
+  { name: 'Advertising & Creative Direction', href: `${baseUrl}services/advertising-creative-direction` },
+  { name: 'Brand Strategy & Identity', href: `${baseUrl}services/brand-strategy-identity` },
+  { name: 'AI & Automation Brand Systems', href: `${baseUrl}services/ai-automation-brand-systems` },
+  { name: 'Campaign Strategy & Activation', href: `${baseUrl}services/campaign-strategy-activation` },
+  { name: 'Design & Art Direction', href: `${baseUrl}services/design-art-direction` },
+  { name: 'Experiential & Events', href: `${baseUrl}services/experiential-events` },
+  { name: 'Growth, Sales & Distribution', href: `${baseUrl}services/growth-sales-distribution` },
+  { name: 'Project Design & Delivery', href: `${baseUrl}services/project-design-delivery` },
+];
+
+const locationsList = [
+  { name: 'Johannesburg & Tshwane', href: `${baseUrl}locations/johannesburg-tshwane` },
+  { name: 'Cape Town & Western Cape', href: `${baseUrl}locations/cape-town` },
+  { name: 'Durban & KwaZulu-Natal', href: `${baseUrl}locations/durban` },
+  { name: 'Nationwide & Remote', href: `${baseUrl}locations/nationwide-remote` },
+];
+---
+
+<footer class="bg-ink text-paper pt-16 pb-12 border-t border-paper/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-paper/10">
+      
+      <!-- Column 1: Brand & Purpose -->
+      <div class="space-y-4 md:col-span-1">
+        <a href={baseUrl} class="flex items-center gap-3">
+          <img src={`${baseUrl}assets/logo-mark.svg`} alt="Logo" class="w-8 h-8 filter invert brightness-200" />
+          <span class="font-display font-bold text-lg text-paper tracking-tight">EVANS MATHIBE</span>
+        </a>
+        <p class="text-sm text-paper/70 font-sans leading-relaxed">
+          Architectural creative direction, visual identity systems, and high-velocity AI automation for forward-looking brands across Africa and globally.
+        </p>
+        <div class="pt-2 text-xs font-mono text-paper/50">
+          Gauteng, RSA &bull; Global Operations
+        </div>
+      </div>
+
+      <!-- Column 2: Core Services -->
+      <div>
+        <h4 class="font-display text-sm uppercase tracking-widest text-brass mb-4">Capabilities</h4>
+        <ul class="space-y-2 text-sm text-paper/80 font-sans">
+          {servicesList.map((service) => (
+            <li>
+              <a href={service.href} class="hover:text-ember transition-colors">
+                {service.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Column 3: Presence & Regional Hubs -->
+      <div>
+        <h4 class="font-display text-sm uppercase tracking-widest text-brass mb-4">Regional Hubs</h4>
+        <ul class="space-y-2 text-sm text-paper/80 font-sans">
+          {locationsList.map((loc) => (
+            <li>
+              <a href={loc.href} class="hover:text-ember transition-colors">
+                {loc.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Column 4: Contact & Engagement -->
+      <div class="space-y-4">
+        <h4 class="font-display text-sm uppercase tracking-widest text-brass mb-4">Initiate Dialogue</h4>
+        <p class="text-sm text-paper/80 font-sans">
+          Ready to scale your visual presence or automate content operations?
+        </p>
+        <a 
+          href={`${baseUrl}contact`} 
+          class="inline-block px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-ink bg-paper hover:bg-ember hover:text-paper transition-all duration-300 border border-paper"
+        >
+          Schedule Consultation &rarr;
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-paper/50 font-mono gap-4">
+      <div>
+        &copy; {new Date().getFullYear()} Evans Mathibe Agency. All rights reserved.
+      </div>
+      <div class="flex space-x-6">
+        <a href={baseUrl} class="hover:text-paper transition-colors">Privacy Policy</a>
+        <a href={baseUrl} class="hover:text-paper transition-colors">Terms of Engagement</a>
+        <a href={`${baseUrl}sitemap-index.xml`} class="hover:text-paper transition-colors">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>

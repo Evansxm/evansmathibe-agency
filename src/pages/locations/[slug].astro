@@ -1,0 +1,88 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const locations = await getCollection('locations');
+  return locations.map((loc) => ({
+    params: { slug: loc.slug },
+    props: { location: loc },
+  }));
+}
+
+const { location } = Astro.props;
+const { Content } = await location.render();
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+---
+
+<Layout 
+  title={`${location.data.region} Hub | Evans Mathibe Agency`}
+  description={location.data.blurb}
+>
+  <article class="bg-paper py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Back Breadcrumb -->
+      <a href={`${baseUrl}locations`} class="inline-flex items-center text-xs font-mono font-bold tracking-wider text-slate hover:text-brass uppercase mb-8">
+        &larr; Back to Locations
+      </a>
+
+      <!-- Header -->
+      <header class="space-y-6 pb-12 border-b border-ink/15 mb-12">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-mono font-bold text-paper bg-ink px-3 py-1 uppercase tracking-widest">
+            {location.data.role}
+          </span>
+          {location.data.coordinates && (
+            <span class="text-xs font-mono font-semibold text-brass">
+              {location.data.coordinates[0]}°S, {location.data.coordinates[1]}°E
+            </span>
+          )}
+        </div>
+        
+        <h1 class="font-display text-4xl sm:text-6xl font-bold text-ink leading-tight">
+          {location.data.region}
+        </h1>
+        
+        <p class="font-sans text-xl text-slate leading-relaxed font-normal">
+          {location.data.blurb}
+        </p>
+      </header>
+
+      <!-- Key Capabilities Grid -->
+      <div class="bg-ink text-paper p-8 mb-12 border-l-4 border-brass">
+        <h2 class="font-display text-lg font-bold text-paper uppercase tracking-wider mb-4">
+          Regional Capability Focus
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {location.data.capabilities.map((item: string) => (
+            <div class="flex items-center gap-3 text-sm font-sans text-paper/90">
+              <span class="w-2 h-2 bg-brass rounded-full"></span>
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Article Body / MDX Content -->
+      <div class="prose prose-lg prose-stone max-w-none prose-headings:font-display prose-headings:font-bold prose-headings:text-ink prose-p:text-slate prose-a:text-brass hover:prose-a:text-ink">
+        <Content />
+      </div>
+
+      <!-- Action Footer -->
+      <div class="mt-16 pt-12 border-t border-ink/15 flex flex-col sm:flex-row items-center justify-between gap-6 bg-paper p-8 border-2 border-ink shadow-[6px_6px_0px_0px_rgba(168,135,63,1)]">
+        <div>
+          <h3 class="font-display text-xl font-bold text-ink">Connect with our {location.data.region} team</h3>
+          <p class="text-sm text-slate">Discuss project execution in this region or request on-site creative direction.</p>
+        </div>
+        <a 
+          href={`${baseUrl}contact`}
+          class="px-6 py-3.5 bg-ink text-paper font-sans text-xs font-bold uppercase tracking-widest hover:bg-brass transition-colors whitespace-nowrap"
+        >
+          Contact Regional Hub &rarr;
+        </a>
+      </div>
+
+    </div>
+  </article>
+</Layout>

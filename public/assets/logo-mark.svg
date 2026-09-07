@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" class="logo-mark-svg">
+  <g stroke="#DE656D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Main inverted triangle -->
+    <polygon points="50,22 18,68 82,68" class="logo-path" />
+    <!-- Left triangular wing -->
+    <polygon points="18,68 6,42 34,42" class="logo-path" />
+    <!-- Right triangular wing -->
+    <polygon points="82,68 94,42 66,42" class="logo-path" />
+    <!-- Center transformation axis line -->
+    <line x1="50" y1="22" x2="50" y2="78" class="logo-path" stroke-dasharray="2 2" stroke-width="1.5" />
+    <!-- Resolving circle beneath -->
+    <circle cx="50" cy="86" r="6" class="logo-path" fill="#DE656D" />
+  </g>
+</svg>

@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+---
+
+<Layout 
+  title="404 Page Not Found | Evans Mathibe Agency"
+  description="The requested page could not be located."
+>
+  <section class="min-h-[70vh] flex items-center justify-center bg-paper py-20 border-b border-ink/10">
+    <div class="max-w-xl mx-auto px-4 text-center space-y-6">
+      <span class="text-xs font-mono font-bold tracking-widest text-ember uppercase block">
+        // 404 Error: Resource Not Found
+      </span>
+      <h1 class="font-display text-5xl sm:text-7xl font-bold text-ink">
+        Page Off Path
+      </h1>
+      <p class="font-sans text-base text-slate max-w-md mx-auto">
+        The destination address does not exist or has been relocated within our strategy network.
+      </p>
+      <div class="pt-4">
+        <a 
+          href={baseUrl}
+          class="px-8 py-4 bg-ink text-paper font-sans text-xs font-bold uppercase tracking-widest hover:bg-ember transition-colors border border-ink inline-block"
+        >
+          Return to Agency Home &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

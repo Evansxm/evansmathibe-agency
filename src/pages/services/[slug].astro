@@ -1,0 +1,79 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  return services.map((service) => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+const { Content } = await service.render();
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+---
+
+<Layout 
+  title={`${service.data.title} | Evans Mathibe Agency`}
+  description={service.data.positionLine}
+>
+  <article class="bg-paper py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Back Breadcrumb -->
+      <a href={`${baseUrl}services`} class="inline-flex items-center text-xs font-mono font-bold tracking-wider text-slate hover:text-ember uppercase mb-8">
+        &larr; Back to Services
+      </a>
+
+      <!-- Header -->
+      <header class="space-y-6 pb-12 border-b border-ink/15 mb-12">
+        <span class="text-xs font-mono font-bold text-ember uppercase tracking-widest block">
+          Practice Area // 0{service.data.order || 1}
+        </span>
+        <h1 class="font-display text-4xl sm:text-6xl font-bold text-ink leading-tight">
+          {service.data.title}
+        </h1>
+        <p class="font-sans text-xl text-slate leading-relaxed font-normal">
+          {service.data.positionLine}
+        </p>
+      </header>
+
+      <!-- Key Deliverables Pill Grid -->
+      <div class="bg-ink text-paper p-8 mb-12 border-l-4 border-ember">
+        <h2 class="font-display text-lg font-bold text-paper uppercase tracking-wider mb-4">
+          Core Deliverables & Outputs
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {service.data.deliverables.map((item: string) => (
+            <div class="flex items-center gap-3 text-sm font-sans text-paper/90">
+              <span class="w-2 h-2 bg-ember rounded-full"></span>
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Article Body / MDX Content -->
+      <div class="prose prose-lg prose-stone max-w-none prose-headings:font-display prose-headings:font-bold prose-headings:text-ink prose-p:text-slate prose-a:text-ember hover:prose-a:text-ember-deep">
+        <Content />
+      </div>
+
+      <!-- Action Footer -->
+      <div class="mt-16 pt-12 border-t border-ink/15 flex flex-col sm:flex-row items-center justify-between gap-6 bg-ink/5 p-8 border-2 border-ink">
+        <div>
+          <h3 class="font-display text-xl font-bold text-ink">Ready to deploy this capability?</h3>
+          <p class="text-sm text-slate">Schedule a strategic briefing with Evans Mathibe to discuss scope and roadmap.</p>
+        </div>
+        <a 
+          href={`${baseUrl}contact`}
+          class="px-6 py-3.5 bg-ink text-paper font-sans text-xs font-bold uppercase tracking-widest hover:bg-ember transition-colors whitespace-nowrap"
+        >
+          Book Strategy Session &rarr;
+        </a>
+      </div>
+
+    </div>
+  </article>
+</Layout>

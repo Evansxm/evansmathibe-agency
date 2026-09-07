@@ -1,0 +1,211 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import LocationCard from '../components/LocationCard.astro';
+import InteractiveCalculator from '../components/InteractiveCalculator';
+import { getCollection } from 'astro:content';
+
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const services = await getCollection('services');
+const sortedServices = services.sort((a, b) => (a.data.order || 99) - (b.data.order || 99));
+
+const locations = await getCollection('locations');
+
+const highImpactStats = [
+  { value: "R120M+", label: "Brand Equity & Client Value Created" },
+  { value: "4.8x", label: "Average Campaign Performance Lift" },
+  { value: "70%", label: "Content Turnaround Time Reduced via AI" },
+  { value: "4", label: "Strategic Regional & National Hubs" },
+];
+---
+
+<Layout 
+  title="Evans Mathibe Agency | Creative Direction, AI Automation & Brand Strategy"
+  description="Leading African creative direction, visual identity systems, experiential marketing, and enterprise AI automation agency."
+>
+
+  <!-- HERO SECTION -->
+  <section class="relative bg-paper pt-12 sm:pt-20 pb-20 border-b border-ink/10 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Text Column -->
+        <div class="lg:col-span-8 space-y-6">
+          <div class="inline-flex items-center gap-3 px-3 py-1.5 bg-ink/5 border border-ink/15 text-xs font-mono font-semibold tracking-wider text-ink uppercase">
+            <span class="w-2 h-2 rounded-full bg-ember animate-pulse"></span>
+            <span>Agency & Executive Practice &bull; RSA & Global</span>
+          </div>
+
+          <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-ink leading-[1.05]">
+            Architectural Creative Direction & <span class="text-ember font-serif italic font-normal">AI Automation</span>
+          </h1>
+
+          <p class="font-sans text-lg sm:text-xl text-slate max-w-2xl leading-relaxed">
+            We partner with high-growth enterprises and market leaders to engineer iconic visual identities, launch high-conversion campaigns, and embed custom AI content pipelines.
+          </p>
+
+          <div class="pt-4 flex flex-wrap items-center gap-4">
+            <a 
+              href={`${baseUrl}contact`}
+              class="px-8 py-4 bg-ink text-paper font-sans text-sm font-semibold uppercase tracking-wider hover:bg-ember transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(222,101,109,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]"
+            >
+              Initiate Enterprise Partnership &rarr;
+            </a>
+
+            <a 
+              href={`${baseUrl}services`}
+              class="px-8 py-4 bg-paper text-ink font-sans text-sm font-semibold uppercase tracking-wider border-2 border-ink hover:bg-ink hover:text-paper transition-all duration-300"
+            >
+              Explore Capabilities
+            </a>
+          </div>
+        </div>
+
+        <!-- Visual / Emblem Column -->
+        <div class="lg:col-span-4 flex justify-center lg:justify-end">
+          <div class="relative w-64 h-64 sm:w-80 sm:h-80 border-4 border-ink p-6 flex flex-col justify-between bg-paper shadow-[12px_12px_0px_0px_rgba(27,23,18,1)]">
+            <div class="flex justify-between items-start">
+              <img src={`${baseUrl}assets/logo-full.svg`} alt="Evans Mathibe Agency" class="w-24" />
+              <span class="font-mono text-xs font-bold text-brass uppercase">EST. 2026</span>
+            </div>
+
+            <div class="space-y-2">
+              <div class="text-3xl font-display font-bold text-ink">EVANS MATHIBE</div>
+              <div class="text-xs font-mono text-slate uppercase tracking-widest">
+                Creative Director & Enterprise Architect
+              </div>
+            </div>
+
+            <div class="border-t border-ink/20 pt-3 flex justify-between items-center text-[10px] font-mono text-ink/70">
+              <span>JHB &bull; CPT &bull; DUR</span>
+              <span class="text-ember font-bold">LIVE SYSTEM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STATS RIBBON -->
+  <section class="bg-ink text-paper py-12 border-b border-paper/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center divide-y sm:divide-y-0 sm:divide-x divide-paper/10">
+        {highImpactStats.map((stat, idx) => (
+          <div class={`space-y-2 ${idx > 0 ? 'pt-4 sm:pt-0' : ''}`}>
+            <div class="font-display text-4xl sm:text-5xl font-bold text-ember">
+              {stat.value}
+            </div>
+            <div class="font-sans text-xs sm:text-sm text-paper/80 uppercase tracking-wider max-w-[200px] mx-auto">
+              {stat.label}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="py-20 bg-paper border-b border-ink/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div class="space-y-3">
+          <span class="text-xs font-mono font-bold tracking-widest text-ember uppercase">
+            // Core Practice Areas
+          </span>
+          <h2 class="font-display text-3xl sm:text-5xl font-bold text-ink">
+            Strategic & Operational Capabilities
+          </h2>
+        </div>
+        <a 
+          href={`${baseUrl}services`}
+          class="mt-4 md:mt-0 font-mono text-xs font-bold uppercase tracking-wider text-ink hover:text-ember transition-colors underline underline-offset-4"
+        >
+          View All Services &rarr;
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {sortedServices.map((service, idx) => (
+          <ServiceCard
+            title={service.data.title}
+            shortTitle={service.data.shortTitle}
+            positionLine={service.data.positionLine}
+            deliverables={service.data.deliverables}
+            slug={service.slug}
+            order={idx + 1}
+          />
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERACTIVE ROI CALCULATOR SECTION -->
+  <section class="py-20 bg-paper/50 border-b border-ink/10">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <InteractiveCalculator client:visible />
+    </div>
+  </section>
+
+  <!-- REGIONAL LOCATIONS SECTION -->
+  <section class="py-20 bg-paper border-b border-ink/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mb-12 space-y-3">
+        <span class="text-xs font-mono font-bold tracking-widest text-brass uppercase">
+          // Geographic Operations
+        </span>
+        <h2 class="font-display text-3xl sm:text-5xl font-bold text-ink">
+          Regional Command Hubs & Nationwide Execution
+        </h2>
+        <p class="font-sans text-base text-slate">
+          Delivering high-touch strategy locally across South Africa's economic hubs while serving global remote mandates.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {locations.map((loc) => (
+          <LocationCard
+            region={loc.data.region}
+            role={loc.data.role}
+            blurb={loc.data.blurb}
+            capabilities={loc.data.capabilities}
+            coordinates={loc.data.coordinates}
+            slug={loc.slug}
+          />
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION SECTION -->
+  <section class="py-24 bg-ink text-paper relative overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 relative z-10">
+      <span class="inline-block text-xs font-mono font-bold tracking-widest text-brass uppercase px-3 py-1 bg-paper/10 border border-paper/20">
+        Initiate Collaboration
+      </span>
+
+      <h2 class="font-display text-4xl sm:text-6xl font-bold text-paper">
+        Ready to Elevate Your Brand Strategy & Operational Velocity?
+      </h2>
+
+      <p class="font-sans text-lg text-paper/80 max-w-2xl mx-auto">
+        Book an executive strategy session directly with founder Evans Mathibe to map out your brand architecture, campaign roadmap, or AI integration framework.
+      </p>
+
+      <div class="pt-4 flex justify-center">
+        <a 
+          href={`${baseUrl}contact`}
+          class="px-10 py-5 bg-ember text-paper font-sans text-sm font-bold uppercase tracking-widest hover:bg-ember-deep transition-all duration-300 border border-paper/20 shadow-[6px_6px_0px_0px_rgba(241,236,226,1)] hover:shadow-none hover:translate-x-[6px] hover:translate-y-[6px]"
+        >
+          Book Executive Briefing &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
