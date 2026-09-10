@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import About from '../components/About.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Home"
+  description="EvansMathibe - South African digital agency. Web development, digital strategy, brand identity, and cloud infrastructure. Serving Gauteng and nationwide."
+  image="/logo.png"
+>
+  <Hero
+    title="Building Digital Experiences Across South Africa"
+    subtitle="A full-service digital agency delivering innovative solutions from Johannesburg to the world."
+  />
+  <Services />
+  <About
+    title="Who We Are"
+    subtitle="We are a passionate team of developers, designers, and strategists based in South Africa, committed to delivering exceptional digital experiences."
+  />
+  <Contact />
+  <Footer
+    title="Let's build something extraordinary together."
+    subtitle="EvansMathibe is a South African digital agency serving businesses across Gauteng and nationwide with cutting-edge solutions."
+  />
+</Layout>

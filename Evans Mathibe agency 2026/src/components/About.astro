@@ -1,0 +1,70 @@
+---
+const { title, subtitle } = Astro.props;
+---
+
+<section id="about" class="py-20 px-4 md:px-8 max-w-7xl mx-auto">
+  <div class="text-center mb-16">
+    <h2 class="section-title">{title}</h2>
+    <div class="w-20 h-1 bg-[#DE656D] mx-auto mt-4 rounded-full"></div>
+    <p class="section-subtitle">{subtitle}</p>
+  </div>
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "EvansMathibe",
+      "description": "EvansMathibe is a South African digital agency serving businesses across Gauteng and nationwide.",
+      "areaServed": "South Africa",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "ZA",
+        "addressLocality": "Johannesburg",
+        "addressRegion": "Gauteng"
+      }
+    }
+  })} />
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <div class="relative">
+      <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 glow-primary">
+        <img src="/logo.png" alt="EvansMathibe" class="w-full h-full object-cover" />
+      </div>
+      <div class="absolute -bottom-4 -right-4 bg-[#DE656D] text-white px-6 py-3 rounded-xl shadow-lg">
+        <p class="text-sm font-bold">Est. 2026</p>
+        <p class="text-xs opacity-90">Digital Agency</p>
+      </div>
+    </div>
+    <div>
+      <h3 class="text-2xl font-bold text-white mb-4">Who We Are</h3>
+      <p class="text-[#A0A0A0] leading-relaxed mb-4">
+        EvansMathibe is a South African digital agency headquartered in Gauteng. We specialize in creating
+        exceptional digital experiences that drive real results for businesses across South Africa and beyond.
+      </p>
+      <p class="text-[#A0A0A0] leading-relaxed mb-6">
+        Our team combines creative vision with technical excellence, delivering solutions that range from
+        web development and digital strategy to brand identity and digital marketing.
+      </p>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-[#1A1A1A] rounded-xl p-4 border border-white/5">
+          <p class="text-[#DE656D] font-bold text-2xl">01</p>
+          <p class="text-[#A0A0A0] text-sm">Years of Excellence</p>
+        </div>
+        <div class="bg-[#1A1A1A] rounded-xl p-4 border border-white/5">
+          <p class="text-[#DE656D] font-bold text-2xl">100%</p>
+          <p class="text-[#A0A0A0] text-sm">Open Source</p>
+        </div>
+        <div class="bg-[#1A1A1A] rounded-xl p-4 border border-white/5">
+          <p class="text-[#DE656D] font-bold text-2xl">ZA</p>
+          <p class="text-[#A0A0A0] text-sm">South Africa</p>
+        </div>
+        <div class="bg-[#1A1A1A] rounded-xl p-4 border border-white/5">
+          <p class="text-[#DE656D] font-bold text-2xl">Free</p>
+          <p class="text-[#A0A0A0] text-sm">Cloudflare Tier</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

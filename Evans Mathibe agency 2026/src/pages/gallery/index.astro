@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Gallery"
+  description="Explore the work and portfolio of EvansMathibe. South African digital agency showcasing creative projects and digital solutions."
+  image="/logo.png"
+>
+  <section id="gallery" class="py-20 px-4 md:px-8 max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="section-title">Our Gallery</h2>
+      <div class="w-20 h-1 bg-[#DE656D] mx-auto mt-4 rounded-full"></div>
+      <p class="section-subtitle">A showcase of our creative work and digital projects.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {[1,2,3,4,5,6].map((i) => (
+        <div class="glass-card overflow-hidden group">
+          <div class="w-full aspect-video bg-gradient-to-br from-[#1A1A1A] to-[#DE656D]/10 flex items-center justify-center">
+            <span class="text-[#DE656D] font-bold text-lg opacity-50">Project {i}</span>
+          </div>
+          <div class="p-4">
+            <h3 class="font-semibold text-white mb-1">Project Title {i}</h3>
+            <p class="text-[#A0A0A0] text-sm">Digital solution description coming soon.</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>

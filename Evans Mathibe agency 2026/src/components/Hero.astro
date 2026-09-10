@@ -1,0 +1,35 @@
+---
+const { title, subtitle } = Astro.props;
+---
+
+<header class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-[#0A0A0A] via-[#111111] to-[#0A0A0A]"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(222,101,109,0.08)_0%,transparent_70%)]"></div>
+  <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#DE656D]/5 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#DE656D]/5 rounded-full blur-3xl"></div>
+
+  <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+    <div class="mb-6">
+      <img src="/logo.png" alt="EvansMathibe Logo" class="w-32 h-32 mx-auto rounded-2xl shadow-2xl glow-primary" />
+    </div>
+    <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
+      EvansMathibe
+    </h1>
+    <p class="text-xl md:text-2xl text-[#A0A0A0] mb-8 max-w-2xl mx-auto leading-relaxed">
+      {title}
+    </p>
+    <p class="text-[#DE656D] font-semibold text-lg mb-10">
+      {subtitle}
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#services" class="btn-primary text-lg">Explore Services</a>
+      <a href="#contact" class="btn-outline text-lg">Get In Touch</a>
+    </div>
+  </div>
+
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6 text-[#DE656D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    </svg>
+  </div>
+</header>

@@ -1,0 +1,74 @@
+---
+const services = [
+  {
+    title: "Web Development",
+    description: "Custom websites and web applications built with modern technologies. Fully responsive, performant, and scalable.",
+    icon: "🌐"
+  },
+  {
+    title: "Digital Strategy",
+    description: "Data-driven strategies to grow your online presence. SEO optimization, content marketing, and audience targeting.",
+    icon: "📊"
+  },
+  {
+    title: "Brand Identity",
+    description: "Complete brand identity design including logos, color palettes, typography, and brand guidelines.",
+    icon: "🎨"
+  },
+  {
+    title: "Cloud Infrastructure",
+    description: "Cloud-native deployments on GitHub Pages and Cloudflare. Free tier optimized for maximum value.",
+    icon: "☁️"
+  },
+  {
+    title: "SEO & Marketing",
+    description: "South African local SEO optimization to get you found in Johannesburg, Cape Town, and nationwide.",
+    icon: "🔍"
+  },
+  {
+    title: "E-Commerce",
+    description: "Online store solutions with secure payments, inventory management, and conversion optimization.",
+    icon: "🛒"
+  }
+];
+---
+
+<section id="services" class="py-20 px-4 md:px-8 max-w-7xl mx-auto">
+  <div class="text-center mb-16">
+    <h2 class="section-title">Our Services</h2>
+    <div class="w-20 h-1 bg-[#DE656D] mx-auto mt-4 rounded-full"></div>
+    <p class="section-subtitle">We deliver comprehensive digital solutions tailored for South African businesses and beyond.</p>
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Digital Agency Services",
+    "provider": {
+      "@type": "Organization",
+      "name": "EvansMathibe"
+    },
+    "areaServed": "South Africa",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Digital Services",
+      "itemListElement": services.map(s => ({
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": s.title
+        }
+      }))
+    }
+  })} />
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {services.map((service, i) => (
+      <div class="glass-card group">
+        <div class="text-4xl mb-4">{service.icon}</div>
+        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-[#DE656D] transition-colors">{service.title}</h3>
+        <p class="text-[#A0A0A0] text-sm leading-relaxed">{service.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
