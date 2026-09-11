@@ -9,8 +9,8 @@ interface Props {
 }
 
 const { title, description, image = '/logo.png', canonicalUrl } = Astro.props;
-const siteUrl = 'https://evansxm.github.io/EvansMathibe';
-const url = canonicalUrl || `${siteUrl}${Astro.url.pathname.replace(/^\/EvansMathibe/, '') || '/'}`;
+const siteUrl = 'https://evansxm.github.io/evansmathibe-agency';
+const url = canonicalUrl || `${siteUrl}${Astro.url.pathname.replace(/^\/evansmathibe-agency/, '') || '/'}`;
 ---
 
 <!DOCTYPE html>
@@ -23,8 +23,8 @@ const url = canonicalUrl || `${siteUrl}${Astro.url.pathname.replace(/^\/EvansMat
     <meta name="author" content="Evans Mathibe" />
     <meta name="keywords" content="Evans Mathibe, advertising, media, design, AI automation, Johannesburg, South Africa, creative agency" />
     <meta name="theme-color" content="#0A0A0A" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}/favicon.svg`} />
+    <link rel="icon" href={`${import.meta.env.BASE_URL}/favicon.ico`} />
     <link rel="canonical" href={url} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -46,7 +46,6 @@ const url = canonicalUrl || `${siteUrl}${Astro.url.pathname.replace(/^\/EvansMat
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={`${siteUrl}${image}`} />
 
-    <!-- Title -->
     <title>{title} | EvansMathibe Agency</title>
 
     <!-- Structured Data -->
@@ -55,56 +54,27 @@ const url = canonicalUrl || `${siteUrl}${Astro.url.pathname.replace(/^\/EvansMat
       "@type": "Organization",
       "name": "EvansMathibe",
       "url": siteUrl,
-      "logo": `${siteUrl}/logo.png`,
+      "logo": image,
       "description": description,
-      "sameAs": [
-        "https://github.com/Evansxm",
-        "https://instagram.com/EvansMathibe"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "ZA",
-        "addressLocality": "Johannesburg",
-        "addressRegion": "Gauteng"
-      },
+      "sameAs": ["https://github.com/Evansxm", "https://instagram.com/EvansMathibe"],
+      "address": {"@type": "PostalAddress", "addressCountry": "ZA", "addressLocality": "Johannesburg", "addressRegion": "Gauteng"},
       "areaServed": "South Africa",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Creative Services",
-        "itemListElement": [
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Advertising"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Media"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Design"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Automation"}}
-        ]
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+27-00-000-0000",
-        "contactType": "sales",
-        "areaServed": "ZA",
-        "availableLanguage": ["en-ZA"]
-      }
+      "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Creative Services", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Advertising"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Media"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Design"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Automation"}}]},
+      "contactPoint": {"@type": "ContactPoint", "telephone": "+27-00-000-0000", "contactType": "sales", "areaServed": "ZA", "availableLanguage": ["en-ZA"]}
     })} />
-
-    <style>
-      @reference "tailwindcss";
-      .nav-link { @apply text-[#A0A0A0] hover:text-[#DE656D] transition-colors text-xs font-medium; }
-      .nav-link.active { @apply text-[#DE656D]; }
-    </style>
   </head>
   <body class="bg-[#0A0A0A] text-[#F5F5F5]">
     <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A]/90 backdrop-blur-md border-b border-white/5">
       <div class="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
-        <a href="/" class="flex items-center gap-2">
-          <img src="/logo.png" alt="EvansMathibe" class="w-8 h-8 rounded-lg" />
+        <a href={import.meta.env.BASE_URL + "/"} class="flex items-center gap-2">
+          <img src={`${import.meta.env.BASE_URL}/logo.png`} alt="EvansMathibe" class="w-8 h-8 rounded-lg" />
           <span class="font-bold text-white text-sm">EvansMathibe</span>
         </a>
         <div class="hidden md:flex items-center gap-8">
-          <a href="/" class="nav-link">Home</a>
-          <a href="/services" class="nav-link">Services</a>
-          <a href="/work" class="nav-link">Work</a>
-          <a href="/about" class="nav-link">About</a>
+          <a href={import.meta.env.BASE_URL + "/"} class="nav-link">Home</a>
+          <a href={import.meta.env.BASE_URL + '/services'} class="nav-link">Services</a>
+          <a href={import.meta.env.BASE_URL + '/work'} class="nav-link">Work</a>
+          <a href={import.meta.env.BASE_URL + '/about'} class="nav-link">About</a>
           <a href="#contact" class="btn-primary text-sm py-2 px-4">Contact</a>
         </div>
         <button id="mobile-menu-btn" class="md:hidden text-white text-xl" aria-label="Menu">
@@ -113,10 +83,10 @@ const url = canonicalUrl || `${siteUrl}${Astro.url.pathname.replace(/^\/EvansMat
       </div>
       <div id="mobile-menu" class="hidden md:hidden bg-[#111111] border-t border-white/5">
         <div class="px-4 py-4 space-y-3">
-          <a href="/" class="block text-[#A0A0A0] hover:text-[#DE656D] transition-colors py-2">Home</a>
-          <a href="/services" class="block text-[#A0A0A0] hover:text-[#DE656D] transition-colors py-2">Services</a>
-          <a href="/work" class="block text-[#A0A0A0] hover:text-[#DE656D] transition-colors py-2">Work</a>
-          <a href="/about" class="block text-[#A0A0A0] hover:text-[#DE656D] transition-colors py-2">About</a>
+          <a href={import.meta.env.BASE_URL + "/"} class="block text-[#A0A0A0] hover:text-[#DE656D] transition-colors py-2">Home</a>
+          <a href={import.meta.env.BASE_URL + '/services'} class="block text-[#A0A0A0] hover:text-[#DE656D] transition-colors py-2">Services</a>
+          <a href={import.meta.env.BASE_URL + '/work'} class="block text-[#A0A0A0] hover:text-[#DE656D] transition-colors py-2">Work</a>
+          <a href={import.meta.env.BASE_URL + '/about'} class="block text-[#A0A0A0] hover:text-[#DE656D] transition-colors py-2">About</a>
           <a href="#contact" class="block text-[#A0A0A0] hover:text-[#DE656D] transition-colors py-2">Contact</a>
         </div>
       </div>
@@ -134,3 +104,9 @@ const url = canonicalUrl || `${siteUrl}${Astro.url.pathname.replace(/^\/EvansMat
     }
   });
 </script>
+
+<style>
+  .nav-link { color: #A0A0A0; transition: color 200ms ease; font-size: 0.875rem; font-weight: 500; }
+  .nav-link:hover { color: #DE656D; }
+  .nav-link.active { color: #DE656D; }
+</style>

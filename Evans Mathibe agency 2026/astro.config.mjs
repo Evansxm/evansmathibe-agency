@@ -4,8 +4,8 @@ import tailwindcssVite from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://evansxm.github.io',
-  base: '/EvansMathibe',
+  site: 'https://evansxm.github.io/evansmathibe-agency',
+  base: '/evansmathibe-agency',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcssVite()],
