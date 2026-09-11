@@ -2,28 +2,39 @@
 const { title, subtitle } = Astro.props;
 ---
 
-<header class="relative min-h-screen flex items-center justify-center overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-br from-[#0A0A0A] via-[#111111] to-[#0A0A0A]"></div>
-  <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(222,101,109,0.08)_0%,transparent_70%)]"></div>
-  <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#DE656D]/5 rounded-full blur-3xl"></div>
-  <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#DE656D]/5 rounded-full blur-3xl"></div>
+<header class="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient geometric-bg">
+  <div class="geo-shape top-20 left-[10%] triangle-1"></div>
+  <div class="geo-shape top-40 right-[15%] diamond" style="width:80px;height:80px;background:#DE656D;transform:rotate(45deg);opacity:0.04;"></div>
+  <div class="geo-shape bottom-20 left-[20%] triangle-2"></div>
+  <div class="geo-shape top-[60%] right-[10%] diamond" style="width:40px;height:40px;background:#DE656D;transform:rotate(45deg);opacity:0.06;"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(222,101,109,0.1)_0%,transparent_70%)]"></div>
 
   <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
-    <div class="mb-6">
-      <img src="/logo.png" alt="EvansMathibe Logo" class="w-32 h-32 mx-auto rounded-2xl shadow-2xl glow-primary" />
+    <div class="mb-8 relative">
+      <div class="inline-block relative">
+        <img src="/logo.png" alt="EvansMathibe Logo" class="w-28 h-28 md:w-32 md:h-32 mx-auto rounded-2xl shadow-2xl glow-primary relative z-10" />
+        <div class="absolute -top-2 -right-2 w-6 h-6 bg-[#DE656D] rounded-full border-2 border-[#0A0A0A]"></div>
+        <div class="absolute -bottom-1 -left-1 w-4 h-4 bg-[#eb3037] rounded-full border-2 border-[#0A0A0A]"></div>
+      </div>
     </div>
-    <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
+    <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white mb-6 leading-tight tracking-tight">
       EvansMathibe
     </h1>
-    <p class="text-xl md:text-2xl text-[#A0A0A0] mb-8 max-w-2xl mx-auto leading-relaxed">
+    <p class="text-xl md:text-2xl text-[#A0A0A0] mb-3 max-w-2xl mx-auto leading-relaxed">
       {title}
     </p>
-    <p class="text-[#DE656D] font-semibold text-lg mb-10">
+    <p class="text-[#DE656D] font-semibold text-lg md:text-xl mb-10 max-w-3xl mx-auto leading-relaxed">
       {subtitle}
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="#services" class="btn-primary text-lg">Explore Services</a>
-      <a href="#contact" class="btn-outline text-lg">Get In Touch</a>
+      <a href="#services" class="btn-primary text-lg px-10 py-4">Our Work</a>
+      <a href="#contact" class="btn-outline text-lg px-10 py-4">Start a Project</a>
+    </div>
+    <div class="mt-12 flex flex-wrap justify-center gap-6 text-sm text-[#A0A0A0]">
+      <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#DE656D]"></span> Advertising</span>
+      <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#DE656D]"></span> Media</span>
+      <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#DE656D]"></span> Design</span>
+      <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#DE656D]"></span> AI Automation</span>
     </div>
   </div>
 

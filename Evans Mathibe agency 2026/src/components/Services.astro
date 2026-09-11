@@ -1,74 +1,89 @@
 ---
-const services = [
-  {
-    title: "Web Development",
-    description: "Custom websites and web applications built with modern technologies. Fully responsive, performant, and scalable.",
-    icon: "🌐"
-  },
-  {
-    title: "Digital Strategy",
-    description: "Data-driven strategies to grow your online presence. SEO optimization, content marketing, and audience targeting.",
-    icon: "📊"
-  },
-  {
-    title: "Brand Identity",
-    description: "Complete brand identity design including logos, color palettes, typography, and brand guidelines.",
-    icon: "🎨"
-  },
-  {
-    title: "Cloud Infrastructure",
-    description: "Cloud-native deployments on GitHub Pages and Cloudflare. Free tier optimized for maximum value.",
-    icon: "☁️"
-  },
-  {
-    title: "SEO & Marketing",
-    description: "South African local SEO optimization to get you found in Johannesburg, Cape Town, and nationwide.",
-    icon: "🔍"
-  },
-  {
-    title: "E-Commerce",
-    description: "Online store solutions with secure payments, inventory management, and conversion optimization.",
-    icon: "🛒"
-  }
-];
 ---
 
-<section id="services" class="py-20 px-4 md:px-8 max-w-7xl mx-auto">
-  <div class="text-center mb-16">
-    <h2 class="section-title">Our Services</h2>
-    <div class="w-20 h-1 bg-[#DE656D] mx-auto mt-4 rounded-full"></div>
-    <p class="section-subtitle">We deliver comprehensive digital solutions tailored for South African businesses and beyond.</p>
+<section id="services" class="py-20 md:py-28 px-4 md:px-8 max-w-7xl mx-auto">
+  <div class="text-center mb-16 md:mb-20">
+    <p class="text-[#DE656D] font-semibold text-sm uppercase tracking-[0.2em] mb-4">What We Do</p>
+    <h2 class="section-title">Four Disciplines, One System</h2>
+    <div class="w-20 h-1 bg-[#DE656D] mx-auto mt-6 rounded-full"></div>
+    <p class="section-subtitle mt-6">Advertising, media, design, and AI automation don't operate in silos at Evans Mathibe. They interlock into a single operating system for brand growth.</p>
   </div>
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Digital Agency Services",
-    "provider": {
-      "@type": "Organization",
-      "name": "EvansMathibe"
-    },
-    "areaServed": "South Africa",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Digital Services",
-      "itemListElement": services.map(s => ({
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": s.title
-        }
-      }))
-    }
-  })} />
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    {services.map((service, i) => (
-      <div class="glass-card group">
-        <div class="text-4xl mb-4">{service.icon}</div>
-        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-[#DE656D] transition-colors">{service.title}</h3>
-        <p class="text-[#A0A0A0] text-sm leading-relaxed">{service.description}</p>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+    <!-- Advertising -->
+    <div class="glass-card group relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-32 h-32 bg-[#DE656D]/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:bg-[#DE656D]/10 transition-all duration-500"></div>
+      <div class="relative">
+        <div class="service-icon">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-[#DE656D] transition-colors">Advertising</h3>
+        <p class="text-[#A0A0A0] text-sm leading-relaxed mb-5">Strategic campaign design, creative copy, and cross-channel execution that cuts through the noise. We build advertising that earns attention and drives measurable outcomes.</p>
+        <ul class="space-y-2 mb-5">
+          <li class="flex items-start gap-2 text-sm text-[#F5F5F5]"><span class="text-[#DE656D] mt-0.5">&#10003;</span><span>Campaign Strategy &amp; Creative Direction</span></li>
+          <li class="flex items-start gap-2 text-sm text-[#F5F5F5]"><span class="text-[#DE656D] mt-0.5">&#10003;</span><span>Digital &amp; Traditional Channel Planning</span></li>
+          <li class="flex items-start gap-2 text-sm text-[#F5F5F5]"><span class="text-[#DE656D] mt-0.5">&#10003;</span><span>Audience Insights &amp; Precise Targeting</span></li>
+          <li class="flex items-start gap-2 text-sm text-[#F5F5F5]"><span class="text-[#DE656D] mt-0.5">&#10003;</span><span>Copywriting &amp; Visual Execution</span></li>
+        </ul>
+        <a href="/services#advertising" class="text-[#DE656D] font-semibold text-sm inline-flex items-center gap-2 group/link hover:gap-3 transition-all">Learn more <span>&rarr;</span></a>
       </div>
-    ))}
+    </div>
+
+    <!-- Media -->
+    <div class="glass-card group relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-32 h-32 bg-[#DE656D]/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:bg-[#DE656D]/10 transition-all duration-500"></div>
+      <div class="relative">
+        <div class="service-icon">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-[#DE656D] transition-colors">Media</h3>
+        <p class="text-[#A0A0A0] text-sm leading-relaxed mb-5">Editorial strategy, content architecture, and media consulting rooted in cultural fluency. We position brands at the intersection of storytelling and audience intelligence.</p>
+        <ul class="space-y-2 mb-5">
+          <li class="flex items-start gap-2 text-sm text-[#F5F5F5]"><span class="text-[#DE656D] mt-0.5">&#10003;</span><span>Editorial Strategy &amp; Content Planning</span></li>
+          <li class="flex items-start gap-2 text-sm text-[#F5F5F5]"><span class="text-[#DE656D] mt-0.5">&#10003;</span><span>Audience Research &amp; Cultural Insight</span></li>
+          <li class="flex items-start gap-2 text-sm text-[#F5F5F5]"><span class="text-[#DE656D] mt-0.5">&#10003;</span><span>Brand Storytelling &amp; Voice Development</span></li>
+          <li class="flex items-start gap-2 text-sm text-[#F5F5F5]"><span class="text-[#DE656D] mt-0.5">&#10003;</span><span>Media Consulting for Brands &amp; Creators</span></li>
+        </ul>
+        <a href="/services#media" class="text-[#DE656D] font-semibold text-sm inline-flex items-center gap-2 group/link hover:gap-3 transition-all">Learn more <span>&rarr;</span></a>
+      </div>
+    </div>
+
+    <!-- Design -->
+    <div class="glass-card group relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-32 h-32 bg-[#DE656D]/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:bg-[#DE656D]/10 transition-all duration-500"></div>
+      <div class="relative">
+        <div class="service-icon">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-[#DE656D] transition-colors">Design</h3>
+        <p class="text-[#A0A0A0] text-sm leading-relaxed mb-5">Brand identity systems, digital product design, and art direction powered by AI-enhanced workflows. We craft visual languages that are distinctive, scalable, and culturally grounded.</p>
+        <ul class="space-y-2 mb-5">
+          <li class="flex items-start gap-2 text-sm text-[#F5F5F5]"><span class="text-[#DE656D] mt-0.5">&#10003;</span><span>Brand Identity &amp; Visual Systems</span></li>
+          <li class="flex items-start gap-2 text-sm text-[#F5F5F5]"><span class="text-[#DE656D] mt-0.5">&#10003;</span><span>Digital Product Design (Web &amp; App)</span></li>
+          <li class="flex items-start gap-2 text-sm text-[#F5F5F5]"><span class="text-[#DE656D] mt-0.5">&#10003;</span><span>Art Direction &amp; Campaign Design</span></li>
+          <li class="flex items-start gap-2 text-sm text-[#F5F5F5]"><span class="text-[#DE656D] mt-0.5">&#10003;</span><span>AI-Enhanced Design Workflows</span></li>
+        </ul>
+        <a href="/services#design" class="text-[#DE656D] font-semibold text-sm inline-flex items-center gap-2 group/link hover:gap-3 transition-all">Learn more <span>&rarr;</span></a>
+      </div>
+    </div>
+
+    <!-- AI Automation -->
+    <div class="glass-card group relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-32 h-32 bg-[#DE656D]/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:bg-[#DE656D]/10 transition-all duration-500"></div>
+      <div class="relative">
+        <div class="service-icon">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-[#DE656D] transition-colors">AI Automation</h3>
+        <p class="text-[#A0A0A0] text-sm leading-relaxed mb-5">Custom AI workflows that augment creative teams, not replace them. We build intelligent systems that accelerate iteration, scale content production, and unlock new creative possibilities.</p>
+        <ul class="space-y-2 mb-5">
+          <li class="flex items-start gap-2 text-sm text-[#F5F5F5]"><span class="text-[#DE656D] mt-0.5">&#10003;</span><span>Workflow Automation for Creative Teams</span></li>
+          <li class="flex items-start gap-2 text-sm text-[#F5F5F5]"><span class="text-[#DE656D] mt-0.5">&#10003;</span><span>AI-Powered Content Generation &amp; Ideation</span></li>
+          <li class="flex items-start gap-2 text-sm text-[#F5F5F5]"><span class="text-[#DE656D] mt-0.5">&#10003;</span><span>Custom AI Systems &amp; Integrations</span></li>
+          <li class="flex items-start gap-2 text-sm text-[#F5F5F5]"><span class="text-[#DE656D] mt-0.5">&#10003;</span><span>Productivity &amp; Process Optimization</span></li>
+        </ul>
+        <a href="/services#ai-automation" class="text-[#DE656D] font-semibold text-sm inline-flex items-center gap-2 group/link hover:gap-3 transition-all">Learn more <span>&rarr;</span></a>
+      </div>
+    </div>
   </div>
 </section>

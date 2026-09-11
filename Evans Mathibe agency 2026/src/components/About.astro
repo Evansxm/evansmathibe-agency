@@ -2,69 +2,59 @@
 const { title, subtitle } = Astro.props;
 ---
 
-<section id="about" class="py-20 px-4 md:px-8 max-w-7xl mx-auto">
-  <div class="text-center mb-16">
+<section id="about" class="py-20 md:py-28 px-4 md:px-8 max-w-7xl mx-auto">
+  <div class="text-center mb-16 md:mb-20">
+    <p class="text-[#DE656D] font-semibold text-sm uppercase tracking-[0.2em] mb-4">Who We Are</p>
     <h2 class="section-title">{title}</h2>
-    <div class="w-20 h-1 bg-[#DE656D] mx-auto mt-4 rounded-full"></div>
-    <p class="section-subtitle">{subtitle}</p>
+    <div class="w-20 h-1 bg-[#DE656D] mx-auto mt-6 rounded-full"></div>
+    <p class="section-subtitle mt-6">{subtitle}</p>
   </div>
 
-  <!-- Schema Markup -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "EvansMathibe",
-      "description": "EvansMathibe is a South African digital agency serving businesses across Gauteng and nationwide.",
-      "areaServed": "South Africa",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "ZA",
-        "addressLocality": "Johannesburg",
-        "addressRegion": "Gauteng"
-      }
-    }
-  })} />
-
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
     <div class="relative">
-      <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 glow-primary">
-        <img src="/logo.png" alt="EvansMathibe" class="w-full h-full object-cover" />
+      <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 glow-primary relative">
+        <img src="/logo.png" alt="EvansMathibe" class="w-full h-full object-cover opacity-90" />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent"></div>
       </div>
-      <div class="absolute -bottom-4 -right-4 bg-[#DE656D] text-white px-6 py-3 rounded-xl shadow-lg">
-        <p class="text-sm font-bold">Est. 2026</p>
-        <p class="text-xs opacity-90">Digital Agency</p>
+      <div class="absolute -bottom-4 -left-4 bg-[#DE656D] text-white px-5 py-3 rounded-xl shadow-lg">
+        <p class="text-sm font-bold">Johannesburg</p>
+        <p class="text-xs opacity-90">Based in Africa</p>
+      </div>
+      <div class="absolute -top-2 -right-2 bg-[#eb3037] text-white px-4 py-2 rounded-lg shadow-lg text-xs font-bold">
+        Est. 2026
       </div>
     </div>
     <div>
-      <h3 class="text-2xl font-bold text-white mb-4">Who We Are</h3>
+      <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Bridging Creativity and Intelligence</h3>
       <p class="text-[#A0A0A0] leading-relaxed mb-4">
-        EvansMathibe is a South African digital agency headquartered in Gauteng. We specialize in creating
-        exceptional digital experiences that drive real results for businesses across South Africa and beyond.
+        Evans Mathibe is a full-service creative and technology firm rooted in Johannesburg. We don't just
+        run campaigns or build brands &mdash; we operate at the convergence of human creative instinct and
+        artificial intelligence.
       </p>
       <p class="text-[#A0A0A0] leading-relaxed mb-6">
-        Our team combines creative vision with technical excellence, delivering solutions that range from
-        web development and digital strategy to brand identity and digital marketing.
+        Our team spans strategists, creative directors, designers, and AI engineers who work as one unit.
+        From advertising that cuts through clutter to AI systems that accelerate production, every output
+        reflects a single philosophy: <em class="text-[#DE656D] font-semibold">augment, don't replace</em>.
       </p>
-      <div class="grid grid-cols-2 gap-4">
-        <div class="bg-[#1A1A1A] rounded-xl p-4 border border-white/5">
-          <p class="text-[#DE656D] font-bold text-2xl">01</p>
-          <p class="text-[#A0A0A0] text-sm">Years of Excellence</p>
+      <div class="grid grid-cols-2 gap-4 mb-8">
+        <div class="bg-[#1A1A1A] rounded-xl p-5 border border-white/5">
+          <p class="text-[#DE656D] font-bold text-3xl">2026</p>
+          <p class="text-[#A0A0A0] text-sm">Year Founded</p>
         </div>
-        <div class="bg-[#1A1A1A] rounded-xl p-4 border border-white/5">
-          <p class="text-[#DE656D] font-bold text-2xl">100%</p>
+        <div class="bg-[#1A1A1A] rounded-xl p-5 border border-white/5">
+          <p class="text-[#DE656D] font-bold text-3xl">4</p>
+          <p class="text-[#A0A0A0] text-sm">Core Disciplines</p>
+        </div>
+        <div class="bg-[#1A1A1A] rounded-xl p-5 border border-white/5">
+          <p class="text-[#DE656D] font-bold text-3xl">ZA</p>
+          <p class="text-[#A0A0A0] text-sm">African Roots</p>
+        </div>
+        <div class="bg-[#1A1A1A] rounded-xl p-5 border border-white/5">
+          <p class="text-[#DE656D] font-bold text-3xl">100%</p>
           <p class="text-[#A0A0A0] text-sm">Open Source</p>
         </div>
-        <div class="bg-[#1A1A1A] rounded-xl p-4 border border-white/5">
-          <p class="text-[#DE656D] font-bold text-2xl">ZA</p>
-          <p class="text-[#A0A0A0] text-sm">South Africa</p>
-        </div>
-        <div class="bg-[#1A1A1A] rounded-xl p-4 border border-white/5">
-          <p class="text-[#DE656D] font-bold text-2xl">Free</p>
-          <p class="text-[#A0A0A0] text-sm">Cloudflare Tier</p>
-        </div>
       </div>
+      <a href="#contact" class="btn-primary">Start a Project</a>
     </div>
   </div>
 </section>

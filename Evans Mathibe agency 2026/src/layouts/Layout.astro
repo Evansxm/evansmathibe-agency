@@ -21,7 +21,7 @@ const url = canonicalUrl || `${siteUrl}${Astro.url.pathname.replace(/^\/EvansMat
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <meta name="author" content="Evans Mathibe" />
-    <meta name="keywords" content="Evans Mathibe, agency, digital, South Africa, Cape Town, Johannesburg" />
+    <meta name="keywords" content="Evans Mathibe, advertising, media, design, AI automation, Johannesburg, South Africa, creative agency" />
     <meta name="theme-color" content="#0A0A0A" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
@@ -29,7 +29,6 @@ const url = canonicalUrl || `${siteUrl}${Astro.url.pathname.replace(/^\/EvansMat
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
@@ -60,7 +59,7 @@ const url = canonicalUrl || `${siteUrl}${Astro.url.pathname.replace(/^\/EvansMat
       "description": description,
       "sameAs": [
         "https://github.com/Evansxm",
-        "https://twitter.com/EvansMathibe"
+        "https://instagram.com/EvansMathibe"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -69,6 +68,16 @@ const url = canonicalUrl || `${siteUrl}${Astro.url.pathname.replace(/^\/EvansMat
         "addressRegion": "Gauteng"
       },
       "areaServed": "South Africa",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Creative Services",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Advertising"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Media"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Design"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Automation"}}
+        ]
+      },
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+27-00-000-0000",
@@ -77,8 +86,51 @@ const url = canonicalUrl || `${siteUrl}${Astro.url.pathname.replace(/^\/EvansMat
         "availableLanguage": ["en-ZA"]
       }
     })} />
+
+    <style>
+      @reference "tailwindcss";
+      .nav-link { @apply text-[#A0A0A0] hover:text-[#DE656D] transition-colors text-xs font-medium; }
+      .nav-link.active { @apply text-[#DE656D]; }
+    </style>
   </head>
   <body class="bg-[#0A0A0A] text-[#F5F5F5]">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A]/90 backdrop-blur-md border-b border-white/5">
+      <div class="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2">
+          <img src="/logo.png" alt="EvansMathibe" class="w-8 h-8 rounded-lg" />
+          <span class="font-bold text-white text-sm">EvansMathibe</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/services" class="nav-link">Services</a>
+          <a href="/work" class="nav-link">Work</a>
+          <a href="/about" class="nav-link">About</a>
+          <a href="#contact" class="btn-primary text-sm py-2 px-4">Contact</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden text-white text-xl" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden bg-[#111111] border-t border-white/5">
+        <div class="px-4 py-4 space-y-3">
+          <a href="/" class="block text-[#A0A0A0] hover:text-[#DE656D] transition-colors py-2">Home</a>
+          <a href="/services" class="block text-[#A0A0A0] hover:text-[#DE656D] transition-colors py-2">Services</a>
+          <a href="/work" class="block text-[#A0A0A0] hover:text-[#DE656D] transition-colors py-2">Work</a>
+          <a href="/about" class="block text-[#A0A0A0] hover:text-[#DE656D] transition-colors py-2">About</a>
+          <a href="#contact" class="block text-[#A0A0A0] hover:text-[#DE656D] transition-colors py-2">Contact</a>
+        </div>
+      </div>
+    </nav>
     <slot />
   </body>
 </html>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    if (btn && menu) {
+      btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+    }
+  });
+</script>
